@@ -55,6 +55,7 @@
       padding: 10px 20px; border-radius: 8px;
       font-size: 14px; font-weight: 600;
       text-decoration: none; transition: background 0.2s;
+      cursor: pointer; border: none; font-family: inherit;
     }
     .nav-btn:hover { background: var(--blue-dark); }
     .nav-btn.ghost {
@@ -102,15 +103,12 @@
       text-decoration: none; transition: all 0.2s;
       border: 2px solid transparent;
       min-width: 200px; justify-content: center;
+      cursor: pointer; font-family: inherit;
+      background: none;
     }
-    .dl-btn.android {
-      background: var(--blue); color: #fff;
-    }
+    .dl-btn.android { background: var(--blue); color: #fff; }
     .dl-btn.android:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
-    .dl-btn.ios {
-      background: #fff; color: var(--text);
-      border-color: var(--border);
-    }
+    .dl-btn.ios { background: #fff; color: var(--text); border-color: var(--border); }
     .dl-btn.ios:hover { border-color: var(--blue); }
     .dl-btn-icon { font-size: 22px; }
     .dl-btn-text { text-align: left; }
@@ -160,7 +158,7 @@
       margin-top: 10px; font-size: 12px; color: #1e40af; font-weight: 600;
     }
 
-    /* HOW IT WORKS */
+    /* SECTIONS */
     .section { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
     .section-label {
       text-align: center; font-size: 13px; font-weight: 600;
@@ -211,7 +209,7 @@
     .feature h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
     .feature p { font-size: 14px; color: var(--muted); line-height: 1.5; }
 
-    /* SCAM EXAMPLES */
+    /* EXAMPLES */
     .examples-bg { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .examples-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -235,65 +233,47 @@
     /* FAMILY */
     .family-section {
       background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
-      color: #fff; text-align: center;
-      padding: 80px 24px;
+      color: #fff; text-align: center; padding: 80px 24px;
     }
     .family-section h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; }
     .family-section p { font-size: 18px; opacity: 0.85; max-width: 540px; margin: 0 auto 40px; }
-    .family-steps {
-      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
-      max-width: 900px; margin: 0 auto;
-    }
+    .family-steps { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
     .family-step {
       background: rgba(255,255,255,0.12); border-radius: 16px;
-      padding: 24px 20px; flex: 1; min-width: 200px; max-width: 260px;
-      text-align: center;
+      padding: 24px 20px; flex: 1; min-width: 200px; max-width: 260px; text-align: center;
     }
     .family-step-icon { font-size: 32px; margin-bottom: 12px; }
     .family-step h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
     .family-step p { font-size: 13px; opacity: 0.75; }
 
     /* WAITLIST */
-    .waitlist-section {
-      max-width: 600px; margin: 0 auto;
-      padding: 80px 24px; text-align: center;
-    }
+    .waitlist-section { max-width: 600px; margin: 0 auto; padding: 80px 24px; text-align: center; }
     .waitlist-section h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 800; margin-bottom: 12px; }
     .waitlist-section p { color: var(--muted); font-size: 16px; margin-bottom: 32px; }
-    .waitlist-form {
-      display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
-    }
+    .waitlist-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
     .waitlist-input {
       flex: 1; min-width: 220px;
       border: 2px solid var(--border); border-radius: 10px;
       padding: 14px 16px; font-size: 15px;
-      font-family: inherit; outline: none;
-      transition: border-color 0.2s;
+      font-family: inherit; outline: none; transition: border-color 0.2s;
     }
     .waitlist-input:focus { border-color: var(--blue); }
     .waitlist-btn {
       background: var(--blue); color: #fff;
       border: none; border-radius: 10px;
       padding: 14px 24px; font-size: 15px; font-weight: 700;
-      cursor: pointer; font-family: inherit;
-      transition: background 0.2s;
+      cursor: pointer; font-family: inherit; transition: background 0.2s;
     }
     .waitlist-btn:hover { background: var(--blue-dark); }
     .waitlist-success { display: none; color: var(--green); font-weight: 600; margin-top: 16px; font-size: 15px; }
 
     /* CTA BOTTOM */
-    .cta-bottom {
-      background: var(--bg); border-top: 1px solid var(--border);
-      text-align: center; padding: 64px 24px;
-    }
+    .cta-bottom { background: var(--bg); border-top: 1px solid var(--border); text-align: center; padding: 64px 24px; }
     .cta-bottom h2 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; margin-bottom: 12px; }
     .cta-bottom p { color: var(--muted); font-size: 16px; margin-bottom: 32px; }
 
     /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 24px; text-align: center;
-    }
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
     .footer-inner { max-width: 1100px; margin: 0 auto; }
     .footer-logo { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
     .footer-logo span { color: var(--blue); }
@@ -301,15 +281,111 @@
     footer a { color: #94a3b8; text-decoration: none; }
     footer a:hover { color: var(--blue); }
 
+    /* DOWNLOAD MODAL */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(15,23,42,0.55); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: #fff; border-radius: 20px;
+      padding: 40px 36px; max-width: 440px; width: 100%;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.18);
+      position: relative; animation: modalIn 0.2s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      background: none; border: none; font-size: 20px;
+      cursor: pointer; color: #94a3b8; line-height: 1;
+      padding: 4px 8px; border-radius: 6px;
+    }
+    .modal-close:hover { background: var(--border); }
+    .modal-icon { font-size: 36px; margin-bottom: 12px; }
+    .modal h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .modal p { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.5; }
+    .modal-field { margin-bottom: 14px; }
+    .modal-field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+    .modal-field input {
+      width: 100%; border: 2px solid var(--border); border-radius: 10px;
+      padding: 12px 14px; font-size: 15px; font-family: inherit;
+      outline: none; transition: border-color 0.2s;
+    }
+    .modal-field input:focus { border-color: var(--blue); }
+    .modal-submit {
+      width: 100%; background: var(--blue); color: #fff;
+      border: none; border-radius: 10px;
+      padding: 15px; font-size: 16px; font-weight: 700;
+      cursor: pointer; font-family: inherit;
+      margin-top: 6px; transition: background 0.2s;
+    }
+    .modal-submit:hover { background: var(--blue-dark); }
+    .modal-skip {
+      display: block; text-align: center; margin-top: 12px;
+      font-size: 13px; color: #94a3b8; cursor: pointer;
+      background: none; border: none; font-family: inherit;
+      text-decoration: underline; width: 100%;
+    }
+    .modal-skip:hover { color: var(--muted); }
+    .modal-success { display: none; text-align: center; }
+    .modal-success-icon { font-size: 48px; margin-bottom: 12px; }
+    .modal-success h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .modal-success p { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+    .modal-dl-link {
+      display: block; background: var(--blue); color: #fff;
+      border-radius: 10px; padding: 15px 24px;
+      text-decoration: none; font-size: 16px; font-weight: 700;
+      text-align: center; transition: background 0.2s;
+    }
+    .modal-dl-link:hover { background: var(--blue-dark); }
+
     /* RESPONSIVE */
     @media (max-width: 600px) {
       .nav-links .nav-btn.ghost { display: none; }
       .download-btns { flex-direction: column; align-items: center; }
       .dl-btn { width: 100%; max-width: 300px; }
+      .modal { padding: 32px 24px; }
     }
   </style>
 </head>
 <body>
+
+<!-- DOWNLOAD MODAL -->
+<div class="modal-overlay" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&#x2715;</button>
+
+    <div id="modalForm">
+      <div class="modal-icon">&#x1F916;</div>
+      <h2 id="modalTitle">Get Double Check for Android</h2>
+      <p>Drop your details below to get the download link. We'll keep you posted on new features — unsubscribe any time.</p>
+      <div class="modal-field">
+        <label for="dlName">Your name</label>
+        <input type="text" id="dlName" placeholder="e.g. Margaret" autocomplete="given-name" />
+      </div>
+      <div class="modal-field">
+        <label for="dlEmail">Email address <span style="color:var(--red)">*</span></label>
+        <input type="email" id="dlEmail" placeholder="your@email.com" required autocomplete="email" />
+      </div>
+      <button class="modal-submit" onclick="submitDownload()">Get the App &#8594;</button>
+      <button class="modal-skip" onclick="skipAndDownload()">Skip &#8212; just take me to the download</button>
+    </div>
+
+    <div class="modal-success" id="modalSuccess">
+      <div class="modal-success-icon">&#x2705;</div>
+      <h2>You're all set!</h2>
+      <p>Tap below to download. Open the APK file on your Android phone to install &#8212; takes about 30 seconds.</p>
+      <a href="https://expo.dev/accounts/martinleo/projects/double-check/builds/6a1eb552-fa21-4ac6-887f-194ad734512b"
+         class="modal-dl-link" target="_blank" rel="noopener">
+        &#x2B07; Download APK Now
+      </a>
+    </div>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -317,50 +393,49 @@
     <a href="#" class="logo">Double<span>Check</span></a>
     <div class="nav-links">
       <a href="#download" class="nav-btn ghost">Download</a>
-      <a href="#download" class="nav-btn">Get the App</a>
+      <button onclick="openModal()" class="nav-btn">Get the App</button>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="badge">Free scam detection · No account needed</div>
-  <h1>Before you respond,<br>pay, or <span>worry</span> —</h1>
+  <div class="badge">Free scam detection &#183; No account needed</div>
+  <h1>Before you respond,<br>pay, or <span>worry</span> &#8212;</h1>
   <p class="hero-sub">Paste any suspicious message, letter, link, or bill and get a plain English answer in seconds. Protect yourself and the people you love.</p>
 
   <div class="download-btns" id="download">
-    <a href="https://expo.dev/accounts/martinleo/projects/double-check/builds/6a1eb552-fa21-4ac6-887f-194ad734512b" class="dl-btn android">
-      <span class="dl-btn-icon">🤖</span>
+    <button onclick="openModal()" class="dl-btn android">
+      <span class="dl-btn-icon">&#x1F916;</span>
       <span class="dl-btn-text">
         <span class="dl-btn-label">Download for</span>
         <span class="dl-btn-name">Android</span>
       </span>
-    </a>
+    </button>
     <a href="#ios-waitlist" class="dl-btn ios">
-      <span class="dl-btn-icon">🍎</span>
+      <span class="dl-btn-icon">&#x1F34E;</span>
       <span class="dl-btn-text">
         <span class="dl-btn-label">Coming soon</span>
         <span class="dl-btn-name">iPhone (iOS)</span>
       </span>
     </a>
   </div>
-  <p class="hero-note">Free · No sign-up required · Works in seconds</p>
+  <p class="hero-note">Free &#183; Works in seconds</p>
 
-  <!-- MOCKUP -->
   <div class="mockup-wrap">
     <div class="mockup-bar">
       <span class="mockup-logo">Double<span>Check</span></span>
       <span style="font-size:13px;color:#94a3b8">History (3)</span>
     </div>
     <div class="mockup-body">
-      <div class="mockup-h">Before you respond, pay, or worry —</div>
+      <div class="mockup-h">Before you respond, pay, or worry &#8212;</div>
       <div class="mockup-s">Paste any message or link for an instant answer.</div>
       <div class="mockup-input">Your Medicare card has expired. Call 1-800-555-0199 now...</div>
-      <div class="mockup-cta">Check This →</div>
+      <div class="mockup-cta">Check This &#8594;</div>
       <div class="mockup-result">
-        <div class="mockup-verdict">✕ Likely Scam</div>
+        <div class="mockup-verdict">&#x2715; Likely Scam</div>
         <div class="mockup-detail">This is a fake Medicare warning. Medicare never cancels coverage by text and will never ask you to call an unverified number.</div>
-        <div class="mockup-alert">📧 Family member alerted automatically</div>
+        <div class="mockup-alert">&#x1F4E7; Family member alerted automatically</div>
       </div>
     </div>
   </div>
@@ -380,12 +455,12 @@
     <div class="step">
       <div class="step-num">2</div>
       <h3>Get a plain English verdict</h3>
-      <p>Our AI checks for scam patterns, urgent deadlines, and suspicious requests — then explains exactly what it found.</p>
+      <p>Our AI checks for scam patterns, urgent deadlines, and suspicious requests &#8212; then explains exactly what it found.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <h3>Know what to do</h3>
-      <p>Delete it, ignore it, or take action — we tell you precisely what to do next. No jargon, no confusion.</p>
+      <p>Delete it, ignore it, or take action &#8212; we tell you precisely what to do next. No jargon, no confusion.</p>
     </div>
   </div>
 </section>
@@ -400,17 +475,17 @@
       <div class="example">
         <div class="example-label">Suspicious text</div>
         <div class="example-msg">"Your Medicare coverage will be cancelled on March 15. Call 1-800-555-4499 now to verify your information."</div>
-        <span class="example-verdict verdict-scam">✕ Likely Scam</span>
+        <span class="example-verdict verdict-scam">&#x2715; Likely Scam</span>
       </div>
       <div class="example">
         <div class="example-label">Real bill</div>
         <div class="example-msg">"Your electric bill of $134.22 is due March 10. Pay at myaccount.pge.com or call 1-800-743-5000."</div>
-        <span class="example-verdict verdict-safe">✓ Safe</span>
+        <span class="example-verdict verdict-safe">&#x2713; Safe</span>
       </div>
       <div class="example">
         <div class="example-label">Suspicious link</div>
         <div class="example-msg">"https://irs-tax-refund-2026.net/claim-now?id=8837491"</div>
-        <span class="example-verdict verdict-scam">✕ Likely Scam</span>
+        <span class="example-verdict verdict-scam">&#x2715; Likely Scam</span>
       </div>
       <div class="example">
         <div class="example-label">Action needed</div>
@@ -428,46 +503,28 @@
   <p class="section-sub">Simple enough for anyone. Smart enough to catch sophisticated scams.</p>
   <div class="features-grid">
     <div class="feature">
-      <div class="feature-icon">📄</div>
-      <div>
-        <h3>Text & links</h3>
-        <p>Paste any message, email body, or suspicious URL and get an instant verdict.</p>
-      </div>
+      <div class="feature-icon">&#x1F4C4;</div>
+      <div><h3>Text &amp; links</h3><p>Paste any message, email body, or suspicious URL and get an instant verdict.</p></div>
     </div>
     <div class="feature">
-      <div class="feature-icon">📸</div>
-      <div>
-        <h3>Screenshot analysis</h3>
-        <p>Got a suspicious message as a screenshot? Upload it directly from your camera roll.</p>
-      </div>
+      <div class="feature-icon">&#x1F4F8;</div>
+      <div><h3>Screenshot analysis</h3><p>Got a suspicious message as a screenshot? Upload it directly from your camera roll.</p></div>
     </div>
     <div class="feature">
-      <div class="feature-icon">👨‍👩‍👧</div>
-      <div>
-        <h3>Auto family alerts</h3>
-        <p>When something risky is detected, a family member gets an automatic email — no action needed.</p>
-      </div>
+      <div class="feature-icon">&#x1F46A;</div>
+      <div><h3>Auto family alerts</h3><p>When something risky is detected, a family member gets an automatic email &#8212; no action needed.</p></div>
     </div>
     <div class="feature">
-      <div class="feature-icon">🔒</div>
-      <div>
-        <h3>Private by design</h3>
-        <p>No account required. We don't store your messages. No monitoring, no surveillance.</p>
-      </div>
+      <div class="feature-icon">&#x1F512;</div>
+      <div><h3>Private by design</h3><p>No account required. We don't store your messages. No monitoring, no surveillance.</p></div>
     </div>
     <div class="feature">
-      <div class="feature-icon">⚡</div>
-      <div>
-        <h3>10-second answers</h3>
-        <p>Plain English. No jargon. Tells you exactly what it is and what to do next.</p>
-      </div>
+      <div class="feature-icon">&#x26A1;</div>
+      <div><h3>10-second answers</h3><p>Plain English. No jargon. Tells you exactly what it is and what to do next.</p></div>
     </div>
     <div class="feature">
-      <div class="feature-icon">🌍</div>
-      <div>
-        <h3>Free to use</h3>
-        <p>Core features are free. No credit card. No sign-up. Download and start checking immediately.</p>
-      </div>
+      <div class="feature-icon">&#x1F30D;</div>
+      <div><h3>Free to use</h3><p>Core features are free. No credit card. Download and start checking immediately.</p></div>
     </div>
   </div>
 </section>
@@ -475,20 +532,20 @@
 <!-- FAMILY ALERT -->
 <div class="family-section">
   <h2>Peace of mind for the whole family</h2>
-  <p>Add a family member's email and they'll be notified automatically whenever something suspicious is detected — without any action from the person using the app.</p>
+  <p>Add a family member's email and they'll be notified automatically whenever something suspicious is detected &#8212; without any extra steps from the person using the app.</p>
   <div class="family-steps">
     <div class="family-step">
-      <div class="family-step-icon">📱</div>
+      <div class="family-step-icon">&#x1F4F1;</div>
       <h3>Mum gets a suspicious text</h3>
       <p>She opens Double Check and pastes it in.</p>
     </div>
     <div class="family-step">
-      <div class="family-step-icon">🤖</div>
+      <div class="family-step-icon">&#x1F916;</div>
       <h3>AI detects it's a scam</h3>
       <p>Verdict returned in seconds. Mum knows not to call the number.</p>
     </div>
     <div class="family-step">
-      <div class="family-step-icon">📧</div>
+      <div class="family-step-icon">&#x1F4E7;</div>
       <h3>You get an email alert</h3>
       <p>Automatic. No extra steps for Mum. You know what happened and can follow up.</p>
     </div>
@@ -499,12 +556,12 @@
 <section class="waitlist-section" id="ios-waitlist">
   <div class="section-label">Coming soon on iPhone</div>
   <h2>Get notified when iOS launches</h2>
-  <p>Android is available now. iOS is coming soon — leave your email and you'll be first to know.</p>
+  <p>Android is available now. iOS is coming soon &#8212; leave your email and you'll be first to know.</p>
   <form class="waitlist-form" id="waitlistForm">
     <input type="email" class="waitlist-input" placeholder="your@email.com" required id="waitlistEmail" />
     <button type="submit" class="waitlist-btn">Notify Me</button>
   </form>
-  <div class="waitlist-success" id="waitlistSuccess">✓ You're on the list! We'll email you when iOS launches.</div>
+  <div class="waitlist-success" id="waitlistSuccess">&#x2713; You're on the list! We'll email you when iOS launches.</div>
 </section>
 
 <!-- CTA BOTTOM -->
@@ -512,15 +569,15 @@
   <h2>Download Double Check free today</h2>
   <p>Android available now. iPhone coming soon.</p>
   <div class="download-btns">
-    <a href="https://expo.dev/accounts/martinleo/projects/double-check/builds/6a1eb552-fa21-4ac6-887f-194ad734512b" class="dl-btn android">
-      <span class="dl-btn-icon">🤖</span>
+    <button onclick="openModal()" class="dl-btn android">
+      <span class="dl-btn-icon">&#x1F916;</span>
       <span class="dl-btn-text">
         <span class="dl-btn-label">Download for</span>
         <span class="dl-btn-name">Android</span>
       </span>
-    </a>
+    </button>
     <a href="#ios-waitlist" class="dl-btn ios">
-      <span class="dl-btn-icon">🍎</span>
+      <span class="dl-btn-icon">&#x1F34E;</span>
       <span class="dl-btn-text">
         <span class="dl-btn-label">Coming soon</span>
         <span class="dl-btn-name">iPhone (iOS)</span>
@@ -533,27 +590,78 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">Double<span>Check</span></div>
-    <p>AI-powered scam detection · For guidance only, not legal or financial advice.</p>
+    <p>AI-powered scam detection &#183; For guidance only, not legal or financial advice.</p>
     <p style="margin-top:8px">
-      <a href="mailto:martingleonard@gmail.com">Contact</a> ·
-      <a href="#">Privacy Policy</a> ·
+      <a href="mailto:martingleonard@gmail.com">Contact</a> &#183;
+      <a href="#">Privacy Policy</a> &#183;
       <a href="#">Terms of Service</a>
     </p>
-    <p style="margin-top:12px">© 2026 Double Check. All rights reserved.</p>
+    <p style="margin-top:12px">&#169; 2026 Double Check. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
-  // Waitlist form
-  document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = document.getElementById('waitlistEmail').value;
-    // Send to backend
-    fetch('https://web-production-970ba.up.railway.app/waitlist', {
+  var BACKEND = 'https://web-production-970ba.up.railway.app';
+
+  function openModal() {
+    document.getElementById('downloadModal').classList.add('open');
+    document.getElementById('modalForm').style.display = '';
+    document.getElementById('modalSuccess').style.display = 'none';
+    document.getElementById('dlName').value = '';
+    document.getElementById('dlEmail').value = '';
+    setTimeout(function() { document.getElementById('dlName').focus(); }, 100);
+  }
+
+  function closeModal() {
+    document.getElementById('downloadModal').classList.remove('open');
+  }
+
+  document.getElementById('downloadModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  function showSuccess() {
+    document.getElementById('modalForm').style.display = 'none';
+    document.getElementById('modalSuccess').style.display = 'block';
+  }
+
+  function submitDownload() {
+    var name  = document.getElementById('dlName').value.trim();
+    var email = document.getElementById('dlEmail').value.trim();
+    var emailInput = document.getElementById('dlEmail');
+
+    if (!email || email.indexOf('@') === -1) {
+      emailInput.focus();
+      emailInput.style.borderColor = '#dc2626';
+      setTimeout(function() { emailInput.style.borderColor = ''; }, 1500);
+      return;
+    }
+
+    fetch(BACKEND + '/waitlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email })
-    }).catch(() => {});
+      body: JSON.stringify({ email: email, name: name, platform: 'android' })
+    }).catch(function() {});
+
+    showSuccess();
+  }
+
+  function skipAndDownload() {
+    showSuccess();
+  }
+
+  document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var email = document.getElementById('waitlistEmail').value;
+    fetch(BACKEND + '/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, platform: 'ios' })
+    }).catch(function() {});
     document.getElementById('waitlistForm').style.display = 'none';
     document.getElementById('waitlistSuccess').style.display = 'block';
   });
