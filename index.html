@@ -348,6 +348,75 @@
     .footer-bottom p { font-size: 12px; }
     .footer-disclaimer { font-size: 12px; color: rgba(255,255,255,0.35); }
 
+    /* MODAL */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(15,23,42,0.6); backdrop-filter: blur(6px);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: #fff; border-radius: 20px;
+      padding: 40px 36px; max-width: 420px; width: 100%;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+      position: relative; animation: mIn 0.2s ease;
+    }
+    @keyframes mIn {
+      from { opacity: 0; transform: translateY(10px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .modal-close {
+      position: absolute; top: 14px; right: 14px;
+      background: none; border: none; font-size: 18px;
+      cursor: pointer; color: var(--subtle); padding: 6px 8px;
+      border-radius: 6px; line-height: 1;
+    }
+    .modal-close:hover { background: var(--bg-subtle); }
+    .modal-icon-row {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
+    }
+    .modal-icon-wrap {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--blue-light); color: var(--blue);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .modal h2 { font-size: 20px; font-weight: 800; }
+    .modal-sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.55; }
+    .modal-field { margin-bottom: 14px; }
+    .modal-field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .modal-field input {
+      width: 100%; border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 12px 14px; font-size: 15px; font-family: inherit;
+      outline: none; transition: border-color 0.2s; background: var(--bg-subtle);
+    }
+    .modal-field input:focus { border-color: var(--blue); background: #fff; }
+    .modal-field input.error { border-color: var(--red); }
+    .modal-submit {
+      width: 100%; background: var(--blue); color: #fff;
+      border: none; border-radius: 10px;
+      padding: 15px; font-size: 16px; font-weight: 700;
+      cursor: pointer; font-family: inherit; margin-top: 4px;
+      transition: background 0.15s;
+    }
+    .modal-submit:hover { background: var(--blue-dark); }
+    .modal-note { font-size: 12px; color: var(--subtle); text-align: center; margin-top: 10px; }
+    .modal-success { display: none; text-align: center; padding: 8px 0; }
+    .modal-success-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--green-light); color: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .modal-success h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    .modal-success p { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.55; }
+    .modal-dl-btn {
+      display: block; background: var(--blue); color: #fff;
+      border-radius: 10px; padding: 15px 24px;
+      text-decoration: none; font-size: 16px; font-weight: 700;
+      text-align: center; transition: background 0.15s;
+    }
+    .modal-dl-btn:hover { background: var(--blue-dark); }
+
     /* RESPONSIVE */
     @media (max-width: 760px) {
       .steps { grid-template-columns: 1fr; }
@@ -371,14 +440,50 @@
 </head>
 <body>
 
+<!-- DOWNLOAD MODAL -->
+<div class="modal-overlay" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&#x2715;</button>
+
+    <div id="modalForm">
+      <div class="modal-icon-row">
+        <div class="modal-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zm-2.5-1C2.67 17 2 17.67 2 18.5v-9C2 8.67 2.67 8 3.5 8S5 8.67 5 9.5v9c0 .83-.67 1.5-1.5 1.5zm17 0c-.83 0-1.5-.67-1.5-1.5v-9c0-.83.67-1.5 1.5-1.5S23 8.67 23 9.5v9c0 .83-.67 1.5-1.5 1.5zM8.5 2.85L7.36 1.71a.496.496 0 0 1 0-.7c.19-.19.51-.19.7 0l1.28 1.27A6.6 6.6 0 0 1 12 1.84c1.09 0 2.13.26 3.12.44L16.39 1c.19-.19.51-.19.7 0 .19.19.19.51 0 .7L15.96 2.84C17.74 3.71 19 5.35 19 7.2V8H5v-.8c0-1.85 1.26-3.49 3.5-4.35z"/></svg>
+        </div>
+        <h2 id="modalTitle">Get Double Check for Android</h2>
+      </div>
+      <p class="modal-sub">Enter your email to get the download link sent to your inbox — and to receive updates when new versions are available.</p>
+      <div class="modal-field">
+        <label for="dlName">Your name <span style="color:var(--subtle);font-weight:400">(optional)</span></label>
+        <input type="text" id="dlName" placeholder="e.g. Margaret" autocomplete="given-name" />
+      </div>
+      <div class="modal-field">
+        <label for="dlEmail">Email address <span style="color:var(--red)">*</span></label>
+        <input type="email" id="dlEmail" placeholder="your@email.com" required autocomplete="email" />
+      </div>
+      <button class="modal-submit" onclick="submitDownload()">Send Me the Download Link</button>
+      <p class="modal-note">We'll email you the APK link and notify you of updates. Unsubscribe any time.</p>
+    </div>
+
+    <div class="modal-success" id="modalSuccess">
+      <div class="modal-success-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg>
+      </div>
+      <h2>Check your inbox</h2>
+      <p>We've sent the download link to your email. Or tap below to download directly now.</p>
+      <a href="https://expo.dev/accounts/martinleo/projects/double-check/builds/6a1eb552-fa21-4ac6-887f-194ad734512b"
+         class="modal-dl-btn" target="_blank" rel="noopener">Download APK Now</a>
+    </div>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo">Double<span>Check</span></a>
     <div class="nav-right">
       <a href="#how-it-works" class="nav-link">How it works</a>
-      <a href="https://expo.dev/accounts/martinleo/projects/double-check/builds/6a1eb552-fa21-4ac6-887f-194ad734512b"
-         class="btn btn-primary" target="_blank" rel="noopener">Download Android</a>
+      <button onclick="openModal()" class="btn btn-primary">Download Android</button>
     </div>
   </div>
 </nav>
@@ -416,8 +521,7 @@
     </div>
 
     <div class="hero-cta" id="download">
-      <a href="https://expo.dev/accounts/martinleo/projects/double-check/builds/6a1eb552-fa21-4ac6-887f-194ad734512b"
-         class="dl-btn android" target="_blank" rel="noopener">
+      <button onclick="openModal()" class="dl-btn android">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
           <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zm-2.5-1C2.67 17 2 17.67 2 18.5v-9C2 8.67 2.67 8 3.5 8S5 8.67 5 9.5v9c0 .83-.67 1.5-1.5 1.5zm17 0c-.83 0-1.5-.67-1.5-1.5v-9c0-.83.67-1.5 1.5-1.5S23 8.67 23 9.5v9c0 .83-.67 1.5-1.5 1.5zM8.5 2.85L7.36 1.71a.496.496 0 0 1 0-.7c.19-.19.51-.19.7 0l1.28 1.27A6.6 6.6 0 0 1 12 1.84c1.09 0 2.13.26 3.12.44L16.39 1c.19-.19.51-.19.7 0 .19.19.19.51 0 .7L15.96 2.84C17.74 3.71 19 5.35 19 7.2V8H5v-.8c0-1.85 1.26-3.49 3.5-4.35z"/>
         </svg>
@@ -723,8 +827,7 @@
     <h2>Download Double Check today</h2>
     <p>Free for Android. Takes 30 seconds to install. Start protecting yourself and your family right now.</p>
     <div class="cta-btns">
-      <a href="https://expo.dev/accounts/martinleo/projects/double-check/builds/6a1eb552-fa21-4ac6-887f-194ad734512b"
-         class="btn btn-primary btn-xl" target="_blank" rel="noopener">Download for Android</a>
+      <button onclick="openModal()" class="btn btn-primary btn-xl">Download for Android</button>
       <a href="#ios-waitlist" class="btn btn-secondary btn-xl">iOS — Notify Me</a>
     </div>
   </div>
@@ -762,6 +865,50 @@
 
 <script>
   var BACKEND = 'https://web-production-970ba.up.railway.app';
+
+  function openModal() {
+    document.getElementById('downloadModal').classList.add('open');
+    document.getElementById('modalForm').style.display = '';
+    document.getElementById('modalSuccess').style.display = 'none';
+    document.getElementById('dlName').value = '';
+    document.getElementById('dlEmail').value = '';
+    document.getElementById('dlEmail').classList.remove('error');
+    setTimeout(function() { document.getElementById('dlEmail').focus(); }, 100);
+  }
+
+  function closeModal() {
+    document.getElementById('downloadModal').classList.remove('open');
+  }
+
+  document.getElementById('downloadModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  function submitDownload() {
+    var name  = document.getElementById('dlName').value.trim();
+    var email = document.getElementById('dlEmail').value.trim();
+    var emailInput = document.getElementById('dlEmail');
+
+    if (!email || email.indexOf('@') === -1) {
+      emailInput.classList.add('error');
+      emailInput.focus();
+      setTimeout(function() { emailInput.classList.remove('error'); }, 2000);
+      return;
+    }
+
+    fetch(BACKEND + '/waitlist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, name: name, platform: 'android' })
+    }).catch(function() {});
+
+    document.getElementById('modalForm').style.display = 'none';
+    document.getElementById('modalSuccess').style.display = 'block';
+  }
 
   document.getElementById('waitlistForm').addEventListener('submit', function(e) {
     e.preventDefault();
