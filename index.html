@@ -14,645 +14,754 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
+      --navy: #0f172a;
+      --navy-mid: #1e293b;
       --blue: #2563eb;
       --blue-dark: #1d4ed8;
       --blue-light: #eff6ff;
-      --red: #dc2626;
+      --blue-mid: #dbeafe;
       --green: #16a34a;
+      --green-light: #f0fdf4;
+      --red: #dc2626;
+      --red-light: #fef2f2;
+      --amber: #d97706;
+      --amber-light: #fffbeb;
       --text: #0f172a;
       --muted: #475569;
+      --subtle: #94a3b8;
       --border: #e2e8f0;
-      --bg: #fafaf8;
+      --bg: #ffffff;
+      --bg-subtle: #f8fafc;
+      --bg-blue: #f0f4ff;
     }
 
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
     /* NAV */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(250,250,248,0.92);
-      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      padding: 0 24px;
     }
     .nav-inner {
       max-width: 1100px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
-      height: 64px;
+      height: 64px; padding: 0 24px;
     }
     .logo { font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; }
     .logo span { color: var(--blue); }
-    .nav-links { display: flex; gap: 8px; }
-    .nav-btn {
-      background: var(--blue); color: #fff;
+    .nav-right { display: flex; align-items: center; gap: 8px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 8px; }
+    .nav-link:hover { color: var(--text); background: var(--bg-subtle); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
       padding: 10px 20px; border-radius: 8px;
       font-size: 14px; font-weight: 600;
-      text-decoration: none; transition: background 0.2s;
-      cursor: pointer; border: none; font-family: inherit;
+      text-decoration: none; cursor: pointer;
+      border: none; font-family: inherit; transition: all 0.15s;
     }
-    .nav-btn:hover { background: var(--blue-dark); }
-    .nav-btn.ghost {
-      background: transparent; color: var(--blue);
-      border: 2px solid var(--blue);
-    }
-    .nav-btn.ghost:hover { background: var(--blue-light); }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.25); }
+    .btn-secondary { background: var(--bg-subtle); color: var(--text); border: 1.5px solid var(--border); }
+    .btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+    .btn-xl { padding: 17px 36px; font-size: 16px; font-weight: 700; border-radius: 12px; }
 
     /* HERO */
-    .hero {
-      max-width: 760px; margin: 0 auto;
-      padding: 80px 24px 60px;
-      text-align: center;
+    .hero-section { background: var(--bg); padding: 72px 24px 64px; }
+    .hero-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 600; color: var(--blue);
+      background: var(--blue-light); border: 1px solid var(--blue-mid);
+      border-radius: 20px; padding: 5px 14px; margin-bottom: 28px;
     }
-    .badge {
-      display: inline-block;
-      background: #fef3c7; color: #92400e;
-      border: 1px solid #fde68a;
-      border-radius: 20px; padding: 6px 16px;
-      font-size: 13px; font-weight: 600;
-      margin-bottom: 24px;
-    }
+    .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
     h1 {
-      font-size: clamp(36px, 6vw, 64px);
-      font-weight: 800; line-height: 1.1;
+      font-size: clamp(36px, 6vw, 60px);
+      font-weight: 800; line-height: 1.1; letter-spacing: -0.5px;
       color: var(--text); margin-bottom: 20px;
     }
-    h1 span { color: var(--blue); }
+    h1 em { font-style: normal; color: var(--blue); }
     .hero-sub {
-      font-size: clamp(17px, 2.5vw, 20px);
-      color: var(--muted); max-width: 560px;
-      margin: 0 auto 40px;
+      font-size: clamp(17px, 2.2vw, 19px);
+      color: var(--muted); max-width: 520px;
+      margin: 0 auto 32px; line-height: 1.65;
     }
+    .trust-strip {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 6px 18px; margin-bottom: 36px;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 13px; font-weight: 500; color: var(--muted);
+    }
+    .trust-item .ti-check { color: var(--green); }
+    .trust-div { color: var(--border); }
 
     /* DOWNLOAD BUTTONS */
-    .download-btns {
-      display: flex; gap: 12px;
-      justify-content: center; flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
+    .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
     .dl-btn {
-      display: flex; align-items: center; gap: 12px;
-      padding: 14px 24px; border-radius: 12px;
-      font-size: 15px; font-weight: 600;
-      text-decoration: none; transition: all 0.2s;
-      border: 2px solid transparent;
-      min-width: 200px; justify-content: center;
-      cursor: pointer; font-family: inherit;
-      background: none;
+      display: inline-flex; align-items: center; gap: 14px;
+      padding: 15px 26px; border-radius: 14px;
+      font-family: inherit; cursor: pointer; transition: all 0.15s;
+      text-decoration: none; min-width: 196px;
     }
-    .dl-btn.android { background: var(--blue); color: #fff; }
-    .dl-btn.android:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
-    .dl-btn.ios { background: #fff; color: var(--text); border-color: var(--border); }
-    .dl-btn.ios:hover { border-color: var(--blue); }
-    .dl-btn-icon { font-size: 22px; }
-    .dl-btn-text { text-align: left; }
-    .dl-btn-label { font-size: 11px; font-weight: 500; opacity: 0.7; display: block; }
+    .dl-btn.android { background: var(--blue); color: #fff; border: none; }
+    .dl-btn.android:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(37,99,235,0.3); }
+    .dl-btn.ios { background: var(--bg); color: var(--text); border: 1.5px solid var(--border); }
+    .dl-btn.ios:hover { border-color: var(--blue); color: var(--blue); }
+    .dl-btn-label { font-size: 11px; opacity: 0.7; display: block; font-weight: 500; }
     .dl-btn-name { font-size: 16px; font-weight: 700; display: block; }
-
-    .hero-note { font-size: 13px; color: #94a3b8; margin-top: 8px; }
+    .hero-note { font-size: 13px; color: var(--subtle); }
 
     /* PHONE MOCKUP */
     .mockup-wrap {
-      max-width: 360px; margin: 48px auto 0;
-      background: #fff; border-radius: 24px;
+      max-width: 320px; margin: 52px auto 0;
+      background: #fff; border-radius: 28px;
       border: 1px solid var(--border);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.03), 0 24px 64px rgba(0,0,0,0.09);
       overflow: hidden;
     }
-    .mockup-bar {
-      background: #f8fafc; border-bottom: 1px solid var(--border);
-      padding: 12px 20px;
+    .mockup-status {
+      background: var(--navy); padding: 12px 20px;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .mockup-logo { font-size: 16px; font-weight: 800; }
-    .mockup-logo span { color: var(--blue); }
-    .mockup-body { padding: 24px 20px; }
-    .mockup-h { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
-    .mockup-s { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
-    .mockup-input {
-      border: 1px solid var(--border); border-radius: 10px;
-      padding: 12px 14px; font-size: 13px; color: #94a3b8;
-      margin-bottom: 12px; width: 100%;
+    .mockup-status-logo { font-size: 15px; font-weight: 800; color: #fff; }
+    .mockup-status-logo span { color: #60a5fa; }
+    .mockup-status-tag { font-size: 11px; color: rgba(255,255,255,0.45); font-weight: 500; }
+    .mockup-body { padding: 20px; }
+    .mockup-field-label { font-size: 10px; font-weight: 700; letter-spacing: 0.6px; color: var(--subtle); text-transform: uppercase; margin-bottom: 6px; }
+    .mockup-input-box {
+      border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 11px 13px; font-size: 12px; color: var(--muted);
+      margin-bottom: 10px; line-height: 1.5; background: var(--bg-subtle);
+      font-family: inherit;
     }
-    .mockup-cta {
+    .mockup-submit {
       background: var(--blue); color: #fff;
-      border-radius: 10px; padding: 14px;
-      text-align: center; font-size: 15px; font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .mockup-result {
-      background: #fef2f2; border: 2px solid #fecaca;
-      border-radius: 10px; padding: 14px;
-    }
-    .mockup-verdict { color: var(--red); font-weight: 800; font-size: 15px; margin-bottom: 4px; }
-    .mockup-detail { font-size: 12px; color: var(--muted); line-height: 1.5; }
-    .mockup-alert {
-      background: #eff6ff; border: 1px solid #bfdbfe;
-      border-radius: 8px; padding: 10px 12px;
-      margin-top: 10px; font-size: 12px; color: #1e40af; font-weight: 600;
-    }
-
-    /* SECTIONS */
-    .section { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
-    .section-label {
-      text-align: center; font-size: 13px; font-weight: 600;
-      letter-spacing: 1px; color: var(--blue); margin-bottom: 12px; text-transform: uppercase;
-    }
-    .section-title {
-      text-align: center; font-size: clamp(26px, 4vw, 40px);
-      font-weight: 800; margin-bottom: 12px;
-    }
-    .section-sub {
-      text-align: center; color: var(--muted); font-size: 17px;
-      max-width: 540px; margin: 0 auto 48px;
-    }
-    .steps {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-    .step {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 16px; padding: 28px 24px;
-    }
-    .step-num {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--blue-light); color: var(--blue);
-      font-weight: 800; font-size: 16px;
-      display: flex; align-items: center; justify-content: center;
+      border-radius: 10px; padding: 11px;
+      text-align: center; font-size: 13px; font-weight: 700;
       margin-bottom: 16px;
     }
-    .step h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-    .step p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .mockup-divider { border-top: 1px solid var(--border); margin: 0 -20px 14px; }
+    .mockup-result { background: var(--red-light); border: 1.5px solid #fecaca; border-radius: 10px; padding: 13px; }
+    .mockup-verdict-row { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+    .vdot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+    .mockup-verdict-text { color: var(--red); font-weight: 800; font-size: 13px; }
+    .mockup-detail { font-size: 11px; color: var(--muted); line-height: 1.5; margin-bottom: 9px; }
+    .mockup-alert-row {
+      background: #eff6ff; border: 1px solid #bfdbfe;
+      border-radius: 7px; padding: 7px 10px;
+      font-size: 11px; color: #1e40af; font-weight: 600;
+      display: flex; align-items: center; gap: 6px;
+    }
 
-    /* FEATURES */
-    .features-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+    /* TRUST ROW */
+    .trust-section {
+      background: var(--bg-subtle);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 52px 24px;
     }
-    .feature {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 16px; padding: 28px 24px;
-      display: flex; gap: 16px; align-items: flex-start;
+    .trust-section-inner { max-width: 1000px; margin: 0 auto; }
+    .trust-section-lbl {
+      text-align: center; font-size: 11px; font-weight: 700;
+      letter-spacing: 1.2px; color: var(--subtle); text-transform: uppercase; margin-bottom: 36px;
     }
-    .feature-icon {
-      font-size: 28px; flex-shrink: 0;
-      width: 52px; height: 52px;
-      background: var(--blue-light); border-radius: 12px;
+    .trust-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+    .trust-pillar { text-align: center; }
+    .trust-pillar-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--bg); border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 12px; color: var(--blue);
     }
-    .feature h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-    .feature p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+    .trust-pillar h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .trust-pillar p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* SHARED SECTION STYLES */
+    .section-label {
+      text-align: center; font-size: 11px; font-weight: 700;
+      letter-spacing: 1.2px; color: var(--blue); margin-bottom: 10px; text-transform: uppercase;
+    }
+    .section-title {
+      text-align: center; font-size: clamp(24px, 4vw, 36px);
+      font-weight: 800; margin-bottom: 10px; letter-spacing: -0.3px;
+    }
+    .section-sub {
+      text-align: center; color: var(--muted); font-size: 16px;
+      max-width: 500px; margin: 0 auto 48px; line-height: 1.65;
+    }
+    .sec-inner { max-width: 1000px; margin: 0 auto; }
+
+    /* HOW IT WORKS */
+    .how-section { background: var(--bg); padding: 80px 24px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .step-card {
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      padding: 32px 28px;
+    }
+    .step-card:first-child { border-radius: 14px 0 0 14px; }
+    .step-card:last-child { border-radius: 0 14px 14px 0; }
+    .step-n {
+      font-size: 11px; font-weight: 700; letter-spacing: 1px;
+      color: var(--blue); text-transform: uppercase;
+      margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+    }
+    .step-n::after { content: ''; flex: 1; height: 1px; background: var(--blue-mid); }
+    .step-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .step-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
     /* EXAMPLES */
-    .examples-bg { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .examples-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
+    .examples-section {
+      background: var(--bg-subtle); padding: 80px 24px;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
     }
-    .example {
-      border: 1px solid var(--border); border-radius: 12px;
-      padding: 20px; background: var(--bg);
+    .examples-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+    .example-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px;
+      display: flex; flex-direction: column; gap: 12px;
     }
-    .example-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; }
-    .example-msg { font-size: 14px; color: var(--text); margin-bottom: 12px; line-height: 1.5; }
-    .example-verdict {
+    .example-type { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: var(--subtle); text-transform: uppercase; }
+    .example-msg { font-size: 14px; color: var(--text); line-height: 1.55; flex: 1; }
+    .verdict-badge {
       display: inline-flex; align-items: center; gap: 6px;
-      padding: 4px 12px; border-radius: 20px;
+      padding: 5px 12px; border-radius: 20px; width: fit-content;
       font-size: 12px; font-weight: 700;
     }
-    .verdict-scam { background: #fef2f2; color: var(--red); }
-    .verdict-safe { background: #f0fdf4; color: var(--green); }
-    .verdict-action { background: #fffbeb; color: #92400e; }
+    .bdot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .v-scam { background: var(--red-light); color: var(--red); border: 1px solid #fecaca; }
+    .v-scam .bdot { background: var(--red); }
+    .v-safe { background: var(--green-light); color: var(--green); border: 1px solid #bbf7d0; }
+    .v-safe .bdot { background: var(--green); }
+    .v-action { background: var(--amber-light); color: var(--amber); border: 1px solid #fde68a; }
+    .v-action .bdot { background: var(--amber); }
+
+    /* FEATURES */
+    .features-section { background: var(--bg); padding: 80px 24px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .feature-card {
+      border: 1px solid var(--border); border-radius: 14px;
+      padding: 24px; display: flex; flex-direction: column; gap: 10px;
+    }
+    .ficon {
+      width: 42px; height: 42px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .feature-card h3 { font-size: 15px; font-weight: 700; }
+    .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
     /* FAMILY */
-    .family-section {
-      background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
-      color: #fff; text-align: center; padding: 80px 24px;
+    .family-section { background: var(--navy); color: #fff; padding: 80px 24px; }
+    .family-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .family-section .section-label { color: #60a5fa; }
+    .family-section .section-title { color: #fff; margin-bottom: 10px; }
+    .family-section .section-sub { color: rgba(255,255,255,0.6); max-width: 500px; margin: 0 auto 52px; }
+    .family-journey { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2px; }
+    .family-step { padding: 28px 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+    .family-step:first-child { border-radius: 14px 0 0 14px; }
+    .family-step:last-child { border-radius: 0 14px 14px 0; }
+    .family-step-num {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+      font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.8);
     }
-    .family-section h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; }
-    .family-section p { font-size: 18px; opacity: 0.85; max-width: 540px; margin: 0 auto 40px; }
-    .family-steps { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
-    .family-step {
-      background: rgba(255,255,255,0.12); border-radius: 16px;
-      padding: 24px 20px; flex: 1; min-width: 200px; max-width: 260px; text-align: center;
+    .family-step h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: #fff; }
+    .family-step p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.55; }
+
+    /* LIMITS */
+    .limits-section {
+      background: var(--bg-blue); padding: 80px 24px;
+      border-top: 1px solid #dbeafe; border-bottom: 1px solid #dbeafe;
     }
-    .family-step-icon { font-size: 32px; margin-bottom: 12px; }
-    .family-step h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-    .family-step p { font-size: 13px; opacity: 0.75; }
+    .limits-inner { max-width: 780px; margin: 0 auto; }
+    .limits-inner .section-sub { max-width: 520px; }
+    .limits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .limits-col h4 {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+      text-transform: uppercase; margin-bottom: 16px;
+      padding-bottom: 10px; border-bottom: 2px solid;
+    }
+    .limits-col.can h4 { color: var(--green); border-color: var(--green); }
+    .limits-col.cannot h4 { color: var(--muted); border-color: var(--border); }
+    .limits-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .limits-list li {
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: 14px; color: var(--muted); line-height: 1.5;
+    }
+    .limits-list li svg { flex-shrink: 0; margin-top: 2px; }
+    .limits-note {
+      margin-top: 28px; padding: 16px 20px;
+      background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.15);
+      border-radius: 10px; font-size: 14px; color: var(--navy-mid);
+      line-height: 1.6; text-align: center;
+    }
 
     /* WAITLIST */
-    .waitlist-section { max-width: 600px; margin: 0 auto; padding: 80px 24px; text-align: center; }
-    .waitlist-section h2 { font-size: clamp(26px, 4vw, 36px); font-weight: 800; margin-bottom: 12px; }
-    .waitlist-section p { color: var(--muted); font-size: 16px; margin-bottom: 32px; }
-    .waitlist-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-    .waitlist-input {
-      flex: 1; min-width: 220px;
-      border: 2px solid var(--border); border-radius: 10px;
-      padding: 14px 16px; font-size: 15px;
+    .waitlist-section { background: var(--bg); padding: 80px 24px; border-top: 1px solid var(--border); }
+    .waitlist-inner { max-width: 540px; margin: 0 auto; text-align: center; }
+    .email-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .email-input {
+      flex: 1; min-width: 210px;
+      border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 13px 16px; font-size: 15px;
       font-family: inherit; outline: none; transition: border-color 0.2s;
+      background: var(--bg-subtle);
     }
-    .waitlist-input:focus { border-color: var(--blue); }
-    .waitlist-btn {
+    .email-input:focus { border-color: var(--blue); background: #fff; }
+    .email-btn {
       background: var(--blue); color: #fff;
       border: none; border-radius: 10px;
-      padding: 14px 24px; font-size: 15px; font-weight: 700;
-      cursor: pointer; font-family: inherit; transition: background 0.2s;
+      padding: 13px 24px; font-size: 15px; font-weight: 700;
+      cursor: pointer; font-family: inherit; white-space: nowrap;
+      transition: background 0.15s;
     }
-    .waitlist-btn:hover { background: var(--blue-dark); }
-    .waitlist-success { display: none; color: var(--green); font-weight: 600; margin-top: 16px; font-size: 15px; }
+    .email-btn:hover { background: var(--blue-dark); }
+    .form-success { display: none; color: var(--green); font-weight: 600; margin-top: 16px; font-size: 15px; }
 
-    /* CTA BOTTOM */
-    .cta-bottom { background: var(--bg); border-top: 1px solid var(--border); text-align: center; padding: 64px 24px; }
-    .cta-bottom h2 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; margin-bottom: 12px; }
-    .cta-bottom p { color: var(--muted); font-size: 16px; margin-bottom: 32px; }
+    /* FINAL CTA */
+    .cta-section { background: var(--bg-subtle); border-top: 1px solid var(--border); padding: 80px 24px; text-align: center; }
+    .cta-inner { max-width: 580px; margin: 0 auto; }
+    .cta-section h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; margin-bottom: 14px; letter-spacing: -0.3px; }
+    .cta-section p { color: var(--muted); font-size: 17px; margin-bottom: 36px; line-height: 1.6; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
     /* FOOTER */
-    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; }
-    .footer-logo { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
-    .footer-logo span { color: var(--blue); }
-    footer p { font-size: 13px; color: #94a3b8; margin-bottom: 4px; }
-    footer a { color: #94a3b8; text-decoration: none; }
-    footer a:hover { color: var(--blue); }
-
-    /* DOWNLOAD MODAL */
-    .modal-overlay {
-      display: none; position: fixed; inset: 0; z-index: 1000;
-      background: rgba(15,23,42,0.55); backdrop-filter: blur(4px);
-      align-items: center; justify-content: center; padding: 24px;
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 52px 24px 36px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+    .footer-logo { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .footer-logo span { color: #60a5fa; }
+    .footer-brand p { font-size: 13px; max-width: 240px; line-height: 1.6; }
+    .footer-links { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 9px; transition: color 0.15s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
     }
-    .modal-overlay.open { display: flex; }
-    .modal {
-      background: #fff; border-radius: 20px;
-      padding: 40px 36px; max-width: 440px; width: 100%;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.18);
-      position: relative; animation: modalIn 0.2s ease;
-    }
-    @keyframes modalIn {
-      from { opacity: 0; transform: translateY(12px) scale(0.97); }
-      to   { opacity: 1; transform: translateY(0) scale(1); }
-    }
-    .modal-close {
-      position: absolute; top: 16px; right: 16px;
-      background: none; border: none; font-size: 20px;
-      cursor: pointer; color: #94a3b8; line-height: 1;
-      padding: 4px 8px; border-radius: 6px;
-    }
-    .modal-close:hover { background: var(--border); }
-    .modal-icon { font-size: 36px; margin-bottom: 12px; }
-    .modal h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
-    .modal p { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.5; }
-    .modal-field { margin-bottom: 14px; }
-    .modal-field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
-    .modal-field input {
-      width: 100%; border: 2px solid var(--border); border-radius: 10px;
-      padding: 12px 14px; font-size: 15px; font-family: inherit;
-      outline: none; transition: border-color 0.2s;
-    }
-    .modal-field input:focus { border-color: var(--blue); }
-    .modal-submit {
-      width: 100%; background: var(--blue); color: #fff;
-      border: none; border-radius: 10px;
-      padding: 15px; font-size: 16px; font-weight: 700;
-      cursor: pointer; font-family: inherit;
-      margin-top: 6px; transition: background 0.2s;
-    }
-    .modal-submit:hover { background: var(--blue-dark); }
-    .modal-skip {
-      display: block; text-align: center; margin-top: 12px;
-      font-size: 13px; color: #94a3b8; cursor: pointer;
-      background: none; border: none; font-family: inherit;
-      text-decoration: underline; width: 100%;
-    }
-    .modal-skip:hover { color: var(--muted); }
-    .modal-success { display: none; text-align: center; }
-    .modal-success-icon { font-size: 48px; margin-bottom: 12px; }
-    .modal-success h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
-    .modal-success p { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-    .modal-dl-link {
-      display: block; background: var(--blue); color: #fff;
-      border-radius: 10px; padding: 15px 24px;
-      text-decoration: none; font-size: 16px; font-weight: 700;
-      text-align: center; transition: background 0.2s;
-    }
-    .modal-dl-link:hover { background: var(--blue-dark); }
+    .footer-bottom p { font-size: 12px; }
+    .footer-disclaimer { font-size: 12px; color: rgba(255,255,255,0.35); }
 
     /* RESPONSIVE */
-    @media (max-width: 600px) {
-      .nav-links .nav-btn.ghost { display: none; }
-      .download-btns { flex-direction: column; align-items: center; }
-      .dl-btn { width: 100%; max-width: 300px; }
-      .modal { padding: 32px 24px; }
+    @media (max-width: 760px) {
+      .steps { grid-template-columns: 1fr; }
+      .step-card:first-child { border-radius: 14px 14px 0 0; }
+      .step-card:last-child { border-radius: 0 0 14px 14px; }
+      .limits-grid { grid-template-columns: 1fr; }
+      .family-journey { grid-template-columns: 1fr 1fr; }
+      .family-step:first-child { border-radius: 14px 0 0 0; }
+      .family-step:last-child { border-radius: 0 0 14px 0; }
+    }
+    @media (max-width: 560px) {
+      .nav-link { display: none; }
+      .hero-cta { flex-direction: column; align-items: center; }
+      .dl-btn { width: 100%; max-width: 300px; justify-content: center; }
+      .family-journey { grid-template-columns: 1fr; }
+      .family-step:first-child { border-radius: 14px 14px 0 0; }
+      .family-step:last-child { border-radius: 0 0 14px 14px; }
+      .footer-top { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
-<!-- DOWNLOAD MODAL -->
-<div class="modal-overlay" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()" aria-label="Close">&#x2715;</button>
-
-    <div id="modalForm">
-      <div class="modal-icon">&#x1F916;</div>
-      <h2 id="modalTitle">Get Double Check for Android</h2>
-      <p>Drop your details below to get the download link. We'll keep you posted on new features — unsubscribe any time.</p>
-      <div class="modal-field">
-        <label for="dlName">Your name</label>
-        <input type="text" id="dlName" placeholder="e.g. Margaret" autocomplete="given-name" />
-      </div>
-      <div class="modal-field">
-        <label for="dlEmail">Email address <span style="color:var(--red)">*</span></label>
-        <input type="email" id="dlEmail" placeholder="your@email.com" required autocomplete="email" />
-      </div>
-      <button class="modal-submit" onclick="submitDownload()">Get the App &#8594;</button>
-      <button class="modal-skip" onclick="skipAndDownload()">Skip &#8212; just take me to the download</button>
-    </div>
-
-    <div class="modal-success" id="modalSuccess">
-      <div class="modal-success-icon">&#x2705;</div>
-      <h2>You're all set!</h2>
-      <p>Tap below to download. Open the APK file on your Android phone to install &#8212; takes about 30 seconds.</p>
-      <a href="https://expo.dev/accounts/martinleo/projects/double-check/builds/6a1eb552-fa21-4ac6-887f-194ad734512b"
-         class="modal-dl-link" target="_blank" rel="noopener">
-        &#x2B07; Download APK Now
-      </a>
-    </div>
-  </div>
-</div>
-
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo">Double<span>Check</span></a>
-    <div class="nav-links">
-      <a href="#download" class="nav-btn ghost">Download</a>
-      <button onclick="openModal()" class="nav-btn">Get the App</button>
+    <div class="nav-right">
+      <a href="#how-it-works" class="nav-link">How it works</a>
+      <a href="https://expo.dev/accounts/martinleo/projects/double-check/builds/6a1eb552-fa21-4ac6-887f-194ad734512b"
+         class="btn btn-primary" target="_blank" rel="noopener">Download Android</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="badge">Free scam detection &#183; No account needed</div>
-  <h1>Before you respond,<br>pay, or <span>worry</span> &#8212;</h1>
-  <p class="hero-sub">Paste any suspicious message, letter, link, or bill and get a plain English answer in seconds. Protect yourself and the people you love.</p>
-
-  <div class="download-btns" id="download">
-    <button onclick="openModal()" class="dl-btn android">
-      <span class="dl-btn-icon">&#x1F916;</span>
-      <span class="dl-btn-text">
-        <span class="dl-btn-label">Download for</span>
-        <span class="dl-btn-name">Android</span>
-      </span>
-    </button>
-    <a href="#ios-waitlist" class="dl-btn ios">
-      <span class="dl-btn-icon">&#x1F34E;</span>
-      <span class="dl-btn-text">
-        <span class="dl-btn-label">Coming soon</span>
-        <span class="dl-btn-name">iPhone (iOS)</span>
-      </span>
-    </a>
-  </div>
-  <p class="hero-note">Free &#183; Works in seconds</p>
-
-  <div class="mockup-wrap">
-    <div class="mockup-bar">
-      <span class="mockup-logo">Double<span>Check</span></span>
-      <span style="font-size:13px;color:#94a3b8">History (3)</span>
+<section class="hero-section">
+  <div class="hero-inner">
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      Free scam detection for you and your family
     </div>
-    <div class="mockup-body">
-      <div class="mockup-h">Before you respond, pay, or worry &#8212;</div>
-      <div class="mockup-s">Paste any message or link for an instant answer.</div>
-      <div class="mockup-input">Your Medicare card has expired. Call 1-800-555-0199 now...</div>
-      <div class="mockup-cta">Check This &#8594;</div>
-      <div class="mockup-result">
-        <div class="mockup-verdict">&#x2715; Likely Scam</div>
-        <div class="mockup-detail">This is a fake Medicare warning. Medicare never cancels coverage by text and will never ask you to call an unverified number.</div>
-        <div class="mockup-alert">&#x1F4E7; Family member alerted automatically</div>
+    <h1>Before you respond,<br>pay, or <em>worry</em> —</h1>
+    <p class="hero-sub">Paste any suspicious message, letter, link, or photo and get a plain English answer in seconds. No jargon. No confusion.</p>
+
+    <div class="trust-strip">
+      <span class="trust-item">
+        <svg class="ti-check" width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6.5l3 3 6-6"/></svg>
+        Free to use
+      </span>
+      <span class="trust-div">·</span>
+      <span class="trust-item">
+        <svg class="ti-check" width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6.5l3 3 6-6"/></svg>
+        No account needed
+      </span>
+      <span class="trust-div">·</span>
+      <span class="trust-item">
+        <svg class="ti-check" width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6.5l3 3 6-6"/></svg>
+        Messages never stored
+      </span>
+      <span class="trust-div">·</span>
+      <span class="trust-item">
+        <svg class="ti-check" width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6.5l3 3 6-6"/></svg>
+        10-second answers
+      </span>
+    </div>
+
+    <div class="hero-cta" id="download">
+      <a href="https://expo.dev/accounts/martinleo/projects/double-check/builds/6a1eb552-fa21-4ac6-887f-194ad734512b"
+         class="dl-btn android" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zm-2.5-1C2.67 17 2 17.67 2 18.5v-9C2 8.67 2.67 8 3.5 8S5 8.67 5 9.5v9c0 .83-.67 1.5-1.5 1.5zm17 0c-.83 0-1.5-.67-1.5-1.5v-9c0-.83.67-1.5 1.5-1.5S23 8.67 23 9.5v9c0 .83-.67 1.5-1.5 1.5zM8.5 2.85L7.36 1.71a.496.496 0 0 1 0-.7c.19-.19.51-.19.7 0l1.28 1.27A6.6 6.6 0 0 1 12 1.84c1.09 0 2.13.26 3.12.44L16.39 1c.19-.19.51-.19.7 0 .19.19.19.51 0 .7L15.96 2.84C17.74 3.71 19 5.35 19 7.2V8H5v-.8c0-1.85 1.26-3.49 3.5-4.35z"/>
+        </svg>
+        <span>
+          <span class="dl-btn-label">Download for</span>
+          <span class="dl-btn-name">Android</span>
+        </span>
+      </a>
+      <a href="#ios-waitlist" class="dl-btn ios">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        <span>
+          <span class="dl-btn-label">Coming soon</span>
+          <span class="dl-btn-name">iPhone (iOS)</span>
+        </span>
+      </a>
+    </div>
+    <p class="hero-note">Android APK · Free · Installs in about 30 seconds</p>
+
+    <!-- PHONE MOCKUP -->
+    <div class="mockup-wrap">
+      <div class="mockup-status">
+        <span class="mockup-status-logo">Double<span>Check</span></span>
+        <span class="mockup-status-tag">History · 3 checks</span>
+      </div>
+      <div class="mockup-body">
+        <div class="mockup-field-label">Paste or type a suspicious message</div>
+        <div class="mockup-input-box">Your Medicare coverage will be cancelled on March 15. Call 1-800-555-4499 now to verify your information.</div>
+        <div class="mockup-submit">Check This</div>
+        <div class="mockup-divider"></div>
+        <div class="mockup-field-label">Result</div>
+        <div class="mockup-result">
+          <div class="mockup-verdict-row">
+            <div class="vdot"></div>
+            <span class="mockup-verdict-text">Likely Scam</span>
+          </div>
+          <div class="mockup-detail">Fake Medicare warning. Medicare never cancels coverage by text and will never ask you to call an unverified number. Do not call back.</div>
+          <div class="mockup-alert-row">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#1e40af" stroke-width="1.5"><rect x="1" y="3" width="10" height="8" rx="1.5"/><path d="M1 5l5 3.5L11 5"/></svg>
+            Family member alerted automatically
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- HOW DOUBLE CHECK PROTECTS YOU -->
+<div class="trust-section">
+  <div class="trust-section-inner">
+    <div class="trust-section-lbl">How Double Check protects you</div>
+    <div class="trust-pillars">
+      <div class="trust-pillar">
+        <div class="trust-pillar-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M10 2L3 5v4c0 4.4 3 8.5 7 9.5 4-1 7-5.1 7-9.5V5L10 2z"/>
+          </svg>
+        </div>
+        <h3>Private by design</h3>
+        <p>We never store or share what you submit. Each check is deleted after your result.</p>
+      </div>
+      <div class="trust-pillar">
+        <div class="trust-pillar-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 2"/>
+          </svg>
+        </div>
+        <h3>Plain English, always</h3>
+        <p>A clear verdict and exactly what to do next — in language anyone can understand.</p>
+      </div>
+      <div class="trust-pillar">
+        <div class="trust-pillar-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2 17c0-3.3 2.7-5 5-5h6c2.3 0 5 1.7 5 5"/>
+            <circle cx="10" cy="7" r="4"/>
+          </svg>
+        </div>
+        <h3>Family always in the loop</h3>
+        <p>When a scam is detected, a family member gets an automatic email — no extra steps needed.</p>
+      </div>
+      <div class="trust-pillar">
+        <div class="trust-pillar-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="5" y="2" width="10" height="14" rx="2"/>
+            <path d="M8 6h4M8 9h4M8 12h2"/>
+          </svg>
+        </div>
+        <h3>No account needed</h3>
+        <p>Open the app and start immediately. No sign-up, no password, no personal details required.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- HOW IT WORKS -->
-<section class="section">
-  <div class="section-label">How it works</div>
-  <h2 class="section-title">Three steps, ten seconds</h2>
-  <p class="section-sub">No account. No learning curve. Just paste and get your answer.</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <h3>Paste the message</h3>
-      <p>Copy any suspicious text, email, letter, or link. Or upload a screenshot directly from your camera roll.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <h3>Get a plain English verdict</h3>
-      <p>Our AI checks for scam patterns, urgent deadlines, and suspicious requests &#8212; then explains exactly what it found.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <h3>Know what to do</h3>
-      <p>Delete it, ignore it, or take action &#8212; we tell you precisely what to do next. No jargon, no confusion.</p>
+<section class="how-section" id="how-it-works">
+  <div class="sec-inner">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title">Three steps, ten seconds</h2>
+    <p class="section-sub">No learning curve. Just paste the message and get your answer.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-n">Step 1</div>
+        <h3>Paste the message</h3>
+        <p>Copy any suspicious text, email, letter, or link. Or upload a photo directly from your camera roll.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-n">Step 2</div>
+        <h3>Get a plain English verdict</h3>
+        <p>Our AI checks for scam patterns, urgent deadlines, and suspicious requests — then explains exactly what it found.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-n">Step 3</div>
+        <h3>Know what to do</h3>
+        <p>Delete it, ignore it, or take action — we tell you precisely what to do next. No jargon, no guesswork.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- EXAMPLES -->
-<div class="examples-bg">
-  <section class="section">
+<section class="examples-section">
+  <div class="sec-inner">
     <div class="section-label">Real examples</div>
     <h2 class="section-title">See it in action</h2>
     <p class="section-sub">These are the kinds of messages Double Check catches every day.</p>
     <div class="examples-grid">
-      <div class="example">
-        <div class="example-label">Suspicious text</div>
+      <div class="example-card">
+        <div class="example-type">Text message</div>
         <div class="example-msg">"Your Medicare coverage will be cancelled on March 15. Call 1-800-555-4499 now to verify your information."</div>
-        <span class="example-verdict verdict-scam">&#x2715; Likely Scam</span>
+        <span class="verdict-badge v-scam"><span class="bdot"></span>Likely Scam</span>
       </div>
-      <div class="example">
-        <div class="example-label">Real bill</div>
+      <div class="example-card">
+        <div class="example-type">Utility bill</div>
         <div class="example-msg">"Your electric bill of $134.22 is due March 10. Pay at myaccount.pge.com or call 1-800-743-5000."</div>
-        <span class="example-verdict verdict-safe">&#x2713; Safe</span>
+        <span class="verdict-badge v-safe"><span class="bdot"></span>Safe</span>
       </div>
-      <div class="example">
-        <div class="example-label">Suspicious link</div>
+      <div class="example-card">
+        <div class="example-type">Suspicious link</div>
         <div class="example-msg">"https://irs-tax-refund-2026.net/claim-now?id=8837491"</div>
-        <span class="example-verdict verdict-scam">&#x2715; Likely Scam</span>
+        <span class="verdict-badge v-scam"><span class="bdot"></span>Likely Scam</span>
       </div>
-      <div class="example">
-        <div class="example-label">Action needed</div>
+      <div class="example-card">
+        <div class="example-type">Government notice</div>
         <div class="example-msg">"Your car registration renewal is due by April 30. Renew online at dmv.gov or visit your local DMV."</div>
-        <span class="example-verdict verdict-action">! Action Required</span>
+        <span class="verdict-badge v-action"><span class="bdot"></span>Action Required</span>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
 <!-- FEATURES -->
-<section class="section">
-  <div class="section-label">Features</div>
-  <h2 class="section-title">Built for people, not tech experts</h2>
-  <p class="section-sub">Simple enough for anyone. Smart enough to catch sophisticated scams.</p>
-  <div class="features-grid">
-    <div class="feature">
-      <div class="feature-icon">&#x1F4C4;</div>
-      <div><h3>Text &amp; links</h3><p>Paste any message, email body, or suspicious URL and get an instant verdict.</p></div>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">&#x1F4F8;</div>
-      <div><h3>Screenshot analysis</h3><p>Got a suspicious message as a screenshot? Upload it directly from your camera roll.</p></div>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">&#x1F46A;</div>
-      <div><h3>Auto family alerts</h3><p>When something risky is detected, a family member gets an automatic email &#8212; no action needed.</p></div>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">&#x1F512;</div>
-      <div><h3>Private by design</h3><p>No account required. We don't store your messages. No monitoring, no surveillance.</p></div>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">&#x26A1;</div>
-      <div><h3>10-second answers</h3><p>Plain English. No jargon. Tells you exactly what it is and what to do next.</p></div>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">&#x1F30D;</div>
-      <div><h3>Free to use</h3><p>Core features are free. No credit card. Download and start checking immediately.</p></div>
+<section class="features-section">
+  <div class="sec-inner">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Built for people, not tech experts</h2>
+    <p class="section-sub">Simple enough for anyone. Smart enough to catch sophisticated scams.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="ficon" style="background:var(--blue-light);color:var(--blue)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="2" width="14" height="16" rx="2"/><path d="M7 7h6M7 11h6M7 15h4"/>
+          </svg>
+        </div>
+        <h3>Text and links</h3>
+        <p>Paste any message, email body, or suspicious URL and get an instant verdict.</p>
+      </div>
+      <div class="feature-card">
+        <div class="ficon" style="background:var(--blue-light);color:var(--blue)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="5" width="16" height="13" rx="2"/>
+            <circle cx="10" cy="11" r="3"/>
+            <path d="M7 5l1.5-3h3L13 5"/>
+          </svg>
+        </div>
+        <h3>Screenshot analysis</h3>
+        <p>Got a suspicious message as a screenshot? Upload it directly from your camera roll.</p>
+      </div>
+      <div class="feature-card">
+        <div class="ficon" style="background:var(--green-light);color:var(--green)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2 16c0-3 2-4.5 4.5-4.5h7c2.5 0 4.5 1.5 4.5 4.5"/>
+            <circle cx="10" cy="6" r="4"/>
+          </svg>
+        </div>
+        <h3>Automatic family alerts</h3>
+        <p>When something risky is detected, a family member gets an email automatically — no extra steps needed.</p>
+      </div>
+      <div class="feature-card">
+        <div class="ficon" style="background:var(--green-light);color:var(--green)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M10 2L4 5v4c0 4.4 2.7 8 6 9 3.3-1 6-4.6 6-9V5L10 2z"/>
+          </svg>
+        </div>
+        <h3>Private by design</h3>
+        <p>No account required. Your messages are never stored or shared. No monitoring, no surveillance.</p>
+      </div>
+      <div class="feature-card">
+        <div class="ficon" style="background:var(--amber-light);color:var(--amber)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M11 2L4 11h6l-1 7 7-9h-6l1-7z"/>
+          </svg>
+        </div>
+        <h3>10-second answers</h3>
+        <p>Plain English. No jargon. Tells you exactly what it is and what to do next — every time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="ficon" style="background:var(--bg-subtle);color:var(--muted)">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="10" cy="10" r="8"/><path d="M10 6v4M10 14v.5"/>
+          </svg>
+        </div>
+        <h3>Free to use</h3>
+        <p>Core features are completely free. No credit card, no subscription. Download and start immediately.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAMILY ALERT -->
-<div class="family-section">
-  <h2>Peace of mind for the whole family</h2>
-  <p>Add a family member's email and they'll be notified automatically whenever something suspicious is detected &#8212; without any extra steps from the person using the app.</p>
-  <div class="family-steps">
-    <div class="family-step">
-      <div class="family-step-icon">&#x1F4F1;</div>
-      <h3>Mum gets a suspicious text</h3>
-      <p>She opens Double Check and pastes it in.</p>
-    </div>
-    <div class="family-step">
-      <div class="family-step-icon">&#x1F916;</div>
-      <h3>AI detects it's a scam</h3>
-      <p>Verdict returned in seconds. Mum knows not to call the number.</p>
-    </div>
-    <div class="family-step">
-      <div class="family-step-icon">&#x1F4E7;</div>
-      <h3>You get an email alert</h3>
-      <p>Automatic. No extra steps for Mum. You know what happened and can follow up.</p>
+<!-- FAMILY JOURNEY -->
+<section class="family-section">
+  <div class="family-inner">
+    <div class="section-label">Peace of mind</div>
+    <h2 class="section-title">You'll always know she's protected</h2>
+    <p class="section-sub">Set up a family member's email once. From then on, Double Check keeps you both in the loop — automatically.</p>
+    <div class="family-journey">
+      <div class="family-step">
+        <div class="family-step-num">1</div>
+        <h3>Mum gets a suspicious text</h3>
+        <p>She opens Double Check and pastes the message in.</p>
+      </div>
+      <div class="family-step">
+        <div class="family-step-num">2</div>
+        <h3>The AI spots a scam</h3>
+        <p>Verdict in seconds. She knows not to call the number.</p>
+      </div>
+      <div class="family-step">
+        <div class="family-step-num">3</div>
+        <h3>You get an email alert</h3>
+        <p>Automatic. No extra steps for Mum. You know what happened.</p>
+      </div>
+      <div class="family-step">
+        <div class="family-step-num">4</div>
+        <h3>You follow up if needed</h3>
+        <p>Give her a call or just rest easy. Either way, you're informed.</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- IOS WAITLIST -->
+<!-- LIMITS & SAFETY -->
+<section class="limits-section">
+  <div class="limits-inner">
+    <div class="section-label">Honest about limits</div>
+    <h2 class="section-title">What Double Check can — and can't — do</h2>
+    <p class="section-sub">Trust is built through honesty. Here's a clear picture of what to expect.</p>
+    <div class="limits-grid">
+      <div class="limits-col can">
+        <h4>What it can do</h4>
+        <ul class="limits-list">
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#16a34a" stroke-width="2"><path d="M2 7l3.5 3.5L12 3"/></svg>Detect common scam patterns in text and images</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#16a34a" stroke-width="2"><path d="M2 7l3.5 3.5L12 3"/></svg>Explain what's suspicious in plain English</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#16a34a" stroke-width="2"><path d="M2 7l3.5 3.5L12 3"/></svg>Alert a family member automatically</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#16a34a" stroke-width="2"><path d="M2 7l3.5 3.5L12 3"/></svg>Give you clear, confident next steps</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#16a34a" stroke-width="2"><path d="M2 7l3.5 3.5L12 3"/></svg>Keep a private history of your past checks</li>
+        </ul>
+      </div>
+      <div class="limits-col cannot">
+        <h4>What it can't do</h4>
+        <ul class="limits-list">
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M3 3l8 8M11 3l-8 8"/></svg>Guarantee 100% accuracy on every message</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M3 3l8 8M11 3l-8 8"/></svg>Give legal, medical, or financial advice</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M3 3l8 8M11 3l-8 8"/></svg>Contact authorities on your behalf</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M3 3l8 8M11 3l-8 8"/></svg>Replace your own judgment and common sense</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M3 3l8 8M11 3l-8 8"/></svg>Block or intercept messages automatically</li>
+        </ul>
+      </div>
+    </div>
+    <div class="limits-note">
+      Always verify with your bank, doctor, or a trusted family member before responding to any request for money or personal information.
+    </div>
+  </div>
+</section>
+
+<!-- iOS WAITLIST -->
 <section class="waitlist-section" id="ios-waitlist">
-  <div class="section-label">Coming soon on iPhone</div>
-  <h2>Get notified when iOS launches</h2>
-  <p>Android is available now. iOS is coming soon &#8212; leave your email and you'll be first to know.</p>
-  <form class="waitlist-form" id="waitlistForm">
-    <input type="email" class="waitlist-input" placeholder="your@email.com" required id="waitlistEmail" />
-    <button type="submit" class="waitlist-btn">Notify Me</button>
-  </form>
-  <div class="waitlist-success" id="waitlistSuccess">&#x2713; You're on the list! We'll email you when iOS launches.</div>
+  <div class="waitlist-inner">
+    <div class="section-label">Coming soon on iPhone</div>
+    <h2 class="section-title">Get notified when iOS launches</h2>
+    <p class="section-sub">Android is live now. iOS is coming soon — leave your email and you'll be first to know.</p>
+    <form class="email-form" id="waitlistForm">
+      <input type="email" class="email-input" placeholder="your@email.com" required id="waitlistEmail" autocomplete="email" />
+      <button type="submit" class="email-btn">Notify Me</button>
+    </form>
+    <div class="form-success" id="waitlistSuccess">You're on the list. We'll email you when iOS launches.</div>
+  </div>
 </section>
 
-<!-- CTA BOTTOM -->
-<div class="cta-bottom">
-  <h2>Download Double Check free today</h2>
-  <p>Android available now. iPhone coming soon.</p>
-  <div class="download-btns">
-    <button onclick="openModal()" class="dl-btn android">
-      <span class="dl-btn-icon">&#x1F916;</span>
-      <span class="dl-btn-text">
-        <span class="dl-btn-label">Download for</span>
-        <span class="dl-btn-name">Android</span>
-      </span>
-    </button>
-    <a href="#ios-waitlist" class="dl-btn ios">
-      <span class="dl-btn-icon">&#x1F34E;</span>
-      <span class="dl-btn-text">
-        <span class="dl-btn-label">Coming soon</span>
-        <span class="dl-btn-name">iPhone (iOS)</span>
-      </span>
-    </a>
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Download Double Check today</h2>
+    <p>Free for Android. Takes 30 seconds to install. Start protecting yourself and your family right now.</p>
+    <div class="cta-btns">
+      <a href="https://expo.dev/accounts/martinleo/projects/double-check/builds/6a1eb552-fa21-4ac6-887f-194ad734512b"
+         class="btn btn-primary btn-xl" target="_blank" rel="noopener">Download for Android</a>
+      <a href="#ios-waitlist" class="btn btn-secondary btn-xl">iOS — Notify Me</a>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">Double<span>Check</span></div>
-    <p>AI-powered scam detection &#183; For guidance only, not legal or financial advice.</p>
-    <p style="margin-top:8px">
-      <a href="mailto:martingleonard@gmail.com">Contact</a> &#183;
-      <a href="#">Privacy Policy</a> &#183;
-      <a href="#">Terms of Service</a>
-    </p>
-    <p style="margin-top:12px">&#169; 2026 Double Check. All rights reserved.</p>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">Double<span>Check</span></div>
+        <p>AI-powered scam detection for you and the people you love. Free, private, and plain English — always.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>App</h5>
+          <a href="#download">Download Android</a>
+          <a href="#ios-waitlist">iOS Waitlist</a>
+          <a href="#how-it-works">How it works</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="mailto:martingleonard@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; 2026 Double Check. All rights reserved.</p>
+      <p class="footer-disclaimer">For guidance only. Not legal, medical, or financial advice.</p>
+    </div>
   </div>
 </footer>
 
 <script>
   var BACKEND = 'https://web-production-970ba.up.railway.app';
-
-  function openModal() {
-    document.getElementById('downloadModal').classList.add('open');
-    document.getElementById('modalForm').style.display = '';
-    document.getElementById('modalSuccess').style.display = 'none';
-    document.getElementById('dlName').value = '';
-    document.getElementById('dlEmail').value = '';
-    setTimeout(function() { document.getElementById('dlName').focus(); }, 100);
-  }
-
-  function closeModal() {
-    document.getElementById('downloadModal').classList.remove('open');
-  }
-
-  document.getElementById('downloadModal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
-  });
-
-  function showSuccess() {
-    document.getElementById('modalForm').style.display = 'none';
-    document.getElementById('modalSuccess').style.display = 'block';
-  }
-
-  function submitDownload() {
-    var name  = document.getElementById('dlName').value.trim();
-    var email = document.getElementById('dlEmail').value.trim();
-    var emailInput = document.getElementById('dlEmail');
-
-    if (!email || email.indexOf('@') === -1) {
-      emailInput.focus();
-      emailInput.style.borderColor = '#dc2626';
-      setTimeout(function() { emailInput.style.borderColor = ''; }, 1500);
-      return;
-    }
-
-    fetch(BACKEND + '/waitlist', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, name: name, platform: 'android' })
-    }).catch(function() {});
-
-    showSuccess();
-  }
-
-  function skipAndDownload() {
-    showSuccess();
-  }
 
   document.getElementById('waitlistForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -664,6 +773,14 @@
     }).catch(function() {});
     document.getElementById('waitlistForm').style.display = 'none';
     document.getElementById('waitlistSuccess').style.display = 'block';
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var id = this.getAttribute('href');
+      var target = document.querySelector(id);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
   });
 </script>
 
