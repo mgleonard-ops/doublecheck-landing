@@ -935,8 +935,6 @@
   }
 
 
-  var APK_URL = 'https://expo.dev/accounts/martinleo/projects/double-check/builds/e7a2b128-9605-4a54-ac58-ecec978e0781';
-
   function submitDownload() {
     var name  = document.getElementById('dlName').value.trim();
     var email = document.getElementById('dlEmail').value.trim();
@@ -949,15 +947,29 @@
       return;
     }
 
+    document.getElementById('modalForm').style.display = 'none';
+    document.getElementById('modalSuccess').style.display = 'block';
+    var dlBtn = document.getElementById('apkDownloadBtn');
+    dlBtn.textContent = 'Preparing link…';
+    dlBtn.removeAttribute('href');
+
     fetch(BACKEND + '/waitlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email, name: name, platform: 'android' })
-    }).catch(function() {});
-
-    document.getElementById('modalForm').style.display = 'none';
-    document.getElementById('modalSuccess').style.display = 'block';
-    document.getElementById('apkDownloadBtn').href = APK_URL;
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.apk_url) {
+        dlBtn.href = data.apk_url;
+        dlBtn.textContent = 'Download APK Now';
+      } else {
+        dlBtn.textContent = 'Link sent to your email';
+      }
+    })
+    .catch(function() {
+      dlBtn.textContent = 'Link sent to your email';
+    });
   }
 
   document.getElementById('waitlistForm').addEventListener('submit', function(e) {
