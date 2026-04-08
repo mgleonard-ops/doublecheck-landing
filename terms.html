@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Double Check</title>
+  <meta name="description" content="Terms of Service for the Double Check scam detection app." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f172a;
+      --navy-mid: #1e293b;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --blue-light: #eff6ff;
+      --blue-mid: #dbeafe;
+      --text: #0f172a;
+      --muted: #475569;
+      --subtle: #94a3b8;
+      --border: #e2e8f0;
+      --bg: #fafaf9;
+      --bg-subtle: #f4f4f0;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,250,249,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; padding: 0 24px;
+    }
+    .logo { font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--blue); }
+    .nav-back { font-size: 15px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 8px; }
+    .nav-back:hover { color: var(--text); background: var(--bg-subtle); }
+
+    /* CONTENT */
+    .page-wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+    .page-label {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.8px;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 12px;
+    }
+    h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 800; line-height: 1.15; margin-bottom: 12px; }
+    .last-updated { font-size: 14px; color: var(--subtle); margin-bottom: 48px; }
+
+    .section { margin-bottom: 40px; }
+    .section h2 {
+      font-size: 18px; font-weight: 700; color: var(--text);
+      margin-bottom: 12px; padding-bottom: 8px;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .section p { font-size: 16px; color: var(--muted); margin-bottom: 12px; line-height: 1.7; }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul { padding-left: 20px; margin-bottom: 12px; }
+    .section ul li { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 6px; }
+
+    .callout {
+      background: #fef9ec; border: 1.5px solid #fde68a;
+      border-radius: 10px; padding: 16px 20px; margin-bottom: 40px;
+    }
+    .callout p { font-size: 15px; color: #92400e; margin: 0; line-height: 1.65; }
+    .callout strong { color: #78350f; }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 52px 24px 36px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+    .footer-logo { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .footer-logo span { color: #60a5fa; }
+    .footer-brand p { font-size: 15px; max-width: 240px; line-height: 1.6; }
+    .footer-links { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-col h5 { font-size: 12px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: 15px; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 9px; transition: color 0.15s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 28px;
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: space-between; align-items: flex-start;
+    }
+    .footer-bottom p { font-size: 13px; }
+    .footer-disclaimer { font-size: 13px; color: rgba(255,255,255,0.35); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Double<span>Check</span></a>
+    <a href="/" class="nav-back">← Back to home</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-label">Legal</div>
+  <h1>Terms of Service</h1>
+  <p class="last-updated">Last updated: 1 April 2026 &nbsp;&middot;&nbsp; Version 1.4.0</p>
+
+  <div class="callout">
+    <p><strong>Plain English summary:</strong> Double Check uses AI to help you identify potential scams. The results are guidance only — not a guarantee, and not professional advice. You remain responsible for any decisions you make.</p>
+  </div>
+
+  <div class="section">
+    <h2>1. Who we are</h2>
+    <p>Double Check is a scam detection service operated by Martin Leonard ("we", "us", "our"). Our service uses artificial intelligence to analyse messages, links, and other content you submit to help you assess whether they may be scams.</p>
+    <p>By creating an account or using the Double Check app, you agree to these Terms of Service. If you do not agree, please do not use the service.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. What Double Check does</h2>
+    <p>Double Check allows you to:</p>
+    <ul>
+      <li>Submit suspicious messages, links, or documents for AI analysis</li>
+      <li>Receive a plain English assessment of whether the content may be a scam</li>
+      <li>Add family contacts who will receive automated email alerts when you scan something flagged as suspicious</li>
+      <li>Share your scan history with a nominated financial advisor (if you choose to)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. AI-generated results — important limitations</h2>
+    <p>All analysis results are generated by artificial intelligence. They are <strong>not reviewed by a human</strong> before being shown to you.</p>
+    <p>AI results are provided for guidance only. They are not a guarantee that any content is or is not a scam. You should:</p>
+    <ul>
+      <li>Always verify before acting on a result — especially before sending money, clicking links, or sharing personal information</li>
+      <li>Not treat Double Check results as legal, financial, or professional advice</li>
+      <li>Contact relevant authorities (e.g. Action Fraud, your bank) if you believe you have been targeted by a scam</li>
+    </ul>
+    <p>We are not liable for any loss or harm arising from reliance on AI-generated results.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. Your account</h2>
+    <p>You must be 18 or older to create an account. You are responsible for keeping your login credentials secure and for all activity that occurs under your account.</p>
+    <p>Accounts are personal and non-transferable. You must not share your account with others or use it on behalf of another person without their knowledge.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Family contacts</h2>
+    <p>You may add family members or trusted contacts to receive automated email alerts when you scan content flagged as a potential scam. By adding a contact, you confirm that:</p>
+    <ul>
+      <li>The contact has agreed to receive these automated alert emails from Double Check on your behalf</li>
+      <li>You have permission to provide their email address to us</li>
+    </ul>
+    <p>We will use contact email addresses solely to send scam alert notifications. We will not use them for marketing.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. Advisor access</h2>
+    <p>If you register via an invite code from a financial advisor, or if you explicitly grant advisor access, your scan history may be visible to your nominated advisor. This is to help them provide you with better support.</p>
+    <p>You consent to this access during account creation. You may contact us to revoke advisor access at any time.</p>
+  </div>
+
+  <div class="section">
+    <h2>7. Acceptable use</h2>
+    <p>You must not use Double Check to:</p>
+    <ul>
+      <li>Submit content that is unlawful, harmful, or violates the rights of others</li>
+      <li>Attempt to reverse-engineer, scrape, or abuse our AI systems</li>
+      <li>Create multiple accounts to circumvent usage limits</li>
+      <li>Use the service in any way that could harm other users or third parties</li>
+    </ul>
+    <p>We reserve the right to suspend or terminate accounts that violate these terms.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Availability and changes</h2>
+    <p>We aim to keep Double Check available at all times but cannot guarantee uninterrupted service. We may update, suspend, or discontinue features at any time.</p>
+    <p>We may update these Terms from time to time. We will notify you of material changes via the app or by email. Continued use after notice constitutes acceptance of the updated Terms.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, Double Check and its operators are not liable for any direct, indirect, or consequential loss arising from your use of the service or reliance on any AI-generated result.</p>
+    <p>The service is provided "as is" without warranties of any kind, express or implied.</p>
+  </div>
+
+  <div class="section">
+    <h2>10. Governing law</h2>
+    <p>These Terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+  </div>
+
+  <div class="section">
+    <h2>11. Contact</h2>
+    <p>If you have any questions about these Terms, please contact us at <a href="mailto:martingleonard@gmail.com" style="color: var(--blue);">martingleonard@gmail.com</a>.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">Double<span>Check</span></div>
+        <p>AI-powered scam detection for you and the people you love. Free, private, and plain English &#8212; always.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>App</h5>
+          <a href="/#download">Download Android</a>
+          <a href="/#ios-waitlist">iOS Waitlist</a>
+          <a href="/#how-it-works">How it works</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="mailto:martingleonard@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; 2026 Double Check. All rights reserved.</p>
+      <p class="footer-disclaimer">AI results are not a guarantee &#8212; always verify before acting. For guidance only. Not legal, financial, or professional advice.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
