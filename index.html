@@ -465,6 +465,17 @@
       .family-step:last-child { border-radius: 0 0 14px 14px; }
       .footer-top { flex-direction: column; }
     }
+    /* HERO STORY + ADVISOR SECTION */
+    .hero-story { display:flex; align-items:flex-start; gap:12px; background:var(--bg-blue); border:1px solid #c7d7fc; border-radius:12px; padding:14px 18px; margin:0 auto 28px; font-size:17px; color:var(--muted); line-height:1.65; max-width:540px; text-align:left; }
+    .advisor-section { background:var(--bg-subtle); padding:80px 24px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .advisor-card { background:#fff; border:1.5px solid var(--border); border-radius:16px; padding:36px; display:flex; gap:32px; align-items:flex-start; max-width:900px; margin:0 auto; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
+    .advisor-icon { width:56px; height:56px; border-radius:14px; background:var(--bg-blue); color:var(--blue); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .advisor-card h3 { font-size:22px; font-weight:800; margin-bottom:10px; }
+    .advisor-card p { font-size:17px; color:var(--muted); line-height:1.65; margin-bottom:18px; }
+    .advisor-btns { display:flex; gap:12px; flex-wrap:wrap; }
+    .advisor-list { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
+    .advisor-list li { display:flex; align-items:center; gap:9px; font-size:16px; color:var(--muted); }
+    @media (max-width:640px) { .advisor-card { flex-direction:column; gap:16px; } }
   </style>
 </head>
 <body>
@@ -510,6 +521,7 @@
     <a href="#" class="logo">Double<span>Check</span></a>
     <div class="nav-right">
       <a href="#how-it-works" class="nav-link">How it works</a>
+      <a href="https://web-production-970ba.up.railway.app/dashboard/#/login" class="nav-link" target="_blank" rel="noopener">For advisors &#8594;</a>
       <button onclick="openModal()" class="btn btn-primary">Download Android</button>
     </div>
   </div>
@@ -525,7 +537,7 @@
       Free scam protection for you and your family
     </div>
     <h1>Real or scam?<br>Know in seconds.</h1>
-    <p class="hero-sub">Paste any suspicious message, letter, link, or photo and get a plain English answer in seconds. No jargon. No confusion.</p>
+    <p class="hero-sub">If something feels off, check it before you act. Paste any message, link, or photo &amp; get a clear answer in seconds.</p>
 
     <div class="trust-strip">
       <span class="trust-item">
@@ -553,7 +565,11 @@
       <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
         <path d="M10 2L3 5v4c0 4.4 3 8.5 7 9.5 4-1 7-5.1 7-9.5V5L10 2z"/>
       </svg>
-      Protected by AI &#183; Recommended by financial advisors
+      Powered by Claude AI &#183; Recommended by financial advisors
+    </div>
+
+    <div class="hero-story">
+      <span><strong>Mom gets a suspicious text.</strong> She opens Double Check. You get an automatic email alert &#8212; and the scam is caught before she acts on it.</span>
     </div>
 
     <div class="hero-cta" id="download">
@@ -789,8 +805,35 @@
             <circle cx="10" cy="10" r="8"/><path d="M10 6v4M10 14v.5"/>
           </svg>
         </div>
-        <h3>Free to use</h3>
+        <h3>No subscription needed</h3>
         <p>Core features are completely free. No credit card, no subscription. Download and start immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR ADVISORS -->
+<section class="advisor-section" id="for-advisors">
+  <div class="sec-inner">
+    <div class="section-label">For financial advisors</div>
+    <h2 class="section-title">Protect your clients. Stay informed.</h2>
+    <p class="section-sub">Double Check is the tool advisors recommend to clients who are prime targets for financial scams.</p>
+    <div class="advisor-card">
+      <div class="advisor-icon">
+        <svg width="26" height="26" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17c0-3.3 2.7-5 5-5h4c2.3 0 5 1.7 5 5"/><circle cx="10" cy="7" r="4"/></svg>
+      </div>
+      <div>
+        <h3>A safety net your clients will actually use</h3>
+        <p>Your clients are targeted every day. Double Check gives them an instant, private way to verify suspicious messages &#8212; and alerts you automatically when a scam is caught. Setup takes minutes. No technical knowledge required from the client.</p>
+        <ul class="advisor-list">
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#16a34a" stroke-width="2"><path d="M2 7l3.5 3.5L12 3"/></svg>Automatic alerts to you when a client catches a scam</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#16a34a" stroke-width="2"><path d="M2 7l3.5 3.5L12 3"/></svg>Dashboard to monitor all client activity</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#16a34a" stroke-width="2"><path d="M2 7l3.5 3.5L12 3"/></svg>Simple onboarding &#8212; you invite, they install</li>
+        </ul>
+        <div class="advisor-btns">
+          <a href="https://web-production-970ba.up.railway.app/dashboard/#/login" class="btn btn-primary" target="_blank" rel="noopener">Advisor Login</a>
+          <a href="https://web-production-970ba.up.railway.app/dashboard/#/signup" class="btn btn-secondary" target="_blank" rel="noopener">Create Advisor Account</a>
+        </div>
       </div>
     </div>
   </div>
@@ -805,7 +848,7 @@
     <div class="family-journey">
       <div class="family-step">
         <div class="family-step-num">1</div>
-        <h3>Mum gets a suspicious text</h3>
+        <h3>Mom gets a suspicious text</h3>
         <p>She opens Double Check and pastes the message in.</p>
       </div>
       <div class="family-step">
@@ -816,7 +859,7 @@
       <div class="family-step">
         <div class="family-step-num">3</div>
         <h3>You get an email alert</h3>
-        <p>Automatic. No extra steps for Mum. You know what happened.</p>
+        <p>Automatic. No extra steps for Mom. You know what happened.</p>
       </div>
       <div class="family-step">
         <div class="family-step-num">4</div>
@@ -906,7 +949,13 @@
           <h5>Legal</h5>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
-          <a href="mailto:martingleonard@gmail.com">Contact</a>
+          <a href="mailto:hello@mydoublecheck.app">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Advisors</h5>
+          <a href="https://web-production-970ba.up.railway.app/dashboard/#/login" target="_blank" rel="noopener">Advisor Login</a>
+          <a href="https://web-production-970ba.up.railway.app/dashboard/#/signup" target="_blank" rel="noopener">Create Account</a>
+          <a href="mailto:hello@mydoublecheck.app">Get in Touch</a>
         </div>
       </div>
     </div>
