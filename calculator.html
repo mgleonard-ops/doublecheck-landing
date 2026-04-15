@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cost of One Scam Calculator — DoubleCheck for Advisors</title>
+  <meta name="description" content="Calculate how much a single scam could cost your practice in lifetime revenue. Built for independent advisors and RIAs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0D1B2A;
+      --navy-mid:   #162032;
+      --navy-light: #1D2E42;
+      --teal:       #00C4A0;
+      --teal-dark:  #00A68A;
+      --cream:      #F8F7F3;
+      --white:      #FFFFFF;
+      --text:       #0D1B2A;
+      --muted:      #6B7280;
+      --border:     #E5E7EB;
+      --red:        #E84545;
+      --red-dim:    rgba(232,69,69,0.10);
+      --teal-dim:   rgba(0,196,160,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text); background: var(--cream);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem;
+    }
+    .nav-logo {
+      font-weight: 700; font-size: 1.2rem;
+      color: var(--navy); text-decoration: none; letter-spacing: -0.03em;
+    }
+    .nav-cta {
+      background: var(--teal); color: var(--navy);
+      font-weight: 700; font-size: 0.875rem;
+      padding: 0.5rem 1.25rem; border-radius: 6px; text-decoration: none;
+    }
+    .nav-cta:hover { background: var(--teal-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy); padding: 5rem 2rem 4.5rem; text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(232,69,69,0.14); border: 1px solid rgba(232,69,69,0.3);
+      color: #FF8C8C; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.4rem 1.1rem; border-radius: 100px; margin-bottom: 2rem;
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px; background: #FF8C8C; border-radius: 50%;
+      animation: blink 1.8s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800;
+      color: var(--white); line-height: 1.15;
+      max-width: 780px; margin: 0 auto 1.25rem;
+    }
+    .hero h1 em { color: var(--teal); font-style: normal; }
+    .hero p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.6);
+      max-width: 520px; margin: 0 auto; line-height: 1.75;
+    }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+    .calc-section { padding: 3.5rem 1.5rem 5rem; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2.25rem 2.5rem; margin-bottom: 1.25rem;
+    }
+    .card-label {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 1.75rem;
+    }
+    .card-dark {
+      background: var(--navy-mid); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px; padding: 2.25rem 2.5rem; margin-bottom: 1.25rem;
+    }
+    .card-dark .card-label { color: var(--teal); }
+
+    /* ── INPUTS ── */
+    .inputs-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 3rem;
+    }
+    @media (max-width: 600px) {
+      .inputs-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+      .card, .card-dark { padding: 1.75rem 1.5rem; }
+    }
+
+    .input-row label {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 0.85rem;
+    }
+    .label-name { font-size: 0.82rem; font-weight: 600; color: var(--muted); }
+    .label-val {
+      font-size: 1.15rem; font-weight: 700; color: var(--navy);
+      font-variant-numeric: tabular-nums;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none; width: 100%; height: 5px;
+      border-radius: 3px; background: var(--border); outline: none; cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%;
+      background: var(--teal); box-shadow: 0 0 0 3px rgba(0,196,160,0.22);
+      cursor: pointer; transition: box-shadow 0.15s;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover { box-shadow: 0 0 0 5px rgba(0,196,160,0.28); }
+    input[type="range"]::-moz-range-thumb {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--teal); border: none; cursor: pointer;
+    }
+
+    /* ── RESULT ── */
+    .result-card {
+      background: var(--navy); border-radius: 16px;
+      padding: 2.75rem 2.5rem; text-align: center;
+      margin-bottom: 1.25rem; position: relative; overflow: hidden;
+    }
+    .result-card::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 480px; height: 280px;
+      background: radial-gradient(ellipse at top, rgba(232,69,69,0.13) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .result-eyebrow {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(255,140,140,0.75); margin-bottom: 0.75rem;
+    }
+    .result-amount {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(3rem, 9vw, 5.5rem); font-weight: 800;
+      color: var(--red); line-height: 1; letter-spacing: -0.02em;
+      margin-bottom: 0.75rem; font-variant-numeric: tabular-nums;
+    }
+    .result-sub { font-size: 0.9rem; color: rgba(255,255,255,0.4); }
+
+    /* ── BREAKDOWN ── */
+    .breakdown-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem; margin-bottom: 1.25rem;
+    }
+    @media (max-width: 640px) { .breakdown-grid { grid-template-columns: 1fr; } }
+
+    .breakdown-card {
+      background: var(--navy-mid); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px; padding: 1.5rem;
+    }
+    .bc-eyebrow {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em;
+      text-transform: uppercase; color: rgba(255,255,255,0.38); margin-bottom: 0.5rem;
+    }
+    .bc-amount {
+      font-size: 1.65rem; font-weight: 700; color: var(--white);
+      letter-spacing: -0.02em; font-variant-numeric: tabular-nums; margin-bottom: 0.35rem;
+    }
+    .bc-amount.teal { color: var(--teal); }
+    .bc-desc { font-size: 0.78rem; color: rgba(255,255,255,0.42); line-height: 1.55; }
+
+    /* ── METHODOLOGY DISCLOSURE ── */
+    .methodology {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: 12px; margin-bottom: 1.25rem; overflow: hidden;
+    }
+    .method-toggle {
+      width: 100%; padding: 1rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: none; border: none; cursor: pointer;
+      font-family: inherit; font-size: 0.82rem; font-weight: 600;
+      color: var(--muted); text-align: left;
+    }
+    .method-toggle:hover { color: var(--text); }
+    .method-toggle .arrow {
+      font-size: 0.7rem; transition: transform 0.2s; flex-shrink: 0;
+    }
+    .method-toggle.open .arrow { transform: rotate(180deg); }
+    .method-body {
+      display: none; padding: 0 1.5rem 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .method-body.open { display: block; }
+    .method-body p {
+      font-size: 0.8rem; color: var(--muted); line-height: 1.7; margin-top: 1rem;
+    }
+    .method-body p strong { color: var(--text); font-weight: 600; }
+    .method-body ul {
+      margin: 0.6rem 0 0 1.1rem; font-size: 0.8rem;
+      color: var(--muted); line-height: 1.8;
+    }
+
+    /* ── STAT CALLOUT ── */
+    .stat-callout {
+      background: var(--navy-light); border: 1px solid rgba(0,196,160,0.2);
+      border-radius: 10px; padding: 1rem 1.5rem;
+      display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;
+    }
+    .sc-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .stat-callout p { font-size: 0.82rem; color: rgba(255,255,255,0.62); line-height: 1.65; }
+    .stat-callout p strong { color: var(--teal); font-weight: 700; }
+    .stat-callout p a { color: rgba(255,255,255,0.35); font-size: 0.75rem; text-decoration: none; }
+    .stat-callout p a:hover { color: var(--teal); }
+
+    /* ── COMPARISON ── */
+    .compare-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem; font-weight: 800; color: var(--navy); margin-bottom: 0.4rem;
+    }
+    .compare-sub {
+      font-size: 0.875rem; color: var(--muted); margin-bottom: 1.75rem; line-height: 1.6;
+    }
+    .compare-row {
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      gap: 1rem; align-items: center;
+    }
+    @media (max-width: 500px) {
+      .compare-row { grid-template-columns: 1fr; }
+      .vs-pill { margin: 0 auto; }
+    }
+    .comp-box { border-radius: 12px; padding: 1.5rem 1.25rem; text-align: center; }
+    .comp-box.danger { background: var(--red-dim); border: 1px solid rgba(232,69,69,0.18); }
+    .comp-box.safe   { background: var(--teal-dim); border: 1px solid rgba(0,196,160,0.25); }
+    .comp-eyebrow {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.09em;
+      text-transform: uppercase; margin-bottom: 0.6rem;
+    }
+    .comp-box.danger .comp-eyebrow { color: rgba(200,60,60,0.75); }
+    .comp-box.safe .comp-eyebrow   { color: var(--teal-dark); }
+    .comp-amount {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800;
+      letter-spacing: -0.02em; font-variant-numeric: tabular-nums; line-height: 1;
+    }
+    .comp-box.danger .comp-amount { color: var(--red); }
+    .comp-box.safe .comp-amount   { color: var(--teal-dark); }
+    .comp-note { font-size: 0.78rem; margin-top: 0.45rem; }
+    .comp-box.danger .comp-note { color: rgba(180,50,50,0.65); }
+    .comp-box.safe .comp-note   { color: rgba(0,130,110,0.7); }
+    .vs-pill {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--cream); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; color: var(--muted); flex-shrink: 0;
+    }
+    .roi-banner {
+      margin-top: 1.5rem; background: var(--navy); border-radius: 10px;
+      padding: 1.1rem 1.5rem; text-align: center;
+    }
+    .roi-banner p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+    .roi-banner strong { color: var(--teal); font-weight: 700; }
+
+    /* ── BOOK-LEVEL VIEW ── */
+    .book-card {
+      background: var(--navy); border-radius: 16px;
+      padding: 2.25rem 2.5rem; margin-bottom: 1.25rem; overflow: hidden;
+      position: relative;
+    }
+    .book-card::before {
+      content: ''; position: absolute; bottom: -60px; right: -60px;
+      width: 220px; height: 220px; border-radius: 50%;
+      background: rgba(0,196,160,0.05); pointer-events: none;
+    }
+    .book-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 1rem; margin-bottom: 1.75rem; flex-wrap: wrap;
+    }
+    .book-title-block .book-eyebrow {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 0.35rem;
+    }
+    .book-title-block h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem; font-weight: 800; color: var(--white); line-height: 1.2;
+    }
+    .book-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; }
+    @media (max-width: 560px) { .book-inputs { grid-template-columns: 1fr; } }
+
+    .book-input-row label {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+    .book-label-name { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.5); }
+    .book-label-val {
+      font-size: 1.05rem; font-weight: 700; color: var(--white);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* dark slider */
+    .dark-range { background: rgba(255,255,255,0.12) !important; }
+    .dark-range::-webkit-slider-thumb { background: var(--teal) !important; }
+
+    .book-results {
+      margin-top: 1.75rem; display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 480px) { .book-results { grid-template-columns: 1fr; } }
+
+    .book-stat {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px; padding: 1.25rem 1.5rem;
+    }
+    .book-stat.danger { border-color: rgba(232,69,69,0.25); background: rgba(232,69,69,0.07); }
+    .book-stat.safe   { border-color: rgba(0,196,160,0.25); background: rgba(0,196,160,0.07); }
+    .book-stat-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .book-stat.danger .book-stat-label { color: rgba(255,140,140,0.7); }
+    .book-stat.safe   .book-stat-label { color: rgba(0,196,160,0.8); }
+    .book-stat-val {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1;
+    }
+    .book-stat.danger .book-stat-val { color: var(--red); }
+    .book-stat.safe   .book-stat-val { color: var(--teal); }
+    .book-stat-desc { font-size: 0.77rem; color: rgba(255,255,255,0.38); margin-top: 0.4rem; line-height: 1.5; }
+
+    .book-savings-banner {
+      margin-top: 1rem; background: rgba(0,196,160,0.1);
+      border: 1px solid rgba(0,196,160,0.2); border-radius: 10px;
+      padding: 1rem 1.5rem; text-align: center;
+    }
+    .book-savings-banner p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+    .book-savings-banner strong { color: var(--teal); font-weight: 700; }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--navy); border-radius: 16px;
+      padding: 2.75rem 2.5rem; text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800;
+      color: var(--white); margin-bottom: 0.75rem; line-height: 1.2;
+    }
+    .cta-section h2 em { color: var(--teal); font-style: normal; }
+    .cta-section p {
+      font-size: 0.95rem; color: rgba(255,255,255,0.55);
+      margin-bottom: 2rem; max-width: 420px;
+      margin-left: auto; margin-right: auto; line-height: 1.7;
+    }
+    .btn-primary {
+      display: inline-block; background: var(--teal); color: var(--navy);
+      font-weight: 700; font-size: 1rem; padding: 0.95rem 2.5rem;
+      border-radius: 7px; text-decoration: none; letter-spacing: 0.01em;
+      transition: background 0.18s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); }
+    .cta-footnote {
+      margin-top: 1rem; font-size: 0.78rem; color: rgba(255,255,255,0.28);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── SHARE ── */
+    .share-strip { text-align: center; margin-top: 1.5rem; }
+    .share-strip p { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-size: 0.82rem; font-weight: 600; padding: 0.5rem 1rem;
+      border-radius: 6px; border: 1.5px solid var(--border);
+      color: var(--text); background: var(--white); cursor: pointer;
+      text-decoration: none; margin: 0 0.25rem; transition: border-color 0.15s, color 0.15s;
+      font-family: inherit;
+    }
+    .share-btn:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080F18; color: rgba(255,255,255,0.3);
+      padding: 1.5rem 2.5rem; display: flex;
+      align-items: center; justify-content: space-between;
+      font-size: 0.78rem; margin-top: 3rem; flex-wrap: wrap; gap: 0.75rem;
+    }
+    footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    footer a:hover { color: var(--teal); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="https://advisor.mydoublecheck.app">DoubleCheck</a>
+  <a class="nav-cta" href="https://advisor.mydoublecheck.app#pilot">Request a Pilot</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge"><span class="dot"></span>Practice Risk Calculator</div>
+    <h1>What Does <em>One Scam</em> Actually<br>Cost Your Practice?</h1>
+    <p>Enter your numbers. Most advisors are surprised by what they see.</p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section">
+  <div class="container">
+
+    <!-- ① INPUTS -->
+    <div class="card">
+      <div class="card-label">Your Practice Numbers</div>
+      <div class="inputs-grid">
+
+        <div class="input-row">
+          <label>
+            <span class="label-name">Average Client AUM</span>
+            <span class="label-val" id="val-aum">$750,000</span>
+          </label>
+          <input type="range" id="sl-aum" min="100000" max="5000000" step="50000" value="750000" />
+        </div>
+
+        <div class="input-row">
+          <label>
+            <span class="label-name">Advisory Fee</span>
+            <span class="label-val" id="val-fee">1.00%</span>
+          </label>
+          <input type="range" id="sl-fee" min="25" max="175" step="5" value="100" />
+        </div>
+
+        <div class="input-row">
+          <label>
+            <span class="label-name">Avg Relationship Length</span>
+            <span class="label-val" id="val-years">20 years</span>
+          </label>
+          <input type="range" id="sl-years" min="5" max="40" step="1" value="20" />
+        </div>
+
+        <div class="input-row">
+          <label>
+            <span class="label-name">Referrals per Client <span style="font-size:0.7rem;font-weight:400;color:#9CA3AF;">(lifetime)</span></span>
+            <span class="label-val" id="val-refs">1.5</span>
+          </label>
+          <input type="range" id="sl-refs" min="0" max="3" step="0.5" value="1.5" />
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ② BIG NUMBER -->
+    <div class="result-card">
+      <div class="result-eyebrow">⚡ Total Lifetime Practice Revenue at Risk</div>
+      <div class="result-amount" id="res-total" data-current="0">—</div>
+      <div class="result-sub">from a single scam incident</div>
+    </div>
+
+    <!-- ③ BREAKDOWN -->
+    <div class="breakdown-grid">
+      <div class="breakdown-card">
+        <div class="bc-eyebrow">📉 Direct Revenue Lost</div>
+        <div class="bc-amount" id="res-direct" data-current="0">—</div>
+        <div class="bc-desc">Fee income over the full relationship — gone when the client leaves or loses trust</div>
+      </div>
+      <div class="breakdown-card">
+        <div class="bc-eyebrow">🔗 Referral Revenue Lost</div>
+        <div class="bc-amount" id="res-refs" data-current="0">—</div>
+        <div class="bc-desc">Future referrals that will not come after reputation damage — modeled at equivalent client value</div>
+      </div>
+      <div class="breakdown-card">
+        <div class="bc-eyebrow">💸 Client's Direct Loss</div>
+        <div class="bc-amount teal">$83,000</div>
+        <div class="bc-desc">Avg HNWI elderly victim loss per incident — the human cost behind the revenue number</div>
+      </div>
+    </div>
+
+    <!-- ④ METHODOLOGY DISCLOSURE -->
+    <div class="methodology">
+      <button class="method-toggle" id="method-btn" onclick="toggleMethod()">
+        <span>📐 How we calculate this</span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="method-body" id="method-body">
+        <p><strong>Direct revenue:</strong> AUM × advisory fee % × relationship length in years. This represents the fee income your practice loses over the remainder of a client relationship when a scam ends it.</p>
+        <p style="margin-top:0.75rem;"><strong>Referral revenue:</strong> Each referral is modeled at the same AUM and relationship length as the original client — a simplifying assumption. Real referrals vary. The slider is capped at 3 lifetime referrals per client to stay within the range supported by advisor practice research.</p>
+        <p style="margin-top:0.75rem;"><strong>Key assumptions:</strong></p>
+        <ul>
+          <li>100% client loss following a scam incident (the relationship ends completely)</li>
+          <li>AUM is held constant — no growth assumed, which makes the output conservative relative to compounded real-world revenue</li>
+          <li>No time-value discounting is applied — this is an illustrative revenue figure, not an NPV</li>
+        </ul>
+        <p style="margin-top:0.75rem;"><strong>$83,000 client loss figure:</strong> Represents the average financial loss per HNWI elderly fraud victim per incident, sourced from FBI Internet Crime Complaint Center (IC3) 2023 report and FTC Consumer Sentinel Network data, filtered to high-net-worth victims over 60. All-victim median is lower; HNWI exposure is materially higher due to investment fraud and impersonation scams.</p>
+        <p style="margin-top:0.75rem;"><strong>$3.4B annual figure:</strong> Total reported losses by Americans aged 60+ in 2023 per FBI IC3. Actual losses are higher as fraud is systemically underreported.</p>
+      </div>
+    </div>
+
+    <!-- ⑤ STAT CALLOUT -->
+    <div class="stat-callout">
+      <div class="sc-icon">📊</div>
+      <p>Americans 60 and older lose <strong>$3.4 billion</strong> to fraud annually. Among high-net-worth elderly victims, the average loss is <strong>$83,000 per incident</strong> — and advisors lose far more in lifetime relationship value. <a href="https://www.ic3.gov/AnnualReport/Reports/2023_IC3Report.pdf" target="_blank">Source: FBI IC3 2023 · FTC Consumer Sentinel</a></p>
+    </div>
+
+    <!-- ⑥ ONE-CLIENT COMPARISON -->
+    <div class="card">
+      <div class="compare-heading">The Protection Math — One Client</div>
+      <div class="compare-sub">Revenue at risk from one scam vs. the annual cost of protecting that single client with DoubleCheck.</div>
+
+      <div class="compare-row">
+        <div class="comp-box danger">
+          <div class="comp-eyebrow">💸 One Scam Costs</div>
+          <div class="comp-amount" id="comp-loss" data-current="0">—</div>
+          <div class="comp-note">in lifetime practice revenue</div>
+        </div>
+        <div class="vs-pill">VS</div>
+        <div class="comp-box safe">
+          <div class="comp-eyebrow">🛡 DoubleCheck Costs</div>
+          <div class="comp-amount">$108</div>
+          <div class="comp-note">per client / year ($9/mo, Starter)</div>
+        </div>
+      </div>
+
+      <div class="roi-banner">
+        <p>For every <strong>$1</strong> spent protecting this client, you protect <strong id="roi-num">—</strong> in lifetime practice revenue.</p>
+      </div>
+    </div>
+
+    <!-- ⑦ BOOK-LEVEL VIEW -->
+    <div class="book-card">
+      <div class="book-header">
+        <div class="book-title-block">
+          <div class="book-eyebrow">📋 Practice-Level View</div>
+          <h3>What's your entire book<br>exposed to this year?</h3>
+        </div>
+      </div>
+
+      <div class="book-inputs">
+        <div class="book-input-row">
+          <label>
+            <span class="book-label-name">Elderly HNWI clients</span>
+            <span class="book-label-val" id="val-clients">120</span>
+          </label>
+          <input type="range" class="dark-range" id="sl-clients" min="10" max="500" step="10" value="120" />
+        </div>
+        <div class="book-input-row">
+          <label>
+            <span class="book-label-name">Estimated at-risk per year</span>
+            <span class="book-label-val" id="val-risk-pct">2%</span>
+          </label>
+          <input type="range" class="dark-range" id="sl-risk" min="1" max="5" step="1" value="2" />
+        </div>
+      </div>
+
+      <div class="book-results">
+        <div class="book-stat danger">
+          <div class="book-stat-label">⚡ Annual Practice Exposure</div>
+          <div class="book-stat-val" id="book-exposure" data-current="0">—</div>
+          <div class="book-stat-desc">Revenue at risk if <span id="book-clients-at-risk">2</span> clients are scammed this year</div>
+        </div>
+        <div class="book-stat safe">
+          <div class="book-stat-label">🛡 DoubleCheck for Full Book</div>
+          <div class="book-stat-val" id="book-dc-cost" data-current="0">—</div>
+          <div class="book-stat-desc">Annual cost to protect all <span id="book-client-count">120</span> elderly HNWI clients (Starter: $9/mo)</div>
+        </div>
+      </div>
+
+      <div class="book-savings-banner">
+        <p>Protecting your full book costs <strong id="book-roi-pct">—</strong> of your annual scam exposure. <strong id="book-net-text">—</strong> in net protected revenue.</p>
+      </div>
+    </div>
+
+    <!-- ⑧ PRICING CONTEXT -->
+    <div style="background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.25rem;">
+      <p style="font-size:0.82rem;color:var(--muted);text-align:center;line-height:1.7;">
+        DoubleCheck pilot pricing: <strong style="color:var(--text);">250 licenses at $9/user/mo</strong> · <strong style="color:var(--text);">500 at $7/user/mo</strong> · <strong style="color:var(--text);">1,000 at $5/user/mo</strong> — billed annually.
+        White labeled with your firm name. No integration. Up and running the same day.
+      </p>
+    </div>
+
+    <!-- ⑨ CTA -->
+    <div class="cta-section">
+      <h2>One scam costs your practice more than this tool costs you <em>for a year.</em></h2>
+      <p>Protect your elderly HNWI clients. Protect your practice. Up and running the same day.</p>
+      <a href="https://advisor.mydoublecheck.app#pilot" class="btn-primary">Request a Pilot →</a>
+      <div class="cta-footnote">Available on iOS &amp; Android &nbsp;·&nbsp; No integration required &nbsp;·&nbsp; White labeled with your firm name</div>
+    </div>
+
+    <!-- ⑩ SHARE -->
+    <div class="share-strip">
+      <p>Share this calculator with your network</p>
+      <a class="share-btn" id="share-linkedin" href="#" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        Share on LinkedIn
+      </a>
+      <button class="share-btn" onclick="copyLink()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        <span id="copy-label">Copy Link</span>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 DoubleCheck · <a href="https://advisor.mydoublecheck.app">advisor.mydoublecheck.app</a></div>
+  <div style="max-width:480px;">Results are illustrative estimates. Assumes full client loss and referrals at equivalent value. No NPV applied. Source: FBI IC3 2023, FTC Consumer Sentinel Network.</div>
+</footer>
+
+<script>
+  // ─── CONSTANTS ───────────────────────────────────────────────────────────────
+  const DC_PER_CLIENT_MONTH = 9;
+  const DC_PER_CLIENT_YEAR  = DC_PER_CLIENT_MONTH * 12; // $108
+
+  // ─── UTILS ───────────────────────────────────────────────────────────────────
+  function fmtCurrency(n) {
+    n = Math.round(n);
+    if (n >= 1000000) {
+      const m = n / 1000000;
+      return '$' + (Number.isInteger(m) ? m : m.toFixed(1).replace(/\.0$/, '')) + 'M';
+    }
+    return '$' + n.toLocaleString('en-US');
+  }
+
+  function animateTo(el, target, formatter) {
+    const start = parseFloat(el.dataset.current || '0');
+    el.dataset.current = String(target);
+    if (Math.abs(start - target) < 1) { el.textContent = formatter(target); return; }
+    const duration = 420;
+    const t0 = performance.now();
+    (function step(now) {
+      const p    = Math.min((now - t0) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = formatter(Math.round(start + (target - start) * ease));
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+
+  function fillSlider(sl, dark) {
+    const pct = ((+sl.value - +sl.min) / (+sl.max - +sl.min)) * 100;
+    const track = dark ? 'rgba(255,255,255,0.12)' : '#E5E7EB';
+    sl.style.background = `linear-gradient(to right,#00C4A0 0%,#00C4A0 ${pct}%,${track} ${pct}%,${track} 100%)`;
+  }
+
+  // ─── MAIN CALC ───────────────────────────────────────────────────────────────
+  let cachedTotal = 0;
+
+  function calc() {
+    const aum   = +document.getElementById('sl-aum').value;
+    const feeBp = +document.getElementById('sl-fee').value;
+    const years = +document.getElementById('sl-years').value;
+    const refs  = +document.getElementById('sl-refs').value;
+
+    const feeDec = feeBp / 10000;
+    const direct = aum * feeDec * years;
+    const refRev = refs * direct;
+    const total  = direct + refRev;
+    cachedTotal  = total;
+
+    // Labels
+    document.getElementById('val-aum').textContent   = fmtCurrency(aum);
+    document.getElementById('val-fee').textContent   = (feeBp / 100).toFixed(2) + '%';
+    document.getElementById('val-years').textContent = years + (years === 1 ? ' year' : ' years');
+    document.getElementById('val-refs').textContent  = refs.toFixed(1);
+
+    // Animate main numbers
+    animateTo(document.getElementById('res-total'),  total,  fmtCurrency);
+    animateTo(document.getElementById('res-direct'), direct, fmtCurrency);
+    animateTo(document.getElementById('res-refs'),   refRev, fmtCurrency);
+    animateTo(document.getElementById('comp-loss'),  total,  fmtCurrency);
+
+    // ROI per client
+    const roi = total / DC_PER_CLIENT_YEAR;
+    document.getElementById('roi-num').textContent = '$' + Math.round(roi).toLocaleString('en-US');
+
+    calcBook();
+    updateShareLinks(aum, feeBp, years, refs, total);
+  }
+
+  // ─── BOOK CALC ───────────────────────────────────────────────────────────────
+  function calcBook() {
+    const clients    = +document.getElementById('sl-clients').value;
+    const riskPct    = +document.getElementById('sl-risk').value;
+    const atRisk     = Math.max(1, Math.round(clients * riskPct / 100));
+    const exposure   = atRisk * cachedTotal;
+    const dcCost     = clients * DC_PER_CLIENT_YEAR;
+    const costPct    = dcCost / exposure;
+    const netSaved   = exposure - dcCost;
+
+    document.getElementById('val-clients').textContent   = clients;
+    document.getElementById('val-risk-pct').textContent  = riskPct + '%';
+    document.getElementById('book-clients-at-risk').textContent = atRisk;
+    document.getElementById('book-client-count').textContent    = clients;
+
+    animateTo(document.getElementById('book-exposure'), exposure, fmtCurrency);
+    animateTo(document.getElementById('book-dc-cost'),  dcCost,   fmtCurrency);
+
+    document.getElementById('book-roi-pct').textContent  =
+      (costPct * 100).toFixed(1) + '%';
+    document.getElementById('book-net-text').textContent =
+      fmtCurrency(netSaved) + ' net protected revenue';
+  }
+
+  // ─── METHODOLOGY TOGGLE ──────────────────────────────────────────────────────
+  function toggleMethod() {
+    const btn  = document.getElementById('method-btn');
+    const body = document.getElementById('method-body');
+    const open = body.classList.toggle('open');
+    btn.classList.toggle('open', open);
+  }
+
+  // ─── SHARE ───────────────────────────────────────────────────────────────────
+  function updateShareLinks(aum, fee, years, refs, total) {
+    const base = window.location.origin + window.location.pathname;
+    const url  = base + `?aum=${aum}&fee=${fee}&years=${years}&refs=${refs}`;
+    const msg  = encodeURIComponent(
+      `A single scam could cost my advisory practice ${fmtCurrency(total)} in lifetime revenue.\n\nRun the numbers for your practice: ${url}`
+    );
+    document.getElementById('share-linkedin').href =
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&summary=${msg}`;
+  }
+
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const lbl = document.getElementById('copy-label');
+      lbl.textContent = 'Copied!';
+      setTimeout(() => { lbl.textContent = 'Copy Link'; }, 2000);
+    });
+  }
+
+  // ─── LOAD URL PARAMS ─────────────────────────────────────────────────────────
+  (function loadParams() {
+    const p = new URLSearchParams(window.location.search);
+    if (p.get('aum'))   document.getElementById('sl-aum').value   = p.get('aum');
+    if (p.get('fee'))   document.getElementById('sl-fee').value   = p.get('fee');
+    if (p.get('years')) document.getElementById('sl-years').value = p.get('years');
+    if (p.get('refs'))  document.getElementById('sl-refs').value  = p.get('refs');
+  })();
+
+  // ─── WIRE UP ALL SLIDERS ─────────────────────────────────────────────────────
+  document.querySelectorAll('#sl-aum,#sl-fee,#sl-years,#sl-refs').forEach(sl => {
+    fillSlider(sl, false);
+    sl.addEventListener('input', () => { fillSlider(sl, false); calc(); });
+  });
+  document.querySelectorAll('#sl-clients,#sl-risk').forEach(sl => {
+    fillSlider(sl, true);
+    sl.addEventListener('input', () => { fillSlider(sl, true); calcBook(); });
+  });
+
+  // ─── INIT ─────────────────────────────────────────────────────────────────
+  calc();
+</script>
+
+</body>
+</html>
