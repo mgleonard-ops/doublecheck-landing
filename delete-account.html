@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account — Double Check</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f8fafc; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .card { background: white; border-radius: 16px; padding: 40px; max-width: 440px; width: 100%; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .logo { font-size: 22px; font-weight: 700; color: #1e40af; margin-bottom: 8px; }
+    h1 { font-size: 20px; font-weight: 600; color: #111827; margin-bottom: 8px; }
+    .warning { font-size: 14px; color: #6b7280; margin-bottom: 28px; line-height: 1.5; }
+    .warning strong { color: #dc2626; }
+    label { display: block; font-size: 14px; font-weight: 500; color: #374151; margin-bottom: 6px; }
+    input { width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 15px; outline: none; margin-bottom: 16px; }
+    input:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+    button { width: 100%; padding: 12px; background: #dc2626; color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 4px; }
+    button:hover { background: #b91c1c; }
+    .message { padding: 14px; border-radius: 8px; font-size: 14px; margin-top: 16px; display: none; }
+    .success { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+    .error { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">Double Check</div>
+    <h1>Delete your account</h1>
+    <p class="warning">This will permanently delete your account and all associated data including your scan history. <strong>This cannot be undone.</strong></p>
+    <form id="form">
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" required placeholder="you@example.com">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required placeholder="Your password">
+      <button type="submit" id="btn">Delete my account permanently</button>
+    </form>
+    <div class="message success" id="success">Your account has been permanently deleted. We're sorry to see you go.</div>
+    <div class="message error" id="error">Incorrect email or password. Please try again.</div>
+  </div>
+  <script>
+    const API = "https://web-production-970ba.up.railway.app";
+    document.getElementById('form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('btn');
+      btn.textContent = 'Deleting…';
+      btn.disabled = true;
+      document.getElementById('success').style.display = 'none';
+      document.getElementById('error').style.display = 'none';
+      try {
+        const loginRes = await fetch(API + '/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: document.getElementById('email').value, password: document.getElementById('password').value })
+        });
+        if (!loginRes.ok) throw new Error('auth');
+        const { access_token } = await loginRes.json();
+        const delRes = await fetch(API + '/auth/account', {
+          method: 'DELETE',
+          headers: { 'Authorization': 'Bearer ' + access_token }
+        });
+        if (!delRes.ok) throw new Error('delete');
+        document.getElementById('form').style.display = 'none';
+        document.getElementById('success').style.display = 'block';
+      } catch {
+        document.getElementById('error').style.display = 'block';
+        btn.textContent = 'Delete my account permanently';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
