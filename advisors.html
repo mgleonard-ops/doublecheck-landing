@@ -837,7 +837,7 @@
     btn.disabled = true;
     btn.textContent = 'Sending…';
     var fullName = name + ' — ' + firm + (clients ? ' (' + clients + ' clients)' : '');
-    var platform = 'advisor-pilot' + (_tier ? '-' + _tier.replace(/[^a-z0-9]/gi, '-').toLowerCase() : '');
+    var platform = 'advisor-pilot' + (_tier ? '-' + _tier.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') : '');
     fetch(BACKEND + '/waitlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
