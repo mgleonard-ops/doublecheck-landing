@@ -1016,18 +1016,6 @@
     });
   }
 
-  document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var email = document.getElementById('waitlistEmail').value;
-    fetch(BACKEND + '/waitlist', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, platform: 'ios' })
-    }).catch(function() {});
-    document.getElementById('waitlistForm').style.display = 'none';
-    document.getElementById('waitlistSuccess').style.display = 'block';
-  });
-
   document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     a.addEventListener('click', function(e) {
       var id = this.getAttribute('href');
