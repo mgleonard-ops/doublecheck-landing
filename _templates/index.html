@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scam Guide — Spot Texts, Emails & Calls Before You Act | Double Check</title>
+  <meta name="description" content="Plain-English guides to the most common scams in 2026: USPS texts, Amazon refunds, IRS calls, Medicare cancellations, romance scams, and more." />
+  <link rel="canonical" href="https://mydoublecheck.app/scams" />
+  <meta property="og:title" content="Scam Guide — Double Check" />
+  <meta property="og:description" content="Plain-English guides to the most common scams in 2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mydoublecheck.app/scams" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f172a; --navy-mid: #1e293b;
+      --blue: #2563eb; --blue-dark: #1d4ed8; --blue-light: #eff6ff; --blue-mid: #dbeafe;
+      --green: #16a34a; --green-light: #f0fdf4;
+      --red: #dc2626; --red-light: #fef2f2;
+      --text: #0f172a; --muted: #475569; --subtle: #94a3b8;
+      --border: #e2e8f0; --bg: #fafaf9; --bg-subtle: #f4f4f0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,249,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; }
+    .logo { font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--blue); }
+    .nav-right { display: flex; align-items: center; gap: 8px; }
+    .nav-link { font-size: 15px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 8px; }
+    .nav-link:hover { color: var(--text); background: var(--bg-subtle); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; font-family: inherit; transition: all 0.15s; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.25); }
+
+    .hero { background: var(--bg); padding: 64px 24px 40px; }
+    .hero-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-light); border: 1px solid var(--blue-mid); border-radius: 20px; padding: 5px 14px; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 0.6px; }
+    h1 { font-size: clamp(34px, 5vw, 52px); font-weight: 800; line-height: 1.12; letter-spacing: -0.6px; margin-bottom: 18px; }
+    h1 em { font-style: normal; color: var(--blue); }
+    .hero-sub { font-size: clamp(17px, 2vw, 20px); color: var(--muted); max-width: 580px; margin: 0 auto; line-height: 1.65; }
+
+    .content { max-width: 1100px; margin: 0 auto; padding: 28px 24px 60px; }
+    .category-section { margin-bottom: 40px; }
+    .category-title { font-size: 18px; font-weight: 800; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--blue); letter-spacing: -0.2px; }
+    .scam-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .scam-card { background: #fff; border: 1.5px solid var(--border); border-radius: 14px; padding: 22px; text-decoration: none; transition: all 0.15s; display: flex; flex-direction: column; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .scam-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,99,235,0.1); }
+    .scam-title { font-size: 17px; font-weight: 700; color: var(--text); line-height: 1.35; margin-bottom: 10px; }
+    .scam-desc { font-size: 14px; color: var(--muted); line-height: 1.55; flex: 1; }
+    .scam-cta { font-size: 14px; color: var(--blue); font-weight: 600; margin-top: 14px; }
+
+    .app-cta { background: var(--navy); color: #fff; border-radius: 16px; padding: 44px 28px; margin: 40px 0 0; text-align: center; }
+    .app-cta h2 { font-size: clamp(24px, 3.5vw, 32px); font-weight: 800; margin-bottom: 12px; color: #fff; }
+    .app-cta p { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.6; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .app-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .app-cta .btn-primary { background: #fff; color: var(--navy); }
+    .app-cta .btn-primary:hover { background: var(--blue-light); }
+    .app-cta .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; }
+    .app-cta .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.05); }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 52px 24px 36px; margin-top: 60px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+    .footer-logo { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .footer-logo span { color: #60a5fa; }
+    .footer-brand p { font-size: 15px; max-width: 240px; line-height: 1.6; }
+    .footer-links { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-col h5 { font-size: 12px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: 15px; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 9px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .footer-bottom p { font-size: 13px; }
+    .footer-disclaimer { font-size: 13px; color: rgba(255,255,255,0.35); }
+
+    @media (max-width: 560px) { .nav-link { display: none; } .footer-top { flex-direction: column; } }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Double<span>Check</span></a>
+    <div class="nav-right">
+      <a href="/scams" class="nav-link">Scam guide</a>
+      <a href="/advisors" class="nav-link">For advisors</a>
+      <a href="https://apps.apple.com/app/id6761861061" class="btn btn-primary" target="_blank" rel="noopener">Download the App</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Free guides &#183; Updated for 2026</div>
+    <h1>Spot any scam <em>before you act</em>.</h1>
+    <p class="hero-sub">Plain-English guides to the most common scams hitting people's phones, inboxes, and front doors right now. Know the red flags. Know what to do.</p>
+  </div>
+</section>
+
+<main class="content">
+  {{CATEGORIES_HTML}}
+
+  <div class="app-cta">
+    <h2>Don't memorize every scam. Just check it.</h2>
+    <p>Paste any suspicious message, screenshot, or link into Double Check and get a plain-English verdict in seconds. Free to start. Family alerts included.</p>
+    <div class="app-cta-btns">
+      <a href="https://apps.apple.com/app/id6761861061" class="btn btn-primary" target="_blank" rel="noopener">Download on the App Store</a>
+      <a href="/#download" class="btn-outline">Get for Android</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">Double<span>Check</span></div>
+        <p>AI-powered scam detection for you and the people you love. Free, private, and plain English &#8212; always.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>App</h5>
+          <a href="https://apps.apple.com/app/id6761861061" target="_blank" rel="noopener">Download iOS</a>
+          <a href="/#download">Download Android</a>
+          <a href="/#how-it-works">How it works</a>
+        </div>
+        <div class="footer-col">
+          <h5>Scam guide</h5>
+          <a href="/scams">All scams</a>
+          <a href="/support">Support</a>
+          <a href="mailto:hello@mydoublecheck.app">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; 2026 Double Check. All rights reserved.</p>
+      <p class="footer-disclaimer">For guidance only. AI results are not a guarantee &#8212; always verify before acting.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
