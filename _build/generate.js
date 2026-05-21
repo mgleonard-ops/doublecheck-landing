@@ -9,11 +9,14 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const DATA = path.join(ROOT, '_data', 'scams.json');
 const GUIDES_DATA = path.join(ROOT, '_data', 'guides.json');
+const ADVISOR_DATA = path.join(ROOT, '_data', 'advisor-pages.json');
 const TPL_PAGE = path.join(ROOT, '_templates', 'scam.html');
 const TPL_INDEX = path.join(ROOT, '_templates', 'index.html');
 const TPL_GUIDE = path.join(ROOT, '_templates', 'guide.html');
+const TPL_ADVISOR = path.join(ROOT, '_templates', 'advisor-page.html');
 const OUT_DIR = path.join(ROOT, 'scams');
 const GUIDES_OUT_DIR = path.join(ROOT, 'guides');
+const ADVISOR_OUT_DIR = path.join(ROOT, 'advisor');
 
 function esc(s) {
   return String(s)
@@ -187,12 +190,13 @@ function renderIndex(scams, tpl) {
   return tpl.replace(/\{\{CATEGORIES_HTML\}\}/g, html);
 }
 
-function buildSitemap(scams, guides) {
+function buildSitemap(scams, guides, advisorPages) {
   const today = new Date().toISOString().slice(0, 10);
   const staticPages = [
     { loc: 'https://mydoublecheck.app/', priority: '1.0', changefreq: 'weekly' },
     { loc: 'https://mydoublecheck.app/scams', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://mydoublecheck.app/advisors', priority: '0.7', changefreq: 'monthly' },
+    { loc: 'https://mydoublecheck.app/advisor', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://mydoublecheck.app/advisors', priority: '0.85', changefreq: 'monthly' },
     { loc: 'https://mydoublecheck.app/support', priority: '0.5', changefreq: 'monthly' },
     { loc: 'https://mydoublecheck.app/privacy', priority: '0.3', changefreq: 'yearly' },
     { loc: 'https://mydoublecheck.app/terms', priority: '0.3', changefreq: 'yearly' }
@@ -207,7 +211,12 @@ function buildSitemap(scams, guides) {
     priority: '0.85',
     changefreq: 'monthly'
   }));
-  const urls = [...staticPages, ...scamPages, ...guidePages].map(u =>
+  const advisorURLs = (advisorPages || []).map(p => ({
+    loc: `https://mydoublecheck.app/advisor/${p.slug}`,
+    priority: '0.9',
+    changefreq: 'monthly'
+  }));
+  const urls = [...staticPages, ...scamPages, ...guidePages, ...advisorURLs].map(u =>
     `  <url>
     <loc>${u.loc}</loc>
     <lastmod>${today}</lastmod>
@@ -281,6 +290,180 @@ function buildGuideRelatedSection(slugs, scamsBySlug) {
   </section>`;
 }
 
+function buildAdvisorSchemaJson(page) {
+  const url = `https://mydoublecheck.app/advisor/${page.slug}`;
+  return JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mydoublecheck.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Advisor library", "item": "https://mydoublecheck.app/advisor" },
+        { "@type": "ListItem", "position": 3, "name": page.h1, "item": url }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": page.title,
+      "description": page.meta_description,
+      "url": url,
+      "image": "https://mydoublecheck.app/og-image.png",
+      "author": { "@type": "Organization", "name": "Double Check" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Double Check",
+        "logo": { "@type": "ImageObject", "url": "https://mydoublecheck.app/favicon.svg" }
+      },
+      "datePublished": "2026-05-21",
+      "dateModified": "2026-05-21"
+    }
+  ], null, 2);
+}
+
+function buildAdvisorRelatedSection(slugs, advisorBySlug) {
+  if (!slugs || !slugs.length) return '';
+  const cards = slugs.map(s => advisorBySlug[s]).filter(Boolean).map(p =>
+    `<a href="/advisor/${p.slug}" class="related-card">
+      <div class="related-sub">${esc(p.category)}</div>
+      <div class="related-title">${esc(p.h1)}</div>
+    </a>`
+  ).join('\n      ');
+  if (!cards) return '';
+  return `<section class="sec">
+    <h2>Related for advisors</h2>
+    <div class="related-grid">
+      ${cards}
+    </div>
+  </section>`;
+}
+
+function renderAdvisorPage(page, tpl, advisorBySlug) {
+  return tpl
+    .replace(/\{\{TITLE\}\}/g, esc(page.title))
+    .replace(/\{\{META_DESCRIPTION\}\}/g, esc(page.meta_description))
+    .replace(/\{\{SLUG\}\}/g, page.slug)
+    .replace(/\{\{H1\}\}/g, esc(page.h1))
+    .replace(/\{\{CATEGORY\}\}/g, esc(page.category))
+    .replace(/\{\{LEDE\}\}/g, page.lede)
+    .replace(/\{\{SECTIONS_HTML\}\}/g, buildGuideSectionsHtml(page.sections))
+    .replace(/\{\{RELATED_SECTION\}\}/g, buildAdvisorRelatedSection(page.related, advisorBySlug))
+    .replace(/\{\{SCHEMA_JSON\}\}/g, buildAdvisorSchemaJson(page));
+}
+
+function renderAdvisorIndex(pages) {
+  const byCat = {};
+  pages.forEach(p => {
+    if (!byCat[p.category]) byCat[p.category] = [];
+    byCat[p.category].push(p);
+  });
+  const order = ['Compliance', 'Pain points', 'Comparisons'];
+  const cats = Object.keys(byCat).sort((a, b) => {
+    const ai = order.indexOf(a);
+    const bi = order.indexOf(b);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
+  const categoryHTML = cats.map(cat => {
+    const cards = byCat[cat].map(p => `<a href="/advisor/${p.slug}" class="scam-card">
+      <div class="scam-title">${esc(p.h1)}</div>
+      <div class="scam-desc">${esc(p.meta_description)}</div>
+      <div class="scam-cta">Read &rarr;</div>
+    </a>`).join('\n      ');
+    return `<div class="category-section">
+    <h2 class="category-title">${esc(cat)}</h2>
+    <div class="scam-grid">
+      ${cards}
+    </div>
+  </div>`;
+  }).join('\n');
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advisor Library — Compliance, Client Protection, Tools | Double Check</title>
+  <meta name="description" content="Practical guides for financial advisors on protecting elderly clients: Senior Safe Act, FINRA Rule 2165, red flags, diminished capacity, and tool comparisons." />
+  <link rel="canonical" href="https://mydoublecheck.app/advisor" />
+  <meta property="og:title" content="Advisor Library — Double Check" />
+  <meta property="og:description" content="Practical guides for advisors protecting elderly clients." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mydoublecheck.app/advisor" />
+  <meta property="og:image" content="https://mydoublecheck.app/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mydoublecheck.app/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f172a;--blue:#2563eb;--blue-dark:#1d4ed8;--blue-light:#eff6ff;--blue-mid:#dbeafe;--text:#0f172a;--muted:#475569;--subtle:#94a3b8;--border:#e2e8f0;--bg:#fafaf9;--bg-subtle:#f4f4f0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,249,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; }
+    .logo { font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--blue); }
+    .nav-link { font-size: 15px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 8px; }
+    .btn-primary { background: var(--blue); color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; }
+    .hero { padding: 64px 24px 40px; }
+    .hero-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .eyebrow { display: inline-flex; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-light); border: 1px solid var(--blue-mid); border-radius: 20px; padding: 5px 14px; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 0.6px; }
+    h1 { font-size: clamp(34px, 5vw, 52px); font-weight: 800; line-height: 1.12; letter-spacing: -0.6px; margin-bottom: 18px; }
+    h1 em { font-style: normal; color: var(--blue); }
+    .hero-sub { font-size: clamp(17px, 2vw, 20px); color: var(--muted); max-width: 620px; margin: 0 auto; line-height: 1.65; }
+    .content { max-width: 1100px; margin: 0 auto; padding: 28px 24px 60px; }
+    .category-section { margin-bottom: 40px; }
+    .category-title { font-size: 18px; font-weight: 800; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--blue); }
+    .scam-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .scam-card { background: #fff; border: 1.5px solid var(--border); border-radius: 14px; padding: 22px; text-decoration: none; display: flex; flex-direction: column; box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: all 0.15s; }
+    .scam-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,99,235,0.1); }
+    .scam-title { font-size: 17px; font-weight: 700; color: var(--text); line-height: 1.35; margin-bottom: 10px; }
+    .scam-desc { font-size: 14px; color: var(--muted); line-height: 1.55; flex: 1; }
+    .scam-cta { font-size: 14px; color: var(--blue); font-weight: 600; margin-top: 14px; }
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 52px 24px 36px; margin-top: 60px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; }
+    .footer-logo { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .footer-logo span { color: #60a5fa; }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Double<span>Check</span></a>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <a href="/advisors" class="nav-link">For advisors</a>
+      <a href="/scams" class="nav-link">Scam guide</a>
+      <a href="https://advisor.mydoublecheck.app" class="btn-primary" target="_blank" rel="noopener">Advisor Login</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">For financial advisors &middot; Updated for 2026</div>
+    <h1>Advisor library: protecting clients <em>before</em> the loss.</h1>
+    <p class="hero-sub">Practical guides on the compliance, conversations, and tools that protect elderly clients. Senior Safe Act, FINRA Rule 2165, red flags, diminished capacity, and tool comparisons.</p>
+  </div>
+</section>
+
+<main class="content">
+${categoryHTML}
+</main>
+
+<footer>
+  <div class="footer-inner" style="text-align:center;color:rgba(255,255,255,0.5);font-size:13px;">
+    <div class="footer-logo">Double<span>Check</span></div>
+    <p>&copy; 2026 Double Check. For guidance only &mdash; not legal advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+`;
+}
+
 function renderGuide(guide, tpl, scamsBySlug) {
   return tpl
     .replace(/\{\{TITLE\}\}/g, esc(guide.title))
@@ -338,10 +521,27 @@ if (fs.existsSync(GUIDES_DATA)) {
   });
 }
 
+// Generate advisor pages
+let advisorPages = [];
+if (fs.existsSync(ADVISOR_DATA)) {
+  advisorPages = JSON.parse(fs.readFileSync(ADVISOR_DATA, 'utf8'));
+  const tplAdvisor = fs.readFileSync(TPL_ADVISOR, 'utf8');
+  if (!fs.existsSync(ADVISOR_OUT_DIR)) fs.mkdirSync(ADVISOR_OUT_DIR, { recursive: true });
+  const advisorBySlug = {};
+  advisorPages.forEach(p => { advisorBySlug[p.slug] = p; });
+  advisorPages.forEach(p => {
+    const html = renderAdvisorPage(p, tplAdvisor, advisorBySlug);
+    fs.writeFileSync(path.join(ADVISOR_OUT_DIR, `${p.slug}.html`), html, 'utf8');
+    console.log(`  wrote /advisor/${p.slug}.html`);
+  });
+  fs.writeFileSync(path.join(ADVISOR_OUT_DIR, 'index.html'), renderAdvisorIndex(advisorPages), 'utf8');
+  console.log(`  wrote /advisor/index.html`);
+}
+
 // Generate sitemap + robots
-fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), buildSitemap(scams, guides), 'utf8');
+fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), buildSitemap(scams, guides, advisorPages), 'utf8');
 console.log(`  wrote /sitemap.xml`);
 fs.writeFileSync(path.join(ROOT, 'robots.txt'), buildRobots(), 'utf8');
 console.log(`  wrote /robots.txt`);
 
-console.log(`\n✓ Generated ${count} scam pages + ${guides.length} guides + index + sitemap + robots`);
+console.log(`\n✓ Generated ${count} scam pages + ${guides.length} guides + ${advisorPages.length} advisor pages + sitemap + robots`);
