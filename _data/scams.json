@@ -720,5 +720,1393 @@
       }
     ],
     "related": ["irs-scam-text", "social-security-scam-call", "medicare-cancellation-scam"]
+  },
+  {
+    "slug": "ups-delivery-text-scam",
+    "title": "UPS Delivery Text Scam: Is the Tracking Message Real?",
+    "meta_description": "Got a UPS text about a missed delivery, customs fee, or address update? Most are scams. Here's how to tell, and what to do.",
+    "h1": "Is the UPS delivery text a scam?",
+    "short_answer": "In almost every case, yes. Real UPS only sends SMS updates if you've signed up for UPS My Choice, and they never charge fees, request address confirmation, or ask you to tap a link to a non-ups.com domain. The 'UPS' delivery text scam is one of the most-circulated smishing attacks worldwide.",
+    "category": "Delivery & shipping",
+    "red_flags": [
+      "Link doesn't point to ups.com — fakes use ups-track.com, upsdelivery.net, ups-redelivery.info",
+      "Asks for a small fee ($1-5) to release or redeliver a package",
+      "Sender is a regular 10-digit number, not a UPS short code",
+      "Arrives when you have no real UPS shipment in progress",
+      "Pressures with 'within 24 hours' or 'final notice' language"
+    ],
+    "examples": [
+      {
+        "type": "Text message",
+        "message": "UPS: Your package #1Z9847291 could not be delivered. Confirm your address and pay the $2.99 redelivery fee: ups-redelivery.info/r/1Z",
+        "verdict": "scam",
+        "reason": "UPS never charges redelivery fees by text. The domain is fake. The tracking number is a plausible-looking but random sequence."
+      },
+      {
+        "type": "Text message",
+        "message": "UPS Alert: Customs inspection requires a $4.50 fee to release your parcel. Pay at: upstrack.shipping-fee.com",
+        "verdict": "scam",
+        "reason": "Customs fees are collected by your carrier at delivery, never by SMS. The domain is shipping-fee.com — 'upstrack' is just a meaningless subdomain."
+      }
+    ],
+    "what_to_do": [
+      "Don't tap the link.",
+      "If you have a real UPS shipment, go to ups.com directly and paste your real tracking number from the sender's email.",
+      "Forward the text to 7726 (SPAM) — your carrier will investigate.",
+      "Block the sender. Delete the message.",
+      "If you tapped the link and entered card details, call your bank immediately and freeze the card."
+    ],
+    "why_scammers_use": "Package-delivery smishing dominates global SMS scam volume because the timing is plausible — millions of people have an active package at any moment. Small fee asks ($1-5) feel low-risk, but the real prize is your card number for resale or larger fraud.",
+    "faq": [
+      {
+        "q": "Does UPS ever text customers?",
+        "a": "Only if you've explicitly opted into UPS My Choice notifications. Even then, they never request payment or tap-throughs by SMS."
+      },
+      {
+        "q": "The text has my real name. Is that proof?",
+        "a": "No. Names tied to phone numbers are widely available from data leaks. Personalization is not legitimacy."
+      }
+    ],
+    "related": ["usps-delivery-text-scam", "fedex-delivery-scam-text", "amazon-refund-scam"]
+  },
+  {
+    "slug": "dhl-customs-scam",
+    "title": "DHL Customs Fee Scam: Email & Text Red Flags",
+    "meta_description": "Got an email or text from 'DHL' demanding a customs fee to release your package? It's a phishing scam — here's how to spot and avoid it.",
+    "h1": "Is the DHL customs fee message a scam?",
+    "short_answer": "Yes, in nearly all cases. Real DHL collects customs and duties through formal channels — typically at delivery, in person, or via a properly invoiced bill of lading. An unsolicited email or text asking for a small payment to 'release customs hold' is a phishing scam.",
+    "category": "Delivery & shipping",
+    "red_flags": [
+      "Demands a small fee ($2-15) to release a held package",
+      "Sender domain is not dhl.com (look at the full From address, not the display name)",
+      "Links go to dhl-customs.info, dhl-pay.net, or similar lookalikes",
+      "Threatens that the package will be 'returned to sender' or 'destroyed' if unpaid",
+      "You weren't expecting an international shipment"
+    ],
+    "examples": [
+      {
+        "type": "Email",
+        "message": "DHL Express — Customs hold for parcel DH-7748291. Pay €4.50 customs duty within 48 hours to release. Pay here: dhl-customs.eu/release",
+        "verdict": "scam",
+        "reason": "DHL collects real duties at delivery, by certified mail, or through a customs broker — never by an emailed link asking for under €15."
+      }
+    ],
+    "what_to_do": [
+      "Don't tap the link or open attachments.",
+      "If a real shipment is in transit, verify by typing dhl.com into your browser and entering the tracking number from the sender's official confirmation.",
+      "Forward suspicious emails to phishing-dpdhl@dhl.com.",
+      "Delete the message. Block the sender.",
+      "If you paid, call your bank to dispute and freeze the card."
+    ],
+    "why_scammers_use": "International shipping fees are confusing for most consumers, making the small 'customs fee' ask feel plausible. The under-€20 amount is below most fraud-detection thresholds and feels too small to question.",
+    "faq": [
+      {
+        "q": "Are any DHL fee emails real?",
+        "a": "Real DHL fee notices typically come from your customs broker, are tied to a known shipment, and never use shortened or unfamiliar domains."
+      }
+    ],
+    "related": ["usps-delivery-text-scam", "fedex-delivery-scam-text", "ups-delivery-text-scam"]
+  },
+  {
+    "slug": "amazon-account-suspended-scam",
+    "title": "'Your Amazon Account Has Been Suspended' Email Scam",
+    "meta_description": "Got an Amazon email saying your account is locked or suspended? It's a phishing trap. Here's how to spot it and what to do.",
+    "h1": "Is the 'Amazon account suspended' email a scam?",
+    "short_answer": "Yes. Amazon does not lock or suspend customer accounts via email and ask you to re-verify by tapping a link. These emails are phishing — designed to capture your Amazon login, which gives scammers access to your saved cards, order history, and address book.",
+    "category": "E-commerce",
+    "red_flags": [
+      "Sender is not @amazon.com (check full address — display names are forged)",
+      "Link goes to amazon-secure.com, amazon-verify.net, amazonid.com, or other lookalikes",
+      "Subject line uses urgent words: 'Final notice,' 'Action required,' 'Within 24 hours'",
+      "Asks you to 'verify' password, card, or full SSN",
+      "Threatens account deletion if you don't act"
+    ],
+    "examples": [
+      {
+        "type": "Email",
+        "message": "Amazon Security: We've detected unusual activity. Your account has been temporarily suspended. Verify your information here to regain access: amazon-secure-verify.com",
+        "verdict": "scam",
+        "reason": "Real Amazon security flags appear inside the Amazon app or website — never via an email link to a non-amazon.com domain. The verify page is a perfect replica designed to steal your password."
+      }
+    ],
+    "what_to_do": [
+      "Don't tap the link.",
+      "Open the Amazon app or go to amazon.com directly and log in. Real account issues are visible in 'Your Account.'",
+      "Forward the phishing email to stop-spoofing@amazon.com.",
+      "If you tapped and entered your password, change it immediately at amazon.com and enable two-factor authentication.",
+      "Check 'Login activity' in your Amazon account settings."
+    ],
+    "why_scammers_use": "Amazon credentials are extremely valuable on the dark web — they typically include saved payment methods, shipping addresses, and order history. Stolen accounts are used for fraudulent purchases shipped to drop addresses.",
+    "faq": [
+      {
+        "q": "How does real Amazon notify of account issues?",
+        "a": "In-app and on-site notifications. They never link out to non-amazon.com domains for verification."
+      }
+    ],
+    "related": ["amazon-refund-scam", "apple-id-locked-scam", "paypal-payment-pending-scam"]
+  },
+  {
+    "slug": "paypal-payment-pending-scam",
+    "title": "PayPal 'Payment Pending' Email Scam: How to Spot It",
+    "meta_description": "Received a PayPal email about a pending payment, invoice, or unauthorized charge? Most are scams. Here's how to identify and avoid them.",
+    "h1": "Is the PayPal payment pending email a scam?",
+    "short_answer": "Likely yes. Common PayPal scams send fake invoices, fake payment-pending notices, or fake unauthorized-charge warnings — all aimed at getting you to call a fake support number or click a link that steals your login. Real PayPal activity is always visible inside the PayPal app or website.",
+    "category": "E-commerce",
+    "red_flags": [
+      "Includes a phone number to 'cancel' a pending transaction — the trap",
+      "Sender is not @paypal.com (check full address)",
+      "Email is for an invoice you don't recognize",
+      "Link goes to paypal-resolve.com, paypal-secure.net, or similar fakes",
+      "Asks you to install 'support software' to refund"
+    ],
+    "examples": [
+      {
+        "type": "Email",
+        "message": "PayPal: Pending charge of $487.32 to 'Crypto Trade Inc.' will process in 24 hours. To dispute, call 1-855-555-0118.",
+        "verdict": "scam",
+        "reason": "PayPal does not include callback numbers in pending-charge emails. The number connects to scammers who guide you through installing remote-access software or 'refunding to yourself.'"
+      },
+      {
+        "type": "Invoice email (real PayPal infrastructure abuse)",
+        "message": "You have an invoice from John D. for $1,287.40. View invoice: [legitimate-paypal-link]. Questions? Call: 1-800-555-0144",
+        "verdict": "scam",
+        "reason": "Scammers create real PayPal invoices and abuse the platform to send them. The link itself is to paypal.com, but the phone number in the invoice memo is the scam. Never call numbers inside invoice notes."
+      }
+    ],
+    "what_to_do": [
+      "Don't call any phone number in a PayPal email.",
+      "Open the PayPal app directly. Check 'Activity' — if there's no real pending payment, the email is fake.",
+      "If a real invoice is there from a stranger, cancel it from inside PayPal and report.",
+      "Forward phishing emails to spoof@paypal.com.",
+      "Enable two-factor authentication in PayPal settings."
+    ],
+    "why_scammers_use": "PayPal's reputation lends instant credibility. The 'pending charge' format mimics how PayPal really communicates, and the urgency window pushes panic-calls to scammer-controlled numbers.",
+    "faq": [
+      {
+        "q": "Can scammers send real PayPal invoices?",
+        "a": "Yes. PayPal's invoicing system is open. Scammers send real invoices with fake support numbers in the memo. Always verify by checking your PayPal activity directly."
+      }
+    ],
+    "related": ["amazon-refund-scam", "zelle-scam", "venmo-stranger-payment-scam"]
+  },
+  {
+    "slug": "venmo-stranger-payment-scam",
+    "title": "Venmo Scams: Unexpected Payments and Refund Traps",
+    "meta_description": "Got an unexpected Venmo payment from a stranger? Don't refund it. Here's how the scam works and how to protect yourself.",
+    "h1": "Is the unexpected Venmo payment a scam?",
+    "short_answer": "Almost certainly yes. The classic Venmo scam: a stranger 'accidentally' sends you money, then asks you to send it back. You refund — and days later their original payment gets reversed (it was from a stolen card), leaving you out the full amount.",
+    "category": "E-commerce",
+    "red_flags": [
+      "Unexpected Venmo payment from someone you don't know",
+      "Followed by a message saying 'wrong person, please refund'",
+      "Pressure to act quickly before they 'get in trouble'",
+      "Refund requested to a different account/email than the original sender",
+      "Sender's profile is newly created or has no other activity"
+    ],
+    "examples": [
+      {
+        "type": "Venmo notification + chat",
+        "message": "[Payment of $850 received from @newuser_88] — 'Hey, that was meant for someone else, my bad! Can you send it back to @anotheraccount please?'",
+        "verdict": "scam",
+        "reason": "The original $850 came from a stolen credit card or hacked Venmo account. When the real owner reports fraud, Venmo reverses the original payment. Your 'refund' to @anotheraccount is irreversible — and you're out $850."
+      }
+    ],
+    "what_to_do": [
+      "Do not send the money back.",
+      "Open Venmo → tap the transaction → tap the three-dot menu → Report.",
+      "Contact Venmo support directly through the app — they can reverse the original payment safely.",
+      "Block the sender.",
+      "Wait for Venmo's resolution — never refund directly to the stranger."
+    ],
+    "why_scammers_use": "This scam exploits two facts: (1) most people feel morally obligated to return mistakenly-sent money, and (2) chargeback reversals can take 1-7 days, creating a window where the refund clears before the original payment is voided.",
+    "faq": [
+      {
+        "q": "Can Venmo recover the money if I already refunded?",
+        "a": "Sometimes, if reported within 24 hours and the recipient hasn't withdrawn. But Venmo's recovery rate is low — treat refunds to strangers as gone."
+      }
+    ],
+    "related": ["zelle-scam", "cashapp-flip-scam", "paypal-payment-pending-scam"]
+  },
+  {
+    "slug": "cashapp-flip-scam",
+    "title": "Cash App 'Money Flip' & Giveaway Scams Explained",
+    "meta_description": "Promises to multiply your Cash App balance? Free cash from #CashAppFriday? Here's how the scams work and why you'll never get the money.",
+    "h1": "Is the Cash App money flip / giveaway a scam?",
+    "short_answer": "Yes, every one of them. There is no such thing as 'Cash App money flipping' — no system multiplies your money. There is no shortcut. People who 'flip' $50 into $500 are running a confidence scam. The official #CashAppFriday giveaways exist but never require you to send money first.",
+    "category": "E-commerce",
+    "red_flags": [
+      "Promises to 'flip' $50 into $500, $200 into $2,000, etc.",
+      "Asks you to send money first 'to activate' the flip",
+      "Uses urgency: 'only 5 spots left,' 'today only'",
+      "DM offers from accounts impersonating Cash App or 'verified flippers'",
+      "Asks for your Cash App login or PIN under any pretense"
+    ],
+    "examples": [
+      {
+        "type": "Instagram DM",
+        "message": "Hey! I'm a verified Cash App flipper. Send $100 and I'll send back $1,000 in 30 min. Limited time. DM me your $cashtag.",
+        "verdict": "scam",
+        "reason": "Money does not multiply. After you send, the 'flipper' either disappears or asks for more 'verification' fees. You will never see your money again."
+      }
+    ],
+    "what_to_do": [
+      "Don't send. There is no legitimate version of this.",
+      "Report the account on Cash App, Instagram, or wherever you saw the offer.",
+      "Block the account.",
+      "If you already sent money: report at cash.app/help. Recovery is rare but always file.",
+      "Tell friends — these scams spread by friend-of-friend posts."
+    ],
+    "why_scammers_use": "Money-flip scams target younger users who are familiar with Cash App but unfamiliar with the underlying mechanics. The 'verified flipper' framing borrows authority from real verified accounts.",
+    "faq": [
+      {
+        "q": "Are any real Cash App giveaways legitimate?",
+        "a": "The official #CashAppFriday giveaways are real — but they require zero payment from you. If you have to send money first, it's always a scam."
+      }
+    ],
+    "related": ["venmo-stranger-payment-scam", "zelle-scam", "pig-butchering-scam"]
+  },
+  {
+    "slug": "ebay-overpayment-scam",
+    "title": "eBay Overpayment Scam: How Buyers Trick Sellers",
+    "meta_description": "Selling on eBay or Craigslist? Buyers who 'overpay' and ask for the difference are running a classic check scam. Here's how to spot it.",
+    "h1": "Is the eBay buyer who overpaid running a scam?",
+    "short_answer": "Yes. The 'overpayment' scam works like this: a buyer sends a check (or claims to have wired) more than the asking price, then asks you to refund the difference. The original payment bounces or is reversed days later — and your refund is gone forever.",
+    "category": "E-commerce",
+    "red_flags": [
+      "Buyer immediately offers more than asking price",
+      "Sends a check, money order, or wire — never PayPal Goods & Services",
+      "Asks you to refund the difference to a 'shipping agent' or different account",
+      "Pressure to ship quickly before the check clears",
+      "Buyer's account is new with little history"
+    ],
+    "examples": [
+      {
+        "type": "Email after a sale",
+        "message": "Hi! My shipping agent will pay you $4,500 — the extra $1,500 covers their fee. Once you receive it, please send $1,500 to the agent at this address. I'll arrange pickup.",
+        "verdict": "scam",
+        "reason": "The 'check' from the shipping agent is fake or stolen. When it bounces (typically 5-10 days later), the bank reverses it. Your $1,500 to the 'agent' is gone."
+      }
+    ],
+    "what_to_do": [
+      "Refuse overpayment. Insist on exact amount.",
+      "Only accept payment via PayPal Goods & Services or eBay-managed payment.",
+      "Wait at least 10 business days for any check to fully clear before shipping or refunding.",
+      "Never refund the difference — it's always a scam.",
+      "Report the buyer to eBay/marketplace and block."
+    ],
+    "why_scammers_use": "Banks 'provisional credit' for deposited checks within 1-2 days, but a fraudulent check can bounce for up to 30 days. Scammers exploit this gap — by the time the check bounces, the refund and goods are both gone.",
+    "faq": [
+      {
+        "q": "What if the check seems to clear?",
+        "a": "Initial credit isn't final. A check can bounce up to a month after deposit. Never act on a check until it's fully verified by your bank manager."
+      }
+    ],
+    "related": ["facebook-marketplace-scam", "craigslist-rental-scam", "mystery-shopper-check-scam"]
+  },
+  {
+    "slug": "dmv-text-scam",
+    "title": "DMV Text Scams: Fake License Suspension & Toll Notices",
+    "meta_description": "Got a text from 'the DMV' about a suspension, toll, or registration issue? Almost certainly a scam. Here's how to verify and respond.",
+    "h1": "Is the DMV text message a scam?",
+    "short_answer": "Yes. Your state DMV does not send unsolicited texts about license suspensions, unpaid tolls, or registration renewals. DMV correspondence is by US mail. Any text claiming to be from the DMV with a link to pay is phishing.",
+    "category": "Government impersonation",
+    "red_flags": [
+      "Text claims your license, registration, or driving privileges will be suspended",
+      "Link goes to dmv-payment.com, statedmv.org, or other non-state-gov domains",
+      "Demands a small fee or fine ($5-50)",
+      "Real state DMV domains end in .gov (e.g., dmv.ca.gov, dmv.ny.gov)",
+      "Urgency: 'pay within 24 hours to avoid suspension'"
+    ],
+    "examples": [
+      {
+        "type": "Text message",
+        "message": "[State DMV] Final notice: Your license will be suspended on March 14 due to an unpaid traffic violation of $43.50. Pay now: dmv-payment-portal.us/v",
+        "verdict": "scam",
+        "reason": "Real DMV citations come by mail. The domain is not a .gov address. The DMV does not suspend licenses by SMS warning."
+      }
+    ],
+    "what_to_do": [
+      "Don't tap the link.",
+      "If you're worried, go to your state's actual DMV website (search for it directly — must end in .gov).",
+      "Forward the text to 7726.",
+      "Report DMV impersonation to your state attorney general.",
+      "Block and delete."
+    ],
+    "why_scammers_use": "Everyone with a car cares about their license. The small payment ($5-50) feels like a fine you'd just pay to avoid hassle — but the goal is your card details for resale.",
+    "faq": [
+      {
+        "q": "How does the real DMV contact me?",
+        "a": "By mail. Some states offer email or SMS notifications if you've explicitly signed up, but they never include payment links."
+      }
+    ],
+    "related": ["irs-scam-text", "usps-delivery-text-scam", "social-security-scam-call"]
+  },
+  {
+    "slug": "jury-duty-scam-call",
+    "title": "Jury Duty Scam Calls: 'Pay or Be Arrested'",
+    "meta_description": "Got a call saying you missed jury duty and need to pay to avoid arrest? It's a scam. Here's how the script works and what to do.",
+    "h1": "Is the missed jury duty call a scam?",
+    "short_answer": "Yes — 100% of the time. No US court demands payment by phone to avoid arrest for missing jury duty. If you actually miss jury duty, real consequences (rare) come by mail with formal court paperwork — never by phone with gift card or wire demands.",
+    "category": "Government impersonation",
+    "red_flags": [
+      "Caller claims to be a court officer, sheriff's deputy, or US marshal",
+      "Says you missed jury duty (you probably never got a real summons)",
+      "Demands immediate payment to 'clear the warrant'",
+      "Wants payment in gift cards, wire transfer, or cryptocurrency",
+      "Threatens arrest if you don't pay in the next hour"
+    ],
+    "examples": [
+      {
+        "type": "Phone call",
+        "message": "This is Deputy Sergeant Wilson with the Sheriff's Office. You failed to appear for jury duty on March 3. A warrant has been issued. To avoid arrest, pay $1,500 in Apple gift cards within 90 minutes.",
+        "verdict": "scam",
+        "reason": "Real arrest warrants are served in person, not avoided by phone payment. Courts never accept gift cards. The script targets fear of arrest and uses fake authority."
+      }
+    ],
+    "what_to_do": [
+      "Hang up. Do not engage or 'press 1.'",
+      "Never read gift card numbers or send wire transfers to anyone over the phone.",
+      "If concerned about a real jury summons, call your local court clerk directly (find the number via the court's official .gov website).",
+      "Report to reportfraud.ftc.gov and your state attorney general.",
+      "Tell anyone older in your family — this scam targets seniors heavily."
+    ],
+    "why_scammers_use": "Fear of arrest is universally motivating. The fake authority + urgent deadline + irreversible payment method (gift cards) creates a panic loop that bypasses rational thinking.",
+    "faq": [
+      {
+        "q": "What if I actually missed jury duty?",
+        "a": "You'd receive a written notice by mail. You can call your local court clerk to check. Real consequences are typically a rescheduled date, not arrest."
+      }
+    ],
+    "related": ["irs-scam-text", "social-security-scam-call", "medicare-cancellation-scam"]
+  },
+  {
+    "slug": "unemployment-benefits-scam",
+    "title": "Unemployment Benefits Scam: Fake Claims in Your Name",
+    "meta_description": "Got a letter or text about unemployment benefits you didn't apply for? Someone may have filed in your name. Here's how to spot it and respond.",
+    "h1": "Is the unemployment benefits notice a scam?",
+    "short_answer": "Either you are the victim of identity theft, or the notice itself is phishing. Both are common. If you didn't apply for unemployment, the real risk is that a scammer used your stolen identity to file a fraudulent claim — and is now intercepting the benefits.",
+    "category": "Government impersonation",
+    "red_flags": [
+      "Letter or email mentions an unemployment claim you didn't file",
+      "Debit card arrives in the mail (states often issue benefits via prepaid card)",
+      "Tax form 1099-G shows unemployment income you never received",
+      "Text or email asks you to 'verify identity' via a link",
+      "Phishing variant: emails from state-unemployment.com, jobless-aid.us — not real state .gov domains"
+    ],
+    "examples": [
+      {
+        "type": "Letter",
+        "message": "Your unemployment benefit claim has been approved. Your prepaid debit card with $7,400 in benefits is being mailed.",
+        "verdict": "scam",
+        "reason": "If you didn't file, someone filed in your name using stolen ID data. They're planning to intercept the card. This is identity theft, not necessarily phishing — but report immediately."
+      }
+    ],
+    "what_to_do": [
+      "Do NOT activate any debit card that arrives. Doing so confirms the fraud.",
+      "Report immediately to your state unemployment office (find via your state .gov site).",
+      "File at identitytheft.gov for a federal record and recovery plan.",
+      "Place a free credit freeze at Equifax, Experian, and TransUnion.",
+      "Notify your employer (they may also need to flag it with payroll)."
+    ],
+    "why_scammers_use": "Pandemic-era expansion of unemployment created massive fraud opportunities — state systems weren't designed for the volume and many became targets. Stolen identity data (often from large breaches like Equifax) gets monetized through these fraudulent claims.",
+    "faq": [
+      {
+        "q": "I never applied. How did this happen?",
+        "a": "Your SSN, name, and address are likely on breach lists. Scammers cross-reference these to file fraudulent claims. It's not personal — it's industrial fraud."
+      }
+    ],
+    "related": ["irs-scam-text", "social-security-scam-call", "ceo-impersonation-scam"]
+  },
+  {
+    "slug": "microsoft-tech-support-scam",
+    "title": "Microsoft Tech Support Scam: Pop-Ups, Calls, and Lock Screens",
+    "meta_description": "Got a Microsoft warning about a virus, security breach, or 'critical error'? It's a scam. Here's how to recognize and respond safely.",
+    "h1": "Is the Microsoft tech support warning a scam?",
+    "short_answer": "Yes, in essentially all cases. Microsoft does not display pop-ups with phone numbers, does not call customers about viruses, and does not lock browsers with sirens or warnings. Every 'Microsoft tech support' phone number you see in a pop-up or hear in a call is a scam.",
+    "category": "Tech support",
+    "red_flags": [
+      "Pop-up appears with a phone number to call",
+      "Browser locks up with alarm sound and warning message",
+      "Caller claims to be Microsoft and warns of detected viruses",
+      "Asks you to install AnyDesk, TeamViewer, or other remote-access tools",
+      "Wants you to log into your bank to 'verify' or 'protect' funds"
+    ],
+    "examples": [
+      {
+        "type": "Browser pop-up",
+        "message": "CRITICAL SECURITY WARNING: Your computer has been infected with 5 viruses. Personal data is being stolen. Call Microsoft Support immediately: 1-888-555-0193. DO NOT TURN OFF YOUR COMPUTER.",
+        "verdict": "scam",
+        "reason": "Microsoft never displays such pop-ups. The message is JavaScript on a malicious webpage. Calling the number connects to a scammer who will request remote access and walk you through 'fixing' the computer while draining your bank account."
+      },
+      {
+        "type": "Phone call",
+        "message": "Hello, this is the Microsoft Windows Support Team. We've detected your IP address is sending error reports. Your computer is compromised. Can you please go to your computer so I can help you fix it?",
+        "verdict": "scam",
+        "reason": "Microsoft does not monitor individual computers or call users about 'error reports.' This is the most-recognized phone scam globally."
+      }
+    ],
+    "what_to_do": [
+      "Don't call any number in a pop-up.",
+      "Don't install remote-access software when prompted by an unsolicited caller.",
+      "Force-quit your browser (Cmd+Q on Mac, Alt+F4 on Windows). On mobile, close all tabs.",
+      "If the pop-up persists, restart the computer.",
+      "Report Microsoft impersonation at microsoft.com/reportascam.",
+      "If you already gave remote access: disconnect internet, run a virus scan, change all passwords from a different device, and contact your bank."
+    ],
+    "why_scammers_use": "Microsoft's brand recognition is universal. The pop-up scam works on anyone unfamiliar with how operating systems actually communicate. Once the scammer has remote access, they typically empty bank accounts in 30-60 minutes.",
+    "faq": [
+      {
+        "q": "Does Microsoft ever call customers?",
+        "a": "Almost never — and only in response to a request you initiated through official channels. They never cold-call about viruses."
+      },
+      {
+        "q": "I let someone control my computer remotely. What now?",
+        "a": "Immediately disconnect from internet, change all passwords from another device, contact your bank, and run a full virus scan. Consider taking the computer to a real local technician."
+      }
+    ],
+    "related": ["geek-squad-scam", "norton-renewal-scam", "apple-iphone-virus-popup-scam"]
+  },
+  {
+    "slug": "mcafee-renewal-scam",
+    "title": "McAfee Renewal Scam: Fake Subscription Invoice Emails",
+    "meta_description": "Got a McAfee renewal email for $300-$500 you didn't authorize? It's a phishing scam. Here's how to spot it.",
+    "h1": "Is the McAfee renewal email a scam?",
+    "short_answer": "Yes, in almost all cases. McAfee does not send unsolicited 'auto-renewal' emails with phone numbers to call. The fake invoice is bait — the goal is to get you on the phone with a scammer who will then drain your accounts.",
+    "category": "Tech support",
+    "red_flags": [
+      "Invoice for an amount like $299, $399, $499 — designed to alarm",
+      "Includes a callback phone number to 'cancel' — the trap",
+      "Sender domain is not @mcafee.com",
+      "PDF attachment mimicking an invoice",
+      "Subject line uses 'Final Notice' or 'Auto-Renewal Confirmed'"
+    ],
+    "examples": [
+      {
+        "type": "Email",
+        "message": "McAfee Total Protection Auto-Renewal: $429.99 charged. To cancel, call 1-833-555-0142 within 24 hours.",
+        "verdict": "scam",
+        "reason": "Real McAfee charges show in your account at mcafee.com. The callback number routes to scammers who walk you through 'refunds' that end in account drainage."
+      }
+    ],
+    "what_to_do": [
+      "Don't call the number.",
+      "Check your bank statement — there won't be a real charge.",
+      "Log into mcafee.com directly if you want to verify subscription status.",
+      "Report to spam@mcafee.com.",
+      "Delete the email."
+    ],
+    "why_scammers_use": "Same playbook as Geek Squad and Norton scams — McAfee is a recognized brand, the fake invoice for hundreds of dollars triggers panic calls, and the phone is where the real fraud happens.",
+    "faq": [
+      {
+        "q": "What if I have a real McAfee subscription?",
+        "a": "Verify by logging into mcafee.com directly. Real cancellations happen inside your account."
+      }
+    ],
+    "related": ["norton-renewal-scam", "geek-squad-scam", "microsoft-tech-support-scam"]
+  },
+  {
+    "slug": "apple-iphone-virus-popup-scam",
+    "title": "iPhone Virus Popup Scam: 'Your iPhone Has Been Compromised'",
+    "meta_description": "Saw a scary pop-up on Safari saying your iPhone has a virus? Don't panic. Here's why iPhones don't get viruses and what to do.",
+    "h1": "Is the iPhone virus warning pop-up a scam?",
+    "short_answer": "Yes, always. iPhones effectively cannot get viruses through normal use, and Apple does not display warning pop-ups about viruses in Safari. Any pop-up claiming your iPhone is infected, locked, or compromised is a JavaScript trick on a malicious webpage — designed to scare you into installing a fake 'cleaner' app or calling a fake support number.",
+    "category": "Tech support",
+    "red_flags": [
+      "Pop-up appears while browsing Safari",
+      "Loud alarm sound or sirens",
+      "Tells you your iPhone is locked or all your photos are at risk",
+      "Pushes a 'cleaner' or 'security' app from the App Store",
+      "Lists a phone number to call for 'Apple Support'"
+    ],
+    "examples": [
+      {
+        "type": "Safari pop-up",
+        "message": "WARNING! Your iPhone has been compromised. 14 viruses detected. Tap below to download Apple Security Cleaner now to remove them.",
+        "verdict": "scam",
+        "reason": "iOS doesn't allow this kind of system warning from Safari. The 'cleaner' app is either fake or a subscription trap. Apple does not warn about viruses this way."
+      }
+    ],
+    "what_to_do": [
+      "Don't tap any button in the pop-up — not even 'Cancel' or 'Close.'",
+      "Close the Safari tab: tap the tabs icon (bottom right), swipe up to close the bad tab.",
+      "Clear Safari history: Settings → Safari → Clear History and Website Data.",
+      "Don't install any 'cleaner' apps.",
+      "If a 'support' phone number was shown, do not call it under any circumstances."
+    ],
+    "why_scammers_use": "iPhones are perceived as ultra-secure, so a 'virus detected' warning feels alarming because it contradicts what people know. Panic = clicks. The follow-up either monetizes through fake subscription apps or routes to phone scammers.",
+    "faq": [
+      {
+        "q": "Can iPhones get viruses?",
+        "a": "Effectively no, through normal use. Apple's iOS sandboxing prevents traditional viruses. The only real risk is phishing — handing over credentials voluntarily."
+      },
+      {
+        "q": "Should I install an antivirus app on my iPhone?",
+        "a": "No. iOS doesn't need one and most iOS 'antivirus' apps don't actually scan anything — they're marketing wrappers around basic phishing protection that Safari already does."
+      }
+    ],
+    "related": ["apple-id-locked-scam", "microsoft-tech-support-scam", "geek-squad-scam"]
+  },
+  {
+    "slug": "wells-fargo-text-scam",
+    "title": "Wells Fargo Fraud Alert Text Scam: Real vs Fake",
+    "meta_description": "Got a Wells Fargo text about fraud, a card alert, or a Zelle issue? Some are real, most are scams. Here's exactly how to tell.",
+    "h1": "Is the Wells Fargo text a scam?",
+    "short_answer": "Usually yes. Real Wells Fargo fraud alerts come from short codes (e.g., 93557, 51682) and ask only for a YES/NO reply. They never include a clickable link or a callback number embedded in the message. Any text from Wells Fargo with a link or phone number is a phishing scam.",
+    "category": "Banking",
+    "red_flags": [
+      "Includes a link to tap",
+      "Asks you to call a number embedded in the message",
+      "Sender is a regular 10-digit number, not a Wells short code",
+      "Asks for your full account number, password, or PIN",
+      "Threatens account closure or large transfer reversal"
+    ],
+    "examples": [
+      {
+        "type": "Text message",
+        "message": "Wells Fargo: A $789.34 Zelle to John D. is pending. If unauthorized, call 1-855-555-0192 immediately.",
+        "verdict": "scam",
+        "reason": "Real Wells Fargo Zelle alerts ask for YES/NO reply, never a callback. The number connects to scammers who 'help' you 'move money to a safe account' (theirs)."
+      },
+      {
+        "type": "Text message (real format)",
+        "message": "Wells Fargo Fraud - Did you attempt a $52 charge at Shell Gas? Reply Y if yes, N if no.",
+        "verdict": "safe",
+        "reason": "Short code sender, YES/NO format, no link, no phone number in the message. Safe to reply Y or N."
+      }
+    ],
+    "what_to_do": [
+      "Ignore any link or phone number in the message.",
+      "Open the Wells Fargo app directly, or call 1-800-869-3557 (the number on your card back).",
+      "If you tapped a link and entered credentials, call Wells Fargo immediately and change your password.",
+      "Forward suspicious texts to 7726.",
+      "Block the sender."
+    ],
+    "why_scammers_use": "Bank fraud alerts have built up trust — customers are used to acting on them quickly. Scammers exploit that trust with lookalike messages that route panic-calls to fraud operators.",
+    "faq": [
+      {
+        "q": "How does a real Wells Fargo fraud alert look?",
+        "a": "From a 5-digit short code, asking you to reply Y or N to a specific transaction. No links, no phone numbers in the message itself."
+      }
+    ],
+    "related": ["chase-fraud-alert-text-scam", "bank-of-america-scam-text", "zelle-scam"]
+  },
+  {
+    "slug": "bank-of-america-scam-text",
+    "title": "Bank of America Text Scam: How to Tell Real from Fake",
+    "meta_description": "Got a Bank of America text about a charge, Zelle, or fraud alert? Here's how to distinguish real alerts from phishing scams.",
+    "h1": "Is the Bank of America text a scam?",
+    "short_answer": "Most likely yes if it contains a link or callback number. Real Bank of America fraud alerts come from short codes and ask for a YES/NO reply — never with a link, never asking you to call a number embedded in the message.",
+    "category": "Banking",
+    "red_flags": [
+      "Includes a link or callback number",
+      "Sender is a regular 10-digit number",
+      "Asks for your account number, password, PIN, or OTP",
+      "Threatens immediate account action",
+      "Uses Bank of America branding but bofa-secure.com type domains"
+    ],
+    "examples": [
+      {
+        "type": "Text message",
+        "message": "Bank of America: Unauthorized login from Texas. Verify identity: bofa-secure-verify.com or call 1-833-555-0177 now.",
+        "verdict": "scam",
+        "reason": "Real BofA does not include verification links or callback numbers in texts. The domain is fake. Calling the number connects to fraud operators."
+      }
+    ],
+    "what_to_do": [
+      "Don't tap or call.",
+      "Open the BofA app directly, or call 1-800-432-1000 (number on card back).",
+      "Forward the text to 7726.",
+      "Change your password if you tapped a link and entered anything.",
+      "Block and delete."
+    ],
+    "why_scammers_use": "Bank brand recognition + fraud-alert format trains us to respond quickly. Scammers exploit that conditioning with phishing that feels familiar.",
+    "faq": [
+      {
+        "q": "How does the real BofA contact me about fraud?",
+        "a": "Short-code SMS with YES/NO reply, an in-app notification, or a phone call to the number on file — never asking you to call a number from a text."
+      }
+    ],
+    "related": ["wells-fargo-text-scam", "chase-fraud-alert-text-scam", "zelle-scam"]
+  },
+  {
+    "slug": "capital-one-fraud-alert-scam",
+    "title": "Capital One Fraud Alert Scam: Spotting the Fake Texts",
+    "meta_description": "Capital One alert about an unauthorized charge, Venture transfer, or account access? Here's how to spot the scam version.",
+    "h1": "Is the Capital One fraud alert a scam?",
+    "short_answer": "If it has a link or callback number, almost certainly yes. Real Capital One fraud alerts use short codes and ask for a Yes/No reply to a specific transaction. Any embedded link or 'call this number' is phishing.",
+    "category": "Banking",
+    "red_flags": [
+      "Includes a clickable link",
+      "Asks you to call a number embedded in the text",
+      "From a regular 10-digit phone, not a Capital One short code",
+      "Demands account or password verification",
+      "Mentions a charge amount that's just high enough to alarm"
+    ],
+    "examples": [
+      {
+        "type": "Text message",
+        "message": "Capital One: A $1,243 charge at Best Buy was attempted on your card ending 4421. Reply STOP to block or call 1-844-555-0189 to confirm.",
+        "verdict": "scam",
+        "reason": "Real Capital One alerts use Yes/No reply, not 'call this number.' Replying STOP simply confirms your number is active — and the callback number is the scam's trap."
+      }
+    ],
+    "what_to_do": [
+      "Ignore the link and phone number.",
+      "Open the Capital One app or call 1-800-227-4825 (the number on your card).",
+      "Forward to 7726 (SPAM).",
+      "If you called and gave info: call Capital One immediately to freeze the card.",
+      "Block the sender."
+    ],
+    "why_scammers_use": "Capital One has tens of millions of US customers — high coverage means random recipients are statistically likely to be real customers, lending the scam plausibility.",
+    "faq": [
+      {
+        "q": "What format do real Capital One alerts use?",
+        "a": "5-digit short code, specific transaction details, Yes/No reply. No links, no phone numbers in message."
+      }
+    ],
+    "related": ["chase-fraud-alert-text-scam", "wells-fargo-text-scam", "bank-of-america-scam-text"]
+  },
+  {
+    "slug": "direct-deposit-change-scam",
+    "title": "Direct Deposit Change Scam: BEC Attacks on Payroll",
+    "meta_description": "Did HR get an email from 'you' asking to change your direct deposit account? That's a business email compromise scam — here's how to recognize and prevent it.",
+    "h1": "Is the direct deposit change email a scam?",
+    "short_answer": "Yes — if it claims to be from an employee but the email is unfamiliar or oddly worded, it's almost certainly a Business Email Compromise (BEC) attack. Scammers impersonate employees, email HR/payroll asking to redirect direct deposit, and intercept the next paycheck.",
+    "category": "Banking",
+    "red_flags": [
+      "Email from a slightly off employee address (john.smith@gmaiI.com vs gmail.com)",
+      "Casual tone but no prior conversation thread",
+      "Requests urgency: 'before this Friday's payroll'",
+      "Asks to change to an account that doesn't match employee records",
+      "Refuses to call to verify, citing 'in meetings'"
+    ],
+    "examples": [
+      {
+        "type": "Email to HR",
+        "message": "Hi Linda, I switched banks recently — can you update my direct deposit to this new account before Friday's pay run? Routing 121000358, account 8847291038. Thanks! — Mike",
+        "verdict": "scam",
+        "reason": "Even if 'Mike' is a real employee, the email is from a spoofed or compromised address. Real Mike's identity should always be verified by phone (using a number you already have) before any payroll change."
+      }
+    ],
+    "what_to_do": [
+      "Always verify by phone (using a number you already had — not a number in the email) before changing any direct deposit.",
+      "Set a policy: no direct deposit changes by email alone, ever.",
+      "Use multi-factor confirmation: in-person or video call.",
+      "Train all payroll/HR staff on BEC patterns.",
+      "If a fraudulent change went through: immediately contact your bank's fraud team — sometimes funds can be recalled within hours."
+    ],
+    "why_scammers_use": "Payroll BEC is one of the highest-yield attacks per attempt: a successful scam captures an entire paycheck, sometimes for months before discovery. Scammers harvest employee names from LinkedIn and compromise or spoof email accounts.",
+    "faq": [
+      {
+        "q": "Who's responsible if money goes to the scammer's account?",
+        "a": "Legally complex. Often the employer bears partial liability if they didn't follow proper verification. Banks typically can't reverse the transaction. Prevention is everything."
+      }
+    ],
+    "related": ["ceo-impersonation-scam", "amazon-account-suspended-scam", "wells-fargo-text-scam"]
+  },
+  {
+    "slug": "crypto-recovery-scam",
+    "title": "Crypto Recovery Scam: Getting Scammed Twice",
+    "meta_description": "Already lost money to a crypto scam? Beware of 'recovery agents' promising to get it back — they're almost always a second scam targeting the same victim.",
+    "h1": "Is the crypto recovery service a scam?",
+    "short_answer": "Almost certainly yes. After someone loses money to crypto fraud (pig butchering, fake exchange, romance scam), they often get contacted by 'recovery agents' offering to retrieve the funds for an upfront fee. These are second-stage scams targeting already-vulnerable victims. Real recovery is rare and never requires upfront payment.",
+    "category": "Romance & investment",
+    "red_flags": [
+      "Contact comes via Telegram, WhatsApp, or DM after you've discussed crypto loss publicly",
+      "Promises 'guaranteed recovery' or specific success rate",
+      "Demands upfront fee before any work begins",
+      "Asks for your wallet seed phrase or private keys",
+      "Claims insider connections to exchanges or 'blockchain forensics'"
+    ],
+    "examples": [
+      {
+        "type": "Telegram DM after a Reddit scam post",
+        "message": "Hi, I saw your post about losing $50k in the crypto scam. I work with a blockchain recovery firm — we've recovered millions. Our success rate is 85%. Initial retainer is $5,000 to start tracing.",
+        "verdict": "scam",
+        "reason": "Real recovery firms don't cold-DM victims. No legitimate firm charges upfront retainers for crypto tracing. The recovery 'firm' is the same scammers (or a connected operation) running a second extraction."
+      }
+    ],
+    "what_to_do": [
+      "Don't pay any upfront fees to anyone promising recovery.",
+      "Never share your seed phrase or private keys — that's the keys to your remaining funds, if any.",
+      "Report the original scam to ic3.gov and your local FBI office.",
+      "If significant funds, hire a licensed attorney (not a 'recovery agent') who can engage real blockchain forensics firms like Chainalysis through proper channels.",
+      "Block recovery offers. Be especially skeptical of anyone who messages you about your loss — scammers monitor scam-victim forums."
+    ],
+    "why_scammers_use": "Scam victims are extremely vulnerable to second scams because they're desperate, emotionally compromised, and willing to believe in any path to recovery. The same operations often run both stages.",
+    "faq": [
+      {
+        "q": "Is any crypto recovery ever real?",
+        "a": "Real recovery exists but is rare, expensive, and pursued via attorneys + licensed forensics firms — never via cold DM offers."
+      }
+    ],
+    "related": ["pig-butchering-scam", "romance-scam", "amazon-refund-scam"]
+  },
+  {
+    "slug": "one-ring-callback-scam",
+    "title": "One Ring Callback Scam: Why You Shouldn't Call Back",
+    "meta_description": "Phone rings once and hangs up? Calling back can cost you hundreds in international charges. Here's how the 'one ring' scam works.",
+    "h1": "Is the one-ring phone call a scam?",
+    "short_answer": "Almost always yes. Scammers use auto-dialers to call millions of numbers and hang up after one ring, betting curious people will call back. The numbers connect to premium-rate international lines that charge $20-$30+ per minute — sometimes hundreds of dollars before you realize what's happening.",
+    "category": "Phone scams",
+    "red_flags": [
+      "Unknown number calls once and hangs up before voicemail",
+      "Caller ID shows an international code: +232 (Sierra Leone), +268 (Eswatini), +809 (Caribbean), +473 (Grenada)",
+      "Number looks like a US area code (e.g., 809) but is actually international",
+      "Multiple one-ring calls in a row",
+      "No legitimate reason a US business would call you from these codes"
+    ],
+    "examples": [
+      {
+        "type": "Missed call notification",
+        "message": "Missed call from +1 (473) 555-0188 — caller hung up after 1 ring at 2:14am.",
+        "verdict": "scam",
+        "reason": "Area code 473 is Grenada, not the US. Calling back connects to a premium-rate line that charges international rates + premium fees. A 2-minute callback can cost $40+."
+      }
+    ],
+    "what_to_do": [
+      "Don't call back unknown numbers — ever.",
+      "If you're missing a real call, real callers leave voicemails or text.",
+      "Block the number.",
+      "Check your phone carrier's international block options to prevent these calls reaching you.",
+      "If you already called and got billed: dispute with your carrier; they sometimes refund first-time victims."
+    ],
+    "why_scammers_use": "Premium-rate international scams are pure-profit with no fraud-recovery risk. The scammer is paid by the per-minute charge, which the victim's carrier passes through. Sometimes a partner carrier abroad splits the revenue.",
+    "faq": [
+      {
+        "q": "What if it's a real friend traveling abroad?",
+        "a": "Real friends leave voicemails, send texts, or use WhatsApp. A single ring with no follow-up is the signature of the scam."
+      }
+    ],
+    "related": ["car-warranty-scam-call", "social-security-scam-call", "irs-scam-text"]
+  },
+  {
+    "slug": "ceo-impersonation-scam",
+    "title": "CEO Impersonation (BEC) Scam: 'Quick Favor' Wire Requests",
+    "meta_description": "Employees getting urgent emails from the 'CEO' asking for gift cards or wire transfers? That's Business Email Compromise — here's how to spot and prevent it.",
+    "h1": "Is the urgent CEO email asking for a wire / gift cards a scam?",
+    "short_answer": "Yes, every time. The 'CEO asking for a quick favor' email is the most common Business Email Compromise (BEC) attack. Scammers impersonate executives (using spoofed or compromised email addresses) and pressure employees to wire money or buy gift cards 'urgently' — outside normal channels.",
+    "category": "Impersonation",
+    "red_flags": [
+      "Email from CEO/CFO/manager asking for urgent action",
+      "Sender address is slightly off (extra letter, similar domain, gmail.com instead of company domain)",
+      "Insists on email-only communication — 'I'm in a meeting, can't call'",
+      "Asks to buy gift cards and send the codes",
+      "Wants a wire transfer to an unfamiliar account, often international"
+    ],
+    "examples": [
+      {
+        "type": "Email",
+        "message": "Hi Sarah — quick favor. I'm in back-to-back meetings and need to send a client thank-you. Can you pick up $2,000 in Apple gift cards and email me the codes? I'll reimburse you. Don't mention to anyone — surprise gift. — David",
+        "verdict": "scam",
+        "reason": "Real executives don't ask employees to buy gift cards by email. The 'don't mention to anyone' line specifically isolates the victim from the colleague who would catch the scam."
+      }
+    ],
+    "what_to_do": [
+      "Always verify by walking to the person, calling their known number, or video call — never reply to the email.",
+      "Set a company-wide rule: no gift card purchases, no wires, no payments based on email alone.",
+      "Train every employee on BEC patterns — especially executive assistants and finance staff.",
+      "If gift cards already purchased: stop, do not send codes, contact your manager.",
+      "If you sent codes: report to ic3.gov immediately — same-day reports occasionally enable card freezes."
+    ],
+    "why_scammers_use": "BEC is the #1 fraud category by dollar value in the US, costing businesses billions. The 'helpful employee meets urgent boss' dynamic bypasses skepticism. Gift cards are preferred because the codes are instantly redeemable and untraceable.",
+    "faq": [
+      {
+        "q": "What's the best prevention?",
+        "a": "A strict rule: no money movement or gift card purchases based on email alone. Always verify in person or by known phone. Make it cultural — employees should feel zero awkwardness saying 'I need to verify by phone.'"
+      }
+    ],
+    "related": ["direct-deposit-change-scam", "amazon-account-suspended-scam", "grandparent-scam"]
+  },
+  {
+    "slug": "fake-charity-scam",
+    "title": "Fake Charity Scam: Spotting Disaster & Cause-Based Fraud",
+    "meta_description": "After every disaster or tragedy, fake charities emerge. Here's how to tell legitimate ones from scams that pocket your donation.",
+    "h1": "Is this charity a scam?",
+    "short_answer": "Often, yes — especially newly-formed charities that pop up after natural disasters, mass tragedies, or popular causes. Real charities don't pressure for immediate cash or gift card donations and are registered with the IRS and state regulators. Always verify before giving.",
+    "category": "Impersonation",
+    "red_flags": [
+      "Newly-created charity name you haven't heard before",
+      "Appears within days of a disaster or tragedy",
+      "Cold calls, texts, or DMs asking for donations",
+      "Pressure to give immediately, often in gift cards or wire",
+      "No registration with charitynavigator.org, give.org, or IRS database",
+      "Vague about exactly where the money goes"
+    ],
+    "examples": [
+      {
+        "type": "Phone call",
+        "message": "Hi, I'm calling from the Survivors of [Recent Disaster] Relief Fund. We're collecting urgent donations. Can you pledge $100 today? We accept gift cards, Zelle, or credit card.",
+        "verdict": "scam",
+        "reason": "Real charities don't accept gift cards. They never combine 'urgent donation' with multiple irreversible payment methods. The charity name is invented to exploit current news."
+      }
+    ],
+    "what_to_do": [
+      "Don't give based on a cold call, text, or DM.",
+      "Verify charities at charitynavigator.org, give.org, or irs.gov/charities-non-profits/tax-exempt-organization-search.",
+      "Donate directly via the charity's official website — type it yourself, never use a link from a solicitation.",
+      "Never give via gift card, wire, or crypto — these are scam-only payment methods.",
+      "Use credit card for donations (chargeback protection if it turns out fraudulent)."
+    ],
+    "why_scammers_use": "Major disasters create immediate giving urgency in millions of people. Fake charities ride that wave, harvesting both donations and (more valuably) credit card details for resale.",
+    "faq": [
+      {
+        "q": "What if a real charity is calling?",
+        "a": "Hang up and donate via their official website directly. Even real charity callers should never be paid by phone — go to the source."
+      }
+    ],
+    "related": ["lottery-winner-scam", "grandparent-scam", "romance-scam"]
+  },
+  {
+    "slug": "fake-job-offer-scam",
+    "title": "Fake Job Offer Scam: Spotting Employment Fraud",
+    "meta_description": "Got a job offer that seems too good — high pay, easy work-from-home, no interview? Here's how to recognize fake job scams.",
+    "h1": "Is this job offer a scam?",
+    "short_answer": "Quite possibly. Common red flags: high pay for unskilled work, no real interview, hiring you after one short chat, asking you to pay for 'equipment' or training, or sending you a check to deposit and forward. Real employers don't operate this way.",
+    "category": "Job scams",
+    "red_flags": [
+      "Hired after one short text/chat — no real interview",
+      "Pay seems unusually high for the described work",
+      "Asks you to deposit a check and forward part of it",
+      "Requires upfront payment for equipment, software, training, or 'certification'",
+      "Job posting on LinkedIn-lookalike sites or unfamiliar boards",
+      "Email from gmail.com or other free domain, not the company domain"
+    ],
+    "examples": [
+      {
+        "type": "Email",
+        "message": "Congratulations! You've been hired as a Remote Personal Assistant at $40/hour. To start, we'll send you a $3,500 check — deposit it and use it to buy equipment from this approved vendor: [link]. Send remaining funds via Zelle.",
+        "verdict": "scam",
+        "reason": "Real employers don't send checks and ask you to forward portions. The check is fake or stolen — it'll bounce after you've sent real money to the 'vendor' (the scammer)."
+      }
+    ],
+    "what_to_do": [
+      "Never deposit a check from a new employer and forward the funds.",
+      "Verify the company by going to their real website directly (not via the recruiter's link).",
+      "Search '[Company name] scam' or '[Company name] reviews' before accepting.",
+      "Refuse to pay any upfront fee for equipment, training, or certification.",
+      "Report fake jobs to the platform where you saw them and at reportfraud.ftc.gov."
+    ],
+    "why_scammers_use": "Job seekers are vulnerable — they're motivated to believe in opportunity, and many are financially stressed. The check-and-forward variant is a particularly cruel form of check fraud that converts the victim into an unwitting money mule.",
+    "faq": [
+      {
+        "q": "What if the company name is real?",
+        "a": "Scammers often impersonate real companies. Always verify by going to the company's website directly and contacting their HR or careers department through public channels."
+      }
+    ],
+    "related": ["mystery-shopper-check-scam", "work-from-home-scam", "amazon-refund-scam"]
+  },
+  {
+    "slug": "mystery-shopper-check-scam",
+    "title": "Mystery Shopper Scam: The Check You Shouldn't Deposit",
+    "meta_description": "Got hired as a mystery shopper and sent a check to deposit? It's the most common check-fraud scam in the US. Here's how it works.",
+    "h1": "Is the mystery shopper job a scam?",
+    "short_answer": "If they send you a check to 'evaluate money transfer services,' yes — it's a scam. Real mystery shopping companies exist (Marketforce, BestMark, etc.) but they pay you AFTER shop reports, never by sending a check upfront to deposit and forward.",
+    "category": "Job scams",
+    "red_flags": [
+      "Received a check before doing any work",
+      "Asked to 'evaluate' Western Union, MoneyGram, Walmart-to-Walmart, or Zelle by sending the money",
+      "Told to keep a 'commission' and send the rest",
+      "Hired without applying — they 'found you' on LinkedIn or by email",
+      "The check arrived by FedEx with no return address"
+    ],
+    "examples": [
+      {
+        "type": "Letter with check",
+        "message": "Welcome to Quality Shopper LLC! Enclosed is your $2,950 assignment check. Step 1: deposit. Step 2: use $2,700 to wire-transfer-test Western Union at a nearby store, sending to John Smith in Florida. Step 3: keep $250 for your evaluation report.",
+        "verdict": "scam",
+        "reason": "Real mystery shopping never involves the shopper sending real money. The check is fake — by the time it bounces (5-10 days), you've already wired $2,700 to the scammer, and you owe your bank the $2,950."
+      }
+    ],
+    "what_to_do": [
+      "Do not deposit the check.",
+      "Do not wire any money or send any Zelle/MoneyGram on instruction.",
+      "Report to the Mystery Shopping Professionals Association (mspa-americas.org).",
+      "Report to FTC at reportfraud.ftc.gov and your state attorney general.",
+      "Shred the check and any materials."
+    ],
+    "why_scammers_use": "This scam combines fake employment with check fraud, exploiting the float between check deposit (provisional funds appear next day) and bounce confirmation (5-30 days). Victims become unwitting money mules.",
+    "faq": [
+      {
+        "q": "What about real mystery shopper jobs?",
+        "a": "Real ones exist but never send you money upfront. You complete a shop with your own money (small amount, usually reimbursed) and submit a report. Find legitimate companies via mspa-americas.org."
+      }
+    ],
+    "related": ["fake-job-offer-scam", "work-from-home-scam", "ebay-overpayment-scam"]
+  },
+  {
+    "slug": "work-from-home-scam",
+    "title": "Work-From-Home Scams: Envelope Stuffing, Assembly, and More",
+    "meta_description": "Promises of easy work-from-home pay assembling products, stuffing envelopes, or processing payments are almost always scams. Here's why.",
+    "h1": "Is the work-from-home offer a scam?",
+    "short_answer": "If it promises high pay for unskilled work like envelope stuffing, product assembly, or 'processing payments,' yes. These scams typically charge upfront for 'starter kits' or materials that produce nothing sellable — or they recruit you as a money mule for criminal proceeds.",
+    "category": "Job scams",
+    "red_flags": [
+      "Earn $500-$2,000/week with no experience",
+      "Charges $20-$100 for a 'starter kit' or 'training materials'",
+      "Promises pay per envelope stuffed or product assembled",
+      "Wants you to 'process payments' from clients — you keep a percentage and forward the rest",
+      "Vague about who buys the product or who the payments come from"
+    ],
+    "examples": [
+      {
+        "type": "Online ad",
+        "message": "Make $4,000/month stuffing envelopes from home! Just $39.99 for starter kit. Materials shipped same day. Begin earning immediately!",
+        "verdict": "scam",
+        "reason": "Real businesses use machines to stuff envelopes for fractions of a cent. The 'starter kit' is the scam — you pay $40, receive instructions to 'recruit others' or marketing materials that are unsellable. Nobody makes $4,000/month stuffing envelopes."
+      }
+    ],
+    "what_to_do": [
+      "Refuse to pay any upfront fee for 'starter kits' or training.",
+      "Refuse to 'process payments' that involve keeping a cut and forwarding — this is money laundering.",
+      "Check the company at bbb.org and via web searches before engaging.",
+      "Report to FTC at reportfraud.ftc.gov.",
+      "Look for legitimate remote work via known platforms (Upwork, We Work Remotely, AngelList)."
+    ],
+    "why_scammers_use": "Targets economically vulnerable people who are desperate enough to overlook obvious red flags. Some variants graduate the victim into money mule work, exposing them to criminal liability.",
+    "faq": [
+      {
+        "q": "Are any envelope-stuffing jobs real?",
+        "a": "Essentially no. Direct mail is fully automated. Any 'envelope stuffing from home' offer in 2026 is a scam."
+      }
+    ],
+    "related": ["fake-job-offer-scam", "mystery-shopper-check-scam", "pig-butchering-scam"]
+  },
+  {
+    "slug": "craigslist-rental-scam",
+    "title": "Craigslist Rental Scam: Fake Listings That Steal Deposits",
+    "meta_description": "House for rent at a great price? If you can't see it before paying and the landlord is out of town, it's a scam. Here's how to verify.",
+    "h1": "Is the Craigslist / Zillow rental listing a scam?",
+    "short_answer": "If the landlord is out of town, won't show the property in person, asks for deposit before any in-person contact, or insists on wire/gift card payment — yes, it's a scam. Real landlords show properties before collecting deposits. Always.",
+    "category": "Marketplace & rental",
+    "red_flags": [
+      "Price is below market for the area",
+      "Landlord/owner is out of town, abroad, or otherwise unavailable to show",
+      "Won't let you tour before paying deposit",
+      "Photos are clearly pulled from another listing (reverse image search to verify)",
+      "Wants payment via Zelle, Western Union, or gift cards",
+      "Sob story about why they need to rent quickly"
+    ],
+    "examples": [
+      {
+        "type": "Craigslist response email",
+        "message": "Hi, the house is still available at $1,200/month. I'm currently working overseas as a missionary, so I can't show it in person. If you send first month + deposit ($2,400) via Zelle, I'll FedEx the keys overnight. The house is yours to inspect first.",
+        "verdict": "scam",
+        "reason": "Real landlords never operate this way. Photos are scraped from a real Zillow or Realtor.com listing. The scammer never had access to the property. The Zelle funds vanish; you never get keys."
+      }
+    ],
+    "what_to_do": [
+      "Refuse to pay before an in-person tour.",
+      "Reverse-image search the photos (Google Lens, TinEye) — you'll often find the real listing on Zillow or Realtor.com.",
+      "Look up the property address — verify the owner via public records (most county assessor sites are free).",
+      "If you must rent remotely, hire a local agent to verify in person.",
+      "Report scam listings on the platform (Craigslist, Facebook, Zillow)."
+    ],
+    "why_scammers_use": "Rental scams are extremely high-yield — a single deposit theft can net $2,000-$5,000. The 'out of town landlord' script is decades old and still works because the urgency to find housing overrides skepticism.",
+    "faq": [
+      {
+        "q": "What if the listing also appears on Zillow?",
+        "a": "Scammers copy real listings. The Zillow version may be legitimate, but the Craigslist version (with a different contact) is fraudulent. Always reach out via the original platform's verified contact."
+      }
+    ],
+    "related": ["facebook-marketplace-scam", "puppy-scam", "ebay-overpayment-scam"]
+  },
+  {
+    "slug": "facebook-marketplace-scam",
+    "title": "Facebook Marketplace Scams: Buyer & Seller Red Flags",
+    "meta_description": "Whether buying or selling on Facebook Marketplace, scams abound. Here's how to spot the most common patterns and protect yourself.",
+    "h1": "Is the Facebook Marketplace transaction a scam?",
+    "short_answer": "Marketplace scams come from both sides. As a seller: 'buyers' who insist on Zelle and overpay, or fake 'shipping' add-ons. As a buyer: 'sellers' with too-good prices who want payment before delivery. The common pattern: any pressure to leave the platform or pay outside in-person cash is a scam signal.",
+    "category": "Marketplace & rental",
+    "red_flags": [
+      "Pressure to communicate via text/WhatsApp instead of Messenger",
+      "Buyer 'overpays' and asks for the difference back",
+      "Seller wants payment before shipping or before in-person meet",
+      "Buyer wants you to use a 'shipping service' link they provide",
+      "Asks you to share a verification code 'to confirm you're real'"
+    ],
+    "examples": [
+      {
+        "type": "Buyer message",
+        "message": "Hi! Loving the couch. Can I send a quick verification code to make sure you're not a bot? I'll send to your phone, just read it back. Then I'll send Zelle.",
+        "verdict": "scam",
+        "reason": "The 'verification code' is them initiating a Google Voice or account-recovery process on YOUR number. Reading it back gives them control of your phone number — used to take over your other accounts."
+      },
+      {
+        "type": "Seller listing",
+        "message": "iPhone 16 Pro Max, brand new sealed, $400 (retail $1,200). Need to sell quick before moving. Zelle only, will ship same day, can show proof of postage.",
+        "verdict": "scam",
+        "reason": "Price is too good. Zelle is irreversible. The 'iPhone' is either fake, broken, or simply never shipped. Real sellers accept in-person cash for high-value local items."
+      }
+    ],
+    "what_to_do": [
+      "Insist on in-person cash for local transactions.",
+      "Never share verification codes — under any pretense.",
+      "Refuse to use 'shipping services' the other party provides.",
+      "Meet in a safe public place (some police stations offer 'safe trade' zones).",
+      "Report scam profiles on Facebook and block."
+    ],
+    "why_scammers_use": "Marketplace is high-traffic and many users are casual sellers without scam awareness. The 'verification code' variant is especially profitable — it converts into account takeovers worth far more than the original item.",
+    "faq": [
+      {
+        "q": "Is Zelle ever safe on Marketplace?",
+        "a": "Only for someone you personally know and trust. Treat Zelle as cash — irreversible. For strangers, insist on in-person cash."
+      }
+    ],
+    "related": ["craigslist-rental-scam", "ebay-overpayment-scam", "puppy-scam"]
+  },
+  {
+    "slug": "puppy-scam",
+    "title": "Puppy Scams: How Fake Breeders Steal Deposits",
+    "meta_description": "Found a perfect puppy online at a great price? Many puppy listings are scams. Here's how to verify a breeder and avoid losing your deposit.",
+    "h1": "Is the puppy listing a scam?",
+    "short_answer": "If you can't visit in person and the breeder demands payment by wire, Zelle, or gift card before shipping, almost certainly yes. Puppy scams generate hundreds of millions in losses annually — the puppy doesn't exist, photos are stolen, and the 'breeder' disappears after the deposit clears.",
+    "category": "Marketplace & rental",
+    "red_flags": [
+      "Breeder won't allow an in-person visit",
+      "Photos look professional and the same dog appears on multiple sites (reverse image search)",
+      "Demands deposit by Zelle, Western Union, or gift card",
+      "After deposit, asks for additional 'shipping insurance,' 'crate fees,' 'health certificate' fees",
+      "Vague about lineage, breeder credentials, or AKC registration",
+      "Email signature with no real address or phone"
+    ],
+    "examples": [
+      {
+        "type": "Email after initial interest",
+        "message": "Hi! Bella is still available — she's our last Yorkie of the litter at $800 (others sold at $1,500). We're located in Tennessee. Deposit $400 via Zelle to hold her, then $400 + $250 shipping when ready. We ship via specialized pet courier.",
+        "verdict": "scam",
+        "reason": "Low price below market is bait. The 'shipping' fees keep escalating — crate fee, insurance, health certificate, vaccination — every payment is the last one until you stop. The puppy never existed."
+      }
+    ],
+    "what_to_do": [
+      "Insist on visiting the breeder in person.",
+      "Reverse-image search the puppy photos — if they appear on other sites, walk away.",
+      "Verify breeder via AKC Marketplace, state breeder registries, or local breed clubs.",
+      "Use credit card only — chargeback protection is critical.",
+      "If scammed, report at petscams.com, ic3.gov, and reportfraud.ftc.gov."
+    ],
+    "why_scammers_use": "Buyers are emotionally invested — they've already named the puppy in their head. The combination of low price + emotional attachment + escalating fees keeps victims sending money past the point most other scams would alarm them.",
+    "faq": [
+      {
+        "q": "How do I find a legitimate breeder?",
+        "a": "AKC Marketplace for purebreds, breed-specific rescue groups, or in-person visits to verified local kennels. Avoid all online-only, sight-unseen purchases."
+      }
+    ],
+    "related": ["craigslist-rental-scam", "facebook-marketplace-scam", "romance-scam"]
+  },
+  {
+    "slug": "lottery-winner-scam",
+    "title": "Lottery Winner Scam: 'You've Won' Calls and Letters",
+    "meta_description": "Got a call, letter, or email saying you've won a lottery you never entered? It's a scam. Here's how the script works and what to do.",
+    "h1": "Is the lottery winning notification a scam?",
+    "short_answer": "Yes — 100% of the time when you didn't enter the lottery. Real lottery prizes don't require winners to pay 'taxes,' 'fees,' or 'insurance' upfront to claim. You cannot win a lottery you never entered. Period.",
+    "category": "Lottery & prize",
+    "red_flags": [
+      "You don't remember entering this lottery",
+      "Says you won a large sum (often $500K – $5M)",
+      "Asks you to pay 'taxes,' 'release fees,' or 'insurance' before receiving the prize",
+      "Tells you to keep the win confidential until paid",
+      "Comes via mail, email, phone, or text — never via official lottery channels",
+      "Foreign lottery: 'Spanish lottery,' 'UK lottery,' 'Canadian lottery'"
+    ],
+    "examples": [
+      {
+        "type": "Phone call",
+        "message": "Congratulations! You've won $2.5 million in the Publishers Clearing House Mega Drawing. To release your prize, we need you to pay $4,500 in federal taxes. Once received, your check will be hand-delivered.",
+        "verdict": "scam",
+        "reason": "Real lotteries don't collect taxes upfront — taxes come out of the prize. PCH publicly states they never call winners or require any payment to claim. This script has cost American seniors over $100 million annually."
+      }
+    ],
+    "what_to_do": [
+      "Hang up or delete the message.",
+      "Never send any money to claim any prize.",
+      "Tell family members, especially older relatives — these scams target seniors aggressively.",
+      "Report at reportfraud.ftc.gov and at the FBI's ic3.gov.",
+      "Sign up for the National Do Not Call Registry (donotcall.gov) — won't stop scammers but adds legal weight."
+    ],
+    "why_scammers_use": "Lottery scams exploit hope and the universal cultural narrative of life-changing windfalls. Older adults are disproportionately targeted — and lose disproportionately, often draining retirement savings over months of escalating 'fees.'",
+    "faq": [
+      {
+        "q": "What about Publishers Clearing House specifically?",
+        "a": "Real PCH winners are notified in person at their home (the 'Prize Patrol'). PCH never calls or emails about wins. Never. Anyone claiming to be PCH by phone is a scammer."
+      }
+    ],
+    "related": ["publishers-clearing-house-scam", "inheritance-scam-email", "grandparent-scam"]
+  },
+  {
+    "slug": "publishers-clearing-house-scam",
+    "title": "Publishers Clearing House Scam: 'You Won' Calls Explained",
+    "meta_description": "Got a call from 'Publishers Clearing House' saying you won millions? It's a scam. PCH never calls winners. Here's how to recognize it.",
+    "h1": "Is the Publishers Clearing House call a scam?",
+    "short_answer": "Yes, always. Publishers Clearing House never notifies winners by phone, email, text, or letter. Real PCH winners are surprised in person by the 'Prize Patrol' at their home — the entire brand is built around that televised moment. Anyone calling claiming to be PCH is a scammer.",
+    "category": "Lottery & prize",
+    "red_flags": [
+      "Caller claims you won a PCH prize",
+      "Asks for 'release fees,' 'taxes,' or 'insurance' to claim",
+      "Wants you to keep it secret",
+      "Pressures with deadlines",
+      "Caller ID shows 'PCH' or a 1-800 number"
+    ],
+    "examples": [
+      {
+        "type": "Phone call",
+        "message": "Hello, this is Dave Sayer from the Publishers Clearing House Prize Patrol. You've won $5,000 a week for life! To process the prize, we'll need you to pay $2,800 in tax preprocessing fees via Apple gift cards. Don't tell anyone — we want to surprise you on TV.",
+        "verdict": "scam",
+        "reason": "Dave Sayer is the real Prize Patrol leader (this gives credibility). But real PCH shows up in person, on TV, with cameras. Never by phone. Never with upfront fees. Never with gift cards."
+      }
+    ],
+    "what_to_do": [
+      "Hang up. Block the number.",
+      "Tell family members — especially older relatives.",
+      "Report at PCH's official fraud page: info.pch.com/consumer-protection.",
+      "Report to FTC at reportfraud.ftc.gov.",
+      "If you already sent money: report to your bank, file police report, contact ic3.gov."
+    ],
+    "why_scammers_use": "PCH is one of the most recognizable American sweepstakes brands. The 'Prize Patrol' format is so famous that callers using the name and real names from the show (like Dave Sayer) instantly gain credibility with older Americans.",
+    "faq": [
+      {
+        "q": "How does real PCH notify winners?",
+        "a": "In person, in a vehicle, often filmed for TV. They never call ahead or ask for any money."
+      }
+    ],
+    "related": ["lottery-winner-scam", "inheritance-scam-email", "grandparent-scam"]
+  },
+  {
+    "slug": "inheritance-scam-email",
+    "title": "Inheritance Scam: 'A Distant Relative Has Left You Money'",
+    "meta_description": "Got an email about a long-lost relative leaving you a fortune? It's a 419 scam — sometimes called the Nigerian prince scam. Here's how to recognize it.",
+    "h1": "Is the inheritance email a scam?",
+    "short_answer": "Yes. The 'distant relative left you millions' email is one of the oldest internet scams (also called the '419 scam' after the Nigerian penal code). Sometimes a barrister, sometimes a banker, sometimes a wealthy expat with cancer — the script is always the same. There is no inheritance.",
+    "category": "Lottery & prize",
+    "red_flags": [
+      "From a stranger claiming to be a lawyer, barrister, banker, or executor",
+      "Says a distant relative (or unnamed expat with your surname) died with no heirs",
+      "Promises millions if you'll 'claim' the inheritance",
+      "Asks for 'processing fees,' 'legal fees,' or 'tax clearance' to release the funds",
+      "Wants your bank details, copy of ID, or signature on documents",
+      "Often poorly written English, urgent tone, lots of formal-looking but fake credentials"
+    ],
+    "examples": [
+      {
+        "type": "Email",
+        "message": "Dear Friend, I am Barrister James Okafor of Lagos, Nigeria. A client with your surname recently passed away with no known relatives, leaving $14.5 million unclaimed. As an attorney, I propose we claim it together — 60% to you, 40% to me. I need only $3,400 in processing fees to begin filings. Reply urgently.",
+        "verdict": "scam",
+        "reason": "The setup is fabricated. The 'fees' will escalate — court fees, transfer fees, tax fees, anti-money-laundering fees. Each one is the last before the money is released. The money will never come."
+      }
+    ],
+    "what_to_do": [
+      "Don't reply. Replying just confirms the address.",
+      "Delete the email.",
+      "If repeated, mark as spam.",
+      "Don't share ID, banking, or signature with anyone reaching out unprompted about money.",
+      "Report at reportfraud.ftc.gov and to your local police if losses occurred."
+    ],
+    "why_scammers_use": "The inheritance scam has the highest yield per 'mark' of any classic scam — successful runs can extract tens of thousands of dollars over months. It targets greed and the universal fantasy of unexpected windfalls.",
+    "faq": [
+      {
+        "q": "What if my relative really did die abroad?",
+        "a": "Real inheritances are handled by real attorneys you can verify (bar association registration, real address, real firm website). They never collect upfront fees from beneficiaries."
+      }
+    ],
+    "related": ["lottery-winner-scam", "publishers-clearing-house-scam", "romance-scam"]
+  },
+  {
+    "slug": "health-insurance-scam-call",
+    "title": "Health Insurance Scam Calls: Fake Marketplace & ACA Pitches",
+    "meta_description": "Got a call about 'low-cost' health insurance, ACA enrollment help, or 'Medicare advantage' offers? Many are scams. Here's how to recognize them.",
+    "h1": "Is the health insurance call a scam?",
+    "short_answer": "Many are — especially during ACA open enrollment periods. Scammers cold-call selling fake plans, harvesting personal info (SSN, bank), or enrolling you in 'short-term medical' that doesn't actually cover real care. The real ACA marketplace never cold-calls.",
+    "category": "Phone scams",
+    "red_flags": [
+      "Cold call about 'ACA help,' 'Obamacare subsidy,' or 'Medicare advantage'",
+      "Asks for your full SSN, bank account, and date of birth on first call",
+      "Promises shockingly low monthly premiums ($50 or less for family coverage)",
+      "Pressure to enroll today, before you can compare",
+      "Vague about which insurer underwrites the plan",
+      "Plan turns out to be 'short-term limited duration' or 'health sharing ministry' — not real insurance"
+    ],
+    "examples": [
+      {
+        "type": "Phone call",
+        "message": "Hi, I'm calling from the Healthcare Enrollment Hotline. You qualify for a $0 premium plan with full coverage. To enroll, I just need your Social Security number, date of birth, and bank account for autopay.",
+        "verdict": "scam",
+        "reason": "The real ACA marketplace doesn't cold-call. Real brokers don't need SSN + bank on a first call. The 'plan' is either nonexistent or junk coverage that won't pay claims."
+      }
+    ],
+    "what_to_do": [
+      "Hang up on cold calls about health insurance.",
+      "For real ACA enrollment, go directly to healthcare.gov or your state exchange.",
+      "For Medicare questions, call 1-800-MEDICARE directly.",
+      "Use a local licensed broker (search nipr.com to verify license).",
+      "Report fraudulent insurance sales to your state insurance commissioner."
+    ],
+    "why_scammers_use": "Health insurance is confusing, expensive, and emotionally charged. Many Americans are willing to talk to anyone promising lower premiums — making cold-call health insurance scams highly effective.",
+    "faq": [
+      {
+        "q": "Are any cold-call insurance sales legitimate?",
+        "a": "Very few. Legitimate brokers usually require you to opt in. If you didn't request the call, default to suspicion."
+      }
+    ],
+    "related": ["medicare-cancellation-scam", "social-security-scam-call", "irs-scam-text"]
+  },
+  {
+    "slug": "electric-disconnection-scam",
+    "title": "Utility Disconnection Scam: Fake 'Pay Now or Lose Power' Calls",
+    "meta_description": "Got a call from your electric company threatening disconnection in 30 minutes? It's a scam. Here's how utility scams work and what to do.",
+    "h1": "Is the electric company disconnection call a scam?",
+    "short_answer": "Yes, almost certainly. Real utility companies don't call demanding immediate payment in gift cards or prepaid debit cards to avoid disconnection. They send written notices, often multiple, before any service interruption. Any 'pay in 30 minutes or lose power' phone call is a scam.",
+    "category": "Utility",
+    "red_flags": [
+      "Phone call claiming immediate disconnection within minutes/hours",
+      "Demands payment via gift cards (Apple, Google Play, prepaid Visa)",
+      "Demands cryptocurrency or wire transfer",
+      "Caller ID shows the real utility company name (spoofed)",
+      "Caller knows partial info about your address (gleaned from public records)",
+      "Refuses to accept payment through normal channels"
+    ],
+    "examples": [
+      {
+        "type": "Phone call",
+        "message": "This is PG&E billing. Your account is 4 months past due. A technician is on the way to disconnect power in 45 minutes unless you pay $487 immediately. We accept Apple gift cards or prepaid Visa.",
+        "verdict": "scam",
+        "reason": "No utility company accepts gift cards. Disconnections require written notice, weeks of warning, and never happen via 45-minute phone deadlines. Real PG&E (and every other utility) does not operate this way."
+      }
+    ],
+    "what_to_do": [
+      "Hang up.",
+      "Don't pay via the caller — even if you're behind on a real bill.",
+      "Call your utility company directly using the number on your actual bill (not from the caller).",
+      "Report to your state attorney general and your utility company's fraud team.",
+      "Tell family members — these scams target small business owners and elderly residents."
+    ],
+    "why_scammers_use": "The threat of losing power triggers panic, especially for small businesses (restaurants lose inventory, retail loses sales) and elderly people (medical equipment dependence). The short deadline overrides verification.",
+    "faq": [
+      {
+        "q": "What if I'm actually behind on my utility bill?",
+        "a": "Call your utility directly using the number on your bill or their official website. Real disconnection processes give you weeks, sometimes months, of written notice."
+      }
+    ],
+    "related": ["medicare-cancellation-scam", "social-security-scam-call", "irs-scam-text"]
+  },
+  {
+    "slug": "qr-code-scam",
+    "title": "QR Code Scams: 'Quishing' Attacks Explained",
+    "meta_description": "Scanned a QR code in a parking lot, on a flyer, or in an email? It might be a phishing scam. Here's how QR code attacks work and how to stay safe.",
+    "h1": "Is the QR code a scam?",
+    "short_answer": "Potentially yes. QR-code phishing ('quishing') is a fast-growing attack. Scammers replace legitimate QR codes (parking meters, restaurant menus) with malicious ones, or include fake QR codes in emails. Scanning sends you to a phishing site that looks legitimate but harvests credentials or payment info.",
+    "category": "Phone scams",
+    "red_flags": [
+      "QR sticker is clearly placed over an existing QR code (peelable, on top)",
+      "QR in unexpected places: parking meters, gas pumps, vending machines (where scammers stick fakes)",
+      "QR in email or text from unknown sender",
+      "QR in mail/flyer demanding urgent payment for parking ticket, package, etc.",
+      "Scanned URL doesn't match the expected business domain"
+    ],
+    "examples": [
+      {
+        "type": "Parking meter sticker",
+        "message": "[QR code with text: 'Scan to pay for parking — quick and contactless']",
+        "verdict": "scam",
+        "reason": "Many municipal parking systems do offer QR payment — but scammers stick fake QR stickers over real ones. The fake QR leads to a fake parking-payment site that captures your card. Always verify the URL matches the city's official domain (e.g., parkmobile.com or city.gov)."
+      },
+      {
+        "type": "Email",
+        "message": "Your Microsoft 365 account requires re-authentication. Scan the QR code below from your phone to verify quickly.",
+        "verdict": "scam",
+        "reason": "Microsoft never asks you to scan a QR code to verify. The QR leads to a phishing page that captures your Microsoft password and 2FA token."
+      }
+    ],
+    "what_to_do": [
+      "Always preview the URL before tapping — your phone shows the URL when you scan, take a moment to read it.",
+      "If the URL doesn't match the expected business (e.g., parking.cityof[yourcity].gov), don't proceed.",
+      "Be especially suspicious of QR codes in emails, texts, or stuck onto public surfaces.",
+      "When in doubt, type the URL or use the official app instead.",
+      "Report fake QR stickers to the business or city — they'll often remove them quickly."
+    ],
+    "why_scammers_use": "QR codes hide the destination URL inside an opaque image. Most people scan reflexively without checking the URL. Replacing physical QR codes is cheap, scales infinitely, and victims don't realize they've been phished until charges appear.",
+    "faq": [
+      {
+        "q": "Is it safe to scan QR codes at restaurants?",
+        "a": "Generally yes — but verify the URL goes to the restaurant's own domain. Be cautious of QR menus that ask for credit card or personal info beyond what you'd expect for ordering."
+      }
+    ],
+    "related": ["microsoft-tech-support-scam", "apple-id-locked-scam", "amazon-account-suspended-scam"]
+  },
+  {
+    "slug": "military-romance-scam",
+    "title": "Military Romance Scam: 'Deployed Soldier' Money Requests",
+    "meta_description": "Met a soldier online who's 'deployed' and now asking for money? It's a romance scam using military identity. Here's how to recognize it.",
+    "h1": "Is the deployed soldier I met online a scam?",
+    "short_answer": "Yes, almost certainly. Real US military personnel rarely contact strangers online claiming to be deployed and asking for money. Active-duty soldiers don't need civilians to send them iTunes cards, satellite phone fees, or leave-request bribes. The 'deployed soldier' is the most-used romance scam persona on dating apps and social media.",
+    "category": "Romance & investment",
+    "red_flags": [
+      "Profile photo of a soldier (often stolen from real military social media)",
+      "Claims to be deployed in 'Syria,' 'Afghanistan,' 'Iraq,' or 'a classified location'",
+      "Can't video call due to 'security protocol' or 'classified deployment'",
+      "Says 'I love you' within days or weeks",
+      "Eventually requests money for: satellite phone, leave application, customs fee, medical emergency, plane ticket home",
+      "Uses military jargon incorrectly or oddly"
+    ],
+    "examples": [
+      {
+        "type": "Message after weeks of chat",
+        "message": "Sweetheart, I want to come home to you. To get emergency leave, my commander needs $2,400 in 'leave application fees' wired today. The US Army doesn't reimburse this kind of thing — I need help.",
+        "verdict": "scam",
+        "reason": "The US military does not charge soldiers fees for leave. Real soldiers never need civilians to wire money for any military process. This script has scammed Americans out of $300+ million annually."
+      }
+    ],
+    "what_to_do": [
+      "Reverse-image search the profile photo. Real soldiers' photos are often stolen from public Facebook/Instagram of actual military personnel.",
+      "Insist on a live video call. Scammers can't, or use deepfakes that fail under questioning.",
+      "Never send money to someone you haven't met in person.",
+      "Report at the US Army CID's official site (cid.army.mil/report).",
+      "Talk to a trusted family member — isolation is part of the scam."
+    ],
+    "why_scammers_use": "The military persona evokes immediate trust, respect, and patriotism — emotional armor that bypasses skepticism. Combined with the romance angle, it's one of the most effective scam structures ever developed.",
+    "faq": [
+      {
+        "q": "What if he/she really is a soldier?",
+        "a": "Real soldiers have family, phones, bank accounts, and access to military finance. They don't need strangers online to wire them money. Ever."
+      }
+    ],
+    "related": ["romance-scam", "pig-butchering-scam", "grandparent-scam"]
+  },
+  {
+    "slug": "irs-tax-refund-scam-email",
+    "title": "IRS Tax Refund Email Scam: 'Click to Claim Your Refund'",
+    "meta_description": "Got an email about an IRS tax refund waiting to be claimed? It's a scam. The real IRS never emails about refunds.",
+    "h1": "Is the IRS tax refund email a scam?",
+    "short_answer": "Yes — the IRS does not email taxpayers about refunds. Ever. Real IRS communications about refunds happen via direct deposit (if you set it up) or paper check by mail. Any email claiming you have an unclaimed refund and asking you to click a link is phishing.",
+    "category": "Government impersonation",
+    "red_flags": [
+      "Sender domain is not @irs.gov — common fakes: irs-refunds.us, irs.taxservice.com, refundprocessing-irs.net",
+      "Asks for your SSN, date of birth, and bank info to 'release' the refund",
+      "Urgency: 'claim within 24 hours or refund expires'",
+      "Logo and formatting look professional",
+      "Refund amount is specific and oddly plausible (e.g., $1,847.30)"
+    ],
+    "examples": [
+      {
+        "type": "Email",
+        "message": "Internal Revenue Service — Tax Refund Notification. You are eligible for a refund of $2,374.85. To process, verify your information here: irs-refundclaim.gov-us.com. Refund expires within 24 hours.",
+        "verdict": "scam",
+        "reason": "Real IRS domain is irs.gov — anything else is fake. Refunds don't expire. Personal info shouldn't be re-submitted via email link. Pattern is universal to phishing."
+      }
+    ],
+    "what_to_do": [
+      "Don't tap any link.",
+      "If you want to check refund status, go directly to irs.gov/refunds and use 'Where's My Refund.'",
+      "Forward IRS phishing emails to phishing@irs.gov.",
+      "Delete and block.",
+      "If you entered info on a fake page: file an identity theft report at identitytheft.gov and place a credit freeze."
+    ],
+    "why_scammers_use": "Tax refund scams spike every tax season and never go away. Most Americans expect a refund, so the message feels plausible. SSN + DOB + bank account = a complete identity-theft kit ready for resale on the dark web.",
+    "faq": [
+      {
+        "q": "How does the IRS contact me about my refund?",
+        "a": "By direct deposit (silent) or paper check by mail. Sometimes an automated phone update if you opted in. Never by email or text."
+      }
+    ],
+    "related": ["irs-scam-text", "social-security-scam-call", "unemployment-benefits-scam"]
   }
 ]
