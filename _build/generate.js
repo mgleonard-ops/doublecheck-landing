@@ -197,6 +197,7 @@ function buildSitemap(scams, guides, advisorPages) {
     { loc: 'https://mydoublecheck.app/scams', priority: '0.9', changefreq: 'weekly' },
     { loc: 'https://mydoublecheck.app/advisor', priority: '0.9', changefreq: 'weekly' },
     { loc: 'https://mydoublecheck.app/advisors', priority: '0.85', changefreq: 'monthly' },
+    { loc: 'https://calculator.mydoublecheck.app/', priority: '0.8', changefreq: 'monthly' },
     { loc: 'https://mydoublecheck.app/support', priority: '0.5', changefreq: 'monthly' },
     { loc: 'https://mydoublecheck.app/privacy', priority: '0.3', changefreq: 'yearly' },
     { loc: 'https://mydoublecheck.app/terms', priority: '0.3', changefreq: 'yearly' }
