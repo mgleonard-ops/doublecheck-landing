@@ -148,5 +148,237 @@
       }
     ],
     "related_scams": ["chase-fraud-alert-text-scam", "wells-fargo-text-scam", "bank-of-america-scam-text", "capital-one-fraud-alert-scam", "zelle-scam", "direct-deposit-change-scam"]
+  },
+  {
+    "slug": "double-check-vs-truecaller",
+    "title": "Double Check vs Truecaller: Which Scam Protection App Should You Use?",
+    "meta_description": "Truecaller identifies callers. Double Check analyzes the content of suspicious texts, emails, and screenshots. Here's how to choose — or use both.",
+    "h1": "Double Check vs Truecaller — honest comparison",
+    "lede": "Truecaller and Double Check are often searched together, but they solve different problems. Truecaller tells you who is calling. Double Check tells you whether what they sent you is a scam. Here's what each does well, where each falls short, and which one (or both) you should be using in 2026.",
+    "sections": [
+      {
+        "h": "What each app actually does",
+        "p": ["<strong>Truecaller</strong> is a caller ID and spam-call blocker. Its core feature is a crowdsourced database of phone numbers — when an unknown number calls, it shows you a name (sometimes), a spam score, and a reason if the number has been reported. It also blocks calls flagged as spam. Truecaller is huge in India, Africa, the Middle East, and parts of Europe. It has a US presence but the US dataset is far weaker than its India dataset.", "<strong>Double Check</strong> is an AI scam-content analyzer. You paste a text message, forward an email, or upload a screenshot — Double Check reads what the sender actually wrote and tells you in plain English whether it's a scam, requires action, or is safe. It works on any sender, no database required. Double Check is US-only."]
+      },
+      {
+        "h": "What Truecaller is good at",
+        "p": ["Identifying unknown callers — especially in countries where its database is dense.", "Auto-blocking known spam numbers before they ever ring.", "A reverse phone-number lookup that often beats the free US options.", "Free tier is functional; paid tier removes ads and adds features."]
+      },
+      {
+        "h": "Where Truecaller falls short for US users",
+        "p": ["Scammers rotate phone numbers constantly — a brand-new number used for the first time has no history, so Truecaller has nothing to say about it.", "Truecaller can't tell you whether the message a sender sent you is a scam — only whether the number has been flagged before.", "It cannot help with email scams, package-delivery texts from random numbers, or screenshot-based scam analysis.", "Privacy concerns: Truecaller historically uploaded users' entire contact lists to build its database. Their policy has evolved but the model still depends on shared contact data."]
+      },
+      {
+        "h": "What Double Check is good at",
+        "p": ["Reading the actual content of suspicious messages — the part that contains the scam.", "Working immediately on first-contact scams (new numbers, new email addresses, never-seen URLs) where reputation databases fail.", "Handling texts, emails, screenshots, and website URLs in one app.", "Plain-English verdicts with a 'what to do next' answer — designed for older users, not security experts.", "Forwarding suspicious emails to scan@mydoublecheck.app and getting a verdict by reply — no app required.", "Family-share alerts so an adult child gets notified when a parent receives something suspicious."]
+      },
+      {
+        "h": "Where Double Check falls short",
+        "p": ["Does not block calls or texts — only analyzes what you paste in.", "Doesn't identify the caller behind a phone number.", "US-only at launch.", "Requires the user to actively check rather than working passively in the background."]
+      },
+      {
+        "h": "Which one should you use?",
+        "p": ["<strong>If your main problem is spam phone calls:</strong> Truecaller (or your carrier's free spam-filter, which is often as good in the US).", "<strong>If your main problem is suspicious texts, emails, or messages you can't tell are real:</strong> Double Check.", "<strong>If you're protecting an older parent:</strong> Double Check, because the scams that take real money are content-based (fake bank alerts, fake delivery notices, romance scams) — not robocalls. Robocalls are annoying; scam content is what causes the $5,000 wire transfer.", "<strong>The pragmatic answer:</strong> use both. Truecaller for incoming calls, Double Check for any message that gives you a moment of doubt. They don't overlap."]
+      },
+      {
+        "h": "The honest disclosure",
+        "p": ["We make Double Check, so this comparison is not neutral. We tried to be fair to Truecaller — it's a good product for what it does. The summary above is what we'd tell a friend who asked."]
+      }
+    ],
+    "related_scams": ["irs-scam-text", "usps-delivery-text-scam", "chase-fraud-alert-text-scam"]
+  },
+  {
+    "slug": "double-check-vs-hiya",
+    "title": "Double Check vs Hiya: Caller ID vs Scam Message Analysis",
+    "meta_description": "Hiya blocks spam calls. Double Check analyzes the content of suspicious texts and emails. Different problems, different tools — here's how to choose.",
+    "h1": "Double Check vs Hiya — honest comparison",
+    "lede": "Hiya is one of the largest call-identification and spam-blocking services in the US — it powers Samsung's built-in caller ID and AT&T's Call Protect. Double Check does something completely different: it reads suspicious messages and tells you if they're scams. Here's what each is for, and which you should pick in 2026.",
+    "sections": [
+      {
+        "h": "What each does",
+        "p": ["<strong>Hiya</strong> is a phone-number reputation service. It identifies incoming callers, flags spam and scam calls, and auto-blocks the worst ones. It's deeply integrated into Samsung phones (Smart Call) and several US carrier apps. The free app does the basics; the paid tier adds reverse lookup and more aggressive blocking.", "<strong>Double Check</strong> is an AI-powered scam-content analyzer. Paste a text, forward an email, upload a screenshot — Double Check tells you in plain English whether it's a scam and what to do. It works on any message regardless of sender reputation."]
+      },
+      {
+        "h": "What Hiya is good at",
+        "p": ["Blocking known spam and robocalls in real time — its database is among the largest in the US.", "Pre-installed on most Samsung phones (Smart Call is Hiya under the hood) — for many users it's already running.", "Identifying business callers — when a legitimate company calls you, Hiya often shows the business name even if the number isn't in your contacts.", "Lightweight and battery-friendly."]
+      },
+      {
+        "h": "Where Hiya falls short",
+        "p": ["Useless against brand-new scam numbers — when a scammer rotates to a fresh number, there's no reputation data yet.", "Cannot evaluate the content of a text or email — only the sender's number.", "No protection against email scams, web-based scams, or screenshot-based scams.", "Limited free tier — many actually-useful features (lookup, more blocking) require a subscription."]
+      },
+      {
+        "h": "What Double Check is good at",
+        "p": ["Analyzing the words in any suspicious message, regardless of who sent it.", "Catching first-contact scams (new sender, new domain, never-seen URL) where reputation databases are blind.", "Works across SMS, email, screenshots, and website URLs.", "Plain-English answers built for older users — 'this is a scam, here's what to do' rather than a confidence score.", "Optional family alerts so an adult child gets notified when a parent receives something suspicious."]
+      },
+      {
+        "h": "Where Double Check falls short",
+        "p": ["Does not block calls — won't stop a robocall from ringing your phone.", "Doesn't identify unknown callers.", "Requires the user to actively check a suspicious message rather than working passively."]
+      },
+      {
+        "h": "Which one should you use?",
+        "p": ["<strong>If unwanted calls are your primary annoyance:</strong> Hiya (or your phone's built-in spam filter, which is often Hiya-powered).", "<strong>If you or a family member keeps getting suspicious texts, emails, or DMs you can't immediately classify:</strong> Double Check.", "<strong>For an older parent at risk of being scammed out of real money:</strong> Double Check. The scams that cause financial losses are almost always content-driven (a fake bank alert, a fake delivery notice, a romance scam) — not robocalls. Hiya can't help once the bad message arrives.", "<strong>Realistic stack:</strong> let Hiya (or your built-in caller ID) handle calls, and use Double Check for any message that gives you a moment of doubt."]
+      },
+      {
+        "h": "Disclosure",
+        "p": ["We build Double Check. Hiya is a competitor in adjacent territory, not direct overlap. We've tried to describe both honestly — if you've had a different experience with either, the comparison should still help you decide."]
+      }
+    ],
+    "related_scams": ["irs-scam-text", "usps-delivery-text-scam", "social-security-scam-text"]
+  },
+  {
+    "slug": "double-check-vs-norton-genie",
+    "title": "Double Check vs Norton Genie: Which AI Scam Detector Should You Use?",
+    "meta_description": "Norton Genie and Double Check are both AI scam-content analyzers. Here's how they compare on accuracy, ease of use, family features, and price.",
+    "h1": "Double Check vs Norton Genie — honest comparison",
+    "lede": "Norton Genie is the closest direct competitor to Double Check — both are AI-powered scam-content analyzers. You paste a message, get a verdict. Here's how they actually differ in 2026: features, who they're built for, what each gets right, and what's missing.",
+    "sections": [
+      {
+        "h": "What each does",
+        "p": ["<strong>Norton Genie</strong> is a free AI scam-detection tool from Gen Digital (the company behind Norton and Avast). You paste text, upload a screenshot, or share a URL — Genie tells you if it looks like a scam, explains why, and suggests next steps. Launched as part of Norton's broader cyber-safety push.", "<strong>Double Check</strong> is also a free-to-start AI scam-content analyzer. Same core flow: paste / upload / forward, get a verdict in plain English with a 'what to do' answer. The differences are in the details — speed, family features, advisor integration, and how the verdicts read."]
+      },
+      {
+        "h": "Where Norton Genie is strong",
+        "p": ["Backed by Norton — instant brand trust, especially for users already inside the Norton ecosystem.", "Free tier with no signup required for basic checks.", "Available as a website, browser extension, and mobile app.", "Integrates with Norton 360 if you're already a subscriber — a single dashboard for security."]
+      },
+      {
+        "h": "Where Norton Genie falls short",
+        "p": ["Verdicts are written in a fairly technical voice — fine for tech-confident users, harder for the older adults most likely to be scammed.", "No family-share or notify-family features built in — the user is on their own.", "No forwarding-by-email option (you can't just forward a suspicious email and get a reply).", "Heavy upsell to the broader Norton 360 paid suite once you engage."]
+      },
+      {
+        "h": "Where Double Check is strong",
+        "p": ["Verdict language is intentionally plain — written for people who don't think about cybersecurity day-to-day.", "<strong>Forward to scan@mydoublecheck.app</strong> — turn any email into a check by forwarding it, no app needed. Reply comes back with the verdict.", "<strong>Family alerts</strong> — set up an adult child's email and they get notified when a parent receives something suspicious.", "<strong>Built-in 'what to do' guidance</strong> — every verdict ends with concrete next steps, not just a risk score.", "<strong>Crowd signal</strong> — when a sender's already been reported by other Double Check users, you see how many times.", "<strong>Advisor integration</strong> — financial advisors can deploy it to elderly client households as part of a client-protection program."]
+      },
+      {
+        "h": "Where Double Check falls short",
+        "p": ["No browser extension yet — Norton Genie has this; we don't.", "US-only at launch — Norton has global reach.", "Smaller brand — if you've never heard of Double Check, it requires a leap of faith Norton doesn't."]
+      },
+      {
+        "h": "Pricing",
+        "p": ["<strong>Norton Genie:</strong> Free; pushes you toward Norton 360 paid bundles ($60+/yr).", "<strong>Double Check:</strong> Free tier (3 checks). Paid tier removes limits, adds family alerts and forward-by-email — single-digit monthly price."]
+      },
+      {
+        "h": "Which should you pick?",
+        "p": ["<strong>If you're already inside Norton's ecosystem and want one dashboard:</strong> Norton Genie.", "<strong>If you're checking on behalf of an older parent, or you want the message language to be readable by someone non-technical:</strong> Double Check.", "<strong>If you want family-alert features so an adult child gets notified:</strong> Double Check — Genie doesn't have this.", "<strong>If you want a forward-to-an-email-address flow:</strong> Double Check — that flow doesn't exist in Genie."]
+      },
+      {
+        "h": "Disclosure",
+        "p": ["Double Check is our product. We've tried to be fair to Norton Genie — it's a real product solving a real problem, and Norton's distribution dwarfs ours. The differences above are factual as of 2026; if either product changes, this guide will be updated."]
+      }
+    ],
+    "related_scams": ["irs-scam-text", "amazon-account-suspended-scam", "pig-butchering-scam"]
+  },
+  {
+    "slug": "double-check-vs-scamadviser",
+    "title": "Double Check vs ScamAdviser: Website Checker vs Message Analyzer",
+    "meta_description": "ScamAdviser rates websites. Double Check analyzes the message that led you to the website. Here's which one solves which problem.",
+    "h1": "Double Check vs ScamAdviser — honest comparison",
+    "lede": "ScamAdviser and Double Check both show up when you search for scam-checking tools, but they're built for different moments. ScamAdviser rates whether a website is trustworthy. Double Check tells you whether a message (text, email, screenshot) is a scam. Most people need both, but at different times.",
+    "sections": [
+      {
+        "h": "What each does",
+        "p": ["<strong>ScamAdviser</strong> is a website trust-rating service. You paste in a URL — ScamAdviser returns a 0-100 trust score based on domain age, hosting location, SSL certificate, traffic patterns, and crowdsourced reviews. It's been around since 2012 and has rated tens of millions of sites.", "<strong>Double Check</strong> reads the actual content of suspicious messages — text, email, screenshot — and tells you whether the message is a scam, what kind, and what to do. URL analysis is part of what it does, but it's not the whole product."]
+      },
+      {
+        "h": "What ScamAdviser is good at",
+        "p": ["Quick risk-rating of a specific website you're about to buy from or hand details to.", "Useful for shopping decisions — 'is this Black Friday deal site legit?'", "Free for casual use; paid API for businesses.", "Browser extension that warns you as you browse."]
+      },
+      {
+        "h": "Where ScamAdviser falls short",
+        "p": ["Only useful if you already have a URL — most scams don't start with a website, they start with a message.", "Cannot evaluate text-message scams, email scams, or screenshot-based scams.", "Trust scores can be misleading for brand-new legitimate sites (low score because the domain is young) and for sophisticated scams (high score because the scammer set things up properly).", "Doesn't tell you what to do — just gives a number."]
+      },
+      {
+        "h": "What Double Check is good at",
+        "p": ["Reading any suspicious message and explaining in plain English whether it's a scam.", "Handles text, email, screenshots, and URLs all in one place.", "Returns a verdict with reasoning and a 'what to do next' answer — not just a score.", "Built for non-technical users (older adults, in particular).", "Family-alert feature so an adult child gets notified about suspicious messages received by a parent."]
+      },
+      {
+        "h": "Where Double Check falls short",
+        "p": ["For 'is this random shopping site legit?' style queries, ScamAdviser's specialized rating is more focused.", "No browser extension yet — ScamAdviser has this."]
+      },
+      {
+        "h": "Which should you use?",
+        "p": ["<strong>'I'm about to enter my card on this website I've never used — is it real?'</strong> → ScamAdviser.", "<strong>'I got this weird text / email / DM — is it a scam?'</strong> → Double Check.", "<strong>'My elderly parent keeps getting suspicious messages — how do I protect them?'</strong> → Double Check, with family alerts on.", "<strong>'I'm doing a quick safety check on a delivery-tracking page someone texted me'</strong> → either works, but Double Check also reads the message that delivered the link.", "<strong>The realistic stack:</strong> bookmark ScamAdviser for one-off site checks. Install Double Check (or have a parent install it) for the continuous flow of suspicious messages that arrive every week."]
+      },
+      {
+        "h": "Disclosure",
+        "p": ["We make Double Check. ScamAdviser is a different category of tool, not a direct competitor — so this comparison should be useful even if you end up using both."]
+      }
+    ],
+    "related_scams": ["fake-online-store-scam", "amazon-account-suspended-scam", "usps-delivery-text-scam"]
+  },
+  {
+    "slug": "double-check-vs-robokiller",
+    "title": "Double Check vs RoboKiller: Call Blocker vs Scam Message Analyzer",
+    "meta_description": "RoboKiller blocks spam calls and texts. Double Check analyzes the suspicious messages that get through. Here's how to choose — or use both.",
+    "h1": "Double Check vs RoboKiller — honest comparison",
+    "lede": "RoboKiller is one of the best-known spam-call and spam-text blockers in the US. Double Check is an AI scam-content analyzer. They sit at different points in the scam-defense chain — RoboKiller tries to stop messages before they reach you, Double Check tells you what to do with the ones that get through. Here's an honest look at both in 2026.",
+    "sections": [
+      {
+        "h": "What each does",
+        "p": ["<strong>RoboKiller</strong> blocks spam and scam calls and texts. It uses a large database of known bad numbers plus AI 'predictive' detection to catch new ones. The signature feature is 'Answer Bots' — pre-recorded scripts that waste scammers' time when they get through. Paid product, usually around $4/month.", "<strong>Double Check</strong> doesn't block anything. It reads the content of any suspicious message you paste in (or forward by email, or screenshot) and tells you in plain English whether it's a scam, what kind, and what to do. Free to start."]
+      },
+      {
+        "h": "What RoboKiller is good at",
+        "p": ["Aggressive call and SMS blocking — one of the more effective US-market blockers.", "Answer Bots — entertaining, mildly satisfying, and arguably waste scammer resources.", "Detailed call-history and spam reports.", "Works across iOS and Android."]
+      },
+      {
+        "h": "Where RoboKiller falls short",
+        "p": ["Cannot block messages from real people, mixed senders, or first-contact scammers using new numbers — these get through.", "Cannot help with email scams or scams that arrive via WhatsApp, iMessage, social DMs, marketplace messages, etc.", "Doesn't tell you anything about WHY a message is a scam, or what to do if you already responded.", "Paid-only — no useful free tier."]
+      },
+      {
+        "h": "What Double Check is good at",
+        "p": ["Analyzing the content of any suspicious message that does reach you, regardless of channel — SMS, email, screenshot, URL.", "Catching first-contact scams where number-blocking is useless.", "Plain-English verdicts and 'what to do' guidance, not just a block.", "Family-alert feature so an adult child gets notified about suspicious messages received by a parent.", "Forwarding to scan@mydoublecheck.app for email-based checking with no app required.", "Free tier you can actually use."]
+      },
+      {
+        "h": "Where Double Check falls short",
+        "p": ["Doesn't block anything — won't stop the calls or texts from arriving.", "Requires the user to actively check rather than working in the background.", "Doesn't do call screening or answer bots."]
+      },
+      {
+        "h": "Which should you use?",
+        "p": ["<strong>If your main pain is the volume of spam calls and texts ringing your phone:</strong> RoboKiller. It's good at the volume problem.", "<strong>If your main pain is figuring out which messages are real scams that cost you money:</strong> Double Check.", "<strong>For an older parent at scam risk:</strong> Double Check first, because the messages that cause real losses (fake bank fraud alerts, romance scams, fake delivery notices) often come from numbers no blocker has flagged yet. RoboKiller is a useful addition once the core scam-analysis is in place.", "<strong>Combined stack:</strong> RoboKiller blocks the obvious junk so your phone is quieter, and Double Check handles anything that gets through and gives you a moment of doubt."]
+      },
+      {
+        "h": "Disclosure",
+        "p": ["We make Double Check. RoboKiller solves an adjacent problem and is a credible product — we'd recommend it if blocking is your main need. The summary above is what we'd say to a friend."]
+      }
+    ],
+    "related_scams": ["irs-scam-text", "social-security-scam-text", "medicare-cancellation-scam"]
+  },
+  {
+    "slug": "us-scam-losses-2026-statistics",
+    "title": "US Scam Losses 2026: Statistics, Trends & Sources",
+    "meta_description": "Up-to-date statistics on US scam losses in 2026: FTC Sentinel data, FBI IC3 reports, AARP elder fraud research. Numbers, trends, and citations.",
+    "h1": "US scam losses in 2026 — statistics and sources",
+    "lede": "Hard numbers on how much Americans are losing to scams, who is most affected, which scams are growing fastest, and where the data comes from. This page is updated as new federal and industry reports are released. All figures are cited so journalists, advisors, and researchers can verify.",
+    "sections": [
+      {
+        "h": "Headline numbers",
+        "p": ["According to the FTC Consumer Sentinel Network, US consumers reported losing more than <strong>$10 billion to fraud in 2023</strong> — the first year losses crossed that threshold, and a 14 percent increase over 2022. 2024 figures showed continued growth, with <strong>$12.5 billion in reported losses</strong>. Early 2026 indicators from the FTC suggest losses remain on the same trajectory.", "The FBI's Internet Crime Complaint Center (IC3) reported <strong>$12.5 billion in losses from internet-enabled crime in 2023</strong>, the most recent full year. Elder fraud specifically (victims age 60+) accounted for <strong>$3.4 billion of that figure</strong> — an 11 percent increase over the prior year and the highest-loss age cohort by a wide margin.", "AARP's Fraud Watch Network estimates that elder fraud losses are dramatically under-reported, with the true annual cost to Americans 60+ likely exceeding <strong>$28 billion</strong> when unreported incidents are included."]
+      },
+      {
+        "h": "Where the money goes",
+        "p": ["<strong>Investment scams</strong> are now the single largest loss category by dollar value. The FTC reported $4.6 billion in investment-scam losses in 2023, driven heavily by 'pig butchering' — long-con romance-into-investment schemes typically built around fake crypto-trading platforms.", "<strong>Imposter scams</strong> (government, business, family/friend impersonation) cost Americans $2.7 billion in 2023.", "<strong>Online shopping fraud</strong> accounted for $392 million, but this is widely considered the most under-reported category because individual losses are smaller.", "<strong>Romance scams</strong> directly accounted for $1.14 billion, but the line between 'romance' and 'investment' has blurred — many romance scams convert to investment scams within weeks."]
+      },
+      {
+        "h": "How victims are contacted",
+        "p": ["Phone (calls and SMS) remains the highest-loss contact method by dollar volume — losses per phone-initiated scam tend to be larger because of the social-engineering depth phone calls allow.", "Email is the highest-volume contact method by reports filed, though average losses per email-initiated scam are lower than phone.", "Social media is the fastest-growing channel, with the FTC reporting that <strong>1 in 4 fraud reports filed by people who lost money in 2023 said the contact started on social media</strong> — and the median individual loss was higher than any other channel.", "Text-message scams (smishing) grew an estimated 58 percent year-over-year through 2024 and continue to be among the most-reported scam vectors."]
+      },
+      {
+        "h": "Elder fraud: the disproportionate impact",
+        "p": ["Adults 60 and older filed <strong>101,068 fraud complaints with IC3 in 2023</strong>, with average loss per victim of <strong>$33,915</strong> — roughly twice the average loss across all age groups.", "Victims 80+ had the highest average loss of any age cohort, at <strong>over $45,000 per incident.</strong>", "Tech support scams disproportionately affect older adults: 60+ victims account for roughly 60 percent of tech-support-scam losses despite being a smaller share of the online population.", "FINRA's Investor Education Foundation estimates that for every $1 of elder financial exploitation reported, an estimated $24 goes unreported — driven by victim shame, cognitive decline, and fear of family intervention."]
+      },
+      {
+        "h": "What's growing fastest",
+        "p": ["<strong>AI-voice impersonation</strong> ('grandparent scams' using cloned voices) — reports tripled between 2023 and 2024. Average loss is among the highest of any scam type.", "<strong>Pig-butchering investment scams</strong> — IC3 logged a 53 percent year-over-year increase in losses through 2023 and the growth continued through 2024.", "<strong>Job scams</strong> — driven by remote-work culture, with median individual losses rising as scammers ask for upfront 'equipment' or 'training' fees.", "<strong>Toll-pass and delivery text scams</strong> — the volume of E-ZPass and USPS-delivery smishing has exploded since 2024, with several states issuing advisories."]
+      },
+      {
+        "h": "Sources",
+        "p": ["<strong>FTC Consumer Sentinel Network Data Book</strong> — annual report from the Federal Trade Commission summarizing fraud, identity theft, and other consumer complaints. Public at ftc.gov.", "<strong>FBI Internet Crime Report (IC3)</strong> — annual report from the FBI's Internet Crime Complaint Center. Public at ic3.gov.", "<strong>AARP Fraud Watch Network</strong> — research arm of AARP focused specifically on fraud targeting older Americans. Public at aarp.org/money/scams-fraud.", "<strong>FINRA Investor Education Foundation</strong> — funds research on elder financial exploitation, including the widely cited 24:1 underreporting estimate.", "All figures on this page are taken from these public sources. If you need original-source links for a citation, contact press@mydoublecheck.app."]
+      },
+      {
+        "h": "Citation",
+        "p": ["This page is updated as new FTC and FBI reports are released. If you cite figures in journalism or research, please cite the original source (FTC, FBI IC3, AARP, or FINRA) rather than this page — we are a secondary aggregator, not a primary research source."]
+      }
+    ],
+    "related_scams": ["pig-butchering-scam", "grandparent-scam", "irs-scam-text", "medicare-cancellation-scam"]
   }
 ]

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Double Check vs Hiya: Caller ID vs Scam Message Analysis</title>
+  <meta name="description" content="Hiya blocks spam calls. Double Check analyzes the content of suspicious texts and emails. Different problems, different tools — here's how to choose." />
+  <link rel="canonical" href="https://mydoublecheck.app/guides/double-check-vs-hiya" />
+  <meta name="apple-itunes-app" content="app-id=6761861061" />
+  <meta property="og:title" content="Double Check vs Hiya: Caller ID vs Scam Message Analysis" />
+  <meta property="og:description" content="Hiya blocks spam calls. Double Check analyzes the content of suspicious texts and emails. Different problems, different tools — here's how to choose." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mydoublecheck.app/guides/double-check-vs-hiya" />
+  <meta property="og:image" content="https://mydoublecheck.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mydoublecheck.app/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://mydoublecheck.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Scam guide",
+        "item": "https://mydoublecheck.app/scams"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Double Check vs Hiya — honest comparison",
+        "item": "https://mydoublecheck.app/guides/double-check-vs-hiya"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Double Check vs Hiya: Caller ID vs Scam Message Analysis",
+    "description": "Hiya blocks spam calls. Double Check analyzes the content of suspicious texts and emails. Different problems, different tools — here's how to choose.",
+    "url": "https://mydoublecheck.app/guides/double-check-vs-hiya",
+    "image": "https://mydoublecheck.app/og-image.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Double Check"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Double Check",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mydoublecheck.app/favicon.svg"
+      }
+    },
+    "datePublished": "2026-05-21",
+    "dateModified": "2026-05-21"
+  }
+]</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f172a; --navy-mid: #1e293b;
+      --blue: #2563eb; --blue-dark: #1d4ed8; --blue-light: #eff6ff; --blue-mid: #dbeafe;
+      --green: #16a34a; --green-light: #f0fdf4;
+      --red: #dc2626; --red-light: #fef2f2;
+      --text: #0f172a; --muted: #475569; --subtle: #94a3b8;
+      --border: #e2e8f0; --bg: #fafaf9; --bg-subtle: #f4f4f0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,249,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; }
+    .logo { font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--blue); }
+    .nav-right { display: flex; align-items: center; gap: 8px; }
+    .nav-link { font-size: 15px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 8px; }
+    .nav-link:hover { color: var(--text); background: var(--bg-subtle); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; font-family: inherit; transition: all 0.15s; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue-dark); }
+
+    .crumb-wrap { background: var(--bg); border-bottom: 1px solid var(--border); }
+    .crumb { max-width: 760px; margin: 0 auto; padding: 14px 24px; font-size: 14px; color: var(--muted); }
+    .crumb a { color: var(--blue); text-decoration: none; }
+    .crumb-sep { margin: 0 6px; color: var(--subtle); }
+
+    .article { max-width: 760px; margin: 0 auto; padding: 40px 24px 60px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-light); border: 1px solid var(--blue-mid); border-radius: 20px; padding: 5px 14px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.6px; }
+    h1 { font-size: clamp(32px, 5.5vw, 48px); font-weight: 800; line-height: 1.12; letter-spacing: -0.6px; margin-bottom: 22px; }
+
+    .lede { font-size: 21px; color: var(--muted); line-height: 1.6; font-weight: 500; margin-bottom: 40px; padding: 22px 24px; background: var(--bg-subtle); border-left: 3px solid var(--blue); border-radius: 0 12px 12px 0; }
+
+    .sec { margin-bottom: 44px; }
+    .sec h2 { font-size: 26px; font-weight: 800; margin-bottom: 18px; letter-spacing: -0.3px; padding-bottom: 10px; border-bottom: 2px solid var(--border); }
+    .sec p { font-size: 17px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+    .sec p strong { color: var(--text); font-weight: 700; }
+    .sec p a { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
+    .sec p a:hover { color: var(--blue-dark); }
+
+    .app-cta { background: var(--navy); color: #fff; border-radius: 16px; padding: 40px 32px; margin: 50px 0; text-align: center; }
+    .app-cta h3 { font-size: 26px; font-weight: 800; margin-bottom: 12px; color: #fff; }
+    .app-cta p { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.6; }
+    .app-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .app-cta .btn-primary { background: #fff; color: var(--navy); }
+    .app-cta .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; }
+
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .related-card { background: #fff; border: 1.5px solid var(--border); border-radius: 12px; padding: 18px; text-decoration: none; display: block; transition: all 0.15s; }
+    .related-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37,99,235,0.1); }
+    .related-title { font-size: 16px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+    .related-sub { font-size: 14px; color: var(--muted); }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 52px 24px 36px; margin-top: 60px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+    .footer-logo { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .footer-logo span { color: #60a5fa; }
+    .footer-brand p { font-size: 15px; max-width: 240px; line-height: 1.6; }
+    .footer-links { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-col h5 { font-size: 12px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: 15px; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 9px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .footer-bottom p { font-size: 13px; }
+    .footer-disclaimer { font-size: 13px; color: rgba(255,255,255,0.35); }
+
+    @media (max-width: 560px) { .nav-link { display: none; } .footer-top { flex-direction: column; } }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Double<span>Check</span></a>
+    <div class="nav-right">
+      <a href="/scams" class="nav-link">Scam guide</a>
+      <a href="/advisors" class="nav-link">For advisors</a>
+      <a href="https://apps.apple.com/app/id6761861061" class="btn btn-primary" target="_blank" rel="noopener">Download the App</a>
+    </div>
+  </div>
+</nav>
+
+<div class="crumb-wrap">
+  <div class="crumb">
+    <a href="/">Home</a>
+    <span class="crumb-sep">/</span>
+    <a href="/scams">Scam guide</a>
+    <span class="crumb-sep">/</span>
+    <span>Double Check vs Hiya — honest comparison</span>
+  </div>
+</div>
+
+<article class="article">
+  <div class="eyebrow">In-depth guide</div>
+  <h1>Double Check vs Hiya — honest comparison</h1>
+  <div class="lede">Hiya is one of the largest call-identification and spam-blocking services in the US — it powers Samsung's built-in caller ID and AT&T's Call Protect. Double Check does something completely different: it reads suspicious messages and tells you if they're scams. Here's what each is for, and which you should pick in 2026.</div>
+
+  <section class="sec">
+    <h2>What each does</h2>
+    <p><strong>Hiya</strong> is a phone-number reputation service. It identifies incoming callers, flags spam and scam calls, and auto-blocks the worst ones. It's deeply integrated into Samsung phones (Smart Call) and several US carrier apps. The free app does the basics; the paid tier adds reverse lookup and more aggressive blocking.</p>
+    <p><strong>Double Check</strong> is an AI-powered scam-content analyzer. Paste a text, forward an email, upload a screenshot — Double Check tells you in plain English whether it's a scam and what to do. It works on any message regardless of sender reputation.</p>
+  </section>
+
+  <section class="sec">
+    <h2>What Hiya is good at</h2>
+    <p>Blocking known spam and robocalls in real time — its database is among the largest in the US.</p>
+    <p>Pre-installed on most Samsung phones (Smart Call is Hiya under the hood) — for many users it's already running.</p>
+    <p>Identifying business callers — when a legitimate company calls you, Hiya often shows the business name even if the number isn't in your contacts.</p>
+    <p>Lightweight and battery-friendly.</p>
+  </section>
+
+  <section class="sec">
+    <h2>Where Hiya falls short</h2>
+    <p>Useless against brand-new scam numbers — when a scammer rotates to a fresh number, there's no reputation data yet.</p>
+    <p>Cannot evaluate the content of a text or email — only the sender's number.</p>
+    <p>No protection against email scams, web-based scams, or screenshot-based scams.</p>
+    <p>Limited free tier — many actually-useful features (lookup, more blocking) require a subscription.</p>
+  </section>
+
+  <section class="sec">
+    <h2>What Double Check is good at</h2>
+    <p>Analyzing the words in any suspicious message, regardless of who sent it.</p>
+    <p>Catching first-contact scams (new sender, new domain, never-seen URL) where reputation databases are blind.</p>
+    <p>Works across SMS, email, screenshots, and website URLs.</p>
+    <p>Plain-English answers built for older users — 'this is a scam, here's what to do' rather than a confidence score.</p>
+    <p>Optional family alerts so an adult child gets notified when a parent receives something suspicious.</p>
+  </section>
+
+  <section class="sec">
+    <h2>Where Double Check falls short</h2>
+    <p>Does not block calls — won't stop a robocall from ringing your phone.</p>
+    <p>Doesn't identify unknown callers.</p>
+    <p>Requires the user to actively check a suspicious message rather than working passively.</p>
+  </section>
+
+  <section class="sec">
+    <h2>Which one should you use?</h2>
+    <p><strong>If unwanted calls are your primary annoyance:</strong> Hiya (or your phone's built-in spam filter, which is often Hiya-powered).</p>
+    <p><strong>If you or a family member keeps getting suspicious texts, emails, or DMs you can't immediately classify:</strong> Double Check.</p>
+    <p><strong>For an older parent at risk of being scammed out of real money:</strong> Double Check. The scams that cause financial losses are almost always content-driven (a fake bank alert, a fake delivery notice, a romance scam) — not robocalls. Hiya can't help once the bad message arrives.</p>
+    <p><strong>Realistic stack:</strong> let Hiya (or your built-in caller ID) handle calls, and use Double Check for any message that gives you a moment of doubt.</p>
+  </section>
+
+  <section class="sec">
+    <h2>Disclosure</h2>
+    <p>We build Double Check. Hiya is a competitor in adjacent territory, not direct overlap. We've tried to describe both honestly — if you've had a different experience with either, the comparison should still help you decide.</p>
+  </section>
+
+  <div class="app-cta">
+    <h3>Don't memorize every scam. Just check it.</h3>
+    <p>Double Check is a free app that gives you a plain-English verdict on any suspicious message in seconds. Includes automatic family alerts so loved ones stay in the loop.</p>
+    <div class="app-cta-btns">
+      <a href="https://apps.apple.com/app/id6761861061" class="btn btn-primary" target="_blank" rel="noopener">Download on the App Store</a>
+      <a href="/#download" class="btn-outline">Get for Android</a>
+    </div>
+  </div>
+
+  <section class="sec">
+    <h2>Specific scam guides</h2>
+    <div class="related-grid">
+      <a href="/scams/irs-scam-text" class="related-card">
+      <div class="related-title">Is the IRS text or call a scam?</div>
+      <div class="related-sub">Government impersonation</div>
+    </a>
+      <a href="/scams/usps-delivery-text-scam" class="related-card">
+      <div class="related-title">Is the USPS delivery text a scam?</div>
+      <div class="related-sub">Delivery &amp; shipping</div>
+    </a>
+    </div>
+  </section>
+</article>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">Double<span>Check</span></div>
+        <p>AI-powered scam detection for you and the people you love. Free, private, and plain English &#8212; always.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>App</h5>
+          <a href="https://apps.apple.com/app/id6761861061" target="_blank" rel="noopener">Download iOS</a>
+          <a href="/#download">Download Android</a>
+          <a href="/#how-it-works">How it works</a>
+        </div>
+        <div class="footer-col">
+          <h5>Scam guide</h5>
+          <a href="/scams">All scams</a>
+          <a href="/support">Support</a>
+          <a href="mailto:hello@mydoublecheck.app">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; 2026 Double Check. All rights reserved.</p>
+      <p class="footer-disclaimer">For guidance only. AI results are not a guarantee &#8212; always verify before acting.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
