@@ -436,7 +436,7 @@ function renderAdvisorIndex(pages) {
     <div style="display:flex;align-items:center;gap:8px;">
       <a href="/advisors" class="nav-link">For advisors</a>
       <a href="/scams" class="nav-link">Scam guide</a>
-      <a href="https://advisor.mydoublecheck.app" class="btn-primary" target="_blank" rel="noopener">Advisor Login</a>
+      <a href="https://advisor.mydoublecheck.app?utm_source=landing&utm_medium=advisor-content&utm_campaign=advisor-library" class="btn-primary" target="_blank" rel="noopener">Advisor Login</a>
     </div>
   </div>
 </nav>
