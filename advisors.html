@@ -390,6 +390,39 @@
       footer { flex-direction: column; gap: 0.75rem; text-align: center; }
       .footer-links { justify-content: center; flex-wrap: wrap; }
     }
+
+    /* RISK REVERSAL */
+    .risk-reversal-strip {
+      display: flex; align-items: center; gap: 0.5rem 1.25rem; flex-wrap: wrap;
+      background: rgba(0,196,160,0.06); border: 1px solid rgba(0,196,160,0.2);
+      border-radius: 10px; padding: 0.875rem 1.25rem; margin-bottom: 2.5rem;
+      font-size: 0.85rem;
+    }
+    .rrv-item { display: flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--text); }
+    .rrv-item::before { content: '\2713'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+    .rrv-sep { color: var(--border); }
+
+    /* ADVISOR TESTIMONIALS */
+    .testimonials { background: var(--white); padding: 5.5rem 2rem; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (max-width: 900px) { .testimonial-grid { grid-template-columns: 1fr; } }
+    .testimonial-card { border: 1.5px solid var(--border); border-radius: 14px; padding: 1.75rem; display: flex; flex-direction: column; gap: 10px; }
+    .testimonial-card.stub { border-style: dashed; background: var(--cream); }
+    .t-stars { color: #f59e0b; font-size: 13px; letter-spacing: 1px; }
+    .t-quote { font-size: 0.9rem; color: var(--muted); line-height: 1.65; font-style: italic; flex: 1; }
+    .t-author { font-size: 0.82rem; font-weight: 700; color: var(--text); margin-top: auto; }
+    .t-firm { font-size: 0.78rem; color: var(--muted); }
+
+    /* ADVISOR FAQ */
+    .advisor-faq { background: var(--cream); padding: 5.5rem 2rem; }
+    .advisor-faq-list { max-width: 760px; margin: 0 auto; }
+    .advisor-faq-item { background: var(--white); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px; overflow: hidden; }
+    details[open].advisor-faq-item { border-color: var(--teal); }
+    .advisor-faq-q { padding: 1.1rem 1.5rem; font-size: 0.95rem; font-weight: 600; color: var(--navy); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .advisor-faq-q::-webkit-details-marker { display: none; }
+    .advisor-faq-q::after { content: '+'; font-size: 1.2rem; color: var(--teal); font-weight: 300; flex-shrink: 0; }
+    details[open] > summary.advisor-faq-q::after { content: '\2212'; }
+    .advisor-faq-a { padding: 0 1.5rem 1.1rem; font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
   </style>
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
@@ -681,12 +714,24 @@
   </section>
 
 
+  <!-- ADVISOR TESTIMONIALS — hidden until we have real advisor quotes (stub markup + .testimonials CSS preserved in git commit a8d3482) -->
+
+
   <!-- PRICING -->
   <section class="pricing" id="pilot">
     <div class="container">
       <div class="section-label">Pilot Pricing</div>
       <h2 class="section-head">Simple to buy. Simple to deploy.</h2>
       <p class="section-sub">Annual license blocks billed upfront. You control whether you pass the cost to clients, mark it up, or offer it as a complimentary client service.</p>
+      <div class="risk-reversal-strip">
+        <span class="rrv-item">No long-term contract</span>
+        <span class="rrv-sep">&nbsp;·&nbsp;</span>
+        <span class="rrv-item">Cancel before renewal, no penalty</span>
+        <span class="rrv-sep">&nbsp;·&nbsp;</span>
+        <span class="rrv-item">Branding configured in under 15 minutes</span>
+        <span class="rrv-sep">&nbsp;·&nbsp;</span>
+        <span class="rrv-item">We respond within 1 business day</span>
+      </div>
       <div class="pricing-grid">
 
         <div class="price-card">
@@ -746,6 +791,59 @@
   </section>
 
 
+  <!-- ADVISOR FAQ -->
+  <section class="advisor-faq">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-head" style="margin-bottom:0.75rem;">Questions advisors ask before the pilot.</h2>
+      <p class="section-sub">Honest answers. No marketing fluff.</p>
+      <div class="advisor-faq-list">
+
+        <details class="advisor-faq-item">
+          <summary class="advisor-faq-q">What does &#8220;advisor branded&#8221; actually mean?</summary>
+          <div class="advisor-faq-a">Your firm name and logo appear throughout the app. Clients download it as your branded protection tool. Double Check as a company is invisible to them &#8212; the experience reads as a premium service from your firm, not a third-party app.</div>
+        </details>
+
+        <details class="advisor-faq-item">
+          <summary class="advisor-faq-q">Does deploying this require a compliance review?</summary>
+          <div class="advisor-faq-a">No. There is no bank integration, no account linking, and no passive monitoring of client activity. The app is on-demand &#8212; the client initiates every check. Nothing in the architecture creates a new compliance obligation. Advisors have deployed same-day.</div>
+        </details>
+
+        <details class="advisor-faq-item">
+          <summary class="advisor-faq-q">What regulatory frameworks does it support?</summary>
+          <div class="advisor-faq-a">Double Check provides compliance-grade activity logs designed to support your obligations under the Senior Safe Act, FINRA Rule 2165 (financial exploitation of specified adults), and Regulation Best Interest. Your advisor dashboard retains a short reference snippet for each check &#8212; sufficient for an audit trail &#8212; without storing the full message content.</div>
+        </details>
+
+        <details class="advisor-faq-item">
+          <summary class="advisor-faq-q">What do my clients actually see when they use the app?</summary>
+          <div class="advisor-faq-a">A simple, clean interface branded with your firm&#8217;s name. They paste or photograph a suspicious message, tap a button, and get a plain-English verdict in under 10 seconds. No menus to navigate, no settings to configure. Simple enough for any client regardless of technical ability.</div>
+        </details>
+
+        <details class="advisor-faq-item">
+          <summary class="advisor-faq-q">How does the advisor dashboard work?</summary>
+          <div class="advisor-faq-a">You see aggregate activity &#8212; how many scam checks your enrolled clients have run &#8212; and receive an email alert whenever a scam is detected. You do not see the content of what clients submitted. That content is never stored.</div>
+        </details>
+
+        <details class="advisor-faq-item">
+          <summary class="advisor-faq-q">What are the pilot terms? Is there a free trial?</summary>
+          <div class="advisor-faq-a">The pilot runs on an annual license at the prices shown above. No long-term contract beyond the first year &#8212; cancel before your renewal date with no penalty. Branding is configured in under 15 minutes. You can have the app in clients&#8217; hands the same day you sign up.</div>
+        </details>
+
+        <details class="advisor-faq-item">
+          <summary class="advisor-faq-q">What if the AI gives a wrong verdict?</summary>
+          <div class="advisor-faq-a">The AI is calibrated to flag suspicious content rather than miss it. An occasional false positive &#8212; a legitimate message flagged as suspicious &#8212; is by design. We&#8217;d rather your client ask one extra question than ignore a real scam. When it happens, the client confirms through another channel and moves on. This tradeoff is disclosed clearly to users.</div>
+        </details>
+
+        <details class="advisor-faq-item">
+          <summary class="advisor-faq-q">Is there a minimum firm size?</summary>
+          <div class="advisor-faq-a">Our Starter plan covers 250 licenses. If your practice is smaller, contact us at <a href="mailto:hello@mydoublecheck.app" style="color:var(--teal);font-weight:600;">hello@mydoublecheck.app</a> &#8212; we&#8217;ll find something that works.</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
@@ -765,7 +863,7 @@
       <a href="/">Home</a>
       <a href="/#how-it-works">How it works</a>
       <a href="/advisors">For advisors</a>
-      <a href="mailto:hello@mydoublecheck.app">Contact</a>
+      <a href="mailto:hello@mydoublecheck.app">hello@mydoublecheck.app</a>
       <a href="https://calculator.mydoublecheck.app?utm_source=landing&utm_medium=advisor-content&utm_campaign=advisors-landing&utm_content=calculator">Scam Cost Calculator</a>
     </div>
   </footer>

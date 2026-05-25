@@ -484,6 +484,29 @@
     .advisor-list { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
     .advisor-list li { display:flex; align-items:center; gap:9px; font-size:16px; color:var(--muted); }
     @media (max-width:640px) { .advisor-card { flex-direction:column; gap:16px; } }
+
+  /* SOCIAL PROOF */
+  .proof-section { background: var(--bg); padding: 80px 24px; border-top: 1px solid var(--border); }
+  .proof-rating-center { text-align: center; margin-bottom: 48px; }
+  .proof-stars-lg { font-size: 34px; color: #f59e0b; letter-spacing: 5px; line-height: 1; margin-bottom: 6px; }
+  .proof-rating-line { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .proof-rating-sub { font-size: 15px; color: var(--muted); }
+  .proof-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; max-width: 900px; margin: 0 auto; }
+  .proof-quote-card { background: var(--bg-subtle); border: 1.5px dashed var(--border); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .proof-q-stars { color: #f59e0b; font-size: 13px; letter-spacing: 1px; }
+  .proof-q-text { font-size: 16px; color: var(--subtle); line-height: 1.65; font-style: italic; flex: 1; }
+  .proof-q-author { font-size: 13px; color: var(--subtle); font-weight: 600; }
+
+  /* FAQ */
+  .faq-section { background: var(--bg-subtle); padding: 80px 24px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .faq-list { max-width: 720px; margin: 0 auto; }
+  .faq-item { background: var(--bg); border: 1.5px solid var(--border); border-radius: 12px; margin-bottom: 8px; overflow: hidden; }
+  details[open].faq-item { border-color: var(--blue-mid); }
+  .faq-q { padding: 18px 22px; font-size: 17px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q::after { content: '+'; font-size: 22px; color: var(--blue); font-weight: 300; flex-shrink: 0; }
+  details[open] > summary.faq-q::after { content: '\2212'; }
+  .faq-a { padding: 0 22px 18px; font-size: 16px; color: var(--muted); line-height: 1.72; }
   </style>
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
@@ -545,7 +568,7 @@
       <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
         <path d="M10 2L3 5v4c0 4.4 3 8.5 7 9.5 4-1 7-5.1 7-9.5V5L10 2z"/>
       </svg>
-      Free scam protection for you and your family
+      Your mom's favorite app?
     </div>
     <h1>Real or scam?<br>Know in seconds.</h1>
     <p class="hero-sub">If something feels off, check it before you act. Paste any message, link, or photo &amp; get a clear answer in seconds.</p>
@@ -564,6 +587,11 @@
       <span class="trust-item">
         <svg class="ti-check" width="14" height="14" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6.5l3 3 6-6"/></svg>
         Messages never stored
+      </span>
+      <span class="trust-div">&#183;</span>
+      <span class="trust-item">
+        <span style="color:#f59e0b;font-size:12px;letter-spacing:1px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        5.0 App Store
       </span>
     </div>
     <div class="hero-shield">
@@ -876,6 +904,19 @@
   </div>
 </section>
 
+<!-- SOCIAL PROOF -->
+<section class="proof-section" id="reviews">
+  <div class="sec-inner">
+    <div class="section-label">Reviews</div>
+    <div class="proof-rating-center">
+      <div class="proof-stars-lg">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="proof-rating-line">5.0 on the App Store</div>
+      <div class="proof-rating-sub">Free to download &nbsp;&#183;&nbsp; No account required &nbsp;&#183;&nbsp; 3 scans included</div>
+    </div>
+    <!-- Add a .proof-quotes grid of real App Store review cards here once we have them (stub markup in git commit a8d3482) -->
+  </div>
+</section>
+
 <!-- LIMITS & SAFETY -->
 <section class="limits-section">
   <div class="limits-inner">
@@ -906,6 +947,58 @@
     </div>
     <div class="limits-note">
       Always verify with your bank, doctor, or a trusted family member before responding to any request for money or personal information.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="sec-inner">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Common questions</h2>
+    <p class="section-sub">Honest answers about what Double Check does and how it works.</p>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-q">Is it free?</summary>
+        <div class="faq-a">Free to download. Includes 3 free scans &#8212; no credit card, no account required to get started.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Do I need to create an account?</summary>
+        <div class="faq-a">No account, no sign-up, no password. Open the app and start immediately. If you want to save your check history or set up family alerts, you can optionally create an account &#8212; but it&#8217;s not required to use the core features.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Does it work on Android?</summary>
+        <div class="faq-a">Yes. Double Check is available on both iOS (App Store) and Android. The iOS version is live on the App Store. Android is available via direct APK download &#8212; use the Android button at the top of this page.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What does the AI do with my message?</summary>
+        <div class="faq-a">Your message is analyzed, a verdict is returned to you, and then the content is discarded. We never write the full content of what you submit to our servers. Nothing you paste into Double Check is retained or used for AI training.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What is the family alert?</summary>
+        <div class="faq-a">You add a trusted email address in settings &#8212; a family member, an adult child, or a financial advisor. When a scam is detected, Double Check automatically sends that person an email. No extra steps required from you, and they don&#8217;t need the app. This keeps the people who care about you informed without anyone having to check in.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What kinds of scams does it catch?</summary>
+        <div class="faq-a">Text messages, emails, suspicious URLs, phone call scripts, and screenshots. Common patterns include Medicare fraud, fake IRS notices, bank impersonation, romance scams, tech support scams, and fake package delivery alerts. If you can paste it or photograph it, Double Check can analyze it.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How accurate is it?</summary>
+        <div class="faq-a">The AI catches the vast majority of common scam patterns. It is not perfect &#8212; no AI is &#8212; and we&#8217;re honest about that. The &#8220;What it can&#8217;t do&#8221; section above explains the limits clearly. Always verify with your bank or a trusted family member before sending money or sharing personal information.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Who sees my family alerts?</summary>
+        <div class="faq-a">Only the email address you enter as a trusted contact. You control who is notified. Nothing is shared publicly or with Double Check. If you don&#8217;t set up a family alert, no one else is notified when you run a check.</div>
+      </details>
+
     </div>
   </div>
 </section>
@@ -952,13 +1045,13 @@
           <h5>Legal</h5>
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Service</a>
-          <a href="mailto:hello@mydoublecheck.app">Contact</a>
+          <a href="mailto:hello@mydoublecheck.app">hello@mydoublecheck.app</a>
         </div>
         <div class="footer-col">
           <h5>Advisors</h5>
           <a href="https://advisor.mydoublecheck.app?utm_source=landing&utm_medium=advisor-content&utm_campaign=homepage" target="_blank" rel="noopener">Advisor Login</a>
           <a href="/advisors">For Advisors</a>
-          <a href="mailto:hello@mydoublecheck.app">Get in Touch</a>
+          <a href="mailto:hello@mydoublecheck.app">hello@mydoublecheck.app</a>
         </div>
       </div>
     </div>
