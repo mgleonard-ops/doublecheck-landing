@@ -6,6 +6,12 @@
       "has": [{ "type": "host", "value": "advisor.mydoublecheck.app" }],
       "destination": "/advisors",
       "permanent": false
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "doublecheck-landing.vercel.app" }],
+      "destination": "https://mydoublecheck.app/:path*",
+      "permanent": true
     }
   ],
   "headers": [
