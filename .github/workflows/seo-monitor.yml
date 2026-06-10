@@ -30,12 +30,14 @@ jobs:
             rm -f "$tmp"
           done < /tmp/urls.txt
 
-          # The raw Vercel domain must redirect to the canonical domain
-          vcode=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "https://doublecheck-landing.vercel.app/")
-          if [ "$vcode" != "308" ] && [ "$vcode" != "301" ]; then
-            echo "::error::doublecheck-landing.vercel.app returned $vcode — expected a permanent redirect to mydoublecheck.app"
-            fail=1
-          fi
+          # Duplicate hosts must permanently redirect to the canonical domain
+          for host in doublecheck-landing.vercel.app www.mydoublecheck.app; do
+            vcode=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "https://$host/" || echo "000")
+            if [ "$vcode" != "308" ] && [ "$vcode" != "301" ]; then
+              echo "::error::$host returned $vcode — expected a permanent redirect to mydoublecheck.app"
+              fail=1
+            fi
+          done
 
           # robots.txt and llms.txt must be reachable
           for f in robots.txt llms.txt sitemap.xml; do
