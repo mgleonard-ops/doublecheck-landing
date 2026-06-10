@@ -1,0 +1,46 @@
+name: Weekly SEO Monitor
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"   # Mondays 7am UTC
+  workflow_dispatch:
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Crawl sitemap URLs (status + canonical)
+        run: |
+          set -e
+          grep "<loc>" sitemap.xml | sed 's/.*<loc>//;s/<\/loc>.*//' > /tmp/urls.txt
+          echo "Checking $(wc -l < /tmp/urls.txt) URLs"
+          fail=0
+          while read -r url; do
+            tmp=$(mktemp)
+            code=$(curl -s -o "$tmp" -w "%{http_code}" --max-time 20 "$url" || echo "000")
+            canon=$(grep -o '<link[^>]*rel="canonical"[^>]*>' "$tmp" | head -1 || true)
+            if [ "$code" != "200" ]; then
+              echo "::error::$url returned $code (must be 200 — remove from sitemap or fix)"
+              fail=1
+            elif [ -z "$canon" ]; then
+              echo "::warning::$url has no canonical tag"
+            fi
+            rm -f "$tmp"
+          done < /tmp/urls.txt
+
+          # The raw Vercel domain must redirect to the canonical domain
+          vcode=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "https://doublecheck-landing.vercel.app/")
+          if [ "$vcode" != "308" ] && [ "$vcode" != "301" ]; then
+            echo "::error::doublecheck-landing.vercel.app returned $vcode — expected a permanent redirect to mydoublecheck.app"
+            fail=1
+          fi
+
+          # robots.txt and llms.txt must be reachable
+          for f in robots.txt llms.txt sitemap.xml; do
+            c=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "https://mydoublecheck.app/$f")
+            [ "$c" = "200" ] || { echo "::error::/$f returned $c"; fail=1; }
+          done
+
+          exit $fail
