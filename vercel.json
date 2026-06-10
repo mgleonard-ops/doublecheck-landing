@@ -8,6 +8,12 @@
       "permanent": false
     },
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "doublecheck-landing.vercel.app" }],
+      "destination": "https://mydoublecheck.app/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "doublecheck-landing.vercel.app" }],
       "destination": "https://mydoublecheck.app/:path*",
