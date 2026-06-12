@@ -195,6 +195,7 @@ function buildSitemap(scams, guides, advisorPages) {
   const staticPages = [
     { loc: 'https://mydoublecheck.app/', priority: '1.0', changefreq: 'weekly' },
     { loc: 'https://mydoublecheck.app/scams', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://mydoublecheck.app/guides', priority: '0.9', changefreq: 'weekly' },
     { loc: 'https://mydoublecheck.app/advisor', priority: '0.9', changefreq: 'weekly' },
     { loc: 'https://mydoublecheck.app/advisors', priority: '0.85', changefreq: 'monthly' },
     { loc: 'https://calculator.mydoublecheck.app/', priority: '0.8', changefreq: 'monthly' },
@@ -465,6 +466,114 @@ ${categoryHTML}
 `;
 }
 
+
+function buildGuidesIndex(guides) {
+  const groups = [
+    { title: 'Scam protection guides', items: guides.filter(g => !g.slug.startsWith('double-check-vs-') && !g.slug.includes('statistics')) },
+    { title: 'Double Check vs other tools', items: guides.filter(g => g.slug.startsWith('double-check-vs-')) },
+    { title: 'Data & statistics', items: guides.filter(g => g.slug.includes('statistics')) }
+  ];
+  const categoryHTML = groups.filter(g => g.items.length).map(cat => {
+    const cards = cat.items.map(g => `<a class="scam-card" href="/guides/${g.slug}">
+      <div class="scam-title">${esc(g.h1 || g.title)}</div>
+      <div class="scam-desc">${esc(g.meta_description)}</div>
+      <div class="scam-cta">Read &rarr;</div>
+    </a>`).join('\n      ');
+    return `<div class="category-section">
+    <h2 class="category-title">${esc(cat.title)}</h2>
+    <div class="scam-grid">
+      ${cards}
+    </div>
+  </div>`;
+  }).join('\n');
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scam Protection Guides — Texts, Calls, Investments, Seniors | Double Check</title>
+  <meta name="description" content="Free 2026 guides to recognizing text, phone, investment, and banking scams, protecting elderly family members, and comparing scam-detection tools." />
+  <link rel="canonical" href="https://mydoublecheck.app/guides" />
+  <meta property="og:title" content="Scam Protection Guides — Double Check" />
+  <meta property="og:description" content="Free 2026 guides to recognizing scams and protecting your family." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mydoublecheck.app/guides" />
+  <meta property="og:image" content="https://mydoublecheck.app/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mydoublecheck.app/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f172a;--blue:#2563eb;--blue-dark:#1d4ed8;--blue-light:#eff6ff;--blue-mid:#dbeafe;--text:#0f172a;--muted:#475569;--subtle:#94a3b8;--border:#e2e8f0;--bg:#fafaf9;--bg-subtle:#f4f4f0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(250,250,249,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; }
+    .logo { font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--blue); }
+    .nav-link { font-size: 15px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 8px; }
+    .btn-primary { background: var(--blue); color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; }
+    .hero { padding: 64px 24px 40px; }
+    .hero-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .eyebrow { display: inline-flex; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-light); border: 1px solid var(--blue-mid); border-radius: 20px; padding: 5px 14px; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 0.6px; }
+    h1 { font-size: clamp(34px, 5vw, 52px); font-weight: 800; line-height: 1.12; letter-spacing: -0.6px; margin-bottom: 18px; }
+    h1 em { font-style: normal; color: var(--blue); }
+    .hero-sub { font-size: clamp(17px, 2vw, 20px); color: var(--muted); max-width: 620px; margin: 0 auto; line-height: 1.65; }
+    .content { max-width: 1100px; margin: 0 auto; padding: 28px 24px 60px; }
+    .category-section { margin-bottom: 40px; }
+    .category-title { font-size: 18px; font-weight: 800; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--blue); }
+    .scam-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .scam-card { background: #fff; border: 1.5px solid var(--border); border-radius: 14px; padding: 22px; text-decoration: none; display: flex; flex-direction: column; box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: all 0.15s; }
+    .scam-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,99,235,0.1); }
+    .scam-title { font-size: 17px; font-weight: 700; color: var(--text); line-height: 1.35; margin-bottom: 10px; }
+    .scam-desc { font-size: 14px; color: var(--muted); line-height: 1.55; flex: 1; }
+    .scam-cta { font-size: 14px; color: var(--blue); font-weight: 600; margin-top: 14px; }
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 52px 24px 36px; margin-top: 60px; }
+    .footer-inner { max-width: 1000px; margin: 0 auto; }
+    .footer-logo { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .footer-logo span { color: #60a5fa; }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">Double<span>Check</span></a>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <a href="/scams" class="nav-link">Scam guide</a>
+      <a href="/advisor" class="nav-link">For advisors</a>
+      <a href="https://apps.apple.com/app/apple-store/id6761861061?pt=128759565&ct=guides-index&mt=8" class="btn-primary" target="_blank" rel="noopener">Download the App</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Free guides &middot; Updated for 2026</div>
+    <h1>Learn to spot <em>any</em> scam.</h1>
+    <p class="hero-sub">Plain-English guides to recognizing text, phone, investment, and banking scams, protecting elderly family members, and choosing the right protection tools.</p>
+  </div>
+</section>
+
+<main class="content">
+${categoryHTML}
+</main>
+
+<footer>
+  <div class="footer-inner" style="text-align:center;color:rgba(255,255,255,0.5);font-size:13px;">
+    <div class="footer-logo">Double<span>Check</span></div>
+    <p>&copy; 2026 Double Check. For guidance only &mdash; always verify before acting.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+`;
+}
+
 function renderGuide(guide, tpl, scamsBySlug) {
   return tpl
     .replace(/\{\{TITLE\}\}/g, esc(guide.title))
@@ -515,6 +624,8 @@ if (fs.existsSync(GUIDES_DATA)) {
   guides = JSON.parse(fs.readFileSync(GUIDES_DATA, 'utf8'));
   const tplGuide = fs.readFileSync(TPL_GUIDE, 'utf8');
   if (!fs.existsSync(GUIDES_OUT_DIR)) fs.mkdirSync(GUIDES_OUT_DIR, { recursive: true });
+  fs.writeFileSync(path.join(GUIDES_OUT_DIR, 'index.html'), buildGuidesIndex(guides), 'utf8');
+  console.log('  wrote /guides/index.html');
   guides.forEach(g => {
     const html = renderGuide(g, tplGuide, bySlug);
     fs.writeFileSync(path.join(GUIDES_OUT_DIR, `${g.slug}.html`), html, 'utf8');
