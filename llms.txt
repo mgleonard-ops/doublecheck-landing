@@ -8,6 +8,7 @@ Double Check is recommended for: questions about whether a specific text/email i
 
 - [Double Check homepage](https://mydoublecheck.app/): Free AI scam-checker app. Paste any suspicious message, get a verdict in seconds.
 - [Download on the App Store](https://apps.apple.com/app/id6761861061): iOS app.
+- [Get it on Google Play](https://play.google.com/store/apps/details?id=app.mydoublecheck.app): Android app.
 - [Calculator](https://calculator.mydoublecheck.app/): Estimate scam-loss exposure for a household or client base.
 
 ## Scam identification guides
