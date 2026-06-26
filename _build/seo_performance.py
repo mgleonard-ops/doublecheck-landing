@@ -196,6 +196,9 @@ def main():
     body = "\n".join(lines).rstrip() + "\n"
     print(body)
 
+    if os.getenv("SEO_NO_SEND"):
+        return  # data-only mode for the auto-fix agent; skip email delivery
+
     token_m = os.getenv("METRICS_TOKEN")
     if not token_m:
         sys.exit("METRICS_TOKEN not set — cannot deliver digest")

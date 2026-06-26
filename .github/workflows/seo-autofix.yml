@@ -1,0 +1,84 @@
+name: Weekly SEO Auto-Fix
+
+# Reads the week's Search Console performance and opens a PR with surgical
+# on-page fixes for the highest-leverage opportunities. Runs the day after the
+# performance digest so it acts on fresh data. Guarded on ANTHROPIC_API_KEY —
+# skips cleanly until that secret is provisioned.
+
+on:
+  schedule:
+    - cron: "0 14 * * 2"   # Tuesdays 14:00 UTC, after Monday's digest
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  autofix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Guard — require ANTHROPIC_API_KEY + GSC access
+        id: guard
+        run: |
+          if [ -z "${{ secrets.ANTHROPIC_API_KEY }}" ] || [ -z "${{ secrets.GSC_SA_JSON }}" ]; then
+            echo "ANTHROPIC_API_KEY or GSC_SA_JSON not set — skipping autofix."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.guard.outputs.ready == 'true'
+        with:
+          node-version: 20
+
+      - uses: actions/setup-python@v5
+        if: steps.guard.outputs.ready == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        if: steps.guard.outputs.ready == 'true'
+        run: pip install --quiet google-auth requests
+
+      - name: Claude — analyze GSC and open a fix PR
+        if: steps.guard.outputs.ready == 'true'
+        uses: anthropics/claude-code-action@v1
+        env:
+          GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
+          SEO_NO_SEND: "1"
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: --allowedTools Edit,Read,Write,Bash
+          prompt: |
+            You are doing weekly SEO maintenance for mydoublecheck.app (a static
+            programmatic-SEO site). GSC_SA_JSON and SEO_NO_SEND=1 are already in
+            your environment.
+
+            1. Run: python3 _build/seo_performance.py
+               It prints this week's Search Console performance (top/rising/
+               slipping pages, striking-distance queries at position 5-15, and
+               high-impression zero-click pages). Read it.
+            2. Pick the 1-2 HIGHEST-LEVERAGE on-page improvements — prefer
+               striking-distance pages (pos 5-15 with real impressions) and
+               high-impression/zero-click pages, where a better title/meta/FAQ
+               or an internal link can earn page-1 clicks.
+            3. Edit the SOURCE, never generated HTML:
+                 - homepage: index.html (hand-maintained)
+                 - scam pages: _data/scams.json
+                 - guide pages: _data/guides.json
+                 - advisor pages: _data/advisor-pages.json
+               Then run `node _build/generate.js` to rebuild the generated
+               pages + sitemap.
+            4. Keep changes SURGICAL: titles, meta descriptions, an FAQ entry,
+               internal links, schema. Touch at most 2 pages. Do NOT change site
+               structure, styling, or copy tone. Match the existing voice.
+            5. Open a pull request on a new branch named seo/autofix-<date>.
+               Title: "SEO autofix — week of <date>". In the body, cite the
+               specific GSC numbers (position, impressions, clicks) that
+               motivated each change. If the data shows nothing worth changing
+               (e.g. no striking-distance opportunities), do NOT open a PR — just
+               print "no actionable opportunities this week" and stop.
