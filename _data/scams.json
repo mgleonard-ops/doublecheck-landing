@@ -382,8 +382,8 @@
   },
   {
     "slug": "apple-id-locked-scam",
-    "title": "'Your Apple ID Has Been Locked' Scam: How to Spot It",
-    "meta_description": "Got a text, email, or call saying your Apple ID is locked or suspended? It's a phishing scam. Learn how to identify and report it.",
+    "title": "Apple ID Locked Scam: Is the 'Account Locked' Alert Real?",
+    "meta_description": "Got a text or email saying your Apple ID or account is locked — even \"for several hours\" or after \"repeated login attempts\"? It's a phishing scam. How to spot it.",
     "h1": "Is the 'Apple ID locked' message a scam?",
     "short_answer": "Yes. Apple does not send unsolicited texts or emails saying your Apple ID is locked, suspended, or compromised. The real Apple manages account issues inside your device's Settings or via appleid.apple.com. The 'locked Apple ID' message is one of the highest-volume phishing attacks in the world.",
     "category": "Tech support",
@@ -392,7 +392,8 @@
       "Asks you to 'verify your password' or 'reconfirm payment information' via a link",
       "Sender is not @apple.com (look at the full address, not the display name)",
       "Threatens account closure in 24–48 hours",
-      "Asks you to read a verification code sent to your phone"
+      "Asks you to read a verification code sent to your phone",
+      "Cites an oddly specific lockout — \"locked for 8 hours\" or \"after repeated login attempts\" — to create panic and urgency"
     ],
     "examples": [
       {
@@ -424,6 +425,10 @@
       {
         "q": "I tapped the link but didn't enter anything. Am I safe?",
         "a": "Probably yes. Just tapping a link doesn't compromise your account. Don't return to the link, and don't tap it again."
+      },
+      {
+        "q": "Why does the message say my account is locked 'for 8 hours' or after 'repeated login attempts'?",
+        "a": "Those oddly specific details are a manipulation tactic, not a real Apple policy. A fake countdown ('locked for 8 hours') or a claim of 'repeated failed attempts from a new device' is designed to make you panic and act before you think. Apple never locks an account this way or messages you about it by text or email — check appleid.apple.com directly instead."
       }
     ],
     "related": ["geek-squad-scam", "amazon-refund-scam", "microsoft-tech-support-scam"]
