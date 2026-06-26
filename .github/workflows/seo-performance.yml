@@ -1,0 +1,38 @@
+name: Weekly SEO Performance Digest
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"   # Mondays 13:00 UTC, after the technical SEO monitor
+  workflow_dispatch:
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Guard — require GSC service-account secret
+        id: guard
+        run: |
+          if [ -z "${{ secrets.GSC_SA_JSON }}" ]; then
+            echo "GSC_SA_JSON not set — Search Console access not provisioned yet. Skipping."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.guard.outputs.ready == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        if: steps.guard.outputs.ready == 'true'
+        run: pip install --quiet google-auth
+
+      - name: Build & send SEO performance digest
+        if: steps.guard.outputs.ready == 'true'
+        env:
+          GSC_SA_JSON: ${{ secrets.GSC_SA_JSON }}
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: python3 _build/seo_performance.py
