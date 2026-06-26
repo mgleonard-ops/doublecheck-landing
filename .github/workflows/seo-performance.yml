@@ -28,7 +28,7 @@ jobs:
 
       - name: Install deps
         if: steps.guard.outputs.ready == 'true'
-        run: pip install --quiet google-auth
+        run: pip install --quiet google-auth requests
 
       - name: Build & send SEO performance digest
         if: steps.guard.outputs.ready == 'true'
