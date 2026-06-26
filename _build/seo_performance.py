@@ -94,7 +94,12 @@ def _fmt_pct(cur, prev):
 
 
 def _short(url, n=52):
-    p = url.replace("https://mydoublecheck.app", "") or "/"
+    p = url
+    for prefix in ("https://www.mydoublecheck.app", "https://mydoublecheck.app"):
+        if p.startswith(prefix):
+            p = p[len(prefix):]
+            break
+    p = p or "/"
     return p if len(p) <= n else p[: n - 1] + "…"
 
 
