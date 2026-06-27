@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.mydoublecheck.app",
+      "sha256_cert_fingerprints": [
+        "31:86:B1:92:73:61:D7:C7:4B:96:9E:A1:D5:A8:6E:24:F0:9A:D8:F3:BA:4D:A3:6A:61:B5:9D:51:C7:02:32:E6"
+      ]
+    }
+  }
+]
