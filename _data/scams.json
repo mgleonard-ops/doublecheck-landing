@@ -383,7 +383,7 @@
   {
     "slug": "apple-id-locked-scam",
     "title": "'Your Apple ID Has Been Locked' Scam: How to Spot It",
-    "meta_description": "Got a text, email, or call saying your Apple ID is locked or suspended? It's a phishing scam. Learn how to identify and report it.",
+    "meta_description": "Got a text, email, or call saying your Apple ID is locked or suspended — or does your account keep getting locked repeatedly? Learn how to tell a phishing scam from a real lockout, and exactly what to do.",
     "h1": "Is the 'Apple ID locked' message a scam?",
     "short_answer": "Yes. Apple does not send unsolicited texts or emails saying your Apple ID is locked, suspended, or compromised. The real Apple manages account issues inside your device's Settings or via appleid.apple.com. The 'locked Apple ID' message is one of the highest-volume phishing attacks in the world.",
     "category": "Tech support",
@@ -424,6 +424,10 @@
       {
         "q": "I tapped the link but didn't enter anything. Am I safe?",
         "a": "Probably yes. Just tapping a link doesn't compromise your account. Don't return to the link, and don't tap it again."
+      },
+      {
+        "q": "My Apple ID keeps getting locked, sometimes for hours. Is that a phishing attack?",
+        "a": "Not always, but a repeated lockout is a warning sign. Apple temporarily locks an account after too many wrong password or verification-code attempts, and the lockout time gets longer with each round — from an hour up to many hours. If it keeps happening and it isn't you typing the wrong password, someone may be trying to break in, or you may have entered your password on a fake site. Change your password at appleid.apple.com (type the address yourself), confirm two-factor authentication is on, and remove any devices you don't recognize under Settings > [Your Name]. The lockout itself is Apple protecting you — the danger is whatever keeps triggering it."
       }
     ],
     "related": ["geek-squad-scam", "amazon-refund-scam", "microsoft-tech-support-scam"]
