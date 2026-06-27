@@ -5,16 +5,7 @@
       {
         "appID": "9VB66T5544.app.mydoublecheck.app",
         "paths": [
-          "/scams/*",
-          "/check/*",
-          "/share/*",
-          "NOT /advisors*",
-          "NOT /privacy",
-          "NOT /terms",
-          "NOT /support",
-          "NOT /delete-account",
-          "NOT /reset-password",
-          "NOT /calculator*"
+          "/scams/*"
         ]
       }
     ]
