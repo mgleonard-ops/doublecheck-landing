@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Double Check</title>
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://mydoublecheck.app/app" />
+  <meta name="description" content="Open the Double Check app on your phone." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy:#0f172a; --blue:#2563eb; --muted:#475569; --bg:#fafaf9; --border:#e2e8f0; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--navy); line-height:1.6;
+           min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+    .card { max-width:420px; width:100%; text-align:center; }
+    .logo { font-size:22px; font-weight:800; margin-bottom:24px; text-decoration:none; color:var(--navy); }
+    .logo span { color:var(--blue); }
+    h1 { font-size:26px; font-weight:800; margin-bottom:8px; }
+    p { font-size:16px; color:var(--muted); margin-bottom:28px; }
+    .btn { display:block; text-decoration:none; padding:16px 28px; border-radius:10px;
+           font-weight:700; font-size:17px; margin-bottom:12px; }
+    .btn-ios { background:var(--blue); color:#fff; }
+    .btn-android { background:var(--navy); color:#fff; }
+    .hint { font-size:13px; color:#94a3b8; margin-top:16px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <a class="logo" href="/">Double<span>Check</span></a>
+    <h1>Open Double Check</h1>
+    <p>Taking you to the app store for your phone…</p>
+    <a class="btn btn-ios" href="https://apps.apple.com/app/id6761861061">Open on iPhone</a>
+    <a class="btn btn-android" href="https://play.google.com/store/apps/details?id=app.mydoublecheck.app">Open on Android</a>
+    <p class="hint">Once you're in the store, tap <strong>Open</strong> (or <strong>Get</strong> if it's not installed yet).</p>
+  </main>
+  <script>
+    // Send each visitor straight to the right store; the buttons above are the
+    // fallback for desktop, unknown devices, or if a browser blocks the redirect.
+    (function () {
+      var ua = navigator.userAgent || navigator.vendor || "";
+      var IOS = "https://apps.apple.com/app/id6761861061";
+      var ANDROID = "https://play.google.com/store/apps/details?id=app.mydoublecheck.app";
+      if (/iPhone|iPad|iPod/i.test(ua)) {
+        window.location.replace(IOS);
+      } else if (/Android/i.test(ua)) {
+        window.location.replace(ANDROID);
+      }
+      // Desktop / other: stay on the page and let the user pick a button.
+    })();
+  </script>
+</body>
+</html>
