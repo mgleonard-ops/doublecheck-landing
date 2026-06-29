@@ -1,0 +1,342 @@
+{
+  "https://mydoublecheck.app/": {
+    "hash": "6e419ff7b50f3ff2ccadf39ee7ee9705e0bbfb9b",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams": {
+    "hash": "d731529c42d7d1b7b2c100a9d121ebcaf2e4e6e7",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides": {
+    "hash": "098cb50b40dfbbe9776a16314429f4e88efb0c1d",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor": {
+    "hash": "94a61fdb8ea97400fd321e5451f10673a31518f8",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisors": {
+    "hash": "c0dc3c678508f2fffb4273b7399b0d86e923d905",
+    "date": "2026-06-29"
+  },
+  "https://calculator.mydoublecheck.app/": {
+    "hash": "46237b3d702aad617eae653792a6269e836aa44d",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/support": {
+    "hash": "af4c18f65b9ef3f501701f2cdc43c1e6df9fa7ad",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/privacy": {
+    "hash": "c13299a852dff0624bf42ef922f56ecb751b0752",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/terms": {
+    "hash": "752119f686e2236e3e745758482987853b083a74",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/usps-delivery-text-scam": {
+    "hash": "43aca998e8128a527ee8ed68220e95550d2af99d",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/fedex-delivery-scam-text": {
+    "hash": "1ea0ebbdf0b8af0df3d652196ae7d633406ced71",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/amazon-refund-scam": {
+    "hash": "ee6af5c29925534a2fd85a7b2da444c439026fab",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/irs-scam-text": {
+    "hash": "3a82d457626e4231c0ba9315654a9fbb1d2d270d",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/social-security-scam-call": {
+    "hash": "8f5a82610986b0fa6ca92dc9460b6ae92ff6ad86",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/medicare-cancellation-scam": {
+    "hash": "13aa6fd6f1791ac44b9163de6bcf2896585bf25b",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/geek-squad-scam": {
+    "hash": "cd29fe8d37f12cbcf02bc007d880f050d67479c5",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/norton-renewal-scam": {
+    "hash": "1bb4a8db3bb65ec6226794f98bef3798d2db5296",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/apple-id-locked-scam": {
+    "hash": "096cb7bafeee3371534db95d8afb294f52dd269e",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/grandparent-scam": {
+    "hash": "53adbcbafbbbe0dd86a943af0cc225ceeab33216",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/chase-fraud-alert-text-scam": {
+    "hash": "f4fcd24bccd2373e95781f47023c932c90d3cc33",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/zelle-scam": {
+    "hash": "673bee583c05db6a72778dc749ffbb708274f9d7",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/romance-scam": {
+    "hash": "c876060cbcdff693a1595aea8a57f7d26cacd4b0",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/pig-butchering-scam": {
+    "hash": "5ec6d2f976e268358560ef7dbb0da5956c804ece",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/car-warranty-scam-call": {
+    "hash": "9efaaaf85f61adb93913ebce3b421872f7082ca4",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/ups-delivery-text-scam": {
+    "hash": "7b4914cc5a7e31c3fdd4fd80bbb4ad082a2cf9f1",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/dhl-customs-scam": {
+    "hash": "18e49fbad12c40e257b092bf4f8cb6db5840020c",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/amazon-account-suspended-scam": {
+    "hash": "68d51387bdce6bd0bbd1205a152ac3235032a3d9",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/paypal-payment-pending-scam": {
+    "hash": "6b52800776805252a74be366dab1afcf9b852329",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/venmo-stranger-payment-scam": {
+    "hash": "cf993339ead82adab1e4bf7f2abc624521022589",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/cashapp-flip-scam": {
+    "hash": "4cd41591ed9b40fcbf8e9e48b1495514f3a7c80a",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/ebay-overpayment-scam": {
+    "hash": "f1631a706a96df19f08f0af16cde0b5be81c23b2",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/dmv-text-scam": {
+    "hash": "98298ed8f06952d9b491e39487b43aaaf39e1889",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/jury-duty-scam-call": {
+    "hash": "e4e79a40a53309c5f3f87a2f2d1e6ab9835f915e",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/unemployment-benefits-scam": {
+    "hash": "ec6f7a0e183c9b8bdde21ad5a830f8d47f9d26c7",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/microsoft-tech-support-scam": {
+    "hash": "4ae63b24bc62d36ffe69cdac16f297cd64f2145c",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/mcafee-renewal-scam": {
+    "hash": "c02ecf4df5b9aedb6888bb86a89516987ac72fb7",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/apple-iphone-virus-popup-scam": {
+    "hash": "ffbeedbf8d3ba5d71a99af07628e3b721dbd8bce",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/wells-fargo-text-scam": {
+    "hash": "6210bab197ff03fa28a992d38a16230b5450858f",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/bank-of-america-scam-text": {
+    "hash": "d2efde0e596e4f5d05fe02335089c09894c513ea",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/capital-one-fraud-alert-scam": {
+    "hash": "fd1d240bfaec4099b2795b9c91a15b5cd487d6fe",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/direct-deposit-change-scam": {
+    "hash": "6b540ea4e1187b6e5b53f8217044ca96a1178d86",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/crypto-recovery-scam": {
+    "hash": "18357e213d4b5e9ead1588d59da10acdc00b002f",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/one-ring-callback-scam": {
+    "hash": "e82da076a02897dd608a68ca00d7f462871794b8",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/ceo-impersonation-scam": {
+    "hash": "899a5a64f9b5fdef6b7ee2fade3b4ac8e6ac25c3",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/fake-charity-scam": {
+    "hash": "4ed2547229816077ba5f6822cbff0dcba4985bee",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/fake-job-offer-scam": {
+    "hash": "025f30b236083a7329f5451d22272868439e712b",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/mystery-shopper-check-scam": {
+    "hash": "f5f5b5bef888edc95959f309c8272a3efdcb057b",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/work-from-home-scam": {
+    "hash": "cec424fcdb92362b69a7df51083c4bdafa297c8e",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/craigslist-rental-scam": {
+    "hash": "ed7d60ee1048f4d25db05f8045eccebd14491699",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/facebook-marketplace-scam": {
+    "hash": "e9236c4f6626e6116a23d076b63b037295d89a50",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/puppy-scam": {
+    "hash": "63b3e636ad08a843f8c82e166ee06e0f15098074",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/lottery-winner-scam": {
+    "hash": "a4262c33ef42c165f3cc27c952004e0e50b85f8a",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/publishers-clearing-house-scam": {
+    "hash": "be73643b4df89370bf7b55d0becc1d3597a918ee",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/inheritance-scam-email": {
+    "hash": "bfd864cf94791bece73bd0a26f382c49990d775a",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/health-insurance-scam-call": {
+    "hash": "2e9f34fbc172f879a47eff96aa2d8443bff8f1cc",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/electric-disconnection-scam": {
+    "hash": "5f5e40e5cedd4b189516945b7908d2945a22eddb",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/qr-code-scam": {
+    "hash": "d1c06e9ca854a1542843dc93e1dd837df876c91f",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/military-romance-scam": {
+    "hash": "cc5483a176dedc8a5bb549c7eb6a47a27255dcde",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/scams/irs-tax-refund-scam-email": {
+    "hash": "38a81825c58d6efb527dc872448cf884889fadc2",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides/text-scam-guide": {
+    "hash": "bc79c53db4910538b19795b116901725d3822b92",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides/senior-scam-protection": {
+    "hash": "9f988217d63859e9256c790ba7aff074c22e1db2",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides/phone-scam-guide": {
+    "hash": "54cfec57ca995ebb7b6ce2bbe787d2d9975f34f5",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides/investment-scam-guide": {
+    "hash": "e4e08c6ecd781a27d29916f6502525fcbd05dadb",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides/banking-scam-guide": {
+    "hash": "5f880bc027a2135fb5b593d5e59414923889604f",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides/double-check-vs-truecaller": {
+    "hash": "c5a6733ab46c4eb43e48ca241ec07cff8ad1ef64",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides/double-check-vs-hiya": {
+    "hash": "a0760bbbbc8f392fb225f8794b8818c5dc1e63be",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides/double-check-vs-norton-genie": {
+    "hash": "b7615aadafded03d273594cb745277d6bf73e447",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides/double-check-vs-scamadviser": {
+    "hash": "9faf0fa0646adb35c85003cc35c86b29e5c341a3",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides/double-check-vs-robokiller": {
+    "hash": "eb8ad5ffab04a53f3690ab0d9717b0634fda2c62",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/guides/us-scam-losses-2026-statistics": {
+    "hash": "c9a9d6b6a697eca14aea97889eac45703e01bf63",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/senior-safe-act-2018": {
+    "hash": "8f193b7dd6aae83aae9e1da09894ecceb0f14c94",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/finra-rule-2165-financial-exploitation": {
+    "hash": "8c956b691b46d1f50da00cae059a74020c733212",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/trusted-contact-person-guide": {
+    "hash": "a05e410e9d958635edb9713ba34f4dcaa1b81e14",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/elder-financial-abuse-reporting-by-state": {
+    "hash": "1fac56fa6a5c4a5a0b8f5bda22e1474cdc89f970",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/reg-bi-elderly-clients": {
+    "hash": "ee0915416704c6e8bc57728e7913ba12daac492b",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/spot-client-being-scammed-red-flags": {
+    "hash": "81c06276ac70661dacbd6b0d28c00e18de1fa79a",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/client-wired-money-to-scammer": {
+    "hash": "7de38cf92a6a3d43713c248818c160e74c33efbd",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/widowed-clients-romance-scam": {
+    "hash": "e544fbc6f4c33a5d266a5d410b2c905a41acf164",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/talking-clients-diminished-capacity": {
+    "hash": "1807ffe6dc5cf65ca8d44173ff58af0ee085b629",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/diminished-capacity-advisor-liability": {
+    "hash": "57b4ab14e16fb117bdd5b49d22317acbab4a509f",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/cyber-hygiene-hnw-clients": {
+    "hash": "c2b731328d427e61387b1aa7406527bb05974134",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/double-check-vs-carefull": {
+    "hash": "c29336761a1a0298f09a5c466e3581d1660d0777",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/double-check-vs-eversafe": {
+    "hash": "0991ea19abc75daba4aa6e6a1052adb7abb57d27",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/best-client-fraud-protection-tools-2026": {
+    "hash": "474f93e3c8df463619678dbc09750d76af28202d",
+    "date": "2026-06-29"
+  },
+  "https://mydoublecheck.app/advisor/family-alert-tools-buyer-guide": {
+    "hash": "8560a23755705cda3043705c0596ea6ed46660bc",
+    "date": "2026-06-29"
+  }
+}

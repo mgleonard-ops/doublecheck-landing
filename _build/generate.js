@@ -5,8 +5,10 @@
  */
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const ROOT = path.resolve(__dirname, '..');
+const LASTMOD_MANIFEST = path.join(__dirname, '..', '_data', 'lastmod.json');
 const DATA = path.join(ROOT, '_data', 'scams.json');
 const GUIDES_DATA = path.join(ROOT, '_data', 'guides.json');
 const ADVISOR_DATA = path.join(ROOT, '_data', 'advisor-pages.json');
@@ -190,38 +192,70 @@ function renderIndex(scams, tpl) {
   return tpl.replace(/\{\{CATEGORIES_HTML\}\}/g, html);
 }
 
+// Read a source file relative to ROOT; '' if missing (keeps the signature
+// stable rather than throwing).
+function srcSig(rel) {
+  try { return fs.readFileSync(path.join(ROOT, rel), 'utf8'); }
+  catch { return ''; }
+}
+
 function buildSitemap(scams, guides, advisorPages) {
   const today = new Date().toISOString().slice(0, 10);
+  const slugSig = arr => (arr || []).map(x => x.slug).sort().join(',');
+
+  // Each URL carries a `sig` — a string that changes only when the page's
+  // real content changes. We hash it and keep <lastmod> frozen across rebuilds
+  // unless the hash moves. Previously every build stamped <lastmod>=today on
+  // every URL, which trains Google to distrust the signal and deprioritize
+  // recrawling (observed: scam pages last crawled 2026-05-21 despite daily churn).
   const staticPages = [
-    { loc: 'https://mydoublecheck.app/', priority: '1.0', changefreq: 'weekly' },
-    { loc: 'https://mydoublecheck.app/scams', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://mydoublecheck.app/guides', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://mydoublecheck.app/advisor', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://mydoublecheck.app/advisors', priority: '0.85', changefreq: 'monthly' },
-    { loc: 'https://calculator.mydoublecheck.app/', priority: '0.8', changefreq: 'monthly' },
-    { loc: 'https://mydoublecheck.app/support', priority: '0.5', changefreq: 'monthly' },
-    { loc: 'https://mydoublecheck.app/privacy', priority: '0.3', changefreq: 'yearly' },
-    { loc: 'https://mydoublecheck.app/terms', priority: '0.3', changefreq: 'yearly' }
+    { loc: 'https://mydoublecheck.app/', priority: '1.0', changefreq: 'weekly', sig: srcSig('index.html') },
+    { loc: 'https://mydoublecheck.app/scams', priority: '0.9', changefreq: 'weekly', sig: slugSig(scams) },
+    { loc: 'https://mydoublecheck.app/guides', priority: '0.9', changefreq: 'weekly', sig: slugSig(guides) },
+    { loc: 'https://mydoublecheck.app/advisor', priority: '0.9', changefreq: 'weekly', sig: slugSig(advisorPages) },
+    { loc: 'https://mydoublecheck.app/advisors', priority: '0.85', changefreq: 'monthly', sig: srcSig('advisors.html') },
+    { loc: 'https://calculator.mydoublecheck.app/', priority: '0.8', changefreq: 'monthly', sig: 'calculator' },
+    { loc: 'https://mydoublecheck.app/support', priority: '0.5', changefreq: 'monthly', sig: srcSig('support.html') },
+    { loc: 'https://mydoublecheck.app/privacy', priority: '0.3', changefreq: 'yearly', sig: srcSig('privacy.html') },
+    { loc: 'https://mydoublecheck.app/terms', priority: '0.3', changefreq: 'yearly', sig: srcSig('terms.html') }
   ];
   const scamPages = scams.map(s => ({
     loc: `https://mydoublecheck.app/scams/${s.slug}`,
     priority: '0.8',
-    changefreq: 'monthly'
+    changefreq: 'monthly',
+    sig: JSON.stringify(s)
   }));
   const guidePages = (guides || []).map(g => ({
     loc: `https://mydoublecheck.app/guides/${g.slug}`,
     priority: '0.85',
-    changefreq: 'monthly'
+    changefreq: 'monthly',
+    sig: JSON.stringify(g)
   }));
   const advisorURLs = (advisorPages || []).map(p => ({
     loc: `https://mydoublecheck.app/advisor/${p.slug}`,
     priority: '0.9',
-    changefreq: 'monthly'
+    changefreq: 'monthly',
+    sig: JSON.stringify(p)
   }));
-  const urls = [...staticPages, ...scamPages, ...guidePages, ...advisorURLs].map(u =>
+
+  const all = [...staticPages, ...scamPages, ...guidePages, ...advisorURLs];
+
+  // Stable-date assignment via a committed manifest (url -> {hash, date}).
+  let manifest = {};
+  try { manifest = JSON.parse(fs.readFileSync(LASTMOD_MANIFEST, 'utf8')); } catch (_) {}
+  const nextManifest = {};
+  for (const u of all) {
+    const hash = crypto.createHash('sha1').update(u.sig || '').digest('hex');
+    const prev = manifest[u.loc];
+    u.lastmod = (prev && prev.hash === hash) ? prev.date : today;
+    nextManifest[u.loc] = { hash, date: u.lastmod };
+  }
+  fs.writeFileSync(LASTMOD_MANIFEST, JSON.stringify(nextManifest, null, 2) + '\n', 'utf8');
+
+  const urls = all.map(u =>
     `  <url>
     <loc>${u.loc}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${u.lastmod}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority}</priority>
   </url>`
