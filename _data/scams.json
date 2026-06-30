@@ -383,7 +383,7 @@
   {
     "slug": "apple-id-locked-scam",
     "title": "'Your Apple ID Has Been Locked' Scam: How to Spot It",
-    "meta_description": "Got a text, email, or call saying your Apple ID is locked or suspended? It's a phishing scam. Learn how to identify and report it.",
+    "meta_description": "Got a text, email, or pop-up saying your Apple ID is locked or suspended? It's a phishing scam. Learn how to spot it, what to do if you tapped the link, and how to report it.",
     "h1": "Is the 'Apple ID locked' message a scam?",
     "short_answer": "Yes. Apple does not send unsolicited texts or emails saying your Apple ID is locked, suspended, or compromised. The real Apple manages account issues inside your device's Settings or via appleid.apple.com. The 'locked Apple ID' message is one of the highest-volume phishing attacks in the world.",
     "category": "Tech support",
@@ -424,6 +424,14 @@
       {
         "q": "I tapped the link but didn't enter anything. Am I safe?",
         "a": "Probably yes. Just tapping a link doesn't compromise your account. Don't return to the link, and don't tap it again."
+      },
+      {
+        "q": "Is the 'Apple ID has been locked' text message ever real?",
+        "a": "No. Apple does not text or email you to say your Apple ID is locked. Any such message with a link is phishing — the real Apple only flags account issues inside Settings or at appleid.apple.com."
+      },
+      {
+        "q": "I entered my Apple ID password on the fake page. What do I do now?",
+        "a": "Act fast: change your Apple ID password at appleid.apple.com (type the address yourself), turn on two-factor authentication, and check Settings > [Your Name] for any unfamiliar devices and remove them. If you reused that password anywhere else, change it there too."
       }
     ],
     "related": ["geek-squad-scam", "amazon-refund-scam", "microsoft-tech-support-scam"]
