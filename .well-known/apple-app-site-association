@@ -12,5 +12,8 @@
   },
   "webcredentials": {
     "apps": ["9VB66T5544.app.mydoublecheck.app"]
+  },
+  "messagefilter": {
+    "apps": ["9VB66T5544.app.mydoublecheck.app.MessageFilterExtension"]
   }
 }
