@@ -1,5 +1,11 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/filter/sms",
+      "destination": "https://web-production-970ba.up.railway.app/filter/sms"
+    }
+  ],
   "redirects": [
     {
       "source": "/",
