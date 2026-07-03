@@ -213,6 +213,7 @@ function buildSitemap(scams, guides, advisorPages) {
     { loc: 'https://mydoublecheck.app/scams', priority: '0.9', changefreq: 'weekly', sig: slugSig(scams) },
     { loc: 'https://mydoublecheck.app/guides', priority: '0.9', changefreq: 'weekly', sig: slugSig(guides) },
     { loc: 'https://mydoublecheck.app/advisor', priority: '0.9', changefreq: 'weekly', sig: slugSig(advisorPages) },
+    { loc: 'https://mydoublecheck.app/advisor/pricing', priority: '0.9', changefreq: 'monthly', sig: srcSig('advisor/pricing.html') },
     { loc: 'https://mydoublecheck.app/advisors', priority: '0.85', changefreq: 'monthly', sig: srcSig('advisors.html') },
     { loc: 'https://mydoublecheck.app/quiz', priority: '0.8', changefreq: 'daily', sig: srcSig('quiz.html') },
     { loc: 'https://calculator.mydoublecheck.app/', priority: '0.8', changefreq: 'monthly', sig: 'calculator' },
@@ -471,6 +472,7 @@ function renderAdvisorIndex(pages) {
     <a href="/" class="logo">Double<span>Check</span></a>
     <div style="display:flex;align-items:center;gap:8px;">
       <a href="/advisors" class="nav-link">For advisors</a>
+      <a href="/advisor/pricing" class="nav-link">Pricing</a>
       <a href="/scams" class="nav-link">Scam guide</a>
       <a href="https://advisor.mydoublecheck.app?utm_source=landing&utm_medium=advisor-content&utm_campaign=advisor-library" class="btn-primary" target="_blank" rel="noopener">Advisor Login</a>
     </div>
@@ -486,6 +488,11 @@ function renderAdvisorIndex(pages) {
 </section>
 
 <main class="content">
+  <a href="/advisor/pricing" class="scam-card" style="background:var(--blue-light);border-color:var(--blue-mid);margin-bottom:36px;">
+    <div class="scam-title" style="color:var(--blue-dark);">Bulk seats for your whole book &rarr; $2/client/month</div>
+    <div class="scam-desc">Protect every client at once. Volume pricing from 25 seats, one invoice, and a quarterly compliance report that documents your Senior Safe Act / FINRA 2165 supervision.</div>
+    <div class="scam-cta">See advisor pricing &rarr;</div>
+  </a>
 ${categoryHTML}
 </main>
 
