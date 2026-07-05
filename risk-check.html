@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What's Your Scam Risk? — Free 2-Minute Assessment — Double Check</title>
+  <link rel="canonical" href="https://mydoublecheck.app/risk-check" />
+  <meta name="description" content="Answer 8 quick questions and see your personal scam-risk profile, plus the 3 scams most likely to target someone like you — and how to beat each one. Free, private, nothing is stored." />
+  <meta name="apple-itunes-app" content="app-id=6761861061" />
+  <meta property="og:title" content="What's your scam risk? 8 questions, 2 minutes." />
+  <meta property="og:description" content="See your personal scam-risk profile and the 3 scams most likely to target someone like you. Free and private — your answers never leave your device." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mydoublecheck.app/risk-check" />
+  <meta property="og:image" content="https://mydoublecheck.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mydoublecheck.app/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f172a;
+      --navy-mid: #1e293b;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --blue-light: #eff6ff;
+      --muted: #475569;
+      --bg: #fafaf9;
+      --bg-subtle: #f1f5f9;
+      --border: #e2e8f0;
+      --green: #15803d;
+      --green-bg: #f0fdf4;
+      --amber: #b45309;
+      --amber-bg: #fffbeb;
+      --red: #b91c1c;
+      --red-bg: #fef2f2;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--navy);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 560px; margin: 0 auto; padding: 28px 20px 60px; }
+    header.top { display: flex; justify-content: center; margin-bottom: 28px; }
+    .logo { font-size: 22px; font-weight: 800; text-decoration: none; color: var(--navy); }
+    .logo span { color: var(--blue); }
+
+    h1 { font-size: 30px; font-weight: 800; text-align: center; margin-bottom: 10px; letter-spacing: -0.3px; }
+    .intro { font-size: 18px; color: var(--muted); text-align: center; margin-bottom: 12px; }
+    .privacy-note {
+      font-size: 15px;
+      color: var(--green);
+      background: var(--green-bg);
+      border-radius: 12px;
+      padding: 12px 16px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(15,23,42,0.06);
+    }
+
+    .progress-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 8px;
+    }
+    .progress-track {
+      height: 8px;
+      background: var(--bg-subtle);
+      border-radius: 4px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      background: var(--blue);
+      border-radius: 4px;
+      transition: width 0.25s ease;
+    }
+    .question-text { font-size: 22px; font-weight: 700; line-height: 1.4; margin-bottom: 20px; }
+    .options { display: flex; flex-direction: column; gap: 12px; }
+    .option-btn {
+      font-size: 18px;
+      font-weight: 600;
+      text-align: left;
+      padding: 18px 20px;
+      border-radius: 14px;
+      border: 2px solid var(--border);
+      background: #fff;
+      color: var(--navy);
+      cursor: pointer;
+      line-height: 1.4;
+      transition: transform 0.1s, border-color 0.15s, background 0.15s;
+    }
+    .option-btn:hover { border-color: var(--blue); background: var(--blue-light); }
+    .option-btn:active { transform: scale(0.98); }
+    .back-row { margin-top: 18px; text-align: center; }
+    .back-link {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 16px;
+      color: var(--muted);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .back-link:hover { color: var(--blue); }
+
+    /* Results */
+    .result-badge {
+      display: block;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 800;
+      padding: 16px 18px;
+      border-radius: 14px;
+      margin-bottom: 16px;
+    }
+    .result-badge.lower { background: var(--green-bg); color: var(--green); }
+    .result-badge.elevated { background: var(--amber-bg); color: var(--amber); }
+    .result-badge.high { background: var(--red-bg); color: var(--red); }
+    .result-summary { font-size: 18px; color: var(--navy-mid); margin-bottom: 10px; }
+    .no-shame {
+      font-size: 16px;
+      color: var(--muted);
+      background: var(--bg-subtle);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 22px;
+    }
+    .scams-heading { font-size: 19px; font-weight: 800; margin-bottom: 14px; }
+    .scam-item {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+    .scam-item a.scam-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .scam-item a.scam-name:hover { text-decoration: underline; }
+    .scam-tip { font-size: 16px; color: var(--navy-mid); margin-top: 6px; }
+    .scam-tip strong { color: var(--navy); }
+
+    .cta-row { margin-top: 30px; text-align: center; }
+    .btn-primary {
+      display: inline-block;
+      width: 100%;
+      text-decoration: none;
+      background: var(--blue);
+      color: #fff;
+      font-size: 19px;
+      font-weight: 700;
+      padding: 18px 24px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      text-decoration: none;
+      background: #fff;
+      color: var(--navy);
+      border: 2px solid var(--border);
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 24px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+    .quiz-link { display: block; margin-top: 14px; font-size: 16px; color: var(--muted); }
+    .quiz-link a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    .quiz-link a:hover { text-decoration: underline; }
+    .share-note { font-size: 14px; color: var(--muted); margin-top: 8px; }
+    .retake-row { margin-top: 18px; text-align: center; }
+
+    .seo-copy {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 32px;
+      text-align: center;
+      line-height: 1.7;
+    }
+    footer.bottom { text-align: center; margin-top: 40px; font-size: 14px; }
+    footer.bottom a { color: var(--muted); text-decoration: none; }
+    footer.bottom a:hover { color: var(--blue); }
+
+    @media (max-width: 420px) {
+      h1 { font-size: 26px; }
+      .intro { font-size: 16px; }
+      .question-text { font-size: 20px; }
+      .option-btn { font-size: 17px; padding: 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="logo" href="/">Double<span>Check</span></a>
+    </header>
+
+    <h1>What's your scam risk?</h1>
+    <p class="intro">8 questions, about 2 minutes. See which scams are most likely to target someone like you &mdash; and how to beat them.</p>
+    <p class="privacy-note">&#128274; Fully private: everything runs on this page. Your answers are never sent, stored, or collected &mdash; anywhere.</p>
+
+    <div class="card" id="card">
+      <div class="progress-label" id="progress-label">Question 1 of 8</div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="question-text" id="question-text"></div>
+      <div class="options" id="options"></div>
+      <div class="back-row" id="back-row" style="display:none">
+        <button class="back-link" id="back-btn" type="button">&larr; Previous question</button>
+      </div>
+    </div>
+
+    <p class="seo-copy">
+      This free scam-risk assessment is based on the risk factors fraud researchers at the FTC and AARP see again and again: living situation, how you handle unknown calls and texts, payment requests, and who you talk to when something feels off. Risk is about how hard scammers work to reach people like you &mdash; it has nothing to do with intelligence. Take it for yourself, or answer for a parent or loved one.
+    </p>
+
+    <footer class="bottom">
+      <a href="/">mydoublecheck.app</a>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      /*
+       * SCORING — how the weights work
+       * Q1 (who is this for) is not scored; it only sets the pronouns in the results.
+       * Q2–Q8 each add 0–3 points. Weights follow FTC/AARP fraud-risk research:
+       *   - Recent loss/widowhood and social isolation are the strongest predictors
+       *     (scammers deliberately target life transitions and people with no one
+       *     to sound ideas off), so those answers carry the top weights (3).
+       *   - Having already clicked a suspicious link or paid by gift card means
+       *     the person is likely on scammer contact lists ("sucker lists"), also 3.
+       *   - Age and phone habits raise exposure more gradually (0–3 / 0–2).
+       * Max score = 19. Tiers: 0–5 Lower, 6–11 Elevated, 12+ High.
+       * Higher scores mean scammers put MORE EFFORT into reaching people in this
+       * situation — never that the person is less capable.
+       */
+      var questions = [
+        {
+          q: 'Who is this check for?',
+          opts: [
+            { t: 'Me', w: 0, who: 'self' },
+            { t: 'A parent or loved one', w: 0, who: 'other' }
+          ]
+        },
+        {
+          q: '{Age_q}',
+          opts: [
+            { t: 'Under 55', w: 0 },
+            { t: '55–64', w: 1 },
+            { t: '65–74', w: 2 },
+            { t: '75 or older', w: 3 }
+          ]
+        },
+        {
+          q: '{Living_q}',
+          opts: [
+            { t: 'With a spouse, family, or housemates', w: 0 },
+            { t: 'Alone', w: 2 },
+            { t: 'Alone, and recently widowed or lost someone close', w: 3 }
+          ]
+        },
+        {
+          q: '{Callers_q}',
+          opts: [
+            { t: 'Let unknown numbers go to voicemail', w: 0 },
+            { t: 'Sometimes pick up, depends on the day', w: 1 },
+            { t: 'Usually answer — it could be important', w: 2 }
+          ]
+        },
+        {
+          q: '{Link_q}',
+          opts: [
+            { t: 'No — deleted or ignored it', w: 0 },
+            { t: 'Opened the message but didn’t tap the link', w: 1 },
+            { t: 'Yes, tapped a link at least once', w: 3 }
+          ]
+        },
+        {
+          q: '{Online_q}',
+          opts: [
+            { t: 'Regularly, and confident spotting fake sites', w: 0 },
+            { t: 'Rarely — mostly avoids it or someone helps', w: 1 },
+            { t: 'Regularly, but not always sure what’s fake', w: 2 }
+          ]
+        },
+        {
+          q: '{Giftcard_q}',
+          opts: [
+            { t: 'Never', w: 0 },
+            { t: 'Yes, but refused', w: 2 },
+            { t: 'Yes, and paid with gift cards at least once', w: 3 }
+          ]
+        },
+        {
+          q: '{Tell_q}',
+          opts: [
+            { t: 'A family member or friend, right away', w: 0 },
+            { t: 'Might mention it eventually', w: 1 },
+            { t: 'Would probably keep it private', w: 3 }
+          ]
+        }
+      ];
+
+      // Question wording per audience (self vs. answering for a loved one)
+      var wording = {
+        self: {
+          Age_q: 'How old are you?',
+          Living_q: 'What’s your living situation?',
+          Callers_q: 'When an unknown number calls, what do you usually do?',
+          Link_q: 'In the last few months, have you tapped a link in a text you weren’t expecting?',
+          Online_q: 'How do you feel about shopping or banking online?',
+          Giftcard_q: 'Has anyone ever asked you to pay for something with gift cards?',
+          Tell_q: 'If a message or call felt "off," who would you tell?'
+        },
+        other: {
+          Age_q: 'How old are they?',
+          Living_q: 'What’s their living situation?',
+          Callers_q: 'When an unknown number calls, what do they usually do?',
+          Link_q: 'In the last few months, have they tapped a link in a text they weren’t expecting?',
+          Online_q: 'How do they feel about shopping or banking online?',
+          Giftcard_q: 'Has anyone ever asked them to pay for something with gift cards?',
+          Tell_q: 'If a message or call felt "off," who would they tell?'
+        }
+      };
+
+      // Result profiles. {You}/{you}/{your} swap to loved-one phrasing when
+      // someone is answering for a parent.
+      var profiles = {
+        lower: {
+          label: 'Lower risk',
+          cls: 'lower',
+          summary: '{You_are} in a lower-risk group right now: good habits with unknown calls and links, and people to talk things over with. Scammers still cast a wide net, though — these mass-blast scams reach everyone, including {you}.',
+          scams: [
+            { slug: 'usps-delivery-text-scam', name: 'Fake delivery texts (USPS)', tip: 'A real carrier never asks for a "small fee" by text. Go to the carrier’s own website or app — never the link in the message.' },
+            { slug: 'amazon-account-suspended-scam', name: '"Amazon account suspended" messages', tip: 'Ignore the message and log in by typing amazon.com yourself. If nothing’s wrong there, nothing’s wrong.' },
+            { slug: 'zelle-scam', name: 'Zelle & instant-payment scams', tip: 'Treat Zelle like cash: only send to people {you_know} personally. A "bank" asking {you} to send money to "protect" it is always a scam.' }
+          ]
+        },
+        elevated: {
+          label: 'Elevated risk',
+          cls: 'elevated',
+          summary: 'A few of {your} answers match patterns scammers actively look for — which means {you_get} more, and more convincing, scam attempts than average. Knowing the three below in advance takes away most of their power.',
+          scams: [
+            { slug: 'social-security-scam-call', name: 'Social Security scam calls', tip: 'The real SSA almost never calls out of the blue, and never threatens arrest or asks {you} to move money. Hang up and call the SSA yourself if worried.' },
+            { slug: 'microsoft-tech-support-scam', name: 'Tech-support pop-ups & calls', tip: 'A real virus warning never includes a phone number. Never let a caller install anything or take control of {your} computer.' },
+            { slug: 'medicare-cancellation-scam', name: 'Medicare cancellation calls', tip: 'Medicare doesn’t call to "verify" {your} number or threaten to cancel coverage. Hang up and use the number on the back of the card.' }
+          ]
+        },
+        high: {
+          label: 'Higher risk',
+          cls: 'high',
+          summary: '{Your} answers match the situations scammers spend the most effort targeting — often with patient, personal, weeks-long approaches rather than clumsy mass texts. That effort is the risk; it says nothing about {your} judgment. The three scams below are the ones to know cold.',
+          scams: [
+            { slug: 'grandparent-scam', name: 'The grandparent scam ("family emergency" calls)', tip: 'Agree on a family code word today. Any urgent call about a relative in trouble: hang up and call that relative directly on their usual number.' },
+            { slug: 'romance-scam', name: 'Romance scams', tip: 'Anyone {you_have} never met in person who eventually brings up money — however slowly, however kindly — is running a script. The request for secrecy is the biggest red flag.' },
+            { slug: 'lottery-winner-scam', name: 'Lottery & prize scams', tip: '{You} can’t win a lottery {you} didn’t enter, and real prizes never require a fee, gift card, or "tax" up front.' }
+          ]
+        }
+      };
+
+      var TIERS = [
+        { max: 5, key: 'lower' },
+        { max: 11, key: 'elevated' },
+        { max: Infinity, key: 'high' }
+      ];
+
+      var card = document.getElementById('card');
+      var idx = 0;
+      var picks = []; // chosen option index per question
+      var who = 'self';
+
+      function fill(text) {
+        var w = wording[who];
+        return text.replace(/\{(\w+)\}/g, function (_, k) {
+          if (w[k]) return w[k];
+          var self = who === 'self';
+          switch (k) {
+            case 'You': return self ? 'You' : 'They';
+            case 'you': return self ? 'you' : 'them';
+            case 'You_are': return self ? 'You’re' : 'Your loved one is';
+            case 'you_get': return self ? 'you’ll get' : 'they’ll get';
+            case 'you_know': return self ? 'you know' : 'they know';
+            case 'you_have': return self ? 'you’ve' : 'they’ve';
+            case 'Your': return self ? 'Your' : 'Their';
+            case 'your': return self ? 'your' : 'their';
+            default: return k;
+          }
+        });
+      }
+
+      function renderQuestion() {
+        var q = questions[idx];
+        var optsHtml = q.opts.map(function (o, i) {
+          return '<button class="option-btn" type="button" data-i="' + i + '">' + o.t + '</button>';
+        }).join('');
+        card.innerHTML =
+          '<div class="progress-label">Question ' + (idx + 1) + ' of ' + questions.length + '</div>' +
+          '<div class="progress-track"><div class="progress-fill" style="width:' + (idx / questions.length * 100) + '%"></div></div>' +
+          '<div class="question-text">' + fill(q.q) + '</div>' +
+          '<div class="options">' + optsHtml + '</div>' +
+          (idx > 0 ? '<div class="back-row"><button class="back-link" type="button" id="back-btn">&larr; Previous question</button></div>' : '');
+
+        Array.prototype.forEach.call(card.querySelectorAll('.option-btn'), function (btn) {
+          btn.addEventListener('click', function () {
+            var i = parseInt(btn.getAttribute('data-i'), 10);
+            picks[idx] = i;
+            if (idx === 0) who = questions[0].opts[i].who;
+            idx++;
+            if (idx < questions.length) renderQuestion();
+            else renderResult();
+          });
+        });
+        var back = document.getElementById('back-btn');
+        if (back) back.addEventListener('click', function () { idx--; renderQuestion(); });
+      }
+
+      function score() {
+        var total = 0;
+        for (var i = 1; i < questions.length; i++) {
+          total += questions[i].opts[picks[i]].w;
+        }
+        return total;
+      }
+
+      function renderResult() {
+        var s = score();
+        var tier = TIERS.filter(function (t) { return s <= t.max; })[0];
+        var p = profiles[tier.key];
+        var self = who === 'self';
+
+        var scamsHtml = p.scams.map(function (sc) {
+          return '<div class="scam-item">' +
+            '<a class="scam-name" href="/scams/' + sc.slug + '">' + sc.name + ' &rarr;</a>' +
+            '<p class="scam-tip"><strong>Beat it:</strong> ' + fill(sc.tip) + '</p>' +
+            '</div>';
+        }).join('');
+
+        card.innerHTML =
+          '<span class="result-badge ' + p.cls + '">' + p.label + '</span>' +
+          '<p class="result-summary">' + fill(p.summary) + '</p>' +
+          '<p class="no-shame">Remember: risk comes from how hard scammers work to reach people in ' +
+          (self ? 'your' : 'their') + ' situation — not from anyone’s intelligence. The most careful people get targeted every day.</p>' +
+          '<h2 class="scams-heading">The 3 scams most likely to target ' + (self ? 'you' : 'them') + '</h2>' +
+          scamsHtml +
+          '<div class="cta-row">' +
+          '<a class="btn-primary" href="https://mydoublecheck.app/app">Get free unlimited checks</a>' +
+          '<button class="btn-secondary" id="share-btn" type="button">Share this assessment</button>' +
+          '<p class="share-note">Sharing sends only the link to this page &mdash; never ' + (self ? 'your' : 'anyone’s') + ' answers or result.</p>' +
+          '<p class="quiz-link">Want a daily 10-second workout? <a href="/quiz">Try the Spot-the-Scam quiz</a></p>' +
+          '</div>' +
+          '<div class="retake-row"><button class="back-link" id="retake-btn" type="button">Start over</button></div>';
+
+        document.getElementById('retake-btn').addEventListener('click', function () {
+          idx = 0; picks = []; who = 'self'; renderQuestion();
+        });
+
+        var shareBtn = document.getElementById('share-btn');
+        var shareUrl = 'https://mydoublecheck.app/risk-check';
+        var shareText = 'What’s your scam risk? 8 questions, 2 minutes. ' + shareUrl;
+        shareBtn.addEventListener('click', function () {
+          if (navigator.share) {
+            navigator.share({ text: shareText, url: shareUrl }).catch(function () {});
+          } else if (navigator.clipboard) {
+            navigator.clipboard.writeText(shareText).then(function () {
+              var original = shareBtn.textContent;
+              shareBtn.textContent = 'Link copied!';
+              setTimeout(function () { shareBtn.textContent = original; }, 2000);
+            });
+          }
+        });
+      }
+
+      renderQuestion();
+    })();
+  </script>
+</body>
+</html>
