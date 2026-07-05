@@ -225,6 +225,38 @@
     .trust-pillar h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
     .trust-pillar p { font-size: 16px; color: var(--muted); line-height: 1.6; }
 
+    /* LIVE PROOF STRIP — progressive enhancement, hidden until JS confirms live data */
+    .live-proof-strip {
+      display: none;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+      padding: 36px 24px 40px;
+    }
+    .live-proof-strip.is-visible { display: block; }
+    .live-proof-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .live-proof-counters {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;
+      margin-bottom: 20px;
+    }
+    .live-proof-counter { min-width: 140px; }
+    .live-proof-counter-num {
+      font-size: clamp(28px, 4vw, 38px); font-weight: 800; color: var(--text); letter-spacing: -0.5px;
+    }
+    .live-proof-counter-label {
+      font-size: 14px; color: var(--muted); margin-top: 2px;
+    }
+    .live-proof-counter-label .est { color: var(--subtle); font-size: 12px; }
+    .live-proof-ticker {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 16px; color: var(--muted);
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: 999px; padding: 10px 20px;
+      max-width: 100%;
+    }
+    .live-proof-ticker-text {
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .live-proof-ticker-text strong { color: var(--text); }
+
     /* SHARED SECTION STYLES */
     .section-label {
       text-align: center; font-size: 13px; font-weight: 700;
@@ -663,6 +695,17 @@
     </div>
   </div>
 </section>
+
+<!-- LIVE PROOF STRIP (progressive enhancement — no server data, no render) -->
+<div class="live-proof-strip" id="live-proof-strip">
+  <div class="live-proof-inner">
+    <div class="live-proof-counters" id="live-proof-counters"></div>
+    <div class="live-proof-ticker" id="live-proof-ticker" style="display:none;">
+      <span aria-hidden="true">&#128337;</span>
+      <span class="live-proof-ticker-text" id="live-proof-ticker-text"></span>
+    </div>
+  </div>
+</div>
 
 <!-- HOW DOUBLE CHECK PROTECTS YOU -->
 <div class="trust-section">
@@ -1235,5 +1278,78 @@
     });
   })();
   </script>
+<!-- LIVE PROOF WIDGET: progressive enhancement. If the fetch fails, is slow,
+     or JS is off, the strip simply never appears — no skeletons, no zeros. -->
+<script>
+  (function () {
+    var STATS_URL = 'https://web-production-970ba.up.railway.app/public/stats';
+    var COUNTER_THRESHOLD = 500; // hide big-number counters below this; ticker can still show
+
+    function formatNumber(n) {
+      return n.toLocaleString('en-US');
+    }
+
+    function renderCounters(data) {
+      var wrap = document.getElementById('live-proof-counters');
+      var items = [
+        { num: formatNumber(data.total_checks), label: 'checks run' },
+        { num: formatNumber(data.scams_caught), label: 'scams caught' },
+        { num: '$' + formatNumber(data.est_losses_prevented_usd), label: 'estimated losses avoided', est: true }
+      ];
+      wrap.innerHTML = items.map(function (item) {
+        return '<div class="live-proof-counter">' +
+          '<div class="live-proof-counter-num">' + item.num + '</div>' +
+          '<div class="live-proof-counter-label">' + item.label + (item.est ? ' <span class="est">(estimated)</span>' : '') + '</div>' +
+          '</div>';
+      }).join('');
+    }
+
+    function startTicker(catches) {
+      var el = document.getElementById('live-proof-ticker');
+      var textEl = document.getElementById('live-proof-ticker-text');
+      if (!catches || !catches.length) return;
+      var i = 0;
+      function show() {
+        var c = catches[i % catches.length];
+        // Server strings already read "35 min ago" / "recently"; category_label
+        // comes from an external API, so build with textContent, never innerHTML.
+        var when = c.minutes_ago === 'recently' ? 'Recently' : c.minutes_ago;
+        textEl.textContent = '';
+        var strong = document.createElement('strong');
+        strong.textContent = when + ':';
+        textEl.appendChild(strong);
+        textEl.appendChild(document.createTextNode(' ' + c.category_label + ' caught'));
+        i++;
+      }
+      show();
+      el.style.display = 'inline-flex';
+      if (catches.length > 1) {
+        setInterval(show, 6000);
+      }
+    }
+
+    fetch(STATS_URL)
+      .then(function (res) {
+        if (!res.ok) throw new Error('bad response');
+        return res.json();
+      })
+      .then(function (data) {
+        var hasRecent = data.recent_catches && data.recent_catches.length > 0;
+        var showCounters = typeof data.total_checks === 'number' && data.total_checks >= COUNTER_THRESHOLD;
+
+        // Nothing worth showing (no volume, no recent catches) — stay hidden.
+        if (!showCounters && !hasRecent) return;
+
+        if (showCounters) renderCounters(data);
+        if (hasRecent) startTicker(data.recent_catches);
+
+        document.getElementById('live-proof-strip').classList.add('is-visible');
+      })
+      .catch(function () {
+        // Server down / network error — strip stays hidden, no skeleton, no zeros.
+      });
+  })();
+</script>
+
 </body>
 </html>
