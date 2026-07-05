@@ -37,6 +37,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://mydoublecheck.app/for-your-parents</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mydoublecheck.app/quiz</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>daily</changefreq>

@@ -215,6 +215,7 @@ function buildSitemap(scams, guides, advisorPages) {
     { loc: 'https://mydoublecheck.app/advisor', priority: '0.9', changefreq: 'weekly', sig: slugSig(advisorPages) },
     { loc: 'https://mydoublecheck.app/advisor/pricing', priority: '0.9', changefreq: 'monthly', sig: srcSig('advisor/pricing.html') },
     { loc: 'https://mydoublecheck.app/advisors', priority: '0.85', changefreq: 'monthly', sig: srcSig('advisors.html') },
+    { loc: 'https://mydoublecheck.app/for-your-parents', priority: '0.8', changefreq: 'monthly', sig: srcSig('for-your-parents.html') },
     { loc: 'https://mydoublecheck.app/quiz', priority: '0.8', changefreq: 'daily', sig: srcSig('quiz.html') },
     { loc: 'https://mydoublecheck.app/risk-check', priority: '0.8', changefreq: 'monthly', sig: srcSig('risk-check.html') },
     { loc: 'https://mydoublecheck.app/save-contact', priority: '0.8', changefreq: 'monthly', sig: srcSig('save-contact.html') },
