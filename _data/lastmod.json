@@ -24,8 +24,12 @@
     "date": "2026-07-02"
   },
   "https://mydoublecheck.app/quiz": {
-    "hash": "8b693228e928ff524ea6f3dbb10a386318b3a2e5",
-    "date": "2026-07-02"
+    "hash": "a3943c9eaa755b5b2df30574dbc2b412ba8b6fe3",
+    "date": "2026-07-05"
+  },
+  "https://mydoublecheck.app/brain-check": {
+    "hash": "8c8d809d5c0048b5bec4a2e14d76f28a145a59b7",
+    "date": "2026-07-05"
   },
   "https://calculator.mydoublecheck.app/": {
     "hash": "46237b3d702aad617eae653792a6269e836aa44d",

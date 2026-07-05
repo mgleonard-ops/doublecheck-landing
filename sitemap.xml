@@ -49,6 +49,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mydoublecheck.app/brain-check</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mydoublecheck.app/risk-check</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
