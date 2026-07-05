@@ -1,7 +1,7 @@
 {
   "https://mydoublecheck.app/": {
-    "hash": "5d78fe71702faa51ed0cf4d3997ccabf411f287c",
-    "date": "2026-07-03"
+    "hash": "80feafcca7a7935f2c697e3be875aa3eac554b48",
+    "date": "2026-07-05"
   },
   "https://mydoublecheck.app/scams": {
     "hash": "d731529c42d7d1b7b2c100a9d121ebcaf2e4e6e7",
@@ -22,6 +22,10 @@
   "https://mydoublecheck.app/advisors": {
     "hash": "24a2529dc1cf696d6206e71ac8d273dfba71da4a",
     "date": "2026-07-02"
+  },
+  "https://mydoublecheck.app/for-your-parents": {
+    "hash": "6a41d77c4569f542b7404b02011b385e0b2a8799",
+    "date": "2026-07-05"
   },
   "https://mydoublecheck.app/quiz": {
     "hash": "8b693228e928ff524ea6f3dbb10a386318b3a2e5",
