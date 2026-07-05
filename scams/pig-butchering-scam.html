@@ -349,7 +349,7 @@
 
   <!-- WEB CHECKER (compact): real AI check, no install. One free check per visitor (enforced server-side). -->
   <div class="checker-card compact" id="web-checker">
-    <label class="checker-label" for="checker-input">Got a message like this? Check it now &#8212; free.</label>
+    <label class="checker-label" for="checker-input">Got a message like this? Check it here, free.</label>
     <textarea id="checker-input" class="checker-input" rows="4" maxlength="2000" placeholder="Paste the suspicious text, email, or link here&#8230;"></textarea>
     <button type="button" id="checker-btn" class="checker-btn">Check it free</button>
     <p class="checker-note">Free &#183; No sign-up &#183; Your message is never stored</p>
@@ -454,9 +454,9 @@
 
     var VERDICTS = {
       scam: { cls: 'v-scam', icon: '⚠️', label: 'This looks like a scam' },
-      action: { cls: 'v-action', icon: '❗', label: 'Be careful — this needs a closer look' },
+      action: { cls: 'v-action', icon: '❗', label: 'Be careful. This needs a closer look' },
       safe: { cls: 'v-safe', icon: '✅', label: 'This looks safe' },
-      ignore: { cls: 'v-safe', icon: '✅', label: 'Nothing to worry about — safe to ignore' }
+      ignore: { cls: 'v-safe', icon: '✅', label: 'Nothing to worry about. Safe to ignore' }
     };
 
     function el(tag, cls, text) {
@@ -495,19 +495,19 @@
         steps.appendChild(document.createTextNode(data.what_to_do));
         result.appendChild(steps);
       }
-      result.appendChild(appCta('That was your free check — get the Double Check app for unlimited free checks, plus automatic family alerts.'));
+      result.appendChild(appCta('That was your free check. Get the Double Check app for unlimited free checks, plus automatic family alerts.'));
       result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     function showWall(msg) {
       reset('');
       result.appendChild(el('p', null, msg));
-      result.appendChild(appCta('Free on iPhone and Android — no credit card needed.'));
+      result.appendChild(appCta('Free on iPhone and Android. No credit card needed.'));
       result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     function showError() {
-      showWall('The checker couldn’t run just now. You can still check this message in the free Double Check app — it works even when this page can’t.');
+      showWall('The checker couldn’t run just now. You can still check this message in the free Double Check app. It works even when this page can’t.');
     }
 
     btn.addEventListener('click', function () {
@@ -543,7 +543,7 @@
         if (code === 'signup_required') {
           showWall('You’ve already used your free check here. In the free Double Check app, checks are unlimited.');
         } else if (r.status === 429 || code === 'anon_ip_limit' || code === 'web_checker_busy') {
-          showWall('The free web checker is busy right now. The app has no limits — and it’s free.');
+          showWall('The free web checker is busy right now. The app is free and has no limits.');
         } else if (r.status === 400 && detail) {
           reset('');
           result.appendChild(el('p', null, typeof detail === 'string' ? detail : (detail.message || 'Please shorten the message and try again.')));
