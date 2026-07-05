@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What's Your Scam Risk? — Free 2-Minute Assessment — Double Check</title>
   <link rel="canonical" href="https://mydoublecheck.app/risk-check" />
-  <meta name="description" content="Answer 8 quick questions and see your personal scam-risk profile, plus the 3 scams most likely to target someone like you — and how to beat each one. Free, private, nothing is stored." />
+  <meta name="description" content="Answer 8 quick questions and see your personal scam-risk profile, plus the 3 scams most likely to target someone like you, and how to beat each one. Free, private, nothing is stored." />
   <meta name="apple-itunes-app" content="app-id=6761861061" />
   <meta property="og:title" content="What's your scam risk? 8 questions, 2 minutes." />
-  <meta property="og:description" content="See your personal scam-risk profile and the 3 scams most likely to target someone like you. Free and private — your answers never leave your device." />
+  <meta property="og:description" content="See your personal scam-risk profile and the 3 scams most likely to target someone like you. Free and private. Your answers never leave your device." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mydoublecheck.app/risk-check" />
   <meta property="og:image" content="https://mydoublecheck.app/og-image.png" />
@@ -226,8 +226,8 @@
     </header>
 
     <h1>What's your scam risk?</h1>
-    <p class="intro">8 questions, about 2 minutes. See which scams are most likely to target someone like you &mdash; and how to beat them.</p>
-    <p class="privacy-note">&#128274; Fully private: everything runs on this page. Your answers are never sent, stored, or collected &mdash; anywhere.</p>
+    <p class="intro">8 questions, about 2 minutes. See which scams are most likely to target someone like you, and how to beat them.</p>
+    <p class="privacy-note">&#128274; Fully private: everything runs on this page. Your answers are never sent, stored, or collected. Not anywhere.</p>
 
     <div class="card" id="card">
       <div class="progress-label" id="progress-label">Question 1 of 8</div>
@@ -240,7 +240,7 @@
     </div>
 
     <p class="seo-copy">
-      This free scam-risk assessment is based on the risk factors fraud researchers at the FTC and AARP see again and again: living situation, how you handle unknown calls and texts, payment requests, and who you talk to when something feels off. Risk is about how hard scammers work to reach people like you &mdash; it has nothing to do with intelligence. Take it for yourself, or answer for a parent or loved one.
+      This free scam-risk assessment is based on the risk factors fraud researchers at the FTC and AARP see again and again: living situation, how you handle unknown calls and texts, payment requests, and who you talk to when something feels off. Risk is about how hard scammers work to reach people like you. It has nothing to do with intelligence. Take it for yourself, or answer for a parent or loved one.
     </p>
 
     <footer class="bottom">
@@ -294,13 +294,13 @@
           opts: [
             { t: 'Let unknown numbers go to voicemail', w: 0 },
             { t: 'Sometimes pick up, depends on the day', w: 1 },
-            { t: 'Usually answer — it could be important', w: 2 }
+            { t: 'Usually answer, it could be important', w: 2 }
           ]
         },
         {
           q: '{Link_q}',
           opts: [
-            { t: 'No — deleted or ignored it', w: 0 },
+            { t: 'No, deleted or ignored it', w: 0 },
             { t: 'Opened the message but didn’t tap the link', w: 1 },
             { t: 'Yes, tapped a link at least once', w: 3 }
           ]
@@ -309,7 +309,7 @@
           q: '{Online_q}',
           opts: [
             { t: 'Regularly, and confident spotting fake sites', w: 0 },
-            { t: 'Rarely — mostly avoids it or someone helps', w: 1 },
+            { t: 'Rarely, mostly avoids it or someone helps', w: 1 },
             { t: 'Regularly, but not always sure what’s fake', w: 2 }
           ]
         },
@@ -359,9 +359,9 @@
         lower: {
           label: 'Lower risk',
           cls: 'lower',
-          summary: '{You_are} in a lower-risk group right now: good habits with unknown calls and links, and people to talk things over with. Scammers still cast a wide net, though — these mass-blast scams reach everyone, including {you}.',
+          summary: '{You_are} in a lower-risk group right now: good habits with unknown calls and links, and people to talk things over with. Scammers still cast a wide net, though. These mass-blast scams reach everyone, including {you}.',
           scams: [
-            { slug: 'usps-delivery-text-scam', name: 'Fake delivery texts (USPS)', tip: 'A real carrier never asks for a "small fee" by text. Go to the carrier’s own website or app — never the link in the message.' },
+            { slug: 'usps-delivery-text-scam', name: 'Fake delivery texts (USPS)', tip: 'A real carrier never asks for a "small fee" by text. Go to the carrier’s own website or app, never the link in the message.' },
             { slug: 'amazon-account-suspended-scam', name: '"Amazon account suspended" messages', tip: 'Ignore the message and log in by typing amazon.com yourself. If nothing’s wrong there, nothing’s wrong.' },
             { slug: 'zelle-scam', name: 'Zelle & instant-payment scams', tip: 'Treat Zelle like cash: only send to people {you_know} personally. A "bank" asking {you} to send money to "protect" it is always a scam.' }
           ]
@@ -369,7 +369,7 @@
         elevated: {
           label: 'Elevated risk',
           cls: 'elevated',
-          summary: 'A few of {your} answers match patterns scammers actively look for — which means {you_get} more, and more convincing, scam attempts than average. Knowing the three below in advance takes away most of their power.',
+          summary: 'A few of {your} answers match patterns scammers actively look for, which means {you_get} more, and more convincing, scam attempts than average. Knowing the three below in advance takes away most of their power.',
           scams: [
             { slug: 'social-security-scam-call', name: 'Social Security scam calls', tip: 'The real SSA almost never calls out of the blue, and never threatens arrest or asks {you} to move money. Hang up and call the SSA yourself if worried.' },
             { slug: 'microsoft-tech-support-scam', name: 'Tech-support pop-ups & calls', tip: 'A real virus warning never includes a phone number. Never let a caller install anything or take control of {your} computer.' },
@@ -379,10 +379,10 @@
         high: {
           label: 'Higher risk',
           cls: 'high',
-          summary: '{Your} answers match the situations scammers spend the most effort targeting — often with patient, personal, weeks-long approaches rather than clumsy mass texts. That effort is the risk; it says nothing about {your} judgment. The three scams below are the ones to know cold.',
+          summary: '{Your} answers match the situations scammers spend the most effort targeting, often with patient, personal, weeks-long approaches rather than clumsy mass texts. That effort is the risk; it says nothing about {your} judgment. The three scams below are the ones to know cold.',
           scams: [
             { slug: 'grandparent-scam', name: 'The grandparent scam ("family emergency" calls)', tip: 'Agree on a family code word today. Any urgent call about a relative in trouble: hang up and call that relative directly on their usual number.' },
-            { slug: 'romance-scam', name: 'Romance scams', tip: 'Anyone {you_have} never met in person who eventually brings up money — however slowly, however kindly — is running a script. The request for secrecy is the biggest red flag.' },
+            { slug: 'romance-scam', name: 'Romance scams', tip: 'Anyone {you_have} never met in person who eventually brings up money, however slowly, however kindly, is running a script. The request for secrecy is the biggest red flag.' },
             { slug: 'lottery-winner-scam', name: 'Lottery & prize scams', tip: '{You} can’t win a lottery {you} didn’t enter, and real prizes never require a fee, gift card, or "tax" up front.' }
           ]
         }
@@ -469,13 +469,13 @@
           '<span class="result-badge ' + p.cls + '">' + p.label + '</span>' +
           '<p class="result-summary">' + fill(p.summary) + '</p>' +
           '<p class="no-shame">Remember: risk comes from how hard scammers work to reach people in ' +
-          (self ? 'your' : 'their') + ' situation — not from anyone’s intelligence. The most careful people get targeted every day.</p>' +
+          (self ? 'your' : 'their') + ' situation, not from anyone’s intelligence. The most careful people get targeted every day.</p>' +
           '<h2 class="scams-heading">The 3 scams most likely to target ' + (self ? 'you' : 'them') + '</h2>' +
           scamsHtml +
           '<div class="cta-row">' +
           '<a class="btn-primary" href="https://mydoublecheck.app/app">Get free unlimited checks</a>' +
           '<button class="btn-secondary" id="share-btn" type="button">Share this assessment</button>' +
-          '<p class="share-note">Sharing sends only the link to this page &mdash; never ' + (self ? 'your' : 'anyone’s') + ' answers or result.</p>' +
+          '<p class="share-note">Sharing sends only the link to this page, never ' + (self ? 'your' : 'anyone’s') + ' answers or result.</p>' +
           '<p class="quiz-link">Want a daily 10-second workout? <a href="/quiz">Try the Spot-the-Scam quiz</a></p>' +
           '</div>' +
           '<div class="retake-row"><button class="back-link" id="retake-btn" type="button">Start over</button></div>';
