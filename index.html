@@ -1127,8 +1127,14 @@
       var i = 0;
       function show() {
         var c = catches[i % catches.length];
-        var when = c.minutes_ago === 'recently' ? 'Recently' : c.minutes_ago + ' ago';
-        textEl.innerHTML = '<strong>' + when + '</strong> &#8212; ' + c.category_label + ' caught';
+        // Server strings already read "35 min ago" / "recently"; category_label
+        // comes from an external API, so build with textContent, never innerHTML.
+        var when = c.minutes_ago === 'recently' ? 'Recently' : c.minutes_ago;
+        textEl.textContent = '';
+        var strong = document.createElement('strong');
+        strong.textContent = when + ':';
+        textEl.appendChild(strong);
+        textEl.appendChild(document.createTextNode(' ' + c.category_label + ' caught'));
         i++;
       }
       show();
