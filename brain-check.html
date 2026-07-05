@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Brain Check — spot the scam &amp; the mini crossword — Double Check</title>
+  <link rel="canonical" href="https://mydoublecheck.app/brain-check" />
+  <meta name="description" content="A calm two-minute daily ritual: spot today's scam, then solve a 5x5 mini crossword built from everyday scam words. Free from Double Check, the scam-detection app for you and your family." />
+  <meta name="apple-itunes-app" content="app-id=6761861061" />
+  <meta property="og:title" content="Daily Brain Check — Double Check" />
+  <meta property="og:description" content="Two minutes to outsmart scammers: spot today's scam, then solve the mini crossword. A new one every day." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mydoublecheck.app/brain-check" />
+  <meta property="og:image" content="https://mydoublecheck.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mydoublecheck.app/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Double Check Daily Brain Check",
+    "url": "https://mydoublecheck.app/brain-check",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Web",
+    "description": "A free daily two-part brain game: spot today's scam message, then solve a 5x5 mini crossword built from everyday scam-safety words.",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "Double Check", "url": "https://mydoublecheck.app/" }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f172a;
+      --navy-mid: #1e293b;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --blue-light: #eff6ff;
+      --muted: #475569;
+      --bg: #fafaf9;
+      --bg-subtle: #f1f5f9;
+      --border: #e2e8f0;
+      --green: #15803d;
+      --green-bg: #f0fdf4;
+      --red: #b91c1c;
+      --red-bg: #fef2f2;
+      --amber: #b45309;
+      --amber-bg: #fffbeb;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--navy);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 560px; margin: 0 auto; padding: 28px 20px 60px; }
+    header.top { display: flex; justify-content: center; margin-bottom: 24px; }
+    .logo { font-size: 22px; font-weight: 800; text-decoration: none; color: var(--navy); }
+    .logo span { color: var(--blue); }
+
+    h1 { font-size: 30px; font-weight: 800; text-align: center; margin-bottom: 10px; letter-spacing: -0.3px; }
+    .intro { font-size: 18px; color: var(--muted); text-align: center; margin-bottom: 22px; }
+
+    .progress { display: flex; justify-content: center; gap: 10px; margin-bottom: 26px; font-size: 15px; font-weight: 600; color: var(--muted); }
+    .progress .dot { display: inline-flex; align-items: center; gap: 6px; }
+    .progress .tick { color: var(--green); }
+
+    .beat-label {
+      font-size: 14px; font-weight: 700; color: var(--blue);
+      text-transform: uppercase; letter-spacing: 0.7px; margin: 4px 0 10px;
+      text-align: center;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(15,23,42,0.06);
+      margin-bottom: 30px;
+    }
+
+    /* ── Beat 1: Spot the Scam ── */
+    .bubble-label { font-size: 14px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 10px; }
+    .bubble {
+      background: var(--bg-subtle); border-radius: 16px; border-top-left-radius: 4px;
+      padding: 20px; font-size: 20px; line-height: 1.55; color: var(--navy); min-height: 84px;
+    }
+    .bubble.skeleton {
+      color: transparent;
+      background: linear-gradient(90deg, var(--bg-subtle) 25%, #e5eaf0 37%, var(--bg-subtle) 63%);
+      background-size: 400% 100%; animation: shimmer 1.4s ease infinite;
+    }
+    @keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: 0 0; } }
+    .answers { display: flex; gap: 12px; margin-top: 22px; }
+    .answer-btn {
+      flex: 1; font-size: 19px; font-weight: 700; padding: 20px 12px;
+      border-radius: 14px; border: 2px solid var(--border); background: #fff; color: var(--navy);
+      cursor: pointer; transition: transform 0.1s, border-color 0.15s, background 0.15s;
+    }
+    .answer-btn:hover:not(:disabled) { border-color: var(--blue); background: var(--blue-light); }
+    .answer-btn:active:not(:disabled) { transform: scale(0.98); }
+    .answer-btn:disabled { cursor: default; opacity: 0.5; }
+    .answer-btn.chosen { border-color: var(--blue); background: var(--blue-light); opacity: 1; }
+    .reveal { margin-top: 22px; display: none; }
+    .reveal.show { display: block; }
+    .verdict { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 14px; font-size: 19px; font-weight: 700; margin-bottom: 14px; }
+    .verdict.correct { background: var(--green-bg); color: var(--green); }
+    .verdict.incorrect { background: var(--red-bg); color: var(--red); }
+    .verdict-icon { font-size: 24px; line-height: 1; }
+    .lesson { font-size: 17px; color: var(--navy-mid); background: var(--bg-subtle); border-radius: 12px; padding: 16px 18px; }
+
+    /* ── Beat 2: Crossword ── */
+    .xw-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px;
+      max-width: 320px; margin: 6px auto 20px;
+    }
+    .cell {
+      position: relative; aspect-ratio: 1 / 1; min-width: 48px; min-height: 48px;
+      border: 2px solid var(--border); border-radius: 8px; background: #fff;
+      font-size: 24px; font-weight: 700; color: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; text-transform: uppercase; user-select: none;
+      transition: border-color 0.12s, background 0.12s;
+    }
+    .cell.block { background: var(--navy); border-color: var(--navy); cursor: default; }
+    .cell.active { border-color: var(--blue); background: var(--blue-light); }
+    .cell.inword { background: var(--blue-light); }
+    .cell.correct { background: var(--green-bg); border-color: #86efac; color: var(--green); }
+    .cell.wrong { background: var(--red-bg); border-color: #fca5a5; color: var(--red); }
+    .cell .num { position: absolute; top: 2px; left: 4px; font-size: 10px; font-weight: 700; color: var(--muted); }
+
+    .keyboard { margin: 0 auto 8px; max-width: 520px; }
+    .krow { display: flex; justify-content: center; gap: 5px; margin-bottom: 5px; }
+    .key {
+      flex: 1 1 0; min-width: 30px; max-width: 46px; height: 50px;
+      border: 1.5px solid var(--border); border-radius: 8px; background: #fff;
+      font-family: inherit; font-size: 18px; font-weight: 700; color: var(--navy);
+      cursor: pointer; transition: background 0.1s, transform 0.05s;
+    }
+    .key:hover { background: var(--blue-light); border-color: var(--blue); }
+    .key:active { transform: translateY(1px); background: #dbeafe; }
+    .key.wide { flex: 1.6 1 0; max-width: 74px; font-size: 15px; }
+
+    .clues { margin-top: 20px; }
+    .clue-group h3 { font-size: 14px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; margin: 12px 0 8px; }
+    .clue {
+      display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 10px;
+      font-size: 16px; line-height: 1.5; cursor: pointer; border: 1.5px solid transparent;
+    }
+    .clue:hover { background: var(--bg-subtle); }
+    .clue.active { background: var(--blue-light); border-color: var(--blue); }
+    .clue.solved { color: var(--green); }
+    .clue.solved .clue-num { color: var(--green); }
+    .clue-num { flex-shrink: 0; font-weight: 700; color: var(--blue); min-width: 22px; }
+    .clue-reveal {
+      margin-left: auto; flex-shrink: 0; font-size: 13px; font-weight: 700; color: var(--muted);
+      background: #fff; border: 1.5px solid var(--border); border-radius: 8px;
+      padding: 6px 10px; cursor: pointer;
+    }
+    .clue-reveal:hover { border-color: var(--blue); color: var(--blue); }
+    .clue-reveal[disabled] { opacity: 0.4; cursor: default; }
+
+    .xw-actions { display: flex; gap: 12px; margin-top: 20px; }
+    .xw-actions button {
+      flex: 1; font-size: 17px; font-weight: 700; padding: 16px 12px; border-radius: 12px;
+      border: 2px solid var(--border); background: #fff; color: var(--navy); cursor: pointer;
+    }
+    .xw-actions button:hover { border-color: var(--blue); color: var(--blue); }
+    .xw-msg { text-align: center; font-size: 16px; color: var(--muted); margin-top: 14px; min-height: 22px; }
+    .xw-msg.good { color: var(--green); font-weight: 700; }
+
+    /* ── Completion ── */
+    .done-card { display: none; text-align: center; }
+    .done-card.show { display: block; }
+    .done-badge { font-size: 40px; margin-bottom: 6px; }
+    .done-title { font-size: 24px; font-weight: 800; margin-bottom: 6px; }
+    .done-sub { font-size: 17px; color: var(--muted); margin-bottom: 16px; }
+    .streak { font-size: 17px; font-weight: 700; color: var(--amber); background: var(--amber-bg); border-radius: 12px; padding: 12px 16px; display: inline-block; margin-bottom: 8px; }
+
+    .cta-row { margin-top: 8px; text-align: center; }
+    .btn-primary {
+      display: inline-block; width: 100%; text-decoration: none; background: var(--blue); color: #fff;
+      font-size: 19px; font-weight: 700; padding: 18px 24px; border-radius: 12px; margin-bottom: 12px;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+      text-decoration: none; background: #fff; color: var(--navy); border: 2px solid var(--border);
+      font-size: 16px; font-weight: 600; padding: 14px 24px; border-radius: 12px; cursor: pointer;
+    }
+    .btn-secondary:hover { border-color: var(--blue); color: var(--blue); }
+
+    .come-back { font-size: 16px; color: var(--muted); text-align: center; margin: 18px 0 4px; }
+    .error-box { text-align: center; padding: 30px 10px; }
+    .error-box p { font-size: 17px; color: var(--muted); margin-bottom: 20px; }
+    .seo-copy { font-size: 15px; color: var(--muted); margin-top: 32px; text-align: center; line-height: 1.7; }
+    footer.bottom { text-align: center; margin-top: 40px; font-size: 14px; }
+    footer.bottom a { color: var(--muted); text-decoration: none; }
+    footer.bottom a:hover { color: var(--blue); }
+
+    @media (max-width: 420px) {
+      h1 { font-size: 26px; }
+      .intro { font-size: 16px; }
+      .bubble { font-size: 18px; }
+      .answer-btn { font-size: 17px; padding: 18px 10px; }
+      .cell { font-size: 20px; }
+      .key { height: 46px; font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="logo" href="/">Double<span>Check</span></a>
+    </header>
+
+    <h1>Today's Brain Check</h1>
+    <p class="intro">Two calm minutes to keep your scam radar sharp. Spot today's scam, then solve the mini crossword. No timer, no rush.</p>
+
+    <div class="progress" id="progress">
+      <span class="dot" id="prog-1">1&#183; Spot the scam</span>
+      <span class="dot" id="prog-2">2&#183; Mini crossword</span>
+    </div>
+
+    <!-- ── BEAT 1: Spot the Scam ── -->
+    <div id="beat1">
+      <div class="beat-label">Part 1 &#183; Spot the scam</div>
+      <div class="card" id="quiz-card">
+        <div class="bubble-label">The message</div>
+        <div class="bubble skeleton" id="bubble">Loading today's message&hellip;</div>
+        <div class="answers" id="answers">
+          <button class="answer-btn" id="btn-scam" disabled>This is a scam</button>
+          <button class="answer-btn" id="btn-safe" disabled>Looks safe</button>
+        </div>
+        <div class="reveal" id="reveal">
+          <div class="verdict" id="verdict"></div>
+          <div class="lesson" id="lesson"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BEAT 2: Mini Crossword ── -->
+    <div id="beat2">
+      <div class="beat-label">Part 2 &#183; Mini crossword</div>
+      <div class="card" id="xw-card">
+        <div class="bubble-label">Tap a square, then use the letters below. Every answer is an everyday scam-safety word.</div>
+        <div class="xw-grid" id="xw-grid" aria-label="Mini crossword grid"></div>
+
+        <div class="keyboard" id="keyboard" aria-hidden="false"></div>
+
+        <div class="xw-actions">
+          <button type="button" id="xw-check">Check my answers</button>
+          <button type="button" id="xw-clear">Clear</button>
+        </div>
+        <div class="xw-msg" id="xw-msg"></div>
+
+        <div class="clues" id="clues"></div>
+      </div>
+    </div>
+
+    <!-- ── COMPLETION ── -->
+    <div class="card done-card" id="done-card">
+      <div class="done-badge">&#127881;</div>
+      <div class="done-title">Brain Check <span id="done-score">2/2</span> &#9989;</div>
+      <div class="done-sub">Nicely done. You kept your scam radar sharp today.</div>
+      <div class="streak" id="streak"></div>
+      <p class="come-back">Come back tomorrow for a fresh one.</p>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn-primary" href="https://mydoublecheck.app/app">Get Double Check free</a>
+      <button class="btn-secondary" id="share-btn" type="button">Share today's Brain Check</button>
+    </div>
+
+    <p class="seo-copy">
+      The Daily Brain Check is a free two-part game from Double Check, the scam-detection app for older adults and their families. Each day you get one real-style scam message to judge &mdash; scam or safe? &mdash; and a five-by-five mini crossword built entirely from everyday scam-safety words like WIRE, CODE, PHISH and VERIFY. It's a gentle way to stay familiar with the words and tricks scammers use, so a suspicious text feels easier to catch. When a real message worries you, open the free Double Check app for an instant, plain-English answer.
+    </p>
+
+    <footer class="bottom">
+      <a href="/quiz">Just the daily scam quiz</a> &nbsp;&#183;&nbsp; <a href="/">mydoublecheck.app</a>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var API_URL = 'https://web-production-970ba.up.railway.app/brain-check/daily';
+
+      // ── shared completion state ──
+      var quizDone = false, xwDone = false;
+
+      // ─────────────────────────────────────────────────────────────
+      // BEAT 1: Spot the Scam
+      // ─────────────────────────────────────────────────────────────
+      var bubble = document.getElementById('bubble');
+      var btnScam = document.getElementById('btn-scam');
+      var btnSafe = document.getElementById('btn-safe');
+      var reveal = document.getElementById('reveal');
+      var verdictEl = document.getElementById('verdict');
+      var lessonEl = document.getElementById('lesson');
+      var quizItem = null, answered = false;
+
+      function renderQuiz(q) {
+        quizItem = q;
+        bubble.textContent = q.message_text;
+        bubble.classList.remove('skeleton');
+        btnScam.disabled = false;
+        btnSafe.disabled = false;
+      }
+
+      function handleAnswer(userSaysScam) {
+        if (answered || !quizItem) return;
+        answered = true;
+        btnScam.disabled = true; btnSafe.disabled = true;
+        (userSaysScam ? btnScam : btnSafe).classList.add('chosen');
+        var correct = userSaysScam === quizItem.is_scam;
+        verdictEl.className = 'verdict ' + (correct ? 'correct' : 'incorrect');
+        verdictEl.innerHTML =
+          '<span class="verdict-icon">' + (quizItem.is_scam ? '&#10007;' : '&#10003;') + '</span>' +
+          '<span>' + (quizItem.is_scam ? 'This was a scam.' : 'This one was safe.') + '</span>';
+        lessonEl.textContent = quizItem.lesson;
+        reveal.classList.add('show');
+        quizDone = true;
+        markProgress();
+      }
+      btnScam.addEventListener('click', function () { handleAnswer(true); });
+      btnSafe.addEventListener('click', function () { handleAnswer(false); });
+
+      // ─────────────────────────────────────────────────────────────
+      // BEAT 2: Mini Crossword
+      // ─────────────────────────────────────────────────────────────
+      var gridEl = document.getElementById('xw-grid');
+      var kbEl = document.getElementById('keyboard');
+      var cluesEl = document.getElementById('clues');
+      var xwMsg = document.getElementById('xw-msg');
+
+      var puzzle = null;
+      var SIZE = 5;
+      var cells = {};        // "r,c" -> {el, answer letter}
+      var entries = [];      // enriched with number, cellKeys
+      var activeEntry = null;
+      var activeIdx = 0;     // index within active entry
+      var user = {};         // "r,c" -> letter typed
+
+      function key(r, c) { return r + ',' + c; }
+
+      function buildPuzzle(p) {
+        puzzle = p;
+        entries = p.entries.map(function (e) { return Object.assign({}, e); });
+
+        // Assign clue numbers by grid scan order (standard crossword numbering).
+        var numAt = {};
+        var starts = {};
+        entries.forEach(function (e) { starts[e.row + ',' + e.col] = true; });
+        var n = 0;
+        for (var r = 0; r < SIZE; r++) {
+          for (var c = 0; c < SIZE; c++) {
+            if (p.grid[r][c] !== '#' && starts[r + ',' + c]) { n++; numAt[r + ',' + c] = n; }
+          }
+        }
+        entries.forEach(function (e) {
+          e.number = numAt[e.row + ',' + e.col];
+          e.cellKeys = [];
+          for (var i = 0; i < e.answer.length; i++) {
+            var rr = e.row + (e.dir === 'down' ? i : 0);
+            var cc = e.col + (e.dir === 'across' ? i : 0);
+            e.cellKeys.push(key(rr, cc));
+          }
+          e.solved = false;
+        });
+
+        // Build grid
+        gridEl.innerHTML = '';
+        for (var r2 = 0; r2 < SIZE; r2++) {
+          for (var c2 = 0; c2 < SIZE; c2++) {
+            var d = document.createElement('div');
+            if (p.grid[r2][c2] === '#') {
+              d.className = 'cell block';
+            } else {
+              d.className = 'cell';
+              var kk = key(r2, c2);
+              cells[kk] = { el: d, answer: p.grid[r2][c2] };
+              if (numAt[r2 + ',' + c2]) {
+                var num = document.createElement('span');
+                num.className = 'num'; num.textContent = numAt[r2 + ',' + c2];
+                d.appendChild(num);
+              }
+              (function (kkk) {
+                d.addEventListener('click', function () { onCellClick(kkk); });
+              })(kk);
+            }
+            gridEl.appendChild(d);
+          }
+        }
+
+        buildKeyboard();
+        buildClues();
+        // Start on first across entry (or first entry).
+        var first = entries.filter(function (e) { return e.dir === 'across'; })[0] || entries[0];
+        setActive(first, 0);
+      }
+
+      function entriesAt(kk) {
+        return entries.filter(function (e) { return e.cellKeys.indexOf(kk) >= 0; });
+      }
+
+      function onCellClick(kk) {
+        var at = entriesAt(kk);
+        if (!at.length) return;
+        // If the clicked cell is in the active entry, toggle to the crossing entry.
+        var pick = at[0];
+        if (activeEntry && at.length > 1) {
+          var inActive = activeEntry.cellKeys.indexOf(kk) >= 0;
+          if (inActive) {
+            var other = at.filter(function (e) { return e !== activeEntry; })[0];
+            if (other) pick = other;
+          }
+        }
+        setActive(pick, pick.cellKeys.indexOf(kk));
+      }
+
+      function setActive(entry, idx) {
+        activeEntry = entry;
+        activeIdx = Math.max(0, idx);
+        render();
+        highlightClue();
+      }
+
+      function render() {
+        for (var kk in cells) {
+          var cl = cells[kk].el;
+          cl.classList.remove('active', 'inword');
+          // letter
+          var glyph = user[kk] || '';
+          var numSpan = cl.querySelector('.num');
+          cl.textContent = glyph;
+          if (numSpan) cl.appendChild(numSpan);
+        }
+        if (activeEntry) {
+          activeEntry.cellKeys.forEach(function (kk, i) {
+            var cl = cells[kk].el;
+            cl.classList.add('inword');
+            if (i === activeIdx) cl.classList.add('active');
+          });
+        }
+      }
+
+      function typeLetter(ch) {
+        if (!activeEntry) return;
+        var kk = activeEntry.cellKeys[activeIdx];
+        user[kk] = ch;
+        // clear any prior correct/wrong marking on edit
+        cells[kk].el.classList.remove('correct', 'wrong');
+        if (activeIdx < activeEntry.cellKeys.length - 1) activeIdx++;
+        render();
+      }
+
+      function backspace() {
+        if (!activeEntry) return;
+        var kk = activeEntry.cellKeys[activeIdx];
+        if (user[kk]) {
+          user[kk] = '';
+        } else if (activeIdx > 0) {
+          activeIdx--;
+          user[activeEntry.cellKeys[activeIdx]] = '';
+        }
+        render();
+      }
+
+      function buildKeyboard() {
+        var rows = ['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'];
+        kbEl.innerHTML = '';
+        rows.forEach(function (row, ri) {
+          var rEl = document.createElement('div');
+          rEl.className = 'krow';
+          if (ri === 2) {
+            // Backspace on the last row, at the end.
+            row.split('').forEach(function (ch) { rEl.appendChild(mkKey(ch)); });
+            var bk = document.createElement('button');
+            bk.className = 'key wide'; bk.type = 'button';
+            bk.innerHTML = '&#9003;'; bk.setAttribute('aria-label', 'Delete');
+            bk.addEventListener('click', backspace);
+            rEl.appendChild(bk);
+          } else {
+            row.split('').forEach(function (ch) { rEl.appendChild(mkKey(ch)); });
+          }
+          kbEl.appendChild(rEl);
+        });
+      }
+
+      function mkKey(ch) {
+        var b = document.createElement('button');
+        b.className = 'key'; b.type = 'button'; b.textContent = ch;
+        b.addEventListener('click', function () { typeLetter(ch); });
+        return b;
+      }
+
+      function buildClues() {
+        cluesEl.innerHTML = '';
+        ['across', 'down'].forEach(function (dir) {
+          var group = entries.filter(function (e) { return e.dir === dir; })
+                             .sort(function (a, b) { return a.number - b.number; });
+          if (!group.length) return;
+          var wrap = document.createElement('div');
+          wrap.className = 'clue-group';
+          var h = document.createElement('h3');
+          h.textContent = dir === 'across' ? 'Across' : 'Down';
+          wrap.appendChild(h);
+          group.forEach(function (e) {
+            var row = document.createElement('div');
+            row.className = 'clue';
+            row.dataset.dir = e.dir; row.dataset.num = e.number;
+            e._clueEl = row;
+            var num = document.createElement('span');
+            num.className = 'clue-num'; num.textContent = e.number;
+            var txt = document.createElement('span');
+            txt.textContent = e.clue;
+            var rev = document.createElement('button');
+            rev.className = 'clue-reveal'; rev.type = 'button'; rev.textContent = 'Reveal';
+            rev.addEventListener('click', function (ev) { ev.stopPropagation(); revealEntry(e); });
+            e._revealBtn = rev;
+            row.appendChild(num); row.appendChild(txt); row.appendChild(rev);
+            row.addEventListener('click', function () { setActive(e, 0); });
+            wrap.appendChild(row);
+          });
+          cluesEl.appendChild(wrap);
+        });
+      }
+
+      function highlightClue() {
+        entries.forEach(function (e) {
+          if (e._clueEl) e._clueEl.classList.toggle('active', e === activeEntry);
+        });
+        if (activeEntry && activeEntry._clueEl) {
+          activeEntry._clueEl.scrollIntoView({ block: 'nearest' });
+        }
+      }
+
+      // Gentle check: green for correct letters, red for wrong; never blocks.
+      function checkAnswers() {
+        var anyTyped = false, allComplete = true;
+        for (var kk in cells) {
+          var typed = user[kk] || '';
+          if (typed) anyTyped = true; else allComplete = false;
+          cells[kk].el.classList.remove('correct', 'wrong');
+          if (typed) {
+            cells[kk].el.classList.add(typed === cells[kk].answer ? 'correct' : 'wrong');
+          }
+        }
+        if (!anyTyped) {
+          xwMsg.className = 'xw-msg';
+          xwMsg.textContent = 'Tap a square and start with the letters below.';
+          return;
+        }
+        updateSolved();
+        if (isPuzzleComplete()) {
+          xwMsg.className = 'xw-msg good';
+          xwMsg.textContent = 'All correct — wonderful!';
+          finishXw();
+        } else {
+          xwMsg.className = 'xw-msg';
+          xwMsg.textContent = allComplete
+            ? 'Almost — the red squares need another look. You can Reveal any clue.'
+            : 'Green squares are right. Keep going — no rush.';
+        }
+      }
+
+      function updateSolved() {
+        entries.forEach(function (e) {
+          var ok = e.cellKeys.every(function (kk) { return (user[kk] || '') === cells[kk].answer; });
+          e.solved = ok;
+          if (e._clueEl) e._clueEl.classList.toggle('solved', ok);
+          if (e._revealBtn) e._revealBtn.disabled = ok;
+        });
+      }
+
+      // Per-word reveal (after the user has had a go): fill the answer, mark green.
+      function revealEntry(e) {
+        e.cellKeys.forEach(function (kk, i) {
+          user[kk] = e.answer[i];
+          cells[kk].el.classList.remove('wrong');
+          cells[kk].el.classList.add('correct');
+        });
+        render();
+        updateSolved();
+        if (isPuzzleComplete()) { xwMsg.className = 'xw-msg good'; xwMsg.textContent = 'That completes the grid.'; finishXw(); }
+      }
+
+      function isPuzzleComplete() {
+        for (var kk in cells) { if ((user[kk] || '') !== cells[kk].answer) return false; }
+        return true;
+      }
+
+      function finishXw() {
+        if (xwDone) return;
+        xwDone = true;
+        markProgress();
+      }
+
+      document.getElementById('xw-check').addEventListener('click', checkAnswers);
+      document.getElementById('xw-clear').addEventListener('click', function () {
+        user = {};
+        for (var kk in cells) { cells[kk].el.classList.remove('correct', 'wrong'); }
+        entries.forEach(function (e) {
+          e.solved = false;
+          if (e._clueEl) e._clueEl.classList.remove('solved');
+          if (e._revealBtn) e._revealBtn.disabled = false;
+        });
+        xwMsg.textContent = '';
+        render();
+      });
+
+      // Physical keyboard support (nice-to-have; the on-screen keys are primary).
+      document.addEventListener('keydown', function (ev) {
+        if (!puzzle) return;
+        if (ev.key === 'Backspace') { ev.preventDefault(); backspace(); }
+        else if (/^[a-zA-Z]$/.test(ev.key)) { typeLetter(ev.key.toUpperCase()); }
+        else if (ev.key === 'ArrowRight' || ev.key === 'ArrowDown') {
+          if (activeEntry && activeIdx < activeEntry.cellKeys.length - 1) { activeIdx++; render(); }
+        } else if (ev.key === 'ArrowLeft' || ev.key === 'ArrowUp') {
+          if (activeEntry && activeIdx > 0) { activeIdx--; render(); }
+        }
+      });
+
+      // ─────────────────────────────────────────────────────────────
+      // Progress, completion, streak
+      // ─────────────────────────────────────────────────────────────
+      function markProgress() {
+        var p1 = document.getElementById('prog-1');
+        var p2 = document.getElementById('prog-2');
+        p1.innerHTML = (quizDone ? '<span class="tick">&#10003;</span> ' : '1&#183; ') + 'Spot the scam';
+        p2.innerHTML = (xwDone ? '<span class="tick">&#10003;</span> ' : '2&#183; ') + 'Mini crossword';
+        if (quizDone && xwDone) showDone();
+      }
+
+      function showDone() {
+        var score = (quizDone ? 1 : 0) + (xwDone ? 1 : 0);
+        document.getElementById('done-score').textContent = score + '/2';
+        var streak = recordStreak();
+        var streakEl = document.getElementById('streak');
+        streakEl.innerHTML = streak > 1
+          ? '&#128293; ' + streak + '-day streak'
+          : '&#128293; Day 1 &mdash; come back tomorrow to build a streak';
+        document.getElementById('done-card').classList.add('show');
+        document.getElementById('done-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      // Calendar-day streak in localStorage (no server, no PII).
+      function todayKey() {
+        var d = new Date();
+        return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+      }
+      function recordStreak() {
+        try {
+          var last = localStorage.getItem('dc_bc_last');
+          var streak = parseInt(localStorage.getItem('dc_bc_streak') || '0', 10) || 0;
+          var today = todayKey();
+          if (last === today) return streak || 1;   // already counted today
+          // yesterday?
+          var y = new Date(); y.setDate(y.getDate() - 1);
+          var yKey = y.getFullYear() + '-' + (y.getMonth() + 1) + '-' + y.getDate();
+          streak = (last === yKey) ? streak + 1 : 1;
+          localStorage.setItem('dc_bc_last', today);
+          localStorage.setItem('dc_bc_streak', String(streak));
+          return streak;
+        } catch (e) { return 1; }
+      }
+
+      // ── Share ──
+      var shareText = "Brain Check ✅ — 2 minutes to outsmart scammers. https://mydoublecheck.app/brain-check";
+      var shareBtn = document.getElementById('share-btn');
+      shareBtn.addEventListener('click', function () {
+        if (navigator.share) {
+          navigator.share({ text: shareText, url: 'https://mydoublecheck.app/brain-check' }).catch(function () {});
+        } else if (navigator.clipboard) {
+          navigator.clipboard.writeText(shareText).then(function () {
+            var original = shareBtn.textContent;
+            shareBtn.textContent = 'Link copied!';
+            setTimeout(function () { shareBtn.textContent = original; }, 2000);
+          });
+        }
+      });
+
+      // ── Error handling (same pattern as /quiz) ──
+      function showError() {
+        document.getElementById('beat1').innerHTML =
+          '<div class="card"><div class="error-box">' +
+          '<p>Today\'s Brain Check couldn\'t load right now. Check back soon &mdash; or open Double Check to check a real message.</p>' +
+          '<a class="btn-primary" href="https://mydoublecheck.app/app">Get Double Check free</a>' +
+          '</div></div>';
+        document.getElementById('beat2').style.display = 'none';
+        document.getElementById('progress').style.display = 'none';
+      }
+
+      fetch(API_URL)
+        .then(function (res) { if (!res.ok) throw new Error('bad response'); return res.json(); })
+        .then(function (data) {
+          if (!data || !data.quiz || !data.crossword) throw new Error('bad payload');
+          renderQuiz(data.quiz);
+          buildPuzzle(data.crossword);
+        })
+        .catch(showError);
+    })();
+  </script>
+</body>
+</html>

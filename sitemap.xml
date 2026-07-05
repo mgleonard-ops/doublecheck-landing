@@ -38,7 +38,13 @@
   </url>
   <url>
     <loc>https://mydoublecheck.app/quiz</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mydoublecheck.app/brain-check</loc>
+    <lastmod>2026-07-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
