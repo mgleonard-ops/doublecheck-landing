@@ -282,7 +282,7 @@
     </div>
 
     <p class="seo-copy">
-      The Daily Brain Check is a free two-part game from Double Check, the scam-detection app for older adults and their families. Each day you get one real-style scam message to judge &mdash; scam or safe? &mdash; and a five-by-five mini crossword built entirely from everyday scam-safety words like WIRE, CODE, PHISH and VERIFY. It's a gentle way to stay familiar with the words and tricks scammers use, so a suspicious text feels easier to catch. When a real message worries you, open the free Double Check app for an instant, plain-English answer.
+      The Daily Brain Check is a free two-part game from Double Check, the scam-detection app for older adults and their families. Each day you get one real-style scam message to judge (scam or safe?) and a five-by-five mini crossword built entirely from everyday scam-safety words like WIRE, CODE, PHISH and VERIFY. It's a gentle way to stay familiar with the words and tricks scammers use, so a suspicious text feels easier to catch. When a real message worries you, open the free Double Check app for an instant, plain-English answer.
     </p>
 
     <footer class="bottom">
@@ -563,13 +563,13 @@
         updateSolved();
         if (isPuzzleComplete()) {
           xwMsg.className = 'xw-msg good';
-          xwMsg.textContent = 'All correct — wonderful!';
+          xwMsg.textContent = 'All correct. Wonderful!';
           finishXw();
         } else {
           xwMsg.className = 'xw-msg';
           xwMsg.textContent = allComplete
-            ? 'Almost — the red squares need another look. You can Reveal any clue.'
-            : 'Green squares are right. Keep going — no rush.';
+            ? 'Almost. The red squares need another look. You can Reveal any clue.'
+            : 'Green squares are right. Keep going, no rush.';
         }
       }
 
@@ -648,7 +648,7 @@
         var streakEl = document.getElementById('streak');
         streakEl.innerHTML = streak > 1
           ? '&#128293; ' + streak + '-day streak'
-          : '&#128293; Day 1 &mdash; come back tomorrow to build a streak';
+          : '&#128293; Day 1. Come back tomorrow to build a streak';
         document.getElementById('done-card').classList.add('show');
         document.getElementById('done-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
@@ -675,7 +675,7 @@
       }
 
       // ── Share ──
-      var shareText = "Brain Check ✅ — 2 minutes to outsmart scammers. https://mydoublecheck.app/brain-check";
+      var shareText = "Brain Check ✅ 2 minutes to outsmart scammers. https://mydoublecheck.app/brain-check";
       var shareBtn = document.getElementById('share-btn');
       shareBtn.addEventListener('click', function () {
         if (navigator.share) {
@@ -693,7 +693,7 @@
       function showError() {
         document.getElementById('beat1').innerHTML =
           '<div class="card"><div class="error-box">' +
-          '<p>Today\'s Brain Check couldn\'t load right now. Check back soon &mdash; or open Double Check to check a real message.</p>' +
+          '<p>Today\'s Brain Check couldn\'t load right now. Check back soon, or open Double Check to check a real message.</p>' +
           '<a class="btn-primary" href="https://mydoublecheck.app/app">Get Double Check free</a>' +
           '</div></div>';
         document.getElementById('beat2').style.display = 'none';
