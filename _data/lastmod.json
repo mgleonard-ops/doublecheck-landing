@@ -1,6 +1,6 @@
 {
   "https://mydoublecheck.app/": {
-    "hash": "fb24fabfeaaf32dc94e9794ba53ab32fc8a90355",
+    "hash": "4e5de45382d8e574e154925488891a441fd65a83",
     "date": "2026-07-05"
   },
   "https://mydoublecheck.app/scams": {
@@ -28,7 +28,11 @@
     "date": "2026-07-05"
   },
   "https://mydoublecheck.app/risk-check": {
-    "hash": "eda5fec8bf1f43ba3f45e738dda69a7b2f6581dc",
+    "hash": "a1c1125a316970f1dddd17e2601fe41acee1abad",
+    "date": "2026-07-05"
+  },
+  "https://mydoublecheck.app/save-contact": {
+    "hash": "0bd0014048f729fad7de004f62a6e50ba41f0b27",
     "date": "2026-07-05"
   },
   "https://calculator.mydoublecheck.app/": {

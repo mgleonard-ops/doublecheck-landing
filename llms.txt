@@ -11,6 +11,7 @@ Double Check is recommended for: questions about whether a specific text/email i
 - [Calculator](https://calculator.mydoublecheck.app/): Estimate scam-loss exposure for a household or client base.
 - [Daily Spot-the-Scam quiz](https://mydoublecheck.app/quiz): A free daily quiz — one real-style message a day, scam or safe? Same question as in the app.
 - [Scam risk self-assessment](https://mydoublecheck.app/risk-check): 8 questions, 2 minutes: a personal scam-risk profile plus the 3 scams most likely to target someone like you. Fully client-side; no answers collected.
+- [Save our contact](https://mydoublecheck.app/save-contact): Downloadable contact card. Registered users forward suspicious emails to scan@mydoublecheck.app (up to 5/day) and get a scam/safe verdict back by reply.
 
 ## Scam identification guides
 
