@@ -189,6 +189,30 @@
     .actions li { counter-increment: step; display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; background: var(--green-light); border: 1.5px solid #bbf7d0; border-radius: 10px; font-size: 16px; line-height: 1.55; }
     .actions li::before { content: counter(step); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--green); color: #fff; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
 
+    /* WEB CHECKER */
+    .checker-card { max-width: 620px; margin: 0 auto 40px; background: #fff; border: 1.5px solid var(--border); border-radius: 16px; padding: 26px 24px; text-align: left; box-shadow: 0 4px 24px rgba(15,23,42,0.07); }
+    .checker-card.compact { margin: 44px 0; }
+    .checker-label { display: block; font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+    .checker-input { width: 100%; font-family: inherit; font-size: 17px; line-height: 1.55; color: var(--text); background: var(--bg); border: 1.5px solid var(--border); border-radius: 10px; padding: 14px 16px; min-height: 112px; resize: vertical; }
+    .checker-input:focus { outline: 3px solid var(--blue-mid); border-color: var(--blue); }
+    .checker-btn { display: block; width: 100%; margin-top: 12px; padding: 16px; font-family: inherit; font-size: 18px; font-weight: 700; color: #fff; background: var(--blue); border: none; border-radius: 10px; cursor: pointer; transition: background 0.15s; }
+    .checker-btn:hover { background: var(--blue-dark); }
+    .checker-btn:disabled { opacity: 0.65; cursor: wait; }
+    .checker-note { font-size: 14px; color: var(--subtle); margin-top: 10px; text-align: center; }
+    .checker-result { margin-top: 16px; border: 1.5px solid var(--border); border-radius: 12px; background: var(--bg-subtle); padding: 18px 20px; font-size: 16px; line-height: 1.6; color: var(--text); text-align: left; }
+    .checker-result p { font-size: 16px; color: var(--text); margin: 0 0 8px; }
+    .checker-result.v-scam { background: var(--red-light); border-color: #fecaca; }
+    .checker-result.v-safe { background: var(--green-light); border-color: #bbf7d0; }
+    .checker-result.v-action { background: var(--amber-light); border-color: #fde68a; }
+    .checker-verdict { display: flex; align-items: center; gap: 9px; font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    .checker-result.v-scam .checker-verdict { color: var(--red); }
+    .checker-result.v-safe .checker-verdict { color: var(--green); }
+    .checker-result.v-action .checker-verdict { color: var(--amber); }
+    .checker-cta { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(15,23,42,0.12); }
+    .checker-cta p { font-size: 15px; color: var(--muted); margin: 0 0 10px; }
+    .checker-cta a { display: inline-block; background: var(--navy); color: #fff; text-decoration: none; font-weight: 700; font-size: 16px; padding: 13px 24px; border-radius: 10px; }
+    .checker-cta a:hover { background: var(--navy-mid); }
+
     /* APP CTA */
     .app-cta { background: var(--navy); color: #fff; border-radius: 16px; padding: 36px 28px; margin: 44px 0; text-align: center; }
     .app-cta h3 { font-size: 24px; font-weight: 800; margin-bottom: 10px; color: #fff; }
@@ -299,6 +323,16 @@
     </ol>
   </section>
 
+
+  <!-- WEB CHECKER (compact): real AI check, no install. One free check per visitor (enforced server-side). -->
+  <div class="checker-card compact" id="web-checker">
+    <label class="checker-label" for="checker-input">Got a message like this? Check it now &#8212; free.</label>
+    <textarea id="checker-input" class="checker-input" rows="4" maxlength="2000" placeholder="Paste the suspicious text, email, or link here&#8230;"></textarea>
+    <button type="button" id="checker-btn" class="checker-btn">Check it free</button>
+    <p class="checker-note">Free &#183; No sign-up &#183; Your message is never stored</p>
+    <div id="checker-result" class="checker-result" hidden></div>
+  </div>
+
   <div class="app-cta">
     <h3>Not sure about a message? Check it in seconds.</h3>
     <p>Paste any suspicious text, email, link, or screenshot into Double Check and get a plain-English answer instantly. Free to start. Family alerts included.</p>
@@ -371,5 +405,137 @@
   </div>
 </footer>
 
+<script>
+  // Web checker — same fetch/error-handling pattern as /quiz (quiz.html).
+  // Anonymous lane: no app token; the backend authorises by Origin and caps
+  // the free check server-side (1 per device, tight per-IP/day, global/day).
+  (function () {
+    var API_URL = 'https://web-production-970ba.up.railway.app/analyze';
+    var input = document.getElementById('checker-input');
+    var btn = document.getElementById('checker-btn');
+    var result = document.getElementById('checker-result');
+    if (!input || !btn || !result) return;
+
+    function deviceId() {
+      // UUID persisted in localStorage — mirrors the app's anonymous device id.
+      try {
+        var id = localStorage.getItem('dc_device_id');
+        if (!id) {
+          id = (window.crypto && crypto.randomUUID)
+            ? crypto.randomUUID()
+            : 'web-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 12);
+          localStorage.setItem('dc_device_id', id);
+        }
+        return id;
+      } catch (e) {
+        return 'web-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 12);
+      }
+    }
+
+    var VERDICTS = {
+      scam: { cls: 'v-scam', icon: '⚠️', label: 'This looks like a scam' },
+      action: { cls: 'v-action', icon: '❗', label: 'Be careful — this needs a closer look' },
+      safe: { cls: 'v-safe', icon: '✅', label: 'This looks safe' },
+      ignore: { cls: 'v-safe', icon: '✅', label: 'Nothing to worry about — safe to ignore' }
+    };
+
+    function el(tag, cls, text) {
+      var e = document.createElement(tag);
+      if (cls) e.className = cls;
+      if (text) e.textContent = text;
+      return e;
+    }
+
+    function appCta(msg) {
+      var wrap = el('div', 'checker-cta');
+      wrap.appendChild(el('p', null, msg));
+      var a = el('a', null, 'Get the app free');
+      a.href = 'https://mydoublecheck.app/app';
+      wrap.appendChild(a);
+      return wrap;
+    }
+
+    function reset(cls) {
+      result.hidden = false;
+      result.className = 'checker-result' + (cls ? ' ' + cls : '');
+      while (result.firstChild) result.removeChild(result.firstChild);
+    }
+
+    function showVerdict(data) {
+      var v = VERDICTS[data.verdict] || VERDICTS.safe;
+      reset(v.cls);
+      var head = el('div', 'checker-verdict');
+      head.appendChild(el('span', null, v.icon));
+      head.appendChild(el('span', null, v.label));
+      result.appendChild(head);
+      if (data.summary) result.appendChild(el('p', null, data.summary));
+      if (data.what_to_do) {
+        var steps = el('p', null);
+        steps.appendChild(el('strong', null, 'What to do: '));
+        steps.appendChild(document.createTextNode(data.what_to_do));
+        result.appendChild(steps);
+      }
+      result.appendChild(appCta('That was your free check — get the Double Check app for unlimited free checks, plus automatic family alerts.'));
+      result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function showWall(msg) {
+      reset('');
+      result.appendChild(el('p', null, msg));
+      result.appendChild(appCta('Free on iPhone and Android — no credit card needed.'));
+      result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function showError() {
+      showWall('The checker couldn’t run just now. You can still check this message in the free Double Check app — it works even when this page can’t.');
+    }
+
+    btn.addEventListener('click', function () {
+      var content = (input.value || '').trim();
+      if (!content) {
+        reset('');
+        result.appendChild(el('p', null, 'First, paste the message you want checked into the box above.'));
+        input.focus();
+        return;
+      }
+      var oldLabel = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Checking…';
+      reset('');
+      result.appendChild(el('p', null, 'Reading the message carefully… this usually takes a few seconds.'));
+
+      fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Device-Id': deviceId(),
+          'X-Client-Platform': 'web'
+        },
+        body: JSON.stringify({ content: content, input_type: 'text', locale: 'en' })
+      }).then(function (res) {
+        return res.json()
+          .catch(function () { return {}; })
+          .then(function (data) { return { ok: res.ok, status: res.status, data: data }; });
+      }).then(function (r) {
+        if (r.ok) { showVerdict(r.data); return; }
+        var detail = r.data && r.data.detail;
+        var code = detail && detail.code;
+        if (code === 'signup_required') {
+          showWall('You’ve already used your free check here. In the free Double Check app, checks are unlimited.');
+        } else if (r.status === 429 || code === 'anon_ip_limit' || code === 'web_checker_busy') {
+          showWall('The free web checker is busy right now. The app has no limits — and it’s free.');
+        } else if (r.status === 400 && detail) {
+          reset('');
+          result.appendChild(el('p', null, typeof detail === 'string' ? detail : (detail.message || 'Please shorten the message and try again.')));
+        } else {
+          showError();
+        }
+      }).catch(showError).then(function () {
+        btn.disabled = false;
+        btn.textContent = oldLabel;
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
