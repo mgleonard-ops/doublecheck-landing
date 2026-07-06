@@ -427,6 +427,8 @@
   </style>
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
+  <!-- posthog: cookieless pageview counter (persistence=memory, no cookies, no banner needed) -->
+  <script async src="https://us-assets.i.posthog.com/static/array.js" onload="posthog.init('phc_oNf6u9H9enNkuU6v8bsG9oSr7JN28sHNHnow4Rv6miXd',{api_host:'https://us.i.posthog.com',persistence:'memory',autocapture:false,disable_session_recording:true})"></script>
 </head>
 <body>
 
@@ -527,6 +529,13 @@
           <span class="feat-icon">🏷️</span>
           <h3>Advisor Branded</h3>
           <p>White labeled with your firm name and logo. It presents as a premium client service, not a third-party app. Every check reinforces your value to that client.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-tag">Client benefit</div>
+          <span class="feat-icon">🛡️</span>
+          <h3>Text Protection</h3>
+          <p>New: automatic SMS filtering on iPhone. Scam texts from unknown senders are moved to Junk before your client ever taps them. One-time setup in Settings, then it works silently. Messages from saved contacts are never touched.</p>
         </div>
 
       </div>
@@ -648,6 +657,12 @@
             <td>Elderly-first UX design</td>
             <td class="part">Partial</td>
             <td class="part">Partial</td>
+            <td class="dc-col yes">✓</td>
+          </tr>
+          <tr>
+            <td>Automatic scam-text filtering in iOS Messages</td>
+            <td class="no">✗</td>
+            <td class="no">✗</td>
             <td class="dc-col yes">✓</td>
           </tr>
           <tr>
