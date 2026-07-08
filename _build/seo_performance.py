@@ -43,6 +43,9 @@ API = "https://searchconsole.googleapis.com/webmasters/v3/sites/{site}/searchAna
 LAG_DAYS = 3
 STRIKING_MIN_POS, STRIKING_MAX_POS = 5.0, 15.0
 STRIKING_MIN_IMPR = 15  # ignore long-tail noise
+# Below this click volume a WoW percentage is noise (2->4 clicks is "+100%"),
+# so we report the raw delta instead of a percentage until there's real traffic.
+MIN_WOW_BASE = 25
 
 
 def _load_creds():
@@ -88,6 +91,11 @@ def _index(rows):
 
 
 def _fmt_pct(cur, prev):
+    # On tiny counts a percentage is meaningless, so below MIN_WOW_BASE report
+    # the signed absolute delta ("+3", "-2", "=") instead of a percentage.
+    if max(cur, prev) < MIN_WOW_BASE:
+        d = cur - prev
+        return f"{d:+.0f}" if d else "="
     if prev == 0:
         return "new" if cur else "0"
     return f"{(cur - prev) / prev * 100:+.0f}%"
