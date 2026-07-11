@@ -4,36 +4,69 @@
     {
       "source": "/filter/sms",
       "destination": "https://web-production-970ba.up.railway.app/filter/sms"
+    },
+    {
+      "source": "/answers",
+      "destination": "https://web-production-970ba.up.railway.app/answers"
+    },
+    {
+      "source": "/answers/:path*",
+      "destination": "https://web-production-970ba.up.railway.app/answers/:path*"
     }
   ],
   "redirects": [
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "advisor.mydoublecheck.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "advisor.mydoublecheck.app"
+        }
+      ],
       "destination": "/advisors",
       "permanent": false
     },
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "doublecheck-landing.vercel.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "doublecheck-landing.vercel.app"
+        }
+      ],
       "destination": "https://mydoublecheck.app/",
       "permanent": true
     },
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "www.mydoublecheck.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mydoublecheck.app"
+        }
+      ],
       "destination": "https://mydoublecheck.app/",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.mydoublecheck.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mydoublecheck.app"
+        }
+      ],
       "destination": "https://mydoublecheck.app/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "doublecheck-landing.vercel.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "doublecheck-landing.vercel.app"
+        }
+      ],
       "destination": "https://mydoublecheck.app/:path*",
       "permanent": true
     }
@@ -42,29 +75,53 @@
     {
       "source": "/doublecheck.vcf",
       "headers": [
-        { "key": "Content-Type", "value": "text/vcard; charset=utf-8" }
+        {
+          "key": "Content-Type",
+          "value": "text/vcard; charset=utf-8"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        }
       ]
     },
     {
       "source": "/.well-known/apple-app-site-association",
       "headers": [
-        { "key": "Content-Type", "value": "application/json" }
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
       ]
     },
     {
       "source": "/.well-known/assetlinks.json",
       "headers": [
-        { "key": "Content-Type", "value": "application/json" }
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
       ]
     }
   ]

@@ -207,6 +207,8 @@
     .checker-btn:hover { background: var(--blue-dark); }
     .checker-btn:disabled { opacity: 0.65; cursor: wait; }
     .checker-note { font-size: 14px; color: var(--subtle); margin-top: 10px; text-align: center; }
+    .checker-share { display: flex; gap: 10px; align-items: flex-start; margin-top: 12px; font-size: 14px; color: var(--subtle); cursor: pointer; }
+    .checker-share input { margin-top: 3px; width: 16px; height: 16px; flex: none; }
     .checker-result { margin-top: 16px; border: 1.5px solid var(--border); border-radius: 12px; background: var(--bg-subtle); padding: 18px 20px; font-size: 16px; line-height: 1.6; color: var(--text); text-align: left; }
     .checker-result p { font-size: 16px; color: var(--text); margin: 0 0 8px; }
     .checker-result.v-scam { background: var(--red-light); border-color: #fecaca; }
@@ -343,6 +345,10 @@
     <label class="checker-label" for="checker-input">Got a message like this? Check it here, free.</label>
     <textarea id="checker-input" class="checker-input" rows="4" maxlength="2000" placeholder="Paste the suspicious text, email, or link here&#8230;"></textarea>
     <button type="button" id="checker-btn" class="checker-btn">Check it free</button>
+        <label class="checker-share" for="checker-share-box">
+      <input type="checkbox" id="checker-share-box" />
+      <span>Turns out to be a scam? Share it anonymously (personal details removed) so the next person can find the answer.</span>
+    </label>
     <p class="checker-note">Free &#183; No sign-up &#183; Your message is never stored</p>
     <div id="checker-result" class="checker-result" hidden></div>
   </div>
@@ -527,7 +533,7 @@
           'X-Device-Id': deviceId(),
           'X-Client-Platform': 'web'
         },
-        body: JSON.stringify({ content: content, input_type: 'text', locale: 'en' })
+        body: JSON.stringify({ content: content, input_type: 'text', locale: 'en', share_ok: !!(document.getElementById('checker-share-box') && document.getElementById('checker-share-box').checked) })
       }).then(function (res) {
         return res.json()
           .catch(function () { return {}; })

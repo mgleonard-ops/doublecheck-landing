@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mydoublecheck.app/sitemap.xml
+Sitemap: https://mydoublecheck.app/answers/sitemap.xml

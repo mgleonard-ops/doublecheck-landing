@@ -641,6 +641,7 @@ function buildRobots() {
 Allow: /
 
 Sitemap: https://mydoublecheck.app/sitemap.xml
+Sitemap: https://mydoublecheck.app/answers/sitemap.xml
 `;
 }
 
