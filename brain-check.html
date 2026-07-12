@@ -277,7 +277,7 @@
         <div class="keyboard" id="keyboard" aria-hidden="false"></div>
 
         <div class="xw-actions">
-          <button type="button" id="xw-check">Check my answers</button>
+          <button type="button" id="xw-check">Check the whole puzzle</button>
           <button type="button" id="xw-clear">Clear</button>
         </div>
         <div class="xw-msg" id="xw-msg"></div>
@@ -496,12 +496,34 @@
         }
       }
 
+      // Clue order as listed: across by number, then down by number.
+      function orderedEntries() {
+        var byNum = function (a, b) { return a.number - b.number; };
+        return entries.filter(function (e) { return e.dir === 'across'; }).sort(byNum)
+          .concat(entries.filter(function (e) { return e.dir === 'down'; }).sort(byNum));
+      }
+
+      // Jump to the first empty cell of the next unfinished clue, wrapping around.
+      function advanceToNextEntry(from) {
+        var order = orderedEntries();
+        var i = order.indexOf(from);
+        for (var step = 1; step <= order.length; step++) {
+          var cand = order[(i + step) % order.length];
+          for (var j = 0; j < cand.cellKeys.length; j++) {
+            if (!user[cand.cellKeys[j]]) { setActive(cand, j); return true; }
+          }
+        }
+        return false;
+      }
+
       function typeLetter(ch) {
         if (!activeEntry) return;
         var kk = activeEntry.cellKeys[activeIdx];
         user[kk] = ch;
         // clear any prior correct/wrong marking on edit
         cells[kk].el.classList.remove('correct', 'wrong');
+        var wordDone = activeEntry.cellKeys.every(function (k2) { return user[k2]; });
+        if (wordDone && advanceToNextEntry(activeEntry)) return; // setActive re-renders
         if (activeIdx < activeEntry.cellKeys.length - 1) activeIdx++;
         render();
       }
