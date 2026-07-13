@@ -522,8 +522,8 @@
         user[kk] = ch;
         // clear any prior correct/wrong marking on edit
         cells[kk].el.classList.remove('correct', 'wrong');
-        var wordDone = activeEntry.cellKeys.every(function (k2) { return user[k2]; });
-        if (wordDone && advanceToNextEntry(activeEntry)) return; // setActive re-renders
+        var wordRight = activeEntry.cellKeys.every(function (k2) { return user[k2] === cells[k2].answer; });
+        if (wordRight && advanceToNextEntry(activeEntry)) return; // setActive re-renders
         if (activeIdx < activeEntry.cellKeys.length - 1) activeIdx++;
         render();
       }
