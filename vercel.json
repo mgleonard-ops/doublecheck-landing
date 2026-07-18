@@ -16,6 +16,11 @@
   ],
   "redirects": [
     {
+      "source": "/quiz",
+      "destination": "/brain-check",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {
@@ -23,8 +28,19 @@
           "value": "advisor.mydoublecheck.app"
         }
       ],
-      "destination": "/advisors",
-      "permanent": false
+      "destination": "https://mydoublecheck.app/advisors",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "advisor.mydoublecheck.app"
+        }
+      ],
+      "destination": "https://mydoublecheck.app/:path*",
+      "permanent": true
     },
     {
       "source": "/",

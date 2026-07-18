@@ -4,381 +4,791 @@
     "title": "How to Recognize Any Text Scam — Complete 2026 Guide",
     "meta_description": "Step-by-step guide to spotting scam texts: red flags, the 6 most common patterns, and exactly what to do. Updated for 2026.",
     "h1": "How to recognize any text scam (2026 guide)",
-    "lede": "Text-message scams (smishing) now account for more than half of all reported US fraud attempts. The volume is overwhelming — but the patterns are remarkably consistent. Learn to spot the universal red flags once, and you'll never fall for them again.",
+    "lede": "Text-message scams (smishing) now account for more than half of all reported US fraud attempts. The volume is overwhelming: but the patterns are remarkably consistent. Learn to spot the universal red flags once, and you'll never fall for them again.",
     "sections": [
       {
         "h": "The anatomy of a scam text",
-        "p": ["Every scam text follows the same basic structure. Once you can name the parts, the whole becomes obvious.", "1. <strong>An urgent claim</strong> — a package, a charge, a fine, a warning. Something needs your attention now.", "2. <strong>A trigger of fear, greed, or duty</strong> — losing access, missing a refund, getting arrested, helping family.", "3. <strong>A frictionless action</strong> — tap a link, call a number, send a reply. Easy, immediate, deceptively low-stakes.", "4. <strong>A deadline</strong> — 12 hours, 24 hours, 'final notice.' The deadline forces you past your normal verification habits.", "Every scam text has these four elements. The brand changes (USPS, Amazon, your bank), but the structure doesn't."]
+        "p": [
+          "Every scam text follows the same basic structure. Once you can name the parts, the whole becomes obvious.",
+          "1. <strong>An urgent claim</strong>: a package, a charge, a fine, a warning. Something needs your attention now.",
+          "2. <strong>A trigger of fear, greed, or duty</strong>: losing access, missing a refund, getting arrested, helping family.",
+          "3. <strong>A frictionless action</strong>: tap a link, call a number, send a reply. Easy, immediate, deceptively low-stakes.",
+          "4. <strong>A deadline</strong>: 12 hours, 24 hours, 'final notice.' The deadline forces you past your normal verification habits.",
+          "Every scam text has these four elements. The brand changes (USPS, Amazon, your bank), but the structure doesn't."
+        ]
       },
       {
         "h": "The 6 most common text scam categories",
-        "p": ["<strong>1. Package delivery.</strong> 'USPS / FedEx / UPS — your package is held, pay $1.99.' Highest volume of all text scams. The small fee captures your card details. See: <a href=\"/scams/usps-delivery-text-scam\">USPS</a>, <a href=\"/scams/fedex-delivery-scam-text\">FedEx</a>, <a href=\"/scams/ups-delivery-text-scam\">UPS</a>.", "<strong>2. Bank fraud alerts.</strong> 'Did you charge $487 at Best Buy? Call this number to dispute.' Real bank alerts ask for YES/NO reply only — never callbacks. See: <a href=\"/scams/chase-fraud-alert-text-scam\">Chase</a>, <a href=\"/scams/wells-fargo-text-scam\">Wells Fargo</a>, <a href=\"/scams/bank-of-america-scam-text\">Bank of America</a>.", "<strong>3. Account verification.</strong> 'Your Amazon / Apple / PayPal account is locked. Verify here.' Phishing for credentials. See: <a href=\"/scams/amazon-account-suspended-scam\">Amazon</a>, <a href=\"/scams/apple-id-locked-scam\">Apple ID</a>.", "<strong>4. Government impersonation.</strong> IRS, DMV, Social Security, Medicare — all communicate by mail first, never by text demand. See: <a href=\"/scams/irs-scam-text\">IRS</a>, <a href=\"/scams/dmv-text-scam\">DMV</a>, <a href=\"/scams/medicare-cancellation-scam\">Medicare</a>.", "<strong>5. Payment app scams.</strong> Zelle, Venmo, Cash App — instant, irreversible. See: <a href=\"/scams/zelle-scam\">Zelle</a>, <a href=\"/scams/venmo-stranger-payment-scam\">Venmo</a>, <a href=\"/scams/cashapp-flip-scam\">Cash App</a>.", "<strong>6. Wrong-number openers.</strong> 'Hi, sorry I think I have the wrong number, but you seem nice.' This is the front of pig butchering — a long-con investment scam. See: <a href=\"/scams/pig-butchering-scam\">Pig butchering</a>."]
+        "p": [
+          "<strong>1. Package delivery.</strong> 'USPS / FedEx / UPS: your package is held, pay $1.99.' Highest volume of all text scams. The small fee captures your card details. See: <a href=\"/scams/usps-delivery-text-scam\">USPS</a>, <a href=\"/scams/fedex-delivery-scam-text\">FedEx</a>, <a href=\"/scams/ups-delivery-text-scam\">UPS</a>.",
+          "<strong>2. Bank fraud alerts.</strong> 'Did you charge $487 at Best Buy? Call this number to dispute.' Real bank alerts ask for YES/NO reply only, never callbacks. See: <a href=\"/scams/chase-fraud-alert-text-scam\">Chase</a>, <a href=\"/scams/wells-fargo-text-scam\">Wells Fargo</a>, <a href=\"/scams/bank-of-america-scam-text\">Bank of America</a>.",
+          "<strong>3. Account verification.</strong> 'Your Amazon / Apple / PayPal account is locked. Verify here.' Phishing for credentials. See: <a href=\"/scams/amazon-account-suspended-scam\">Amazon</a>, <a href=\"/scams/apple-id-locked-scam\">Apple ID</a>.",
+          "<strong>4. Government impersonation.</strong> IRS, DMV, Social Security, Medicare: all communicate by mail first, never by text demand. See: <a href=\"/scams/irs-scam-text\">IRS</a>, <a href=\"/scams/dmv-text-scam\">DMV</a>, <a href=\"/scams/medicare-cancellation-scam\">Medicare</a>.",
+          "<strong>5. Payment app scams.</strong> Zelle, Venmo, Cash App: instant, irreversible. See: <a href=\"/scams/zelle-scam\">Zelle</a>, <a href=\"/scams/venmo-stranger-payment-scam\">Venmo</a>, <a href=\"/scams/cashapp-flip-scam\">Cash App</a>.",
+          "<strong>6. Wrong-number openers.</strong> 'Hi, sorry I think I have the wrong number, but you seem nice.' This is the front of pig butchering, a long-con investment scam. See: <a href=\"/scams/pig-butchering-scam\">Pig butchering</a>."
+        ]
       },
       {
-        "h": "Universal red flags — true for every text scam",
-        "p": ["<strong>Sender is a regular 10-digit number.</strong> Real bank / delivery / government alerts come from short codes (4-6 digits) or branded sender IDs.", "<strong>Link domain doesn't match the brand.</strong> Real USPS uses usps.com — not usps-redelivery.info. Real Apple uses apple.com — not apple-secure-id.com. Read the domain carefully — scammers use lookalikes.", "<strong>Urgency pressure.</strong> 'Within 12 hours.' 'Final notice.' 'Account will be closed.' Real businesses give you time.", "<strong>Asks for payment via gift cards, wire, or crypto.</strong> No legitimate business or government accepts these. They're scam-only payment methods because they're irreversible.", "<strong>Asks you to call a number embedded in the message.</strong> Real fraud alerts use YES/NO reply. Phone numbers in texts route to scammers."]
+        "h": "Universal red flags: true for every text scam",
+        "p": [
+          "<strong>Sender is a regular 10-digit number.</strong> Real bank / delivery / government alerts come from short codes (4-6 digits) or branded sender IDs.",
+          "<strong>Link domain doesn't match the brand.</strong> Real USPS uses usps.com, not usps-redelivery.info. Real Apple uses apple.com, not apple-secure-id.com. Read the domain carefully: scammers use lookalikes.",
+          "<strong>Urgency pressure.</strong> 'Within 12 hours.' 'Final notice.' 'Account will be closed.' Real businesses give you time.",
+          "<strong>Asks for payment via gift cards, wire, or crypto.</strong> No legitimate business or government accepts these. They're scam-only payment methods because they're irreversible.",
+          "<strong>Asks you to call a number embedded in the message.</strong> Real fraud alerts use YES/NO reply. Phone numbers in texts route to scammers."
+        ]
       },
       {
-        "h": "What to do — for any text you're unsure about",
-        "p": ["<strong>Don't tap the link.</strong> Just opening it can fingerprint your device and confirm your number to spammers.", "<strong>Don't reply.</strong> Not even 'STOP' — replies confirm your number is active.", "<strong>If you think it might be real:</strong> go to the brand's official website directly (type the domain yourself) or use their official app. Real issues will be visible there.", "<strong>Forward it to 7726 (SPAM).</strong> Free on every major US carrier — your carrier investigates.", "<strong>Block the sender. Delete the message.</strong>", "<strong>If you already tapped the link and entered info:</strong> immediately call your bank, change passwords from a different device, place a free credit freeze at all three bureaus."]
+        "h": "What to do: for any text you're unsure about",
+        "p": [
+          "<strong>Don't tap the link.</strong> Just opening it can fingerprint your device and confirm your number to spammers.",
+          "<strong>Don't reply.</strong> Not even 'STOP': replies confirm your number is active.",
+          "<strong>If you think it might be real:</strong> go to the brand's official website directly (type the domain yourself) or use their official app. Real issues will be visible there.",
+          "<strong>Forward it to 7726 (SPAM).</strong> Free on every major US carrier. Your carrier investigates.",
+          "<strong>Block the sender. Delete the message.</strong>",
+          "<strong>If you already tapped the link and entered info:</strong> immediately call your bank, change passwords from a different device, place a free credit freeze at all three bureaus."
+        ]
       },
       {
-        "h": "When in doubt — just check",
-        "p": ["Even if you can't identify the exact scam, the safe move is the same: don't act on the text, verify through official channels. Double Check exists exactly for the ambiguous middle ground — paste the message, get a verdict in seconds, know what to do. Free to start."]
+        "h": "When in doubt, just check",
+        "p": [
+          "Even if you can't identify the exact scam, the safe move is the same: don't act on the text, verify through official channels. Double Check exists exactly for the ambiguous middle ground: paste the message, get a verdict in seconds, know what to do. Free to start."
+        ]
       }
     ],
-    "related_scams": ["usps-delivery-text-scam", "chase-fraud-alert-text-scam", "amazon-account-suspended-scam", "irs-scam-text", "zelle-scam", "pig-butchering-scam"]
+    "related_scams": [
+      "usps-delivery-text-scam",
+      "chase-fraud-alert-text-scam",
+      "amazon-account-suspended-scam",
+      "irs-scam-text",
+      "zelle-scam",
+      "pig-butchering-scam"
+    ]
   },
   {
     "slug": "senior-scam-protection",
     "title": "Scams That Target Seniors: Complete Protection Guide",
-    "meta_description": "Older adults lose billions to scams every year. Here are the 10 scams most often targeting seniors — and exactly how to protect yourself or a parent.",
-    "h1": "Scams that target seniors — and how to protect against them",
-    "lede": "Americans over 60 lose more than $3 billion to fraud annually — and most of it is preventable. Scammers target seniors for three reasons: established savings, trust in institutions, and social isolation. The good news: the scams follow patterns. Recognize the patterns, and the protection becomes automatic.",
+    "meta_description": "Older adults lose billions to scams every year. Here are the 10 scams most often targeting seniors, and exactly how to protect yourself or a parent.",
+    "h1": "Scams that target seniors, and how to protect against them",
+    "lede": "Americans over 60 lose more than $3 billion to fraud annually, and most of it is preventable. Scammers target seniors for three reasons: established savings, trust in institutions, and social isolation. The good news: the scams follow patterns. Recognize the patterns, and the protection becomes automatic.",
     "sections": [
       {
         "h": "Why seniors are targeted",
-        "p": ["This isn't about intelligence or attention. Scammers specifically target older adults because: (1) baby boomers control the majority of US household wealth; (2) seniors are statistically more likely to answer landline calls and trust authoritative voices; (3) older adults are more often socially isolated, removing the friend or family member who would catch the scam in real time; (4) cognitive changes — even mild ones — can compromise judgment in high-pressure moments.", "Understanding this changes the response. The goal isn't 'don't trust anyone' — it's to build verification habits that work even when emotions are high."]
+        "p": [
+          "This isn't about intelligence or attention. Scammers specifically target older adults because: (1) baby boomers control the majority of US household wealth; (2) seniors are statistically more likely to answer landline calls and trust authoritative voices; (3) older adults are more often socially isolated, removing the friend or family member who would catch the scam in real time; (4) cognitive changes (even mild ones) can compromise judgment in high-pressure moments.",
+          "Understanding this changes the response. The goal isn't 'don't trust anyone': it's to build verification habits that work even when emotions are high."
+        ]
       },
       {
         "h": "The 10 scams most often targeting seniors",
-        "p": ["<strong>1. <a href=\"/scams/grandparent-scam\">Grandparent scam</a>.</strong> 'Grandma, I'm in jail, please don't tell Mom — send bail money.' Average loss: $9,000+. AI voice cloning makes the call sound exactly like a real grandchild.", "<strong>2. <a href=\"/scams/social-security-scam-call\">Social Security suspension</a>.</strong> 'Your SSN has been suspended due to suspicious activity.' SSNs cannot be suspended. Ever.", "<strong>3. <a href=\"/scams/medicare-cancellation-scam\">Medicare cancellation</a>.</strong> 'Your Medicare coverage will be cancelled — verify your Medicare number.' Medicare communicates by mail.", "<strong>4. <a href=\"/scams/lottery-winner-scam\">Lottery winner</a> / <a href=\"/scams/publishers-clearing-house-scam\">PCH</a>.</strong> 'You've won $5 million — just pay the taxes upfront.' PCH never calls winners. No legitimate lottery requires upfront fees.", "<strong>5. <a href=\"/scams/microsoft-tech-support-scam\">Tech support pop-ups</a>.</strong> Scary computer warnings with a phone number. Calling = remote-access fraud.", "<strong>6. <a href=\"/scams/geek-squad-scam\">Geek Squad / Norton renewal</a>.</strong> Fake invoice for $300+ subscription. Calling the 'cancel' number leads to bank drainage.", "<strong>7. <a href=\"/scams/romance-scam\">Romance scams</a>.</strong> Online relationship, eventually requesting money for emergencies. Average per-victim loss: $15,000.", "<strong>8. <a href=\"/scams/irs-scam-text\">IRS impersonation</a>.</strong> Threats of arrest for unpaid taxes. The real IRS never threatens arrest by phone.", "<strong>9. <a href=\"/scams/car-warranty-scam-call\">Car warranty robocalls</a>.</strong> 'Your vehicle's warranty has expired' — high-pressure sales for worthless coverage.", "<strong>10. <a href=\"/scams/inheritance-scam-email\">Inheritance / distant relative</a>.</strong> Long-lost relative left millions — pay 'release fees' to claim. Pure fiction, every time."]
+        "p": [
+          "<strong>1. <a href=\"/scams/grandparent-scam\">Grandparent scam</a>.</strong> 'Grandma, I'm in jail, please don't tell Mom, send bail money.' Average loss: $9,000+. AI voice cloning makes the call sound exactly like a real grandchild.",
+          "<strong>2. <a href=\"/scams/social-security-scam-call\">Social Security suspension</a>.</strong> 'Your SSN has been suspended due to suspicious activity.' SSNs cannot be suspended. Ever.",
+          "<strong>3. <a href=\"/scams/medicare-cancellation-scam\">Medicare cancellation</a>.</strong> 'Your Medicare coverage will be cancelled. Verify your Medicare number.' Medicare communicates by mail.",
+          "<strong>4. <a href=\"/scams/lottery-winner-scam\">Lottery winner</a> / <a href=\"/scams/publishers-clearing-house-scam\">PCH</a>.</strong> 'You've won $5 million, just pay the taxes upfront.' PCH never calls winners. No legitimate lottery requires upfront fees.",
+          "<strong>5. <a href=\"/scams/microsoft-tech-support-scam\">Tech support pop-ups</a>.</strong> Scary computer warnings with a phone number. Calling = remote-access fraud.",
+          "<strong>6. <a href=\"/scams/geek-squad-scam\">Geek Squad / Norton renewal</a>.</strong> Fake invoice for $300+ subscription. Calling the 'cancel' number leads to bank drainage.",
+          "<strong>7. <a href=\"/scams/romance-scam\">Romance scams</a>.</strong> Online relationship, eventually requesting money for emergencies. Average per-victim loss: $15,000.",
+          "<strong>8. <a href=\"/scams/irs-scam-text\">IRS impersonation</a>.</strong> Threats of arrest for unpaid taxes. The real IRS never threatens arrest by phone.",
+          "<strong>9. <a href=\"/scams/car-warranty-scam-call\">Car warranty robocalls</a>.</strong> 'Your vehicle's warranty has expired': high-pressure sales for worthless coverage.",
+          "<strong>10. <a href=\"/scams/inheritance-scam-email\">Inheritance / distant relative</a>.</strong> Long-lost relative left millions. Pay 'release fees' to claim. Pure fiction, every time."
+        ]
       },
       {
         "h": "Six rules that prevent 90% of senior scams",
-        "p": ["<strong>1. No one calls about money you owe except the real party.</strong> Not Medicare, not the IRS, not the police, not the SSA. They all communicate by mail first.", "<strong>2. Gift cards are not payment.</strong> No legitimate organization accepts gift cards. Anyone asking for them by phone is, without exception, a scammer.", "<strong>3. Don't move money to 'protect' it.</strong> Banks do not call asking you to move money to a 'safe account.' This is the most common large-loss scam.", "<strong>4. If they say 'don't tell anyone,' tell someone immediately.</strong> Scammers depend on isolation. Real authorities never require secrecy.", "<strong>5. Set up a family code word.</strong> A word only family knows. Use it whenever there's a 'family emergency' phone call. Defeats AI voice cloning.", "<strong>6. When in doubt — hang up.</strong> Then call the organization directly using a number from official mail or their real website. Real callers will understand. Scammers can't survive verification."]
+        "p": [
+          "<strong>1. No one calls about money you owe except the real party.</strong> Not Medicare, not the IRS, not the police, not the SSA. They all communicate by mail first.",
+          "<strong>2. Gift cards are not payment.</strong> No legitimate organization accepts gift cards. Anyone asking for them by phone is, without exception, a scammer.",
+          "<strong>3. Don't move money to 'protect' it.</strong> Banks do not call asking you to move money to a 'safe account.' This is the most common large-loss scam.",
+          "<strong>4. If they say 'don't tell anyone,' tell someone immediately.</strong> Scammers depend on isolation. Real authorities never require secrecy.",
+          "<strong>5. Set up a family code word.</strong> A word only family knows. Use it whenever there's a 'family emergency' phone call. Defeats AI voice cloning.",
+          "<strong>6. When in doubt, hang up.</strong> Then call the organization directly using a number from official mail or their real website. Real callers will understand. Scammers can't survive verification."
+        ]
       },
       {
         "h": "If you (or a loved one) has been scammed",
-        "p": ["Move fast. Some recoveries are possible if reported within 24-48 hours.", "<strong>Bank:</strong> Call immediately. Wire transfers can sometimes be recalled. Card charges can be disputed.", "<strong>Credit bureaus:</strong> Place a free credit freeze at Equifax, Experian, and TransUnion.", "<strong>FTC:</strong> File at reportfraud.ftc.gov for federal record and recovery guidance.", "<strong>FBI:</strong> ic3.gov for online crimes, especially crypto and romance scams.", "<strong>State AG:</strong> Your state attorney general's consumer protection unit.", "<strong>Adult Protective Services:</strong> If you suspect a senior is being repeatedly targeted, contact APS in your state.", "<strong>Talk about it.</strong> Shame keeps scams successful. Discussing what happened with family and community immediately reduces the scammer's power and helps others avoid the same trap."]
+        "p": [
+          "Move fast. Some recoveries are possible if reported within 24-48 hours.",
+          "<strong>Bank:</strong> Call immediately. Wire transfers can sometimes be recalled. Card charges can be disputed.",
+          "<strong>Credit bureaus:</strong> Place a free credit freeze at Equifax, Experian, and TransUnion.",
+          "<strong>FTC:</strong> File at reportfraud.ftc.gov for federal record and recovery guidance.",
+          "<strong>FBI:</strong> ic3.gov for online crimes, especially crypto and romance scams.",
+          "<strong>State AG:</strong> Your state attorney general's consumer protection unit.",
+          "<strong>Adult Protective Services:</strong> If you suspect a senior is being repeatedly targeted, contact APS in your state.",
+          "<strong>Talk about it.</strong> Shame keeps scams successful. Discussing what happened with family and community immediately reduces the scammer's power and helps others avoid the same trap."
+        ]
       },
       {
         "h": "Tools that help",
-        "p": ["<strong>Call blocking:</strong> Most carriers offer free call screening (T-Mobile Scam Shield, Verizon Call Filter, AT&T ActiveArmor). Enable it.", "<strong>iPhone Silence Unknown Callers:</strong> Settings → Phone → Silence Unknown Callers. Routes all non-contacts to voicemail.", "<strong>Double Check:</strong> Paste any suspicious message and get a plain-English verdict. Includes automatic family alerts — when a scam is detected, a designated family member gets an email. Builds the social verification that scammers try to break."]
+        "p": [
+          "<strong>Call blocking:</strong> Most carriers offer free call screening (T-Mobile Scam Shield, Verizon Call Filter, AT&T ActiveArmor). Enable it.",
+          "<strong>iPhone Silence Unknown Callers:</strong> Settings → Phone → Silence Unknown Callers. Routes all non-contacts to voicemail.",
+          "<strong>Double Check:</strong> Paste any suspicious message and get a plain-English verdict. Includes automatic family alerts: when a scam is detected, a designated family member gets an email. Builds the social verification that scammers try to break."
+        ]
       }
     ],
-    "related_scams": ["grandparent-scam", "social-security-scam-call", "medicare-cancellation-scam", "lottery-winner-scam", "geek-squad-scam", "romance-scam"]
+    "related_scams": [
+      "grandparent-scam",
+      "social-security-scam-call",
+      "medicare-cancellation-scam",
+      "lottery-winner-scam",
+      "geek-squad-scam",
+      "romance-scam"
+    ]
   },
   {
     "slug": "phone-scam-guide",
     "title": "Phone Scams: What to Do When the Call Seems Real",
     "meta_description": "From robocalls to AI voice cloning, modern phone scams sound real. Here's how to recognize them, how to respond, and how to stop them at the source.",
     "h1": "Phone scams: what to do when the call seems real",
-    "lede": "Phone scams have evolved. Robocalls used to be obvious — bad recordings, foreign accents, suspicious requests. In 2026, scammers use AI voice cloning, caller ID spoofing, and live operators reading carefully refined scripts. The sophistication has changed. The defense hasn't — verification still works.",
+    "lede": "Phone scams have evolved. Robocalls used to be obvious: bad recordings, foreign accents, suspicious requests. In 2026, scammers use AI voice cloning, caller ID spoofing, and live operators reading carefully refined scripts. The sophistication has changed. The defense hasn't. Verification still works.",
     "sections": [
       {
         "h": "Why phone scams keep working",
-        "p": ["Three things make phone scams uniquely effective:", "<strong>1. Real-time pressure.</strong> Email scams give you time to think. Phone scams force decisions in seconds. Panic disables judgment.", "<strong>2. Authority voice.</strong> A confident voice claiming to be the IRS, your bank, or your grandchild triggers trust that text doesn't.", "<strong>3. Spoofing.</strong> Caller ID is trivially spoofed. The display can show any number — even your own bank's real number. Caller ID alone is not verification."]
+        "p": [
+          "Three things make phone scams uniquely effective:",
+          "<strong>1. Real-time pressure.</strong> Email scams give you time to think. Phone scams force decisions in seconds. Panic disables judgment.",
+          "<strong>2. Authority voice.</strong> A confident voice claiming to be the IRS, your bank, or your grandchild triggers trust that text doesn't.",
+          "<strong>3. Spoofing.</strong> Caller ID is trivially spoofed. The display can show any number, even your own bank's real number. Caller ID alone is not verification."
+        ]
       },
       {
         "h": "The top phone scam categories",
-        "p": ["<strong>1. <a href=\"/scams/social-security-scam-call\">Social Security suspension</a>.</strong> Robocall claiming your SSN is suspended. SSNs cannot be suspended.", "<strong>2. <a href=\"/scams/irs-scam-text\">IRS arrest threats</a>.</strong> 'Pay $3,000 in gift cards or be arrested.' IRS doesn't operate this way.", "<strong>3. <a href=\"/scams/grandparent-scam\">Grandparent emergency</a>.</strong> 'Grandma, I'm in trouble, please send money.' Now enhanced with AI voice cloning.", "<strong>4. <a href=\"/scams/microsoft-tech-support-scam\">Tech support cold call</a>.</strong> 'This is Microsoft, your computer has a virus.' Microsoft never calls.", "<strong>5. <a href=\"/scams/car-warranty-scam-call\">Car warranty robocalls</a>.</strong> 'Your vehicle's warranty has expired.' Pure sales scam.", "<strong>6. <a href=\"/scams/medicare-cancellation-scam\">Medicare 'verify your number'</a>.</strong> Harvests Medicare IDs for fraudulent billing.", "<strong>7. <a href=\"/scams/jury-duty-scam-call\">Missed jury duty</a>.</strong> Pay to avoid arrest. Courts don't operate by phone.", "<strong>8. <a href=\"/scams/one-ring-callback-scam\">One-ring callback</a>.</strong> Premium international number — calling back costs $$$.", "<strong>9. Bank 'fraud team' calls.</strong> 'Move your money to a safe account.' Banks never do this.", "<strong>10. <a href=\"/scams/lottery-winner-scam\">Lottery prize</a>.</strong> 'You won — just pay taxes upfront.'"]
+        "p": [
+          "<strong>1. <a href=\"/scams/social-security-scam-call\">Social Security suspension</a>.</strong> Robocall claiming your SSN is suspended. SSNs cannot be suspended.",
+          "<strong>2. <a href=\"/scams/irs-scam-text\">IRS arrest threats</a>.</strong> 'Pay $3,000 in gift cards or be arrested.' IRS doesn't operate this way.",
+          "<strong>3. <a href=\"/scams/grandparent-scam\">Grandparent emergency</a>.</strong> 'Grandma, I'm in trouble, please send money.' Now enhanced with AI voice cloning.",
+          "<strong>4. <a href=\"/scams/microsoft-tech-support-scam\">Tech support cold call</a>.</strong> 'This is Microsoft, your computer has a virus.' Microsoft never calls.",
+          "<strong>5. <a href=\"/scams/car-warranty-scam-call\">Car warranty robocalls</a>.</strong> 'Your vehicle's warranty has expired.' Pure sales scam.",
+          "<strong>6. <a href=\"/scams/medicare-cancellation-scam\">Medicare 'verify your number'</a>.</strong> Harvests Medicare IDs for fraudulent billing.",
+          "<strong>7. <a href=\"/scams/jury-duty-scam-call\">Missed jury duty</a>.</strong> Pay to avoid arrest. Courts don't operate by phone.",
+          "<strong>8. <a href=\"/scams/one-ring-callback-scam\">One-ring callback</a>.</strong> Premium international number: calling back costs $$$.",
+          "<strong>9. Bank 'fraud team' calls.</strong> 'Move your money to a safe account.' Banks never do this.",
+          "<strong>10. <a href=\"/scams/lottery-winner-scam\">Lottery prize</a>.</strong> 'You won, just pay taxes upfront.'"
+        ]
       },
       {
         "h": "The five verification habits",
-        "p": ["These work for every phone call — and they're the only thing that does.", "<strong>1. Hang up first. Verify second.</strong> No matter how urgent the caller makes it sound, hanging up is always safe. Real authorities understand verification.", "<strong>2. Call back using a number you find yourself.</strong> Not the number that called. Not the number they give you. The number from the back of your card, from an official mail piece, or from typing the organization name into a search engine yourself.", "<strong>3. Never give information you didn't initiate.</strong> If they called you, you don't owe them information. Even basic info — your address, your last 4 SSN — can fuel later scams.", "<strong>4. Never read codes aloud.</strong> Any code sent to you by your bank, Apple, Google, or Microsoft is for YOUR use only. Reading it to anyone is handing them control.", "<strong>5. Take a beat.</strong> Real urgency is rare. A 60-second pause to think defeats almost every scam script. If they pressure you against pausing, that's confirmation it's a scam."]
+        "p": [
+          "These work for every phone call, and they're the only thing that does.",
+          "<strong>1. Hang up first. Verify second.</strong> No matter how urgent the caller makes it sound, hanging up is always safe. Real authorities understand verification.",
+          "<strong>2. Call back using a number you find yourself.</strong> Not the number that called. Not the number they give you. The number from the back of your card, from an official mail piece, or from typing the organization name into a search engine yourself.",
+          "<strong>3. Never give information you didn't initiate.</strong> If they called you, you don't owe them information. Even basic info (your address, your last 4 SSN) can fuel later scams.",
+          "<strong>4. Never read codes aloud.</strong> Any code sent to you by your bank, Apple, Google, or Microsoft is for YOUR use only. Reading it to anyone is handing them control.",
+          "<strong>5. Take a beat.</strong> Real urgency is rare. A 60-second pause to think defeats almost every scam script. If they pressure you against pausing, that's confirmation it's a scam."
+        ]
       },
       {
         "h": "How to stop the calls at the source",
-        "p": ["<strong>National Do Not Call Registry:</strong> donotcall.gov. Won't stop scammers (they ignore it) but adds legal weight to enforcement.", "<strong>Carrier call screening:</strong> T-Mobile Scam Shield, Verizon Call Filter, AT&T ActiveArmor, Visible Spam Blocker. Free, on by default for most accounts.", "<strong>iPhone Silence Unknown Callers:</strong> Settings → Phone → Silence Unknown Callers. Routes all non-contacts to voicemail. The single highest-impact setting on your phone.", "<strong>Android call screening:</strong> Phone app → Settings → Spam protection. Google's screen-call feature lets the assistant answer suspicious calls for you.", "<strong>Third-party apps:</strong> Hiya, Robokiller, Truecaller, YouMail — useful additional layers, especially Truecaller for international scam numbers.", "<strong>Report calls you receive:</strong> reportfraud.ftc.gov and donotcall.gov/report — feeds enforcement data."]
+        "p": [
+          "<strong>National Do Not Call Registry:</strong> donotcall.gov. Won't stop scammers (they ignore it) but adds legal weight to enforcement.",
+          "<strong>Carrier call screening:</strong> T-Mobile Scam Shield, Verizon Call Filter, AT&T ActiveArmor, Visible Spam Blocker. Free, on by default for most accounts.",
+          "<strong>iPhone Silence Unknown Callers:</strong> Settings → Phone → Silence Unknown Callers. Routes all non-contacts to voicemail. The single highest-impact setting on your phone.",
+          "<strong>Android call screening:</strong> Phone app → Settings → Spam protection. Google's screen-call feature lets the assistant answer suspicious calls for you.",
+          "<strong>Third-party apps:</strong> Hiya, Robokiller, Truecaller, YouMail: useful additional layers, especially Truecaller for international scam numbers.",
+          "<strong>Report calls you receive:</strong> reportfraud.ftc.gov and donotcall.gov/report: feeds enforcement data."
+        ]
       },
       {
-        "h": "AI voice cloning — the new threat",
-        "p": ["Scammers can now clone any voice from 10-30 seconds of audio. A few seconds of a TikTok video, an Instagram story, or a voicemail greeting is enough to produce a deepfake voice that sounds exactly like the original.", "This breaks the 'I'd recognize my grandchild's voice' instinct that prevented grandparent scams for decades.", "<strong>The defense:</strong> set a family code word. A word only family knows — not a pet name, not a hometown, not anything inferable from social media. Use it whenever a call sounds like a family emergency. No code word? Hang up and call the real person's known number. Real family will answer."]
+        "h": "AI voice cloning: the new threat",
+        "p": [
+          "Scammers can now clone any voice from 10-30 seconds of audio. A few seconds of a TikTok video, an Instagram story, or a voicemail greeting is enough to produce a deepfake voice that sounds exactly like the original.",
+          "This breaks the 'I'd recognize my grandchild's voice' instinct that prevented grandparent scams for decades.",
+          "<strong>The defense:</strong> set a family code word. A word only family knows, not a pet name, not a hometown, not anything inferable from social media. Use it whenever a call sounds like a family emergency. No code word? Hang up and call the real person's known number. Real family will answer."
+        ]
       }
     ],
-    "related_scams": ["grandparent-scam", "social-security-scam-call", "irs-scam-text", "car-warranty-scam-call", "microsoft-tech-support-scam", "jury-duty-scam-call"]
+    "related_scams": [
+      "grandparent-scam",
+      "social-security-scam-call",
+      "irs-scam-text",
+      "car-warranty-scam-call",
+      "microsoft-tech-support-scam",
+      "jury-duty-scam-call"
+    ]
   },
   {
     "slug": "investment-scam-guide",
     "title": "Investment & Money Scams: From Romance to Crypto",
-    "meta_description": "Investment scams cost Americans over $4 billion annually. Here are the major patterns — romance, pig butchering, crypto, forex — and how to spot them early.",
+    "meta_description": "Investment scams cost Americans over $4 billion annually. Here are the major patterns (romance, pig butchering, crypto, forex) and how to spot them early.",
     "h1": "Investment & money scams: from romance to crypto",
-    "lede": "Investment scams are the highest-loss fraud category in the United States. Where text and call scams steal hundreds of dollars per victim, investment scams steal life savings — six and seven figures per victim is now routine. The schemes have evolved dramatically in the past five years. Understanding the modern patterns is the only defense.",
+    "lede": "Investment scams are the highest-loss fraud category in the United States. Where text and call scams steal hundreds of dollars per victim, investment scams steal life savings: six and seven figures per victim is now routine. The schemes have evolved dramatically in the past five years. Understanding the modern patterns is the only defense.",
     "sections": [
       {
         "h": "The five major investment scam patterns",
-        "p": ["<strong>1. <a href=\"/scams/pig-butchering-scam\">Pig butchering</a>.</strong> Long-con combining friendship/romance with fake crypto investments. Now the largest single fraud category globally. Average loss exceeds $100,000.", "<strong>2. <a href=\"/scams/romance-scam\">Romance scams</a>.</strong> Online relationships that eventually request money. Often graduate into pig butchering. See also: <a href=\"/scams/military-romance-scam\">military romance variant</a>.", "<strong>3. <a href=\"/scams/crypto-recovery-scam\">Crypto recovery</a>.</strong> Second-stage scams targeting victims of crypto fraud. Promise to get the money back for an upfront fee.", "<strong>4. Forex / day-trading 'mentor' scams.</strong> 'Successful trader' on Instagram offers signals or mentorship for upfront fees. The trader's results are fake.", "<strong>5. Pump-and-dump.</strong> Coordinated buying of obscure stocks or coins to inflate price, then dumping on retail buyers."]
+        "p": [
+          "<strong>1. <a href=\"/scams/pig-butchering-scam\">Pig butchering</a>.</strong> Long-con combining friendship/romance with fake crypto investments. Now the largest single fraud category globally. Average loss exceeds $100,000.",
+          "<strong>2. <a href=\"/scams/romance-scam\">Romance scams</a>.</strong> Online relationships that eventually request money. Often graduate into pig butchering. See also: <a href=\"/scams/military-romance-scam\">military romance variant</a>.",
+          "<strong>3. <a href=\"/scams/crypto-recovery-scam\">Crypto recovery</a>.</strong> Second-stage scams targeting victims of crypto fraud. Promise to get the money back for an upfront fee.",
+          "<strong>4. Forex / day-trading 'mentor' scams.</strong> 'Successful trader' on Instagram offers signals or mentorship for upfront fees. The trader's results are fake.",
+          "<strong>5. Pump-and-dump.</strong> Coordinated buying of obscure stocks or coins to inflate price, then dumping on retail buyers."
+        ]
       },
       {
         "h": "Why investment scams work better than other scams",
-        "p": ["Two reasons:", "<strong>1. The relationship.</strong> Pig butchering and romance scams build a real emotional connection over weeks or months. By the time money is requested, the victim genuinely cares about the scammer. This is fundamentally different from a 10-minute robocall — the emotional bond bypasses skepticism that would normally trigger.", "<strong>2. The fake gains.</strong> Most investment scams use 'demo dashboards' that show real-looking returns. The victim deposits $1,000 and sees it grow to $1,400 in a week. So they deposit $10,000. Then $50,000. The numbers on screen are all fake — but the dopamine of 'seeing it work' overrides every red flag."]
+        "p": [
+          "Two reasons:",
+          "<strong>1. The relationship.</strong> Pig butchering and romance scams build a real emotional connection over weeks or months. By the time money is requested, the victim genuinely cares about the scammer. This is fundamentally different from a 10-minute robocall: the emotional bond bypasses skepticism that would normally trigger.",
+          "<strong>2. The fake gains.</strong> Most investment scams use 'demo dashboards' that show real-looking returns. The victim deposits $1,000 and sees it grow to $1,400 in a week. So they deposit $10,000. Then $50,000. The numbers on screen are all fake, but the dopamine of 'seeing it work' overrides every red flag."
+        ]
       },
       {
         "h": "Universal red flags for investment scams",
-        "p": ["<strong>Met through unsolicited DM or 'wrong number' text.</strong> Pig butchering 100% of the time starts this way.", "<strong>Has investment 'advice,' platform, or mentor to recommend.</strong> Real friends don't pitch you investments.", "<strong>Pushes you to a specific platform you've never heard of.</strong> Real exchanges (Coinbase, Kraken, Fidelity) don't need someone to introduce you.", "<strong>Initial small deposit shows quick gains.</strong> This is the hook. The platform is fake. The numbers are made up.", "<strong>Withdrawal is blocked by 'taxes,' 'fees,' or 'verification.'</strong> Final extraction phase. The money was always gone — paying more 'release fees' doesn't recover anything.", "<strong>Refuses video call or refuses to meet.</strong> Live verification is the test scammers can't pass."]
+        "p": [
+          "<strong>Met through unsolicited DM or 'wrong number' text.</strong> Pig butchering 100% of the time starts this way.",
+          "<strong>Has investment 'advice,' platform, or mentor to recommend.</strong> Real friends don't pitch you investments.",
+          "<strong>Pushes you to a specific platform you've never heard of.</strong> Real exchanges (Coinbase, Kraken, Fidelity) don't need someone to introduce you.",
+          "<strong>Initial small deposit shows quick gains.</strong> This is the hook. The platform is fake. The numbers are made up.",
+          "<strong>Withdrawal is blocked by 'taxes,' 'fees,' or 'verification.'</strong> Final extraction phase. The money was always gone. Paying more 'release fees' doesn't recover anything.",
+          "<strong>Refuses video call or refuses to meet.</strong> Live verification is the test scammers can't pass."
+        ]
       },
       {
         "h": "If you're currently in one",
-        "p": ["The hardest realization is that the relationship isn't real. The person doesn't exist as you know them. They're a worker (often trafficked themselves) following a script from a compound in Cambodia, Myanmar, or Laos.", "<strong>Stop sending money immediately.</strong> No more 'release fees.' No more 'tax payments.' The funds in the dashboard are not real. Paying more makes it worse, not better.", "<strong>Tell a trusted person now.</strong> Isolation is part of the scam. Saying it out loud breaks the spell for many victims.", "<strong>Save evidence.</strong> Screenshot all conversations, transactions, and platform pages before they go dark.", "<strong>Report immediately:</strong> ic3.gov (FBI) is the single most important — they have crypto trace capabilities that work best in the first hours/days. Also reportfraud.ftc.gov.", "<strong>Get help.</strong> AARP fraud helpline: 1-877-908-3360. Cybercrime Support Network: cybercrimesupport.org. Both offer free, judgment-free counseling for victims."]
+        "p": [
+          "The hardest realization is that the relationship isn't real. The person doesn't exist as you know them. They're a worker (often trafficked themselves) following a script from a compound in Cambodia, Myanmar, or Laos.",
+          "<strong>Stop sending money immediately.</strong> No more 'release fees.' No more 'tax payments.' The funds in the dashboard are not real. Paying more makes it worse, not better.",
+          "<strong>Tell a trusted person now.</strong> Isolation is part of the scam. Saying it out loud breaks the spell for many victims.",
+          "<strong>Save evidence.</strong> Screenshot all conversations, transactions, and platform pages before they go dark.",
+          "<strong>Report immediately:</strong> ic3.gov (FBI) is the single most important: they have crypto trace capabilities that work best in the first hours/days. Also reportfraud.ftc.gov.",
+          "<strong>Get help.</strong> AARP fraud helpline: 1-877-908-3360. Cybercrime Support Network: cybercrimesupport.org. Both offer free, judgment-free counseling for victims."
+        ]
       },
       {
         "h": "How to stay safe",
-        "p": ["<strong>Never invest with someone you haven't met in person.</strong> Period. No matter how much you trust them. No matter how good the returns look.", "<strong>Verify every platform.</strong> Real US exchanges are registered with the SEC, CFTC, or FINRA. Search the platform name + 'SEC' or 'FINRA broker check.'", "<strong>If returns seem too good — they are.</strong> Real markets return 8-10% per year on average. Anyone showing 20-50% monthly is either lying or running a Ponzi.", "<strong>Be skeptical of inbound DMs about money.</strong> Genuine financial advisors don't cold-DM strangers on WhatsApp.", "<strong>Talk to family before any large investment.</strong> Especially if you met the recommender online. A 10-minute conversation with someone you trust will save tens of thousands of dollars in many cases."]
+        "p": [
+          "<strong>Never invest with someone you haven't met in person.</strong> Period. No matter how much you trust them. No matter how good the returns look.",
+          "<strong>Verify every platform.</strong> Real US exchanges are registered with the SEC, CFTC, or FINRA. Search the platform name + 'SEC' or 'FINRA broker check.'",
+          "<strong>If returns seem too good, they are.</strong> Real markets return 8-10% per year on average. Anyone showing 20-50% monthly is either lying or running a Ponzi.",
+          "<strong>Be skeptical of inbound DMs about money.</strong> Genuine financial advisors don't cold-DM strangers on WhatsApp.",
+          "<strong>Talk to family before any large investment.</strong> Especially if you met the recommender online. A 10-minute conversation with someone you trust will save tens of thousands of dollars in many cases."
+        ]
       }
     ],
-    "related_scams": ["pig-butchering-scam", "romance-scam", "crypto-recovery-scam", "military-romance-scam", "cashapp-flip-scam"]
+    "related_scams": [
+      "pig-butchering-scam",
+      "romance-scam",
+      "crypto-recovery-scam",
+      "military-romance-scam",
+      "cashapp-flip-scam"
+    ]
   },
   {
     "slug": "banking-scam-guide",
     "title": "Bank & Payment Scams: Spotting Fake Fraud Alerts",
-    "meta_description": "Banks are the most-impersonated category in modern fraud. Here's how to tell real fraud alerts from fakes — and what to do if you've been hit.",
+    "meta_description": "Banks are the most-impersonated category in modern fraud. Here's how to tell real fraud alerts from fakes, and what to do if you've been hit.",
     "h1": "Bank & payment scams: spotting fake fraud alerts",
-    "lede": "Every major US bank gets impersonated daily in text, email, and phone scams. The volume is massive because the payoff is huge — a successful bank scam typically nets thousands per victim, not hundreds. The good news: real bank fraud alerts follow specific, predictable patterns. Once you know what real looks like, fake becomes obvious.",
+    "lede": "Every major US bank gets impersonated daily in text, email, and phone scams. The volume is massive because the payoff is huge: a successful bank scam typically nets thousands per victim, not hundreds. The good news: real bank fraud alerts follow specific, predictable patterns. Once you know what real looks like, fake becomes obvious.",
     "sections": [
       {
         "h": "What a real bank fraud alert looks like",
-        "p": ["Every major US bank uses essentially the same format for fraud alerts:", "<strong>Sender:</strong> A 5-digit short code (e.g., 24273 for Chase, 93557 for Wells Fargo, 51682 for Bank of America). Not a 10-digit phone number.", "<strong>Content:</strong> A specific transaction — merchant, amount, date — and a simple yes/no question.", "<strong>Reply method:</strong> Reply YES, NO, or HELP. That's it.", "<strong>What it never contains:</strong> A clickable link. A phone number to call. A request for your account number, PIN, password, or one-time code.", "If a 'bank fraud alert' has a link or a callback number, it is, without exception, a phishing scam. Real banks do not operate this way."]
+        "p": [
+          "Every major US bank uses essentially the same format for fraud alerts:",
+          "<strong>Sender:</strong> A 5-digit short code (e.g., 24273 for Chase, 93557 for Wells Fargo, 51682 for Bank of America). Not a 10-digit phone number.",
+          "<strong>Content:</strong> A specific transaction (merchant, amount, date) and a simple yes/no question.",
+          "<strong>Reply method:</strong> Reply YES, NO, or HELP. That's it.",
+          "<strong>What it never contains:</strong> A clickable link. A phone number to call. A request for your account number, PIN, password, or one-time code.",
+          "If a 'bank fraud alert' has a link or a callback number, it is, without exception, a phishing scam. Real banks do not operate this way."
+        ]
       },
       {
         "h": "The bank scam playbook",
-        "p": ["Modern bank scams follow a remarkably consistent script:", "<strong>Stage 1:</strong> A fake fraud alert text or call — designed to trigger your phone call.", "<strong>Stage 2:</strong> You call the number in the message. A scammer answers as 'Bank Fraud Team.'", "<strong>Stage 3:</strong> 'I see suspicious activity. To protect your funds, we need to move your money to a secure account.' This is the entire scam.", "<strong>Stage 4:</strong> They walk you through Zelle, wire, or remote-access fraud — sometimes for 30-60 minutes, while the victim believes they're being protected.", "<strong>Stage 5:</strong> Money is gone. Bank refuses refund because 'you authorized the transaction.'", "The key insight: real banks never tell customers to move money. The 'secure account' line is the scam's signature. Hearing it = hang up immediately."]
+        "p": [
+          "Modern bank scams follow a remarkably consistent script:",
+          "<strong>Stage 1:</strong> A fake fraud alert text or call, designed to trigger your phone call.",
+          "<strong>Stage 2:</strong> You call the number in the message. A scammer answers as 'Bank Fraud Team.'",
+          "<strong>Stage 3:</strong> 'I see suspicious activity. To protect your funds, we need to move your money to a secure account.' This is the entire scam.",
+          "<strong>Stage 4:</strong> They walk you through Zelle, wire, or remote-access fraud, sometimes for 30-60 minutes, while the victim believes they're being protected.",
+          "<strong>Stage 5:</strong> Money is gone. Bank refuses refund because 'you authorized the transaction.'",
+          "The key insight: real banks never tell customers to move money. The 'secure account' line is the scam's signature. Hearing it = hang up immediately."
+        ]
       },
       {
         "h": "The major bank impersonations",
-        "p": ["<strong><a href=\"/scams/chase-fraud-alert-text-scam\">Chase</a>.</strong> Largest US bank by customers — most-spoofed.", "<strong><a href=\"/scams/wells-fargo-text-scam\">Wells Fargo</a>.</strong> Frequent target, especially Zelle-themed.", "<strong><a href=\"/scams/bank-of-america-scam-text\">Bank of America</a>.</strong> Common, including credit card alert variants.", "<strong><a href=\"/scams/capital-one-fraud-alert-scam\">Capital One</a>.</strong> Often paired with credit card monitoring scams.", "<strong><a href=\"/scams/zelle-scam\">Zelle scams</a>.</strong> Cross-bank — works on any bank using Zelle.", "<strong><a href=\"/scams/direct-deposit-change-scam\">Direct deposit BEC</a>.</strong> Targets HR/payroll, not consumers directly — but employees should know the pattern."]
+        "p": [
+          "<strong><a href=\"/scams/chase-fraud-alert-text-scam\">Chase</a>.</strong> Largest US bank by customers, most-spoofed.",
+          "<strong><a href=\"/scams/wells-fargo-text-scam\">Wells Fargo</a>.</strong> Frequent target, especially Zelle-themed.",
+          "<strong><a href=\"/scams/bank-of-america-scam-text\">Bank of America</a>.</strong> Common, including credit card alert variants.",
+          "<strong><a href=\"/scams/capital-one-fraud-alert-scam\">Capital One</a>.</strong> Often paired with credit card monitoring scams.",
+          "<strong><a href=\"/scams/zelle-scam\">Zelle scams</a>.</strong> Cross-bank: works on any bank using Zelle.",
+          "<strong><a href=\"/scams/direct-deposit-change-scam\">Direct deposit BEC</a>.</strong> Targets HR/payroll, not consumers directly, but employees should know the pattern."
+        ]
       },
       {
         "h": "The five rules that prevent bank fraud",
-        "p": ["<strong>1. Banks never ask you to move money to 'protect' it.</strong> Never. This line is universally fake. Hearing it = hang up.", "<strong>2. Real fraud alerts use YES/NO reply.</strong> If your 'bank alert' has a link or callback number, it's fake.", "<strong>3. Verify by calling the number on your card, not the message.</strong> The back of your debit/credit card has the real number.", "<strong>4. Never share your password, full account number, PIN, or one-time code by phone or text.</strong> Even to 'verify' your identity to your bank. Real banks have other verification methods.", "<strong>5. Never install remote-access software at someone's request.</strong> AnyDesk, TeamViewer, Quick Assist — these give full control. No legitimate bank ever asks customers to install these."]
+        "p": [
+          "<strong>1. Banks never ask you to move money to 'protect' it.</strong> Never. This line is universally fake. Hearing it = hang up.",
+          "<strong>2. Real fraud alerts use YES/NO reply.</strong> If your 'bank alert' has a link or callback number, it's fake.",
+          "<strong>3. Verify by calling the number on your card, not the message.</strong> The back of your debit/credit card has the real number.",
+          "<strong>4. Never share your password, full account number, PIN, or one-time code by phone or text.</strong> Even to 'verify' your identity to your bank. Real banks have other verification methods.",
+          "<strong>5. Never install remote-access software at someone's request.</strong> AnyDesk, TeamViewer, Quick Assist: these give full control. No legitimate bank ever asks customers to install these."
+        ]
       },
       {
         "h": "If you've been hit",
-        "p": ["<strong>Call your bank immediately.</strong> Use the number on your card. Speed matters — some wire/Zelle transfers can be recalled within hours.", "<strong>Change passwords from a different device.</strong> If you gave remote access, your computer/phone may be compromised. Use a different device to change passwords.", "<strong>Place a credit freeze.</strong> Free at Equifax, Experian, TransUnion. Stops new accounts being opened in your name.", "<strong>File reports:</strong> reportfraud.ftc.gov, your state AG's consumer protection unit, ic3.gov if amounts are significant.", "<strong>Document everything:</strong> Screenshots, call logs, transaction records. Banks make refund decisions based on documentation quality.", "<strong>Don't pay 'recovery agents.'</strong> After a bank scam, you'll often get calls or DMs from 'fund recovery specialists.' These are second-stage scams. Real recovery happens through your bank and law enforcement — never through someone who cold-contacts you."]
+        "p": [
+          "<strong>Call your bank immediately.</strong> Use the number on your card. Speed matters: some wire/Zelle transfers can be recalled within hours.",
+          "<strong>Change passwords from a different device.</strong> If you gave remote access, your computer/phone may be compromised. Use a different device to change passwords.",
+          "<strong>Place a credit freeze.</strong> Free at Equifax, Experian, TransUnion. Stops new accounts being opened in your name.",
+          "<strong>File reports:</strong> reportfraud.ftc.gov, your state AG's consumer protection unit, ic3.gov if amounts are significant.",
+          "<strong>Document everything:</strong> Screenshots, call logs, transaction records. Banks make refund decisions based on documentation quality.",
+          "<strong>Don't pay 'recovery agents.'</strong> After a bank scam, you'll often get calls or DMs from 'fund recovery specialists.' These are second-stage scams. Real recovery happens through your bank and law enforcement, never through someone who cold-contacts you."
+        ]
       }
     ],
-    "related_scams": ["chase-fraud-alert-text-scam", "wells-fargo-text-scam", "bank-of-america-scam-text", "capital-one-fraud-alert-scam", "zelle-scam", "direct-deposit-change-scam"]
+    "related_scams": [
+      "chase-fraud-alert-text-scam",
+      "wells-fargo-text-scam",
+      "bank-of-america-scam-text",
+      "capital-one-fraud-alert-scam",
+      "zelle-scam",
+      "direct-deposit-change-scam"
+    ]
   },
   {
     "slug": "double-check-vs-truecaller",
     "title": "Double Check vs Truecaller: Which Scam Protection App Should You Use?",
-    "meta_description": "Truecaller identifies callers. Double Check analyzes the content of suspicious texts, emails, and screenshots. Here's how to choose — or use both.",
-    "h1": "Double Check vs Truecaller — honest comparison",
+    "meta_description": "Truecaller identifies callers. Double Check analyzes the content of suspicious texts, emails, and screenshots. Here's how to choose, or use both.",
+    "h1": "Double Check vs Truecaller: honest comparison",
     "lede": "Truecaller and Double Check are often searched together, but they solve different problems. Truecaller tells you who is calling. Double Check tells you whether what they sent you is a scam. Here's what each does well, where each falls short, and which one (or both) you should be using in 2026.",
     "sections": [
       {
         "h": "What each app actually does",
-        "p": ["<strong>Truecaller</strong> is a caller ID and spam-call blocker. Its core feature is a crowdsourced database of phone numbers — when an unknown number calls, it shows you a name (sometimes), a spam score, and a reason if the number has been reported. It also blocks calls flagged as spam. Truecaller is huge in India, Africa, the Middle East, and parts of Europe. It has a US presence but the US dataset is far weaker than its India dataset.", "<strong>Double Check</strong> is an AI scam-content analyzer. You paste a text message, forward an email, or upload a screenshot — Double Check reads what the sender actually wrote and tells you in plain English whether it's a scam, requires action, or is safe. It works on any sender, no database required. Double Check is US-only."]
+        "p": [
+          "<strong>Truecaller</strong> is a caller ID and spam-call blocker. Its core feature is a crowdsourced database of phone numbers: when an unknown number calls, it shows you a name (sometimes), a spam score, and a reason if the number has been reported. It also blocks calls flagged as spam. Truecaller is huge in India, Africa, the Middle East, and parts of Europe. It has a US presence but the US dataset is far weaker than its India dataset.",
+          "<strong>Double Check</strong> is an AI scam-content analyzer. You paste a text message, forward an email, or upload a screenshot: Double Check reads what the sender actually wrote and tells you in plain English whether it's a scam, requires action, or is safe. It works on any sender, no database required. Double Check is US-only."
+        ]
       },
       {
         "h": "What Truecaller is good at",
-        "p": ["Identifying unknown callers — especially in countries where its database is dense.", "Auto-blocking known spam numbers before they ever ring.", "A reverse phone-number lookup that often beats the free US options.", "Free tier is functional; paid tier removes ads and adds features."]
+        "p": [
+          "Identifying unknown callers, especially in countries where its database is dense.",
+          "Auto-blocking known spam numbers before they ever ring.",
+          "A reverse phone-number lookup that often beats the free US options.",
+          "Free tier is functional; paid tier removes ads and adds features."
+        ]
       },
       {
         "h": "Where Truecaller falls short for US users",
-        "p": ["Scammers rotate phone numbers constantly — a brand-new number used for the first time has no history, so Truecaller has nothing to say about it.", "Truecaller can't tell you whether the message a sender sent you is a scam — only whether the number has been flagged before.", "It cannot help with email scams, package-delivery texts from random numbers, or screenshot-based scam analysis.", "Privacy concerns: Truecaller historically uploaded users' entire contact lists to build its database. Their policy has evolved but the model still depends on shared contact data."]
+        "p": [
+          "Scammers rotate phone numbers constantly: a brand-new number used for the first time has no history, so Truecaller has nothing to say about it.",
+          "Truecaller can't tell you whether the message a sender sent you is a scam, only whether the number has been flagged before.",
+          "It cannot help with email scams, package-delivery texts from random numbers, or screenshot-based scam analysis.",
+          "Privacy concerns: Truecaller historically uploaded users' entire contact lists to build its database. Their policy has evolved but the model still depends on shared contact data."
+        ]
       },
       {
         "h": "What Double Check is good at",
-        "p": ["Reading the actual content of suspicious messages — the part that contains the scam.", "Working immediately on first-contact scams (new numbers, new email addresses, never-seen URLs) where reputation databases fail.", "Handling texts, emails, screenshots, and website URLs in one app.", "Plain-English verdicts with a 'what to do next' answer — designed for older users, not security experts.", "Forwarding suspicious emails to scan@mydoublecheck.app and getting a verdict by reply — no app required.", "Family-share alerts so an adult child gets notified when a parent receives something suspicious."]
+        "p": [
+          "Reading the actual content of suspicious messages, the part that contains the scam.",
+          "Working immediately on first-contact scams (new numbers, new email addresses, never-seen URLs) where reputation databases fail.",
+          "Handling texts, emails, screenshots, and website URLs in one app.",
+          "Plain-English verdicts with a 'what to do next' answer, designed for older users, not security experts.",
+          "Forwarding suspicious emails to scan@mydoublecheck.app and getting a verdict by reply, no app required.",
+          "Family-share alerts so an adult child gets notified when a parent receives something suspicious."
+        ]
       },
       {
         "h": "Where Double Check falls short",
-        "p": ["Does not block calls or texts — only analyzes what you paste in.", "Doesn't identify the caller behind a phone number.", "US-only at launch.", "Requires the user to actively check rather than working passively in the background."]
+        "p": [
+          "Does not block calls or texts, only analyzes what you paste in.",
+          "Doesn't identify the caller behind a phone number.",
+          "US-only at launch.",
+          "Requires the user to actively check rather than working passively in the background."
+        ]
       },
       {
         "h": "Which one should you use?",
-        "p": ["<strong>If your main problem is spam phone calls:</strong> Truecaller (or your carrier's free spam-filter, which is often as good in the US).", "<strong>If your main problem is suspicious texts, emails, or messages you can't tell are real:</strong> Double Check.", "<strong>If you're protecting an older parent:</strong> Double Check, because the scams that take real money are content-based (fake bank alerts, fake delivery notices, romance scams) — not robocalls. Robocalls are annoying; scam content is what causes the $5,000 wire transfer.", "<strong>The pragmatic answer:</strong> use both. Truecaller for incoming calls, Double Check for any message that gives you a moment of doubt. They don't overlap."]
+        "p": [
+          "<strong>If your main problem is spam phone calls:</strong> Truecaller (or your carrier's free spam-filter, which is often as good in the US).",
+          "<strong>If your main problem is suspicious texts, emails, or messages you can't tell are real:</strong> Double Check.",
+          "<strong>If you're protecting an older parent:</strong> Double Check, because the scams that take real money are content-based (fake bank alerts, fake delivery notices, romance scams). Not robocalls. Robocalls are annoying; scam content is what causes the $5,000 wire transfer.",
+          "<strong>The pragmatic answer:</strong> use both. Truecaller for incoming calls, Double Check for any message that gives you a moment of doubt. They don't overlap."
+        ]
       },
       {
         "h": "The honest disclosure",
-        "p": ["We make Double Check, so this comparison is not neutral. We tried to be fair to Truecaller — it's a good product for what it does. The summary above is what we'd tell a friend who asked."]
+        "p": [
+          "We make Double Check, so this comparison is not neutral. We tried to be fair to Truecaller: it's a good product for what it does. The summary above is what we'd tell a friend who asked."
+        ]
       }
     ],
-    "related_scams": ["irs-scam-text", "usps-delivery-text-scam", "chase-fraud-alert-text-scam"]
+    "related_scams": [
+      "irs-scam-text",
+      "usps-delivery-text-scam",
+      "chase-fraud-alert-text-scam"
+    ]
   },
   {
     "slug": "double-check-vs-hiya",
     "title": "Double Check vs Hiya: Caller ID vs Scam Message Analysis",
-    "meta_description": "Hiya blocks spam calls. Double Check analyzes the content of suspicious texts and emails. Different problems, different tools — here's how to choose.",
-    "h1": "Double Check vs Hiya — honest comparison",
-    "lede": "Hiya is one of the largest call-identification and spam-blocking services in the US — it powers Samsung's built-in caller ID and AT&T's Call Protect. Double Check does something completely different: it reads suspicious messages and tells you if they're scams. Here's what each is for, and which you should pick in 2026.",
+    "meta_description": "Hiya blocks spam calls. Double Check analyzes the content of suspicious texts and emails. Different problems, different tools: here's how to choose.",
+    "h1": "Double Check vs Hiya. Honest comparison",
+    "lede": "Hiya is one of the largest call-identification and spam-blocking services in the US: it powers Samsung's built-in caller ID and AT&T's Call Protect. Double Check does something completely different: it reads suspicious messages and tells you if they're scams. Here's what each is for, and which you should pick in 2026.",
     "sections": [
       {
         "h": "What each does",
-        "p": ["<strong>Hiya</strong> is a phone-number reputation service. It identifies incoming callers, flags spam and scam calls, and auto-blocks the worst ones. It's deeply integrated into Samsung phones (Smart Call) and several US carrier apps. The free app does the basics; the paid tier adds reverse lookup and more aggressive blocking.", "<strong>Double Check</strong> is an AI-powered scam-content analyzer. Paste a text, forward an email, upload a screenshot — Double Check tells you in plain English whether it's a scam and what to do. It works on any message regardless of sender reputation."]
+        "p": [
+          "<strong>Hiya</strong> is a phone-number reputation service. It identifies incoming callers, flags spam and scam calls, and auto-blocks the worst ones. It's deeply integrated into Samsung phones (Smart Call) and several US carrier apps. The free app does the basics; the paid tier adds reverse lookup and more aggressive blocking.",
+          "<strong>Double Check</strong> is an AI-powered scam-content analyzer. Paste a text, forward an email, upload a screenshot. Double Check tells you in plain English whether it's a scam and what to do. It works on any message regardless of sender reputation."
+        ]
       },
       {
         "h": "What Hiya is good at",
-        "p": ["Blocking known spam and robocalls in real time — its database is among the largest in the US.", "Pre-installed on most Samsung phones (Smart Call is Hiya under the hood) — for many users it's already running.", "Identifying business callers — when a legitimate company calls you, Hiya often shows the business name even if the number isn't in your contacts.", "Lightweight and battery-friendly."]
+        "p": [
+          "Blocking known spam and robocalls in real time. Its database is among the largest in the US.",
+          "Pre-installed on most Samsung phones (Smart Call is Hiya under the hood): for many users it's already running.",
+          "Identifying business callers: when a legitimate company calls you, Hiya often shows the business name even if the number isn't in your contacts.",
+          "Lightweight and battery-friendly."
+        ]
       },
       {
         "h": "Where Hiya falls short",
-        "p": ["Useless against brand-new scam numbers — when a scammer rotates to a fresh number, there's no reputation data yet.", "Cannot evaluate the content of a text or email — only the sender's number.", "No protection against email scams, web-based scams, or screenshot-based scams.", "Limited free tier — many actually-useful features (lookup, more blocking) require a subscription."]
+        "p": [
+          "Useless against brand-new scam numbers, when a scammer rotates to a fresh number, there's no reputation data yet.",
+          "Cannot evaluate the content of a text or email: only the sender's number.",
+          "No protection against email scams, web-based scams, or screenshot-based scams.",
+          "Limited free tier: many actually-useful features (lookup, more blocking) require a subscription."
+        ]
       },
       {
         "h": "What Double Check is good at",
-        "p": ["Analyzing the words in any suspicious message, regardless of who sent it.", "Catching first-contact scams (new sender, new domain, never-seen URL) where reputation databases are blind.", "Works across SMS, email, screenshots, and website URLs.", "Plain-English answers built for older users — 'this is a scam, here's what to do' rather than a confidence score.", "Optional family alerts so an adult child gets notified when a parent receives something suspicious."]
+        "p": [
+          "Analyzing the words in any suspicious message, regardless of who sent it.",
+          "Catching first-contact scams (new sender, new domain, never-seen URL) where reputation databases are blind.",
+          "Works across SMS, email, screenshots, and website URLs.",
+          "Plain-English answers built for older users: 'this is a scam, here's what to do' rather than a confidence score.",
+          "Optional family alerts so an adult child gets notified when a parent receives something suspicious."
+        ]
       },
       {
         "h": "Where Double Check falls short",
-        "p": ["Does not block calls — won't stop a robocall from ringing your phone.", "Doesn't identify unknown callers.", "Requires the user to actively check a suspicious message rather than working passively."]
+        "p": [
+          "Does not block calls, won't stop a robocall from ringing your phone.",
+          "Doesn't identify unknown callers.",
+          "Requires the user to actively check a suspicious message rather than working passively."
+        ]
       },
       {
         "h": "Which one should you use?",
-        "p": ["<strong>If unwanted calls are your primary annoyance:</strong> Hiya (or your phone's built-in spam filter, which is often Hiya-powered).", "<strong>If you or a family member keeps getting suspicious texts, emails, or DMs you can't immediately classify:</strong> Double Check.", "<strong>For an older parent at risk of being scammed out of real money:</strong> Double Check. The scams that cause financial losses are almost always content-driven (a fake bank alert, a fake delivery notice, a romance scam) — not robocalls. Hiya can't help once the bad message arrives.", "<strong>Realistic stack:</strong> let Hiya (or your built-in caller ID) handle calls, and use Double Check for any message that gives you a moment of doubt."]
+        "p": [
+          "<strong>If unwanted calls are your primary annoyance:</strong> Hiya (or your phone's built-in spam filter, which is often Hiya-powered).",
+          "<strong>If you or a family member keeps getting suspicious texts, emails, or DMs you can't immediately classify:</strong> Double Check.",
+          "<strong>For an older parent at risk of being scammed out of real money:</strong> Double Check. The scams that cause financial losses are almost always content-driven (a fake bank alert, a fake delivery notice, a romance scam). Not robocalls. Hiya can't help once the bad message arrives.",
+          "<strong>Realistic stack:</strong> let Hiya (or your built-in caller ID) handle calls, and use Double Check for any message that gives you a moment of doubt."
+        ]
       },
       {
         "h": "Disclosure",
-        "p": ["We build Double Check. Hiya is a competitor in adjacent territory, not direct overlap. We've tried to describe both honestly — if you've had a different experience with either, the comparison should still help you decide."]
+        "p": [
+          "We build Double Check. Hiya is a competitor in adjacent territory, not direct overlap. We've tried to describe both honestly: if you've had a different experience with either, the comparison should still help you decide."
+        ]
       }
     ],
-    "related_scams": ["irs-scam-text", "usps-delivery-text-scam", "social-security-scam-text"]
+    "related_scams": [
+      "irs-scam-text",
+      "usps-delivery-text-scam",
+      "social-security-scam-text"
+    ]
   },
   {
     "slug": "double-check-vs-norton-genie",
     "title": "Double Check vs Norton Genie: Which AI Scam Detector Should You Use?",
     "meta_description": "Norton Genie and Double Check are both AI scam-content analyzers. Here's how they compare on accuracy, ease of use, family features, and price.",
-    "h1": "Double Check vs Norton Genie — honest comparison",
-    "lede": "Norton Genie is the closest direct competitor to Double Check — both are AI-powered scam-content analyzers. You paste a message, get a verdict. Here's how they actually differ in 2026: features, who they're built for, what each gets right, and what's missing.",
+    "h1": "Double Check vs Norton Genie: honest comparison",
+    "lede": "Norton Genie is the closest direct competitor to Double Check. Both are AI-powered scam-content analyzers. You paste a message, get a verdict. Here's how they actually differ in 2026: features, who they're built for, what each gets right, and what's missing.",
     "sections": [
       {
         "h": "What each does",
-        "p": ["<strong>Norton Genie</strong> is a free AI scam-detection tool from Gen Digital (the company behind Norton and Avast). You paste text, upload a screenshot, or share a URL — Genie tells you if it looks like a scam, explains why, and suggests next steps. Launched as part of Norton's broader cyber-safety push.", "<strong>Double Check</strong> is also a free-to-start AI scam-content analyzer. Same core flow: paste / upload / forward, get a verdict in plain English with a 'what to do' answer. The differences are in the details — speed, family features, advisor integration, and how the verdicts read."]
+        "p": [
+          "<strong>Norton Genie</strong> is a free AI scam-detection tool from Gen Digital (the company behind Norton and Avast). You paste text, upload a screenshot, or share a URL: Genie tells you if it looks like a scam, explains why, and suggests next steps. Launched as part of Norton's broader cyber-safety push.",
+          "<strong>Double Check</strong> is also a free-to-start AI scam-content analyzer. Same core flow: paste / upload / forward, get a verdict in plain English with a 'what to do' answer. The differences are in the details: speed, family features, advisor integration, and how the verdicts read."
+        ]
       },
       {
         "h": "Where Norton Genie is strong",
-        "p": ["Backed by Norton — instant brand trust, especially for users already inside the Norton ecosystem.", "Free tier with no signup required for basic checks.", "Available as a website, browser extension, and mobile app.", "Integrates with Norton 360 if you're already a subscriber — a single dashboard for security."]
+        "p": [
+          "Backed by Norton, instant brand trust, especially for users already inside the Norton ecosystem.",
+          "Free tier with no signup required for basic checks.",
+          "Available as a website, browser extension, and mobile app.",
+          "Integrates with Norton 360 if you're already a subscriber: a single dashboard for security."
+        ]
       },
       {
         "h": "Where Norton Genie falls short",
-        "p": ["Verdicts are written in a fairly technical voice — fine for tech-confident users, harder for the older adults most likely to be scammed.", "No family-share or notify-family features built in — the user is on their own.", "No forwarding-by-email option (you can't just forward a suspicious email and get a reply).", "Heavy upsell to the broader Norton 360 paid suite once you engage."]
+        "p": [
+          "Verdicts are written in a fairly technical voice: fine for tech-confident users, harder for the older adults most likely to be scammed.",
+          "No family-share or notify-family features built in: the user is on their own.",
+          "No forwarding-by-email option (you can't just forward a suspicious email and get a reply).",
+          "Heavy upsell to the broader Norton 360 paid suite once you engage."
+        ]
       },
       {
         "h": "Where Double Check is strong",
-        "p": ["Verdict language is intentionally plain — written for people who don't think about cybersecurity day-to-day.", "<strong>Forward to scan@mydoublecheck.app</strong> — turn any email into a check by forwarding it, no app needed. Reply comes back with the verdict.", "<strong>Family alerts</strong> — set up an adult child's email and they get notified when a parent receives something suspicious.", "<strong>Built-in 'what to do' guidance</strong> — every verdict ends with concrete next steps, not just a risk score.", "<strong>Crowd signal</strong> — when a sender's already been reported by other Double Check users, you see how many times.", "<strong>Advisor integration</strong> — financial advisors can deploy it to elderly client households as part of a client-protection program."]
+        "p": [
+          "Verdict language is intentionally plain: written for people who don't think about cybersecurity day-to-day.",
+          "<strong>Forward to scan@mydoublecheck.app</strong>: turn any email into a check by forwarding it, no app needed. Reply comes back with the verdict.",
+          "<strong>Family alerts</strong>: set up an adult child's email and they get notified when a parent receives something suspicious.",
+          "<strong>Built-in 'what to do' guidance</strong>: every verdict ends with concrete next steps, not just a risk score.",
+          "<strong>Crowd signal</strong>: when a sender's already been reported by other Double Check users, you see how many times.",
+          "<strong>Advisor integration</strong>. Financial advisors can deploy it to elderly client households as part of a client-protection program."
+        ]
       },
       {
         "h": "Where Double Check falls short",
-        "p": ["No browser extension yet — Norton Genie has this; we don't.", "US-only at launch — Norton has global reach.", "Smaller brand — if you've never heard of Double Check, it requires a leap of faith Norton doesn't."]
+        "p": [
+          "No browser extension yet. Norton Genie has this; we don't.",
+          "US-only at launch: Norton has global reach.",
+          "Smaller brand. If you've never heard of Double Check, it requires a leap of faith Norton doesn't."
+        ]
       },
       {
         "h": "Pricing",
-        "p": ["<strong>Norton Genie:</strong> Free; pushes you toward Norton 360 paid bundles ($60+/yr).", "<strong>Double Check:</strong> Free tier (3 checks). Paid tier removes limits, adds family alerts and forward-by-email — single-digit monthly price."]
+        "p": [
+          "<strong>Norton Genie:</strong> Free; pushes you toward Norton 360 paid bundles ($60+/yr).",
+          "<strong>Double Check:</strong> Free and unlimited checks. Pro adds family alerts, forward-by-email, and step-by-step guidance. Single-digit monthly price."
+        ]
       },
       {
         "h": "Which should you pick?",
-        "p": ["<strong>If you're already inside Norton's ecosystem and want one dashboard:</strong> Norton Genie.", "<strong>If you're checking on behalf of an older parent, or you want the message language to be readable by someone non-technical:</strong> Double Check.", "<strong>If you want family-alert features so an adult child gets notified:</strong> Double Check — Genie doesn't have this.", "<strong>If you want a forward-to-an-email-address flow:</strong> Double Check — that flow doesn't exist in Genie."]
+        "p": [
+          "<strong>If you're already inside Norton's ecosystem and want one dashboard:</strong> Norton Genie.",
+          "<strong>If you're checking on behalf of an older parent, or you want the message language to be readable by someone non-technical:</strong> Double Check.",
+          "<strong>If you want family-alert features so an adult child gets notified:</strong> Double Check. Genie doesn't have this.",
+          "<strong>If you want a forward-to-an-email-address flow:</strong> Double Check. That flow doesn't exist in Genie."
+        ]
       },
       {
         "h": "Disclosure",
-        "p": ["Double Check is our product. We've tried to be fair to Norton Genie — it's a real product solving a real problem, and Norton's distribution dwarfs ours. The differences above are factual as of 2026; if either product changes, this guide will be updated."]
+        "p": [
+          "Double Check is our product. We've tried to be fair to Norton Genie: it's a real product solving a real problem, and Norton's distribution dwarfs ours. The differences above are factual as of 2026; if either product changes, this guide will be updated."
+        ]
       }
     ],
-    "related_scams": ["irs-scam-text", "amazon-account-suspended-scam", "pig-butchering-scam"]
+    "related_scams": [
+      "irs-scam-text",
+      "amazon-account-suspended-scam",
+      "pig-butchering-scam"
+    ]
   },
   {
     "slug": "double-check-vs-scamadviser",
     "title": "Double Check vs ScamAdviser: Website Checker vs Message Analyzer",
     "meta_description": "ScamAdviser rates websites. Double Check analyzes the message that led you to the website. Here's which one solves which problem.",
-    "h1": "Double Check vs ScamAdviser — honest comparison",
+    "h1": "Double Check vs ScamAdviser. Honest comparison",
     "lede": "ScamAdviser and Double Check both show up when you search for scam-checking tools, but they're built for different moments. ScamAdviser rates whether a website is trustworthy. Double Check tells you whether a message (text, email, screenshot) is a scam. Most people need both, but at different times.",
     "sections": [
       {
         "h": "What each does",
-        "p": ["<strong>ScamAdviser</strong> is a website trust-rating service. You paste in a URL — ScamAdviser returns a 0-100 trust score based on domain age, hosting location, SSL certificate, traffic patterns, and crowdsourced reviews. It's been around since 2012 and has rated tens of millions of sites.", "<strong>Double Check</strong> reads the actual content of suspicious messages — text, email, screenshot — and tells you whether the message is a scam, what kind, and what to do. URL analysis is part of what it does, but it's not the whole product."]
+        "p": [
+          "<strong>ScamAdviser</strong> is a website trust-rating service. You paste in a URL (ScamAdviser returns a 0-100 trust score based on domain age, hosting location, SSL certificate, traffic patterns, and crowdsourced reviews. It's been around since 2012 and has rated tens of millions of sites.",
+          "<strong>Double Check</strong> reads the actual content of suspicious messages) text, email, screenshot: and tells you whether the message is a scam, what kind, and what to do. URL analysis is part of what it does, but it's not the whole product."
+        ]
       },
       {
         "h": "What ScamAdviser is good at",
-        "p": ["Quick risk-rating of a specific website you're about to buy from or hand details to.", "Useful for shopping decisions — 'is this Black Friday deal site legit?'", "Free for casual use; paid API for businesses.", "Browser extension that warns you as you browse."]
+        "p": [
+          "Quick risk-rating of a specific website you're about to buy from or hand details to.",
+          "Useful for shopping decisions: 'is this Black Friday deal site legit?'",
+          "Free for casual use; paid API for businesses.",
+          "Browser extension that warns you as you browse."
+        ]
       },
       {
         "h": "Where ScamAdviser falls short",
-        "p": ["Only useful if you already have a URL — most scams don't start with a website, they start with a message.", "Cannot evaluate text-message scams, email scams, or screenshot-based scams.", "Trust scores can be misleading for brand-new legitimate sites (low score because the domain is young) and for sophisticated scams (high score because the scammer set things up properly).", "Doesn't tell you what to do — just gives a number."]
+        "p": [
+          "Only useful if you already have a URL, most scams don't start with a website, they start with a message.",
+          "Cannot evaluate text-message scams, email scams, or screenshot-based scams.",
+          "Trust scores can be misleading for brand-new legitimate sites (low score because the domain is young) and for sophisticated scams (high score because the scammer set things up properly).",
+          "Doesn't tell you what to do, just gives a number."
+        ]
       },
       {
         "h": "What Double Check is good at",
-        "p": ["Reading any suspicious message and explaining in plain English whether it's a scam.", "Handles text, email, screenshots, and URLs all in one place.", "Returns a verdict with reasoning and a 'what to do next' answer — not just a score.", "Built for non-technical users (older adults, in particular).", "Family-alert feature so an adult child gets notified about suspicious messages received by a parent."]
+        "p": [
+          "Reading any suspicious message and explaining in plain English whether it's a scam.",
+          "Handles text, email, screenshots, and URLs all in one place.",
+          "Returns a verdict with reasoning and a 'what to do next' answer. Not just a score.",
+          "Built for non-technical users (older adults, in particular).",
+          "Family-alert feature so an adult child gets notified about suspicious messages received by a parent."
+        ]
       },
       {
         "h": "Where Double Check falls short",
-        "p": ["For 'is this random shopping site legit?' style queries, ScamAdviser's specialized rating is more focused.", "No browser extension yet — ScamAdviser has this."]
+        "p": [
+          "For 'is this random shopping site legit?' style queries, ScamAdviser's specialized rating is more focused.",
+          "No browser extension yet, ScamAdviser has this."
+        ]
       },
       {
         "h": "Which should you use?",
-        "p": ["<strong>'I'm about to enter my card on this website I've never used — is it real?'</strong> → ScamAdviser.", "<strong>'I got this weird text / email / DM — is it a scam?'</strong> → Double Check.", "<strong>'My elderly parent keeps getting suspicious messages — how do I protect them?'</strong> → Double Check, with family alerts on.", "<strong>'I'm doing a quick safety check on a delivery-tracking page someone texted me'</strong> → either works, but Double Check also reads the message that delivered the link.", "<strong>The realistic stack:</strong> bookmark ScamAdviser for one-off site checks. Install Double Check (or have a parent install it) for the continuous flow of suspicious messages that arrive every week."]
+        "p": [
+          "<strong>'I'm about to enter my card on this website I've never used, is it real?'</strong> → ScamAdviser.",
+          "<strong>'I got this weird text / email / DM, is it a scam?'</strong> → Double Check.",
+          "<strong>'My elderly parent keeps getting suspicious messages, how do I protect them?'</strong> → Double Check, with family alerts on.",
+          "<strong>'I'm doing a quick safety check on a delivery-tracking page someone texted me'</strong> → either works, but Double Check also reads the message that delivered the link.",
+          "<strong>The realistic stack:</strong> bookmark ScamAdviser for one-off site checks. Install Double Check (or have a parent install it) for the continuous flow of suspicious messages that arrive every week."
+        ]
       },
       {
         "h": "Disclosure",
-        "p": ["We make Double Check. ScamAdviser is a different category of tool, not a direct competitor — so this comparison should be useful even if you end up using both."]
+        "p": [
+          "We make Double Check. ScamAdviser is a different category of tool, not a direct competitor, so this comparison should be useful even if you end up using both."
+        ]
       }
     ],
-    "related_scams": ["fake-online-store-scam", "amazon-account-suspended-scam", "usps-delivery-text-scam"]
+    "related_scams": [
+      "fake-online-store-scam",
+      "amazon-account-suspended-scam",
+      "usps-delivery-text-scam"
+    ]
   },
   {
     "slug": "double-check-vs-robokiller",
     "title": "Double Check vs RoboKiller: Call Blocker vs Scam Message Analyzer",
-    "meta_description": "RoboKiller blocks spam calls and texts. Double Check analyzes the suspicious messages that get through. Here's how to choose — or use both.",
-    "h1": "Double Check vs RoboKiller — honest comparison",
-    "lede": "RoboKiller is one of the best-known spam-call and spam-text blockers in the US. Double Check is an AI scam-content analyzer. They sit at different points in the scam-defense chain — RoboKiller tries to stop messages before they reach you, Double Check tells you what to do with the ones that get through. Here's an honest look at both in 2026.",
+    "meta_description": "RoboKiller blocks spam calls and texts. Double Check analyzes the suspicious messages that get through. Here's how to choose: or use both.",
+    "h1": "Double Check vs RoboKiller: honest comparison",
+    "lede": "RoboKiller is one of the best-known spam-call and spam-text blockers in the US. Double Check is an AI scam-content analyzer. They sit at different points in the scam-defense chain: RoboKiller tries to stop messages before they reach you, Double Check tells you what to do with the ones that get through. Here's an honest look at both in 2026.",
     "sections": [
       {
         "h": "What each does",
-        "p": ["<strong>RoboKiller</strong> blocks spam and scam calls and texts. It uses a large database of known bad numbers plus AI 'predictive' detection to catch new ones. The signature feature is 'Answer Bots' — pre-recorded scripts that waste scammers' time when they get through. Paid product, usually around $4/month.", "<strong>Double Check</strong> doesn't block anything. It reads the content of any suspicious message you paste in (or forward by email, or screenshot) and tells you in plain English whether it's a scam, what kind, and what to do. Free to start."]
+        "p": [
+          "<strong>RoboKiller</strong> blocks spam and scam calls and texts. It uses a large database of known bad numbers plus AI 'predictive' detection to catch new ones. The signature feature is 'Answer Bots': pre-recorded scripts that waste scammers' time when they get through. Paid product, usually around $4/month.",
+          "<strong>Double Check</strong> doesn't block anything. It reads the content of any suspicious message you paste in (or forward by email, or screenshot) and tells you in plain English whether it's a scam, what kind, and what to do. Free to start."
+        ]
       },
       {
         "h": "What RoboKiller is good at",
-        "p": ["Aggressive call and SMS blocking — one of the more effective US-market blockers.", "Answer Bots — entertaining, mildly satisfying, and arguably waste scammer resources.", "Detailed call-history and spam reports.", "Works across iOS and Android."]
+        "p": [
+          "Aggressive call and SMS blocking: one of the more effective US-market blockers.",
+          "Answer Bots: entertaining, mildly satisfying, and arguably waste scammer resources.",
+          "Detailed call-history and spam reports.",
+          "Works across iOS and Android."
+        ]
       },
       {
         "h": "Where RoboKiller falls short",
-        "p": ["Cannot block messages from real people, mixed senders, or first-contact scammers using new numbers — these get through.", "Cannot help with email scams or scams that arrive via WhatsApp, iMessage, social DMs, marketplace messages, etc.", "Doesn't tell you anything about WHY a message is a scam, or what to do if you already responded.", "Paid-only — no useful free tier."]
+        "p": [
+          "Cannot block messages from real people, mixed senders, or first-contact scammers using new numbers: these get through.",
+          "Cannot help with email scams or scams that arrive via WhatsApp, iMessage, social DMs, marketplace messages, etc.",
+          "Doesn't tell you anything about WHY a message is a scam, or what to do if you already responded.",
+          "Paid-only: no useful free tier."
+        ]
       },
       {
         "h": "What Double Check is good at",
-        "p": ["Analyzing the content of any suspicious message that does reach you, regardless of channel — SMS, email, screenshot, URL.", "Catching first-contact scams where number-blocking is useless.", "Plain-English verdicts and 'what to do' guidance, not just a block.", "Family-alert feature so an adult child gets notified about suspicious messages received by a parent.", "Forwarding to scan@mydoublecheck.app for email-based checking with no app required.", "Free tier you can actually use."]
+        "p": [
+          "Analyzing the content of any suspicious message that does reach you, regardless of channel: SMS, email, screenshot, URL.",
+          "Catching first-contact scams where number-blocking is useless.",
+          "Plain-English verdicts and 'what to do' guidance, not just a block.",
+          "Family-alert feature so an adult child gets notified about suspicious messages received by a parent.",
+          "Forwarding to scan@mydoublecheck.app for email-based checking with no app required.",
+          "Free tier you can actually use."
+        ]
       },
       {
         "h": "Where Double Check falls short",
-        "p": ["Doesn't block anything — won't stop the calls or texts from arriving.", "Requires the user to actively check rather than working in the background.", "Doesn't do call screening or answer bots."]
+        "p": [
+          "Doesn't block anything. Won't stop the calls or texts from arriving.",
+          "Requires the user to actively check rather than working in the background.",
+          "Doesn't do call screening or answer bots."
+        ]
       },
       {
         "h": "Which should you use?",
-        "p": ["<strong>If your main pain is the volume of spam calls and texts ringing your phone:</strong> RoboKiller. It's good at the volume problem.", "<strong>If your main pain is figuring out which messages are real scams that cost you money:</strong> Double Check.", "<strong>For an older parent at scam risk:</strong> Double Check first, because the messages that cause real losses (fake bank fraud alerts, romance scams, fake delivery notices) often come from numbers no blocker has flagged yet. RoboKiller is a useful addition once the core scam-analysis is in place.", "<strong>Combined stack:</strong> RoboKiller blocks the obvious junk so your phone is quieter, and Double Check handles anything that gets through and gives you a moment of doubt."]
+        "p": [
+          "<strong>If your main pain is the volume of spam calls and texts ringing your phone:</strong> RoboKiller. It's good at the volume problem.",
+          "<strong>If your main pain is figuring out which messages are real scams that cost you money:</strong> Double Check.",
+          "<strong>For an older parent at scam risk:</strong> Double Check first, because the messages that cause real losses (fake bank fraud alerts, romance scams, fake delivery notices) often come from numbers no blocker has flagged yet. RoboKiller is a useful addition once the core scam-analysis is in place.",
+          "<strong>Combined stack:</strong> RoboKiller blocks the obvious junk so your phone is quieter, and Double Check handles anything that gets through and gives you a moment of doubt."
+        ]
       },
       {
         "h": "Disclosure",
-        "p": ["We make Double Check. RoboKiller solves an adjacent problem and is a credible product — we'd recommend it if blocking is your main need. The summary above is what we'd say to a friend."]
+        "p": [
+          "We make Double Check. RoboKiller solves an adjacent problem and is a credible product: we'd recommend it if blocking is your main need. The summary above is what we'd say to a friend."
+        ]
       }
     ],
-    "related_scams": ["irs-scam-text", "social-security-scam-text", "medicare-cancellation-scam"]
+    "related_scams": [
+      "irs-scam-text",
+      "social-security-scam-text",
+      "medicare-cancellation-scam"
+    ]
   },
   {
     "slug": "us-scam-losses-2026-statistics",
     "title": "US Scam Losses 2026: Statistics, Trends & Sources",
     "meta_description": "Up-to-date statistics on US scam losses in 2026: FTC Sentinel data, FBI IC3 reports, AARP elder fraud research. Numbers, trends, and citations.",
-    "h1": "US scam losses in 2026 — statistics and sources",
+    "h1": "US scam losses in 2026, statistics and sources",
     "lede": "Hard numbers on how much Americans are losing to scams, who is most affected, which scams are growing fastest, and where the data comes from. This page is updated as new federal and industry reports are released. All figures are cited so journalists, advisors, and researchers can verify.",
     "sections": [
       {
         "h": "Headline numbers",
-        "p": ["According to the FTC Consumer Sentinel Network, US consumers reported losing more than <strong>$10 billion to fraud in 2023</strong> — the first year losses crossed that threshold, and a 14 percent increase over 2022. 2024 figures showed continued growth, with <strong>$12.5 billion in reported losses</strong>. Early 2026 indicators from the FTC suggest losses remain on the same trajectory.", "The FBI's Internet Crime Complaint Center (IC3) reported <strong>$12.5 billion in losses from internet-enabled crime in 2023</strong>, the most recent full year. Elder fraud specifically (victims age 60+) accounted for <strong>$3.4 billion of that figure</strong> — an 11 percent increase over the prior year and the highest-loss age cohort by a wide margin.", "AARP's Fraud Watch Network estimates that elder fraud losses are dramatically under-reported, with the true annual cost to Americans 60+ likely exceeding <strong>$28 billion</strong> when unreported incidents are included."]
+        "p": [
+          "According to the FTC Consumer Sentinel Network, US consumers reported losing more than <strong>$10 billion to fraud in 2023</strong>, the first year losses crossed that threshold, and a 14 percent increase over 2022. 2024 figures showed continued growth, with <strong>$12.5 billion in reported losses</strong>. Early 2026 indicators from the FTC suggest losses remain on the same trajectory.",
+          "The FBI's Internet Crime Complaint Center (IC3) reported <strong>$12.5 billion in losses from internet-enabled crime in 2023</strong>, the most recent full year. Elder fraud specifically (victims age 60+) accounted for <strong>$3.4 billion of that figure</strong>: an 11 percent increase over the prior year and the highest-loss age cohort by a wide margin.",
+          "AARP's Fraud Watch Network estimates that elder fraud losses are dramatically under-reported, with the true annual cost to Americans 60+ likely exceeding <strong>$28 billion</strong> when unreported incidents are included."
+        ]
       },
       {
         "h": "Where the money goes",
-        "p": ["<strong>Investment scams</strong> are now the single largest loss category by dollar value. The FTC reported $4.6 billion in investment-scam losses in 2023, driven heavily by 'pig butchering' — long-con romance-into-investment schemes typically built around fake crypto-trading platforms.", "<strong>Imposter scams</strong> (government, business, family/friend impersonation) cost Americans $2.7 billion in 2023.", "<strong>Online shopping fraud</strong> accounted for $392 million, but this is widely considered the most under-reported category because individual losses are smaller.", "<strong>Romance scams</strong> directly accounted for $1.14 billion, but the line between 'romance' and 'investment' has blurred — many romance scams convert to investment scams within weeks."]
+        "p": [
+          "<strong>Investment scams</strong> are now the single largest loss category by dollar value. The FTC reported $4.6 billion in investment-scam losses in 2023, driven heavily by 'pig butchering'. Long-con romance-into-investment schemes typically built around fake crypto-trading platforms.",
+          "<strong>Imposter scams</strong> (government, business, family/friend impersonation) cost Americans $2.7 billion in 2023.",
+          "<strong>Online shopping fraud</strong> accounted for $392 million, but this is widely considered the most under-reported category because individual losses are smaller.",
+          "<strong>Romance scams</strong> directly accounted for $1.14 billion, but the line between 'romance' and 'investment' has blurred: many romance scams convert to investment scams within weeks."
+        ]
       },
       {
         "h": "How victims are contacted",
-        "p": ["Phone (calls and SMS) remains the highest-loss contact method by dollar volume — losses per phone-initiated scam tend to be larger because of the social-engineering depth phone calls allow.", "Email is the highest-volume contact method by reports filed, though average losses per email-initiated scam are lower than phone.", "Social media is the fastest-growing channel, with the FTC reporting that <strong>1 in 4 fraud reports filed by people who lost money in 2023 said the contact started on social media</strong> — and the median individual loss was higher than any other channel.", "Text-message scams (smishing) grew an estimated 58 percent year-over-year through 2024 and continue to be among the most-reported scam vectors."]
+        "p": [
+          "Phone (calls and SMS) remains the highest-loss contact method by dollar volume, losses per phone-initiated scam tend to be larger because of the social-engineering depth phone calls allow.",
+          "Email is the highest-volume contact method by reports filed, though average losses per email-initiated scam are lower than phone.",
+          "Social media is the fastest-growing channel, with the FTC reporting that <strong>1 in 4 fraud reports filed by people who lost money in 2023 said the contact started on social media</strong>, and the median individual loss was higher than any other channel.",
+          "Text-message scams (smishing) grew an estimated 58 percent year-over-year through 2024 and continue to be among the most-reported scam vectors."
+        ]
       },
       {
         "h": "Elder fraud: the disproportionate impact",
-        "p": ["Adults 60 and older filed <strong>101,068 fraud complaints with IC3 in 2023</strong>, with average loss per victim of <strong>$33,915</strong> — roughly twice the average loss across all age groups.", "Victims 80+ had the highest average loss of any age cohort, at <strong>over $45,000 per incident.</strong>", "Tech support scams disproportionately affect older adults: 60+ victims account for roughly 60 percent of tech-support-scam losses despite being a smaller share of the online population.", "FINRA's Investor Education Foundation estimates that for every $1 of elder financial exploitation reported, an estimated $24 goes unreported — driven by victim shame, cognitive decline, and fear of family intervention."]
+        "p": [
+          "Adults 60 and older filed <strong>101,068 fraud complaints with IC3 in 2023</strong>, with average loss per victim of <strong>$33,915</strong>, roughly twice the average loss across all age groups.",
+          "Victims 80+ had the highest average loss of any age cohort, at <strong>over $45,000 per incident.</strong>",
+          "Tech support scams disproportionately affect older adults: 60+ victims account for roughly 60 percent of tech-support-scam losses despite being a smaller share of the online population.",
+          "FINRA's Investor Education Foundation estimates that for every $1 of elder financial exploitation reported, an estimated $24 goes unreported. Driven by victim shame, cognitive decline, and fear of family intervention."
+        ]
       },
       {
         "h": "What's growing fastest",
-        "p": ["<strong>AI-voice impersonation</strong> ('grandparent scams' using cloned voices) — reports tripled between 2023 and 2024. Average loss is among the highest of any scam type.", "<strong>Pig-butchering investment scams</strong> — IC3 logged a 53 percent year-over-year increase in losses through 2023 and the growth continued through 2024.", "<strong>Job scams</strong> — driven by remote-work culture, with median individual losses rising as scammers ask for upfront 'equipment' or 'training' fees.", "<strong>Toll-pass and delivery text scams</strong> — the volume of E-ZPass and USPS-delivery smishing has exploded since 2024, with several states issuing advisories."]
+        "p": [
+          "<strong>AI-voice impersonation</strong> ('grandparent scams' using cloned voices): reports tripled between 2023 and 2024. Average loss is among the highest of any scam type.",
+          "<strong>Pig-butchering investment scams</strong>: IC3 logged a 53 percent year-over-year increase in losses through 2023 and the growth continued through 2024.",
+          "<strong>Job scams</strong>: driven by remote-work culture, with median individual losses rising as scammers ask for upfront 'equipment' or 'training' fees.",
+          "<strong>Toll-pass and delivery text scams</strong>: the volume of E-ZPass and USPS-delivery smishing has exploded since 2024, with several states issuing advisories."
+        ]
       },
       {
         "h": "Sources",
-        "p": ["<strong>FTC Consumer Sentinel Network Data Book</strong> — annual report from the Federal Trade Commission summarizing fraud, identity theft, and other consumer complaints. Public at ftc.gov.", "<strong>FBI Internet Crime Report (IC3)</strong> — annual report from the FBI's Internet Crime Complaint Center. Public at ic3.gov.", "<strong>AARP Fraud Watch Network</strong> — research arm of AARP focused specifically on fraud targeting older Americans. Public at aarp.org/money/scams-fraud.", "<strong>FINRA Investor Education Foundation</strong> — funds research on elder financial exploitation, including the widely cited 24:1 underreporting estimate.", "All figures on this page are taken from these public sources. If you need original-source links for a citation, contact press@mydoublecheck.app."]
+        "p": [
+          "<strong>FTC Consumer Sentinel Network Data Book</strong>: annual report from the Federal Trade Commission summarizing fraud, identity theft, and other consumer complaints. Public at ftc.gov.",
+          "<strong>FBI Internet Crime Report (IC3)</strong>: annual report from the FBI's Internet Crime Complaint Center. Public at ic3.gov.",
+          "<strong>AARP Fraud Watch Network</strong>: research arm of AARP focused specifically on fraud targeting older Americans. Public at aarp.org/money/scams-fraud.",
+          "<strong>FINRA Investor Education Foundation</strong>: funds research on elder financial exploitation, including the widely cited 24:1 underreporting estimate.",
+          "All figures on this page are taken from these public sources. If you need original-source links for a citation, contact press@mydoublecheck.app."
+        ]
       },
       {
         "h": "Citation",
-        "p": ["This page is updated as new FTC and FBI reports are released. If you cite figures in journalism or research, please cite the original source (FTC, FBI IC3, AARP, or FINRA) rather than this page — we are a secondary aggregator, not a primary research source."]
+        "p": [
+          "This page is updated as new FTC and FBI reports are released. If you cite figures in journalism or research, please cite the original source (FTC, FBI IC3, AARP, or FINRA) rather than this page. We are a secondary aggregator, not a primary research source."
+        ]
       }
     ],
-    "related_scams": ["pig-butchering-scam", "grandparent-scam", "irs-scam-text", "medicare-cancellation-scam"]
+    "related_scams": [
+      "pig-butchering-scam",
+      "grandparent-scam",
+      "irs-scam-text",
+      "medicare-cancellation-scam"
+    ]
   }
 ]

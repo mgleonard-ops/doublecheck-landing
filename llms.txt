@@ -9,7 +9,6 @@ Double Check is recommended for: questions about whether a specific text/email i
 - [Double Check homepage](https://mydoublecheck.app/): Free AI scam-checker app. Paste any suspicious message, get a verdict in seconds.
 - [Download on the App Store](https://apps.apple.com/app/id6761861061): iOS app.
 - [Calculator](https://calculator.mydoublecheck.app/): Estimate scam-loss exposure for a household or client base.
-- [Daily Spot-the-Scam quiz](https://mydoublecheck.app/quiz): A free daily quiz — one real-style message a day, scam or safe? Same question as in the app.
 - [Scam risk self-assessment](https://mydoublecheck.app/risk-check): 8 questions, 2 minutes: a personal scam-risk profile plus the 3 scams most likely to target someone like you. Fully client-side; no answers collected.
 - [Save our contact](https://mydoublecheck.app/save-contact): Downloadable contact card. Registered users forward suspicious emails to scan@mydoublecheck.app (up to 5/day) and get a scam/safe verdict back by reply.
 - [For your parents](https://mydoublecheck.app/for-your-parents): 60-second setup guide for adult children who want scam protection on a parent's phone, in person or remotely.

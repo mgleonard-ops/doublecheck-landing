@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mydoublecheck.app/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -32,25 +32,19 @@
   </url>
   <url>
     <loc>https://mydoublecheck.app/advisors</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mydoublecheck.app/for-your-parents</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mydoublecheck.app/quiz</loc>
-    <lastmod>2026-07-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://mydoublecheck.app/risk-check</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -62,13 +56,13 @@
   </url>
   <url>
     <loc>https://mydoublecheck.app/brain-check</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://calculator.mydoublecheck.app/</loc>
-    <lastmod>2026-06-29</lastmod>
+    <loc>https://mydoublecheck.app/calculator</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -80,7 +74,7 @@
   </url>
   <url>
     <loc>https://mydoublecheck.app/privacy</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -392,67 +386,67 @@
   </url>
   <url>
     <loc>https://mydoublecheck.app/guides/text-scam-guide</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mydoublecheck.app/guides/senior-scam-protection</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mydoublecheck.app/guides/phone-scam-guide</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mydoublecheck.app/guides/investment-scam-guide</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mydoublecheck.app/guides/banking-scam-guide</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mydoublecheck.app/guides/double-check-vs-truecaller</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mydoublecheck.app/guides/double-check-vs-hiya</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mydoublecheck.app/guides/double-check-vs-norton-genie</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mydoublecheck.app/guides/double-check-vs-scamadviser</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mydoublecheck.app/guides/double-check-vs-robokiller</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mydoublecheck.app/guides/us-scam-losses-2026-statistics</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>

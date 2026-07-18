@@ -1,7 +1,7 @@
 {
   "https://mydoublecheck.app/": {
-    "hash": "ec3874e31ff0964753becfcb990360544c9c1522",
-    "date": "2026-07-11"
+    "hash": "30b373bdb93313c125eb837f534e5d51877b578c",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/scams": {
     "hash": "d731529c42d7d1b7b2c100a9d121ebcaf2e4e6e7",
@@ -20,40 +20,36 @@
     "date": "2026-07-06"
   },
   "https://mydoublecheck.app/advisors": {
-    "hash": "ae762d5d9ded03dd44d764c00e0f57391916fef5",
-    "date": "2026-07-06"
+    "hash": "2fbeac20a97bee82f3b97ad4a9d17d0ed8d49755",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/for-your-parents": {
-    "hash": "f6cac4f50c0ef8c90f9341e34a03c04630f7dced",
-    "date": "2026-07-06"
-  },
-  "https://mydoublecheck.app/quiz": {
-    "hash": "9e0c3ff43bb7c23b26a18c9541db2383db56e3ed",
-    "date": "2026-07-06"
+    "hash": "06b588ad8dbb97e134092f293f41d44242222c60",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/risk-check": {
-    "hash": "5ecb444deb74a7afb6b2633ea53991a47f488603",
-    "date": "2026-07-06"
+    "hash": "078493fa904eb12e6bdb1f8bd212d5b8ebd62451",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/save-contact": {
     "hash": "053cec14ea432ae334bed434d86f80bd13eafd97",
     "date": "2026-07-06"
   },
   "https://mydoublecheck.app/brain-check": {
-    "hash": "2ce108cf339beb3cf8f7a96adb946492baae2256",
-    "date": "2026-07-11"
+    "hash": "1ddbf40239c95fff768831f60a1e37c9da20663b",
+    "date": "2026-07-18"
   },
-  "https://calculator.mydoublecheck.app/": {
-    "hash": "46237b3d702aad617eae653792a6269e836aa44d",
-    "date": "2026-06-29"
+  "https://mydoublecheck.app/calculator": {
+    "hash": "42b999823d56035911b26a90c0869ea00ee702e8",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/support": {
     "hash": "12988a0e1e0c98e78a4c5ad1b471746024639896",
     "date": "2026-07-06"
   },
   "https://mydoublecheck.app/privacy": {
-    "hash": "438ca1a5f927239677d21181ffca42590391927a",
-    "date": "2026-07-06"
+    "hash": "949131fdd22f755f2e44b3f1de538dade660fc0e",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/terms": {
     "hash": "55066f5450bd8b458e4c1e5265c5063a96dfc2da",
@@ -260,48 +256,48 @@
     "date": "2026-06-29"
   },
   "https://mydoublecheck.app/guides/text-scam-guide": {
-    "hash": "bc79c53db4910538b19795b116901725d3822b92",
-    "date": "2026-06-29"
+    "hash": "de903800f3fb0c2dfefa1e7ab0cf3556417de2b0",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/guides/senior-scam-protection": {
-    "hash": "9f988217d63859e9256c790ba7aff074c22e1db2",
-    "date": "2026-06-29"
+    "hash": "cb695e06a285b370ae99f92336f123b6875a7268",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/guides/phone-scam-guide": {
-    "hash": "54cfec57ca995ebb7b6ce2bbe787d2d9975f34f5",
-    "date": "2026-06-29"
+    "hash": "b020eafe671d7be3399f5a03c20107ce0d4d09d3",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/guides/investment-scam-guide": {
-    "hash": "e4e08c6ecd781a27d29916f6502525fcbd05dadb",
-    "date": "2026-06-29"
+    "hash": "7a1928953c132666cd3659a5d7db35672d526d4d",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/guides/banking-scam-guide": {
-    "hash": "5f880bc027a2135fb5b593d5e59414923889604f",
-    "date": "2026-06-29"
+    "hash": "11a22c1153fd24e8b4efe1b37d4ced974953c4cf",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/guides/double-check-vs-truecaller": {
-    "hash": "c5a6733ab46c4eb43e48ca241ec07cff8ad1ef64",
-    "date": "2026-06-29"
+    "hash": "222412f6d521033c86be9b80d53604349f518597",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/guides/double-check-vs-hiya": {
-    "hash": "a0760bbbbc8f392fb225f8794b8818c5dc1e63be",
-    "date": "2026-06-29"
+    "hash": "2e996041d58af1be899d5fd13ddec5b1a4a4b838",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/guides/double-check-vs-norton-genie": {
-    "hash": "b7615aadafded03d273594cb745277d6bf73e447",
-    "date": "2026-06-29"
+    "hash": "73638fad740c5e1e5b1f88040bd68fb60d049253",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/guides/double-check-vs-scamadviser": {
-    "hash": "9faf0fa0646adb35c85003cc35c86b29e5c341a3",
-    "date": "2026-06-29"
+    "hash": "83fb2c1a3f4606e33422994b3aa871e9b4fb46cc",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/guides/double-check-vs-robokiller": {
-    "hash": "eb8ad5ffab04a53f3690ab0d9717b0634fda2c62",
-    "date": "2026-06-29"
+    "hash": "a7b9cbcc0c6bdbacde0b9ad0d7e3abf5d21bf0ef",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/guides/us-scam-losses-2026-statistics": {
-    "hash": "c9a9d6b6a697eca14aea97889eac45703e01bf63",
-    "date": "2026-06-29"
+    "hash": "78a75db60e0dd489a0a78019e2618fa4b07b0a81",
+    "date": "2026-07-18"
   },
   "https://mydoublecheck.app/advisor/senior-safe-act-2018": {
     "hash": "8f193b7dd6aae83aae9e1da09894ecceb0f14c94",
