@@ -47,6 +47,28 @@
       "has": [
         {
           "type": "host",
+          "value": "calculator.mydoublecheck.app"
+        }
+      ],
+      "destination": "https://mydoublecheck.app/calculator",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "calculator.mydoublecheck.app"
+        }
+      ],
+      "destination": "https://mydoublecheck.app/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
           "value": "doublecheck-landing.vercel.app"
         }
       ],

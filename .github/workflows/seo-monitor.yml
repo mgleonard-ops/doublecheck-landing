@@ -14,6 +14,7 @@ jobs:
       - name: Crawl sitemap URLs (status + canonical)
         run: |
           set -e
+          fail=0
           # The live sitemap must be valid XML with at least one <loc> — catches the
           # "Sitemap is HTML" failure mode where a page gets served where XML is expected.
           live=$(mktemp)
@@ -22,13 +23,12 @@ jobs:
             echo "::error::live sitemap.xml is not valid XML (status $sc, first line not <?xml) — it may be served as HTML"
             fail=1
           fi
-          locs=$(grep -c "<loc>" "$live" || echo 0)
+          locs=$(grep -c "<loc>" "$live" || true)
           [ "$locs" -gt 0 ] || { echo "::error::live sitemap.xml has zero <loc> entries"; fail=1; }
           rm -f "$live"
 
           grep "<loc>" sitemap.xml | sed 's/.*<loc>//;s/<\/loc>.*//' > /tmp/urls.txt
           echo "Checking $(wc -l < /tmp/urls.txt) URLs"
-          fail=0
           while read -r url; do
             tmp=$(mktemp)
             code=$(curl -s -L -o "$tmp" -w "%{http_code}" --max-time 20 "$url" || echo "000")
