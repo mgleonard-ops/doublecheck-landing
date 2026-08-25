@@ -275,8 +275,8 @@
   },
   {
     "slug": "banking-scam-guide",
-    "title": "Bank & Payment Scams: Spotting Fake Fraud Alerts",
-    "meta_description": "Banks are the most-impersonated category in modern fraud. Here's how to tell real fraud alerts from fakes, and what to do if you've been hit.",
+    "title": "Bank Fraud Alert Texts: Real Short Codes vs. Fake Alerts",
+    "meta_description": "Is 24273 really Chase? Real bank fraud alerts come from 5-digit short codes and ask for a YES/NO reply, never a link. How to tell real from phishing.",
     "h1": "Bank & payment scams: spotting fake fraud alerts",
     "lede": "Every major US bank gets impersonated daily in text, email, and phone scams. The volume is massive because the payoff is huge: a successful bank scam typically nets thousands per victim, not hundreds. The good news: real bank fraud alerts follow specific, predictable patterns. Once you know what real looks like, fake becomes obvious.",
     "sections": [
@@ -289,6 +289,16 @@
           "<strong>Reply method:</strong> Reply YES, NO, or HELP. That's it.",
           "<strong>What it never contains:</strong> A clickable link. A phone number to call. A request for your account number, PIN, password, or one-time code.",
           "If a 'bank fraud alert' has a link or a callback number, it is, without exception, a phishing scam. Real banks do not operate this way."
+        ]
+      },
+      {
+        "h": "Is 24273 a real Chase short code?",
+        "p": [
+          "Yes. 24273 is one of Chase's genuine alert short codes — it spells CHASE on a phone keypad. These are the short codes the major banks actually text from:",
+          "<strong>Chase:</strong> 24273 and 96632. <strong>Wells Fargo:</strong> 93557. <strong>Bank of America:</strong> 51682. Other banks use their own; if you're not sure what yours is, your bank's website lists it under alerts or text banking.",
+          "But a real short code is a good sign, not proof. Scam texts can arrive from spoofed sender IDs, and they sometimes land in the same message thread as genuine alerts, which makes them look like part of an existing conversation with your bank.",
+          "So judge the message, not the sender. A real alert from 24273 names a specific transaction and asks you to reply YES or NO. A fake one asks you to tap a link or call a number — even if it arrived in the right thread from the right five digits. See <a href=\"/scams/chase-fraud-alert-text-scam\">the Chase fraud alert text scam</a> for side-by-side examples.",
+          "If you're unsure, don't reply either way. Open your banking app or call the number on the back of your card. A genuine hold on your account will be waiting for you there."
         ]
       },
       {

@@ -1206,8 +1206,8 @@
   },
   {
     "slug": "apple-iphone-virus-popup-scam",
-    "title": "iPhone Virus Popup Scam: 'Your iPhone Has Been Compromised'",
-    "meta_description": "Saw a scary pop-up on Safari saying your iPhone has a virus? Don't panic. Here's why iPhones don't get viruses and what to do.",
+    "title": "'Viruses Detected on Your iPhone' Pop-Up: Is It a Scam?",
+    "meta_description": "'Viruses have been detected on your iPhone.' 'Your iPhone is infected.' Both are fake — Safari can't scan iOS. Here's how to close the pop-up safely.",
     "h1": "Is the iPhone virus warning pop-up a scam?",
     "short_answer": "Yes, always. iPhones effectively cannot get viruses through normal use, and Apple does not display warning pop-ups about viruses in Safari. Any pop-up claiming your iPhone is infected, locked, or compromised is a JavaScript trick on a malicious webpage — designed to scare you into installing a fake 'cleaner' app or calling a fake support number.",
     "category": "Tech support",
@@ -1242,6 +1242,14 @@
       {
         "q": "Should I install an antivirus app on my iPhone?",
         "a": "No. iOS doesn't need one and most iOS 'antivirus' apps don't actually scan anything — they're marketing wrappers around basic phishing protection that Safari already does."
+      },
+      {
+        "q": "Why does the pop-up say it's 'scanning' my device?",
+        "a": "It isn't scanning anything. A webpage has no way to inspect your iPhone, and Safari can't run a virus scan. The progress bar and the count of infections found are just animation on the page, timed to land on a scary number. Close the tab and the 'scan' stops."
+      },
+      {
+        "q": "Does Apple ever send virus warnings?",
+        "a": "No. Apple does not warn you about viruses by pop-up, text, email, or phone call, and there is no 'Apple Security' team that asks you to call a number. Any virus alert claiming to be from Apple is fake, no matter how closely it copies Apple's fonts and logo."
       }
     ],
     "related": ["apple-id-locked-scam", "microsoft-tech-support-scam", "geek-squad-scam"]
