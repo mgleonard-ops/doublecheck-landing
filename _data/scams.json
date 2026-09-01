@@ -517,6 +517,10 @@
     "why_scammers_use": "Bank fraud alerts have built up trust — people are used to receiving real ones and tend to act on them quickly. Scammers piggyback on that trust. The 'call this number' variant typically leads to a 30-minute social engineering call ending in wire transfers or remote-access account drain.",
     "faq": [
       {
+        "q": "Is 24273 a real Chase number?",
+        "a": "Yes. 24273 spells CHASE on a phone keypad and is one of Chase's genuine fraud alert short codes, along with 96632. A real short code is a good sign — carriers only lease them to verified businesses — but still judge the message by what it asks. A genuine alert names a specific charge and asks you to reply YES, NO, or HELP, with no link and no number to call."
+      },
+      {
         "q": "How does a real Chase fraud alert look?",
         "a": "A short code (5-digit sender), a question about a specific charge, and asks you to reply YES, NO, or HELP. No links, no phone numbers in the message itself."
       },
@@ -525,7 +529,7 @@
         "a": "Replying just confirms your number is active — it's not catastrophic. But don't tap any follow-up link, and call Chase directly to be safe."
       }
     ],
-    "related": ["wells-fargo-scam-text", "zelle-scam", "amazon-refund-scam"]
+    "related": ["wells-fargo-text-scam", "zelle-scam", "amazon-refund-scam"]
   },
   {
     "slug": "zelle-scam",
@@ -1206,8 +1210,8 @@
   },
   {
     "slug": "apple-iphone-virus-popup-scam",
-    "title": "iPhone Virus Popup Scam: 'Your iPhone Has Been Compromised'",
-    "meta_description": "Saw a scary pop-up on Safari saying your iPhone has a virus? Don't panic. Here's why iPhones don't get viruses and what to do.",
+    "title": "Is the 'Your iPhone Has Been Compromised' Virus Warning Real?",
+    "meta_description": "No - it's a fake popup, not a real Apple warning. Your iPhone is fine. Here's how to close it safely and what to do if you tapped anything.",
     "h1": "Is the iPhone virus warning pop-up a scam?",
     "short_answer": "Yes, always. iPhones effectively cannot get viruses through normal use, and Apple does not display warning pop-ups about viruses in Safari. Any pop-up claiming your iPhone is infected, locked, or compromised is a JavaScript trick on a malicious webpage — designed to scare you into installing a fake 'cleaner' app or calling a fake support number.",
     "category": "Tech support",
