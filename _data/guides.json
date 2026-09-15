@@ -275,11 +275,22 @@
   },
   {
     "slug": "banking-scam-guide",
-    "title": "Bank & Payment Scams: Spotting Fake Fraud Alerts",
-    "meta_description": "Banks are the most-impersonated category in modern fraud. Here's how to tell real fraud alerts from fakes, and what to do if you've been hit.",
+    "title": "Bank Fraud Alert Short Codes: Is 24273 Really Chase?",
+    "meta_description": "Yes - 24273 is Chase's real fraud-alert short code. But the sender is not what makes an alert genuine. Here's the test that is, for every major bank.",
     "h1": "Bank & payment scams: spotting fake fraud alerts",
     "lede": "Every major US bank gets impersonated daily in text, email, and phone scams. The volume is massive because the payoff is huge: a successful bank scam typically nets thousands per victim, not hundreds. The good news: real bank fraud alerts follow specific, predictable patterns. Once you know what real looks like, fake becomes obvious.",
     "sections": [
+      {
+        "h": "Which short code is really your bank?",
+        "p": [
+          "If a fraud alert arrives from a 5-digit short code, the code itself tells you whose system sent it. The ones you'll see most:",
+          "<strong>24273</strong> &mdash; Chase. It spells CHASE on a phone keypad. Chase also sends from 96632. <a href=\"/scams/chase-fraud-alert-text-scam\">Real vs fake Chase alert texts &rarr;</a>",
+          "<strong>93557</strong> &mdash; <a href=\"/scams/wells-fargo-text-scam\">Wells Fargo</a>.",
+          "<strong>51682</strong> &mdash; <a href=\"/scams/bank-of-america-scam-text\">Bank of America</a>.",
+          "But the sender is not the test. A text claiming to be your bank from an ordinary 10-digit number is fake every time &mdash; and even in a thread that really does come from 24273, a genuine alert will never contain a link, a callback number, or a request for your PIN, password, or one-time code. Judge the message by what it asks you to do, not by who it says it's from.",
+          "Not sure? Don't reply and don't call the number in the text. Call the number on the back of your card."
+        ]
+      },
       {
         "h": "What a real bank fraud alert looks like",
         "p": [
