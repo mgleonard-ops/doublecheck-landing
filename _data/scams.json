@@ -54,8 +54,8 @@
   },
   {
     "slug": "fedex-delivery-scam-text",
-    "title": "FedEx Delivery Text Scam: How to Spot It Instantly",
-    "meta_description": "FedEx delivery texts about address issues, customs fees, or held packages are usually scams. Learn the exact red flags and what to do.",
+    "title": "Is the FedEx Delivery Text a Scam? How to Spot It (2026)",
+    "meta_description": "FedEx texts asking you to reschedule a delivery, confirm your address, or pay a customs fee are usually scams. See real examples, red flags, and what to do.",
     "h1": "Is the FedEx delivery text a scam?",
     "short_answer": "Yes — almost every unsolicited 'FedEx' text asking you to pay a fee, confirm your address, or tap a link is a phishing scam. Real FedEx alerts only come if you signed up for Delivery Manager, and they never ask for payment or personal info by SMS.",
     "category": "Delivery & shipping",
@@ -96,6 +96,10 @@
       {
         "q": "The text knows my name. Is it still a scam?",
         "a": "Yes. Names are widely available from data leaks. A personalized text is not proof of legitimacy — many large scam operations now buy lists with name + phone pairs."
+      },
+      {
+        "q": "A text says I need to reschedule my FedEx delivery. Is it real?",
+        "a": "Almost certainly not if the link doesn't go to fedex.com. Fake 'reschedule your delivery' texts are one of the most common FedEx scams. If you're expecting a package, look up the tracking number from the seller's confirmation on fedex.com directly — if a delivery really needs rescheduling, it will show there."
       }
     ],
     "related": ["usps-delivery-text-scam", "amazon-refund-scam"]
