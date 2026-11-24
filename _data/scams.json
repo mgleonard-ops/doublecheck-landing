@@ -54,8 +54,8 @@
   },
   {
     "slug": "fedex-delivery-scam-text",
-    "title": "FedEx Delivery Text Scam: How to Spot It Instantly",
-    "meta_description": "FedEx delivery texts about address issues, customs fees, or held packages are usually scams. Learn the exact red flags and what to do.",
+    "title": "Is the FedEx Delivery Text a Scam? How to Spot It (2026)",
+    "meta_description": "Got a text from 'FedEx' about a held package, address problem, or customs fee? It's almost always a scam. Here's how to spot it in seconds and what to do.",
     "h1": "Is the FedEx delivery text a scam?",
     "short_answer": "Yes — almost every unsolicited 'FedEx' text asking you to pay a fee, confirm your address, or tap a link is a phishing scam. Real FedEx alerts only come if you signed up for Delivery Manager, and they never ask for payment or personal info by SMS.",
     "category": "Delivery & shipping",
@@ -1206,8 +1206,8 @@
   },
   {
     "slug": "apple-iphone-virus-popup-scam",
-    "title": "iPhone Virus Popup Scam: 'Your iPhone Has Been Compromised'",
-    "meta_description": "Saw a scary pop-up on Safari saying your iPhone has a virus? Don't panic. Here's why iPhones don't get viruses and what to do.",
+    "title": "Is the 'Your iPhone Has Been Compromised' Virus Warning Real?",
+    "meta_description": "No - it's a fake popup, not a real Apple warning. Your iPhone is fine. Here's how to close it safely and what to do if you tapped anything.",
     "h1": "Is the iPhone virus warning pop-up a scam?",
     "short_answer": "Yes, always. iPhones effectively cannot get viruses through normal use, and Apple does not display warning pop-ups about viruses in Safari. Any pop-up claiming your iPhone is infected, locked, or compromised is a JavaScript trick on a malicious webpage — designed to scare you into installing a fake 'cleaner' app or calling a fake support number.",
     "category": "Tech support",
@@ -1835,8 +1835,8 @@
   },
   {
     "slug": "publishers-clearing-house-scam",
-    "title": "Publishers Clearing House Scam: 'You Won' Calls Explained",
-    "meta_description": "Got a call from 'Publishers Clearing House' saying you won millions? It's a scam. PCH never calls winners. Here's how to recognize it.",
+    "title": "Publishers Clearing House Call or Text: Real or Scam?",
+    "meta_description": "Got a call, text, or Facebook message from 'Publishers Clearing House' saying you won? It's a scam if they ask for any money. Here's how to tell, and what to do.",
     "h1": "Is the Publishers Clearing House call a scam?",
     "short_answer": "Yes, always. Publishers Clearing House never notifies winners by phone, email, text, or letter. Real PCH winners are surprised in person by the 'Prize Patrol' at their home — the entire brand is built around that televised moment. Anyone calling claiming to be PCH is a scammer.",
     "category": "Lottery & prize",
@@ -1867,6 +1867,14 @@
       {
         "q": "How does real PCH notify winners?",
         "a": "In person, in a vehicle, often filmed for TV. They never call ahead or ask for any money."
+      },
+      {
+        "q": "Is Publishers Clearing House real?",
+        "a": "Yes. Publishers Clearing House is a real company that has run sweepstakes for decades. The scam isn't PCH itself — it's people pretending to be PCH to get your money."
+      },
+      {
+        "q": "Do you have to pay to collect a PCH prize?",
+        "a": "No. A real sweepstakes never asks a winner to pay fees, taxes, or 'insurance' up front, and never by gift card, wire, or crypto. If anyone asks for money to release a prize, it's a scam."
       }
     ],
     "related": ["lottery-winner-scam", "inheritance-scam-email", "grandparent-scam"]
